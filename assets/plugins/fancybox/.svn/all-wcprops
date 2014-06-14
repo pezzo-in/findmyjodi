@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/FindMyJodi/!svn/ver/1/code/assets/plugins/fancybox
+END
+CHANGELOG.md
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/FindMyJodi/!svn/ver/1/code/assets/plugins/fancybox/CHANGELOG.md
+END
+.gitattributes
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/FindMyJodi/!svn/ver/1/code/assets/plugins/fancybox/.gitattributes
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/FindMyJodi/!svn/ver/1/code/assets/plugins/fancybox/README.md
+END

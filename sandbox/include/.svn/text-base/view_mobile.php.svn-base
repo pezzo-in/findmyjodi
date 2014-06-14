@@ -1,0 +1,74 @@
+<?php
+session_start(); 
+include('../lib/myclass.php');
+$select_member="SELECT members.*,member_photos.photo FROM members LEFT JOIN member_photos ON members.id = member_photos.member_id where members.id='".$_GET['id']."'";
+$db_member=$obj->select($select_member);
+?>
+
+
+    <form  method="post" id="form_sample_2" name="form_sample_3" class="form-horizontal" enctype="multipart/form-data" onsubmit="return check_form()" >   
+        <div class="profile_details">
+            <div class="profile_img" style="padding-left:0px;">
+                <div class="profile-img-box" style="position:inherit">
+                     <?php
+					 if(($db_member[0]['photo']))
+						{
+							$path = "upload/".$db_member[0]['photo'];
+							if ($db_member[0]['photo']!='') {
+									echo '<img title="click here to upload photo" class="profile_pic" src="'.$path.'" style="width:100px;height:100px;" />';
+							}
+							else{
+								if($db_member[0]['gender']=='M')
+echo '<img title="click here to upload photo" class="profile_pic" src="images/male-user1.png" style="width:100px;height:100px;" />';
+								else
+echo '<img title="click here to upload photo" class="profile_pic" src="images/female-user1.png" style="width:100px;height:100px;" />';
+							}
+						}
+						else{
+								if($db_member[0]['gender']=='M')
+echo '<img title="click here to upload photo" class="profile_pic" src="images/male-user1.png" style="width:100px;height:100px;" />';
+								else
+echo '<img title="click here to upload photo" class="profile_pic" src="images/female-user1.png" style="width:100px;height:100px;" />';
+							}
+					 ?>
+                </div>
+                <h2 style="float: left;width: 54%;"><?php echo "Contact Number of ". ucfirst($db_member[0]['name']); ?></h2>
+                <!--<p><?php echo $db_member[0]['caste']; ?> ( <?php echo $db_member[0]['religion']; ?> )<br>
+        <?php echo $db_member[0]['age'] ?> Yrs, <?php if($db_member[0]['height']!=''){ echo $db_member[0]['height'].' In'; } ?><br>
+        <?php echo $db_member[0]['education'] ?></p>--><br />
+                    <h3><?php echo $db_member[0]['mobile_no']; ?></h4>
+            </div>
+            <div class="row-detail new_acc">
+                   
+
+            </div>                
+        </div>
+    </form>
+<?php
+if(isset($_GET['number']))
+{
+	$update_mob_counter = "update members set view_mobile='".($_GET['number']+1)."' where member_id='".$_SESSION['logged_user'][0]['member_id']."'"; 
+	$obj->edit($update_mob_counter);
+}
+
+?>  
+<script>
+function check_form()  
+{ 
+	$('#message').css('border','1px solid #ccc');
+	error = 0;
+	
+	if($('textarea[name=message]').val().trim()=='')
+	{
+		$('#message').css('border','1px solid red');
+		error=1
+	}
+	else
+	{
+		error=0
+	}
+	if(error==0)
+		return true;
+	else
+		return false;
+}

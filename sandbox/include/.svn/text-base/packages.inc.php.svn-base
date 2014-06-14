@@ -1,0 +1,42 @@
+<?php
+	$sql = "SELECT * from new_membership_plans";			 			  
+	$data=$obj->select($sql);
+	
+	/*$lastid = "select max(id) as last_id from members";
+	$ans = $obj->select($lastid);*/
+	
+?>
+<div class="mid" style="width:954px;">
+<?php if($_GET['redirect']!='account'){ ?>
+<div class="backtolink"><!--<a href="photo_upload.php">Skip this page »&nbsp;&nbsp;&nbsp;</a>||--><a href="thank-you.php">&nbsp;&nbsp;&nbsp;Continue To Home Page »</a></div>
+<?php } ?>
+			<div id="tab-container">
+                        <?php /*?><ul class="msgtab">
+                            <li><a href="#packagetab-1">Regular Packages</a></li>
+                            <li><a href="#packagetab-1">Combo Packages</a></li>
+                        </ul><?php */?>
+                        <form action="payment.php" method="post">
+                        <div class="msgtab_content pack" id="packagetab-1">
+                       	  <h2>Select Membership Package</h2>
+                          <table class="packtable" border="0" cellpadding="0" cellspacing="0" >
+                              <tr>
+                                <th style="width:25px;">&nbsp;</th>
+                                <th>&nbsp;</th>
+                                <th><strong>months</strong></th>
+                                <th><strong>Amount</strong></th>
+                              </tr>
+                              <?php $i=0; ?>
+                              <?php foreach($data as $d) { ?>
+                              <tr>
+                              	<td style="width:25px;"><input type="radio" name="plane_id" <?php if($i==0){ ?> checked="checked" <?php } ?> value="<?php echo $d['id']; ?>" /></td>
+                                <td><h1><?php echo $d['plan_name']; ?></h1></td>
+                                <td style="font-size: 20px;color: black;font-weight: bold;<?php if($d['plan_duration']==365){ ?>padding-left: 34px;<?php }else{ ?>padding-left: 40px;<?php } ?>"><?php if($d['plan_duration']==365){ echo '12'; }else{ echo $d['plan_duration']/30; } ?></td>
+                                <td style="font-size: 20px;color: black;font-weight:bold;">Rs. <?php echo $d['plan_amount']; ?></td>
+                              </tr>
+                              <?php $i++; } ?>
+                          </table><br />
+                          	<input type="submit" class="pay_now_btn" value="pay_now_btn" style="border:none;" />
+                        </div>
+                        </form>
+                    </div>
+        </div>

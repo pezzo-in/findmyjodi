@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/FindMyJodi/!svn/ver/1/code/admin/assets/plugins/gmaps/test/spec
+END
+GeometrySpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/FindMyJodi/!svn/ver/1/code/admin/assets/plugins/gmaps/test/spec/GeometrySpec.js
+END
+LayerSpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/FindMyJodi/!svn/ver/1/code/admin/assets/plugins/gmaps/test/spec/LayerSpec.js
+END
+MapSpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/FindMyJodi/!svn/ver/1/code/admin/assets/plugins/gmaps/test/spec/MapSpec.js
+END
+RouteSpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/FindMyJodi/!svn/ver/1/code/admin/assets/plugins/gmaps/test/spec/RouteSpec.js
+END
+StyleSpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/FindMyJodi/!svn/ver/1/code/admin/assets/plugins/gmaps/test/spec/StyleSpec.js
+END
+EventSpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/FindMyJodi/!svn/ver/1/code/admin/assets/plugins/gmaps/test/spec/EventSpec.js
+END
+MarkerSpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/FindMyJodi/!svn/ver/1/code/admin/assets/plugins/gmaps/test/spec/MarkerSpec.js
+END
+OverlaySpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/FindMyJodi/!svn/ver/1/code/admin/assets/plugins/gmaps/test/spec/OverlaySpec.js
+END
+StreetViewSpec.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/FindMyJodi/!svn/ver/1/code/admin/assets/plugins/gmaps/test/spec/StreetViewSpec.js
+END

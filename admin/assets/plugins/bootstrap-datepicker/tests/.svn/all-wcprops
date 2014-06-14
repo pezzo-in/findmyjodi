@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/FindMyJodi/!svn/ver/1/code/admin/assets/plugins/bootstrap-datepicker/tests
+END
+tests.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/FindMyJodi/!svn/ver/1/code/admin/assets/plugins/bootstrap-datepicker/tests/tests.html
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/FindMyJodi/!svn/ver/1/code/admin/assets/plugins/bootstrap-datepicker/tests/README.md
+END
+_coverage.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/FindMyJodi/!svn/ver/1/code/admin/assets/plugins/bootstrap-datepicker/tests/_coverage.html
+END
+run-qunit.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/FindMyJodi/!svn/ver/1/code/admin/assets/plugins/bootstrap-datepicker/tests/run-qunit.js
+END

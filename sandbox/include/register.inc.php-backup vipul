@@ -1,0 +1,533 @@
+<?php
+	function redemption_code()
+	{
+		$chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+		$redemption_code = "";
+		for ($i = 0; $i < 11; $i++) {
+			$redemption_code .= $chars[mt_rand(0, strlen($chars)-1)];
+		}
+		return $redemption_code;
+	}
+	
+	if(isset($_POST['submit']))
+	{
+		$today = new DateTime();
+		$birthdate = new DateTime($_POST['dob']);
+		$interval = $today->diff($birthdate);
+		$age = $interval->format('%y');
+		
+		$one_time_pass=redemption_code();
+		
+			$insert="INSERT into members(id, profile_for,name,gender,date_of_birth,age,religion,mother_tongue
+								 ,caste,country,mob_code,mobile_no,email_id,password,status,reg_date,day,month,year, one_time_pass, annual_income, star, occupation, manglik_dosham)
+			 values
+			 		(NULL,
+						   '".$_POST['drpProfFor']."','".$_POST['username']."','".$_POST['Rdgender']."',
+						   '".date('Y-m-d',strtotime($_POST['dob']))."','".$age."',
+						   '".$_POST['drpReligion']."','".$_POST['drpMotherlanguage']."','".$_POST['drpCaste']."',
+						   '".$_POST['drpCountry']."','".$_POST['drpMobcodedata']."','".$_POST['txtMobNo']."',
+						   '".$_POST['email']."','".md5($_POST['password'])."','Deactive','".date('Y-m-d')."',
+						   '".date('d')."','".date('m')."','".date('Y')."','".$one_time_pass."', '".$_POST['drpIncome']."', '".$_POST['drpStar']."', '".$_POST['drpOccupation']."', '".$_POST['drpManglik']."')";
+		  
+		$db_ins=$obj->insert($insert);
+		$inserted_id =  mysql_insert_id();	
+	if(strlen($inserted_id) == "1")
+	{
+		$mem_id = "CH000".$inserted_id;
+	}
+	elseif(strlen($inserted_id) == "2")
+	{
+		$mem_id = "CH00".$inserted_id;
+	}
+	elseif(strlen($inserted_id) == "3")
+	{
+		$mem_id = "CH0".$inserted_id;
+	}
+	$update_page="UPDATE members SET member_id = '".$mem_id."' where id = '".$inserted_id."'";
+	$db_updatepage=$obj->edit($update_page);
+	if(!empty($_FILES['file']['name'][0]))
+	{
+		$select_category = "SELECT max(id) as id FROM members";
+		$db_member = $obj->select($select_category);
+		for ($i = 0; $i < count($_FILES['file']); $i++) {
+			$fileLink =  $_SERVER['DOCUMENT_ROOT']."Kannadalagna/upload/". $_FILES['file']['name'][$i];
+			$fileType = $_FILES['file']['type'][$i];
+			$fileSize = ($_FILES['file']['type'][$i]) / 1024;
+			$source = "$fileLink";
+			if ((move_uploaded_file($_FILES["file"]["tmp_name"][$i], $source))) {
+				$insert="INSERT into member_photos(id,member_id,photo)
+						 values
+					 		(NULL,'".$db_member[0]['id']."','".$_FILES["file"]["name"][$i]."')";						
+				$db_ins=$obj->insert($insert);
+			}			
+		}
+		//end photo  upload
+	}
+		/*echo "<script>window.location='success.php'</script>";*/
+		//$to = "jigisha@eliteinfoworld.com";
+		$to=$_POST['email'];
+		$subject = "Registration with Kannadlagna";
+		//echo "mem-id=".$mem_id; exit;
+		$loginurl = $obj->SITEURL."login.php?visit=1&mem_id=".$one_time_pass;
+		$message = '<div style="width:98%;border:1px solid #ccc;padding:10px;border-radius:5px">
+			<a href="'.$obj->SITEURL.'"><img src="'.$obj->SITEURL.'images/logo.png" /></a><br /><br />';
+
+		$message .= '<strong>Dear Sir/Madam,</strong><br /><br />';
+		
+		$message .= "Congrats!..You have successfully registered with our site<br /><br />
+							 Your registration detail is as follow:<br>
+							 Email ID : ". $_POST['email']."<br />
+							 Password : ".$_POST['password']."<br /><br />";					
+		$message.= "To activate your account. <a href='".$loginurl."'><strong>Click here</strong></a>\n\n";
+		
+		$message.= "<br /><br /><strong>Thank You,</strong><br />";
+		$message.= "<strong>KannadaLagna</strong><br />";
+		$message .= '</div>';
+					 
+		$headers = "MIME-Version: 1.0" . "\r\n";
+		$headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";	
+		$headers .= 'From: Kannadlagna <info@Kannadlagna.com>';
+		if(mail($to,$subject,$message,$headers))
+		{
+			/*echo "<script> window.location.href = 'registration-step-2.php' </script>";*/
+			echo "<script> window.location.href = 'thank-you.php' </script>";
+		}
+		
+	}
+
+?>
+    <div class="mid">
+ 
+     		<h2>Create an account</h2>
+    <form id="formID" class="form-horizontal" method="post" onsubmit="return check_form()">
+    
+    <div class="new_acc">           
+         <div class="left" style="width:100%">
+     		 <table width="100%" align="center" border="0" cellpadding="5" cellspacing="0">
+             	<tr>
+                	<td width="20%"><label style="margin-top:-18px">Matrimony Profile For</label></td>
+                    <td><select id="drpProfFor" name="drpProfFor" onchange="drpProfFor_fun(this.id)" tabindex="1" style="clear:none;" >
+                        <option value="">-Select-</option>
+                        <option value="Myself">Myself</option>
+                        <option value="Son">Son</option>
+                        <option value="Daughter">Daughter</option>
+                        <option value="Brother">Brother</option>
+                        <option value="Sister">Sister</option>
+                        <option value="Relative">Relative</option>
+                        <option value="Friend">Friend</option>
+                    </select></td>
+                </tr>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">Name</label></td>
+                    <td><input type="text" name="username" id="username" tabindex="2" style="clear:none;"></td>
+                </tr>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">Date of Birth</label></td>
+                    <td><link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+                  <script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
+                  <script src="js/jquery-ui.js"></script>
+                   	<input type="text" class="" id="dob" name="dob" tabindex="3" onchange="drpProfFor_fun(this.id)"  style="clear:none;" />
+                     <script>
+							 var d = new Date();
+							var year = d.getFullYear() - 18;
+						$(function() {
+							var dates = $( "#dob" ).datepicker({
+								changeYear: true,
+								changeMonth: true,
+								numberOfMonths: 1,
+								dateFormat  : 'dd/mm/yy',
+								yearRange: '-50:-18',
+								reverseYearRange: true,
+								defaultDate: '-18y'
+												});
+						});
+					</script></td>
+                </tr>
+                <?php if (isset($error)) { echo "<p class='message'>" .$error. "</p>" ;} ?>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">Gender</label></td>
+                    <td> <div id="genderRadio">
+                    <label class="radiobtn">
+                    	<input type="radio" tabindex="4" name="Rdgender" id="Rdgender" value="M" />Male
+                    </label>
+                    <label class="radiobtn">
+                    	<input type="radio" tabindex="5" value="F" name="Rdgender" />Female
+                    </label>
+                    </div></td>
+                </tr>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">Religion</label></td>
+                    <td><?php
+						$religion_list = "select * from religions";
+						$data = $obj->select($religion_list);
+					?>
+                    <select name="drpReligion" id="drpReligion" onchange="drpProfFor_fun(this.id)" tabindex="5" style="clear:none;">
+                        <option value=""> -Select- </option>
+                        <?php foreach($data as $res) { ?>
+                        	<option value="<?php echo $res['religion']; ?>"><?php echo $res['religion']; ?></option>
+                        <?php } ?>
+                    </select></td>
+                </tr>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">Country Living In</label></td>
+                    <td><?php
+						$country_list = "select * from mobile_codes";
+						$data = $obj->select($country_list);
+					?>
+                    <select name="drpCountry" id="drpCountry" onchange="drpProfFor_fun(this.id)" tabindex="6" style="clear:none;"/>
+                        <option value="">- Select -</option>
+                        <?php foreach($data as $res) { ?>
+                        <option value="<?php echo $res['country']; ?>"><?php echo $res['country']; ?></option>
+                        <?php } ?>
+                    </select></td>
+                </tr>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">Caste</label></td>
+                    <td><?php
+						$caste_list = "select * from caste"; 
+						$data = $obj->select($caste_list);
+					?>
+                    <select name="drpCaste" id="drpCaste" onchange="drpProfFor_fun(this.id)" tabindex="7" style="clear:none;">
+                        <option value=""> -Select- </option>
+                        <?php foreach($data as $res) { ?>
+                        	<option value="<?php echo $res['caste']; ?>"><?php echo $res['caste']; ?></option>
+                        <?php } ?>
+                    </select></td>
+                </tr>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">Email</label></td>
+                    <td><input type="text" name="email" id="email" onchange="return check_form1()" tabindex="8" style="clear:none;"></td>
+                </tr>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">Password</label></td>
+                    <td><input type="password" name="password" onchange="drpProfFor_fun(this.id)" id="password" tabindex="9" style="clear:none;"></td>
+                </tr>
+                <?php
+						$list = "select * from mother_tongues";
+						$data = $obj->select($list);
+					?>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">Mother Tongue</label></td>
+                    <td><select name="drpMotherlanguage" id="drpMotherlanguage" onchange="drpProfFor_fun(this.id)" tabindex="10" style="clear:none;" />
+                        <option value=""> -Select- </option>
+                        <?php foreach($data as $res) { ?>
+                        	<option value="<?php echo $res['name']; ?>"><?php echo $res['name']; ?></option>
+                        <?php } ?>
+                    </select> 
+                    </td>
+                </tr>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">Annual Income</label></td>
+                    <td><?php
+						$list = "select * from annual_income_master";
+						$data = $obj->select($list);
+					?>
+                    <select name="drpIncome" id="drpIncome" tabindex="11" style="clear:none;" />
+                        <?php foreach($data as $res) { ?>
+                        	<option value="<?php echo $res['annual_income']; ?>"><?php echo $res['annual_income']; ?></option>
+                        <?php } ?>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">Star</label></td>
+                    <td><?php 
+						$list = "select * from horoscope_star_master";
+						$data = $obj->select($list);
+					?>
+                    <select name="drpStar" id="drpStar" tabindex="12" style="clear:none;" />
+                    <option value="0">Optional</option>
+                        <?php foreach($data as $res) { ?>
+                        	<option value="<?php echo $res['star']; ?>"><?php echo $res['star']; ?></option>
+                        <?php } ?>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">Mobile Number</label></td>
+                    <td><div id="drpMobcodedata" style="float:left;">
+                    	<?php
+						$select_category2 = "select * from mobile_codes";
+						$db_category2 = $obj->select($select_category2);
+						?>
+                        <select  id="drpMobcode" name="mob_code" style="width:75px;">
+                        <?php foreach($db_category2 as $db) {  ?>
+							<option value="<?php echo $db['mob_code']; ?>" <?php if($db['mob_code'] == $logged_in_member[0]['mob_code']){ ?> selected="selected" <?php } ?>}) ?><?php echo $db['mob_code']; ?></option>
+                            
+<?php } ?>
+						</select> 
+					</div>
+                    <input type="text" name="txtMobNo" id="txtMobNo" maxlength="10" style="width: 170px;margin-left: 5px;clear: none;" onchange="return check_form1()" tabindex="14" />
+                    </td>
+                </tr>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">Occupation</label></td>
+                    <td><?php
+						$list = "select * from occupation_master";
+						$data = $obj->select($list);
+					?>
+                    <select name="drpOccupation" id="drpOccupation" tabindex="15" style="clear:none;" />
+                        <?php foreach($data as $res) { ?>
+                        	<option value="<?php echo $res['occupation']; ?>"><?php echo $res['occupation']; ?></option>
+                        <?php } ?>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">Manglik</label></td>
+                    <td><select name="drpManglik" id="drpManglik" tabindex="16" style="clear:none;" />
+                    	<option value="Dont Know">Don't know</option>
+                    	<option value="Y">Yes</option>
+                    	<option value="N">No</option>                        
+                    </select>
+                    </td>
+                </tr>
+             </table>
+              
+                    
+         </div>
+         <br class="clear" />
+                <div class="terms_line">
+                <label class="checkbox"><input checked="checked" type="checkbox" /> I agree to the KannadaLagna <a href="privacy_policy.php">Privacy Policy</a> and <a href="terms_conditions.php">Terms and Conditions.</a></label>
+                <input type="submit" name="submit" />
+                </div>
+                </form>
+    </div>  
+    </div>    
+    <script>
+var error = 0;	
+var error_email=0;
+var error_mobile=0;
+
+function drpProfFor_fun(id)
+{
+	if(document.getElementById(id).value!='')
+	{
+		$('#'+id).css('border','1px solid #ccc');
+	}
+	else
+	{
+		$('#'+id).css('border','1px solid red');
+	}
+}
+
+
+function check_form1()
+{	
+	$('#email').css('border','1px solid #ccc');
+	$('#txtMobNo').css('border','1px solid #ccc');
+	
+	if(document.getElementById('email').value!=null)
+	{
+		var x=document.getElementById('email').value;
+		var atpos=x.indexOf("@");
+		var dotpos=x.lastIndexOf(".");
+		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+		{
+			  $('#email').css('border','1px solid red');
+			  error_email=1;
+		}
+		else
+		{
+			var val = document.getElementById('email').value;
+			$.ajax({
+				url: 'chkExistEmail.php',
+				dataType: 'html',
+				data: { email : val },
+				success: function(data) {
+					if(data != "")
+					{
+						$('#email').css('border','1px solid red');
+						error_email=1;
+					}
+					else
+					{
+						error_email=0;
+					}
+				}
+			});	
+		}
+	}
+	
+	if(document.getElementById('txtMobNo').value!=null)
+	{
+		var val = document.getElementById('txtMobNo').value;
+		$.ajax({
+			url: 'chkExistPhone.php',
+			dataType: 'html',
+			data: { phone : val },
+			success: function(data) {
+				if(data != "")
+				{
+					$('#txtMobNo').css('border','1px solid red');
+					error_mobile=1;
+				}
+				else
+				{
+					error_mobile=0;
+				}
+			}
+		});	
+	}
+}
+	
+function check_form()
+{
+	error = 0
+	
+	$('#drpProfFor').css('border','1px solid #ccc');
+	$('#dob').css('border','1px solid #ccc');
+	$('#txtMobNo').css('border','1px solid #ccc');
+	$('#drpCountry').css('border','1px solid #ccc');
+	$('#drpReligion').css('border','1px solid #ccc');
+	$('#email').css('border','1px solid #ccc');
+	$('#username').css('border','1px solid #ccc');
+	$('#password').css('border','1px solid #ccc');
+	$('#drpMotherlanguage').css('border','1px solid #ccc');
+	$('#Message').css('border','1px solid #ccc');
+	$('#Rdgender').css('border','1px solid #ccc');
+	$('#drpCaste').css('border','1px solid #ccc');
+	
+	//$('#genderRadio').css('border','1px solid #ccc');
+	
+
+	if(document.getElementById('drpProfFor').value=='')
+	{
+		$('#drpProfFor').css('border','1px solid red');
+		
+		error=1
+	}
+	
+	if(document.getElementById('genderRadio').value=='undefined')
+	{
+		
+		$('#genderRadio').css('border','1px solid red');
+		
+		error=1
+	}
+
+	if(document.getElementById('dob').value=='')
+	{
+		$('#dob').css('border','1px solid red');
+		
+		error=1
+	}
+	
+	if(document.getElementById('txtMobNo').value=='')
+	{
+		$('#txtMobNo').css('border','1px solid red');		
+		error=1
+	}
+	
+	if(document.getElementById('drpCountry').value=='')
+	{
+		$('#drpCountry').css('border','1px solid red');
+		error=1
+	}
+	
+	if(document.getElementById('drpReligion').value=='')
+	{
+		$('#drpReligion').css('border','1px solid red');
+		
+		error=1
+	}
+	
+	if(document.getElementById('drpCaste').value=='')
+	{
+		$('#drpCaste').css('border','1px solid red');
+		
+		error=1
+	}
+	
+	if(document.getElementById('email').value=='')
+	{
+		$('#email').css('border','1px solid red');
+		
+		error=1
+	}
+	
+
+	if(document.getElementById('username').value=='')
+	{
+		$('#username').css('border','1px solid red');
+		
+		error=1
+	}
+	
+	if(document.getElementById('password').value=='')
+	{
+		$('#password').css('border','1px solid red');
+		
+		error=1
+	}
+	
+	if(document.getElementById('drpMotherlanguage').value=='')
+	{
+		$('#drpMotherlanguage').css('border','1px solid red');
+		
+		error=1
+	}
+	
+	if(error_email==1)
+	{
+		$('#email').css('border','1px solid red');
+	}
+	
+	if(error_mobile==1)
+	{
+		$('#txtMobNo').css('border','1px solid red');
+	}
+	
+	if(error==0 && error_email==0 && error_mobile==0)
+		return true;
+	else
+		return false;
+}
+
+$(function() {
+	
+		$('#drpCountry').change( function() {
+			var val = $(this).val();
+				$.ajax({
+				   url: 'findPhoneCode.php',
+				   dataType: 'html',
+				   data: { country : val },
+				   success: function(data) {
+					   $('#drpMobcodedata').html( data );
+				   }
+				});			
+		});	
+		$('#drpMobcodedata').change( function() {
+			var val = $('#drpMobcode').val();
+				$.ajax({
+				   url: 'findCountry.php',
+				   dataType: 'html',
+				   data: { phoneCode : val },
+				   success: function(data) {
+					   $('#drpCountry').html( data );
+				   }
+				});			
+		});		
+		$('#drpProfFor').click( function() {
+			var val = $('#drpProfFor').val();
+				$.ajax({
+				   url: 'makeSelect.php',
+				   dataType: 'html',
+				   data: { pro_for : val },
+				   success: function(data) {
+					   $('#genderRadio').html( data );
+				   }
+				});			
+		});	
+	});  
+
+</script>  
+<style>
+.test
+{
+	border:1px solid red;
+	padding-top:20px;
+	height:5px;
+}
+</style>
+	

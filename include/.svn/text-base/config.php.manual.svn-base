@@ -1,0 +1,21 @@
+<?php
+// the variables needed for the chat //
+defined('USER') ?null:define('USER','WRITE_HERE'); //the user name
+defined('PASS') ?null:define('PASS','WRITE_HERE'); //the password
+defined('DB') ?null:define('DB','WRITE_HERE'); // the database
+defined('HOST') ?null:define('HOST','WRITE_HERE'); // the host name
+defined('PREF') ?null:define('PREF','WRITE_HERE'); // prefixe
+
+//if you are a mode A user then Just give names to the following 
+//if you are a mode B user then Edit the following with your existing user database 
+
+ $useDefaultAuth=1; // use the default authentication system (1: yes / 0: no)
+ $srcDB='WRITE_HERE'; // the database that contains your web site users (TIP: if you are using mode A then put the same value as the one on line 5 )
+ $usersTable4setup='WRITE_HERE'; // the table that contain the users which is used to the DB setup
+ $usersTable=PREF.'WRITE_HERE'; // the table that contain the users (TIP: keep "PREF.")
+$statueColomn='WRITE_HERE'; // the name of the colomn that stores the user's chat statue ( if you dont have this in your existing user table install_B.php will create this for you , so just give it a name)
+ $userIdColomn='WRITE_HERE'; // the colomn name of the user's id 
+ $nameColomn='WRITE_HERE'; // the colomn name of the user's nickname
+  $emailColomn='WRITE_HERE';// the colomn name of the user's email
+  $chatTable=PREF.'WRITE_HERE'; // the table where the chat messages are stored
+?>

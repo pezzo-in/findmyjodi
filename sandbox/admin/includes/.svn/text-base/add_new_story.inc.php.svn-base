@@ -1,0 +1,675 @@
+<?php
+
+if(isset($_POST['submit']))
+
+{
+
+	if ($_FILES["file"]["error"] > 0)
+
+  	{
+
+  		echo "Error: " . $_FILES["file"]["error"] . "<br>";
+
+  	}
+
+	else
+
+  	{
+
+	  echo "Upload: " . $_FILES["file"]["name"] . "<br>";
+
+	  echo "Type: " . $_FILES["file"]["type"] . "<br>";
+
+	  echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
+
+	  echo "Stored in: " . $_FILES["file"]["tmp_name"];
+
+	}
+
+	
+
+	$allowedExts = array("gif", "jpeg", "jpg", "png");
+
+	$temp = explode(".", $_FILES["file"]["name"]);
+
+	$extension = end($temp);
+
+	if ((($_FILES["file"]["type"] == "image/gif")
+
+	|| ($_FILES["file"]["type"] == "image/jpeg")
+
+	|| ($_FILES["file"]["type"] == "image/jpg")
+
+	|| ($_FILES["file"]["type"] == "image/pjpeg")
+
+	|| ($_FILES["file"]["type"] == "image/x-png")
+
+	|| ($_FILES["file"]["type"] == "image/png"))
+
+	&& ($_FILES["file"]["size"] < 20000)
+
+	&& in_array($extension, $allowedExts))
+
+  	{
+
+  		if ($_FILES["file"]["error"] > 0)
+
+    	{
+
+    		echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
+
+    	}
+
+  		else
+
+    	{
+
+			if (file_exists("upload/" . $_FILES["file"]["name"]))
+
+      	    {
+
+      			echo $_FILES["file"]["name"] . " already exists. ";
+
+      		}
+
+   			else
+
+      		{
+
+	 			move_uploaded_file($_FILES["file"]["tmp_name"],$_SERVER['DOCUMENT_ROOT']."matrimonial/upload/" . $_FILES["file"]["name"]);
+
+	  		}
+
+    	}
+
+  }
+
+
+
+   $characters = $_POST['bride_name']."123456789";
+
+   $length = 10;
+
+   $matri_id = "";
+
+   for ($p = 0; $p < $length; $p++) {
+
+        $matri_id .= $characters[mt_rand(0, strlen($characters))];
+
+    }
+
+	$insert="INSERT into success_member_details
+
+					(id, bride_name,groom_name,matrimony_id,engag_or_marriage_date
+
+					,photo,country,country_code,contact_no,story,status)
+
+			values
+
+				  (NULL,'".$_POST['bride_name']."','".$_POST['groom_name']."',
+
+				        '".$matri_id."',
+
+						'".date('Y-m-d',strtotime($_POST['datepicker']))."',
+
+						'".$_FILES["file"]["name"][0]."','".$_POST['drpCountry']."','".$_POST['mob_code']."',
+
+						'".$_POST['contact_no']."','".$_POST['story']."','".$_POST['drpStatus']."')";
+
+						
+
+	
+
+	$db_ins=$obj->insert($insert);	
+
+	echo "<script>window.location='list_members_story.php'</script>";
+
+}
+
+if(isset($_POST['update']))
+
+{	
+
+	$update_page="UPDATE admin 
+
+				 SET 
+
+				 		username = '".$_POST['username']."',password = '".md5($_POST['password'])."',email = '".$_POST['email']."',
+
+						status = '".$_POST['drpStatus']."',role_id = '".$_POST['drpRole']."',status='UnApprove'
+
+				 where
+
+				 		 id = '".$_GET['id']."'";
+
+	$db_updatepage=$obj->edit($update_page);	
+
+	echo "<script>window.location='list_user.php'</script>";
+
+}
+
+$select_category = "SELECT * FROM success_member_details  where id = '".$_GET['id']."'";
+
+
+
+$db_member = $obj->select($select_category);
+
+
+
+?>
+
+<div class="page-content">
+
+    <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+    <div id="portlet-config" class="modal hide">
+
+        <div class="modal-header">
+
+            <button data-dismiss="modal" class="close" type="button"></button>
+
+            <h3>portlet Settings</h3>
+
+        </div>
+
+        <div class="modal-body">
+
+            <p>Here will be a configuration form</p>
+
+        </div>
+
+    </div>
+
+    <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+    <!-- BEGIN PAGE CONTAINER-->
+
+    <div class="container-fluid">
+
+        <!-- BEGIN PAGE HEADER-->   
+
+        <div class="row-fluid">
+
+            <div class="span12">
+
+                <!-- BEGIN STYLE CUSTOMIZER -->
+
+                <div class="color-panel hidden-phone">
+
+                    <div class="color-mode-icons icon-color"></div>
+
+                    <div class="color-mode-icons icon-color-close"></div>
+
+                    <div class="color-mode">
+
+                        <p>THEME COLOR</p>
+
+                        <ul class="inline">
+
+                            <li class="color-black current color-default" data-style="default"></li>
+
+                            <li class="color-blue" data-style="blue"></li>
+
+                            <li class="color-brown" data-style="brown"></li>
+
+                            <li class="color-purple" data-style="purple"></li>
+
+                            <li class="color-grey" data-style="grey"></li>
+
+                            <li class="color-white color-light" data-style="light"></li>
+
+                        </ul>
+
+                        <label>
+
+                            <span>Layout</span>
+
+                            <select class="layout-option m-wrap small">
+
+                                <option value="fluid" selected>Fluid</option>
+
+                                <option value="boxed">Boxed</option>
+
+                            </select>
+
+                        </label>
+
+                        <label>
+
+                            <span>Header</span>
+
+                            <select class="header-option m-wrap small">
+
+                                <option value="fixed" selected>Fixed</option>
+
+                                <option value="default">Default</option>
+
+                            </select>
+
+                        </label>
+
+                        <label>
+
+                            <span>Sidebar</span>
+
+                            <select class="sidebar-option m-wrap small">
+
+                                <option value="fixed">Fixed</option>
+
+                                <option value="default" selected>Default</option>
+
+                            </select>
+
+                        </label>
+
+                        <label>
+
+                            <span>Footer</span>
+
+                            <select class="footer-option m-wrap small">
+
+                                <option value="fixed">Fixed</option>
+
+                                <option value="default" selected>Default</option>
+
+                            </select>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- END BEGIN STYLE CUSTOMIZER -->     
+
+                <h3 class="page-title">
+
+                    Add New Story                    
+
+                </h3>
+
+                <ul class="breadcrumb">
+
+                    <li>
+
+                        <i class="icon-home"></i>
+
+                        <a href="dashboard.php">Home</a> 
+
+                        <span class="icon-angle-right"></span>
+
+                    </li>
+
+                    <li>
+
+                        <a href="list_members_story.php">List Story</a>
+
+                        <span class="icon-angle-right"></span>
+
+                    </li>
+
+                    <li><a href="#">List Story</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- END PAGE HEADER-->
+
+        <!-- BEGIN PAGE CONTENT-->
+
+        
+
+        
+
+        <div class="row-fluid">
+
+            <div class="span12">
+
+                <!-- BEGIN VALIDATION STATES-->
+
+                <div class="btn-group" style="margin-bottom:10px; float:right">
+
+                    <a href="list_members_story.php"><button id="sample_editable_1_new" class="btn green">
+
+                    List Story
+
+                    </button></a>
+
+                </div>
+
+                <div class="portlet box green">
+
+                    <div class="portlet-title">
+
+                        <div class="caption"><i class="icon-reorder"></i>Add Story</div>                        
+
+                    </div>
+
+                    <div class="portlet-body form">
+
+            <form  method="post" id="form_sample_2" name="form_sample_3" class="form-horizontal" enctype="multipart/form-data">
+
+              <div class="alert alert-error hide">
+
+                <button class="close" data-dismiss="alert"></button>
+
+                You have some form errors. Please check below. </div>
+
+              <div class="control-group">
+
+                <label class="control-label">Bride Name (Female)<span class="required">*</span></label>
+
+                <div class="controls">
+
+                  <input type="text" name="bride_name" id="bride_name" value="<?php echo $db_member[0]['bride_name']; ?>" class="span6 m-wrap required"/>
+
+                </div>
+
+              </div>
+
+              <div class="control-group">
+
+                <label class="control-label">Groom Name (Male)<span class="required">*</span></label>
+
+                <div class="controls">
+
+                  <input type="text" name="groom_name" id="groom_name" value="<?php echo $db_member[0]['groom_name']; ?>" class="span6 m-wrap required"/>
+
+                </div>
+
+              </div>
+
+              <?php /*?><div class="control-group">
+
+                <label class="control-label">Matrimony ID<span class="required">*</span></label>
+
+                <div class="controls">
+
+                  <input type="text" name="matrimony_id" value="<?php echo $db_member[0]['matrimony_id']; ?>" class="m-wrap medium required"/>
+
+                </div>
+
+              </div><?php */?>
+
+              <div class="control-group" style="display:none">
+
+                <label class="control-label">Email-ID<span class="required">*</span></label>
+
+                <div class="controls">
+
+                  <input type="text" name="email_id" value="<?php echo $db_member[0]['email_id']; ?>" class="span6 m-wrap required"/>
+
+                </div>
+
+              </div>
+
+              <div class="control-group">
+
+                <label class="control-label">Engagement/Marriage Date<span class="required">*</span></label>
+
+                <div class="controls">
+
+                  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+                  <script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
+
+                  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+                  <?php /*?><link rel="stylesheet" href="/resources/demos/style.css" /><?php */?>
+
+                  <script>
+
+                                                  $(function() {
+
+                                                    $( "#datepicker" ).datepicker({
+
+                                                      showOn: "button",
+
+                                                     buttonImage: "/Kannadalagna/calendar/calendar/images/iconCalendar.gif",
+
+                                                      buttonImageOnly: true,
+
+													  class:"span6 m-wrap required"
+
+                                                    });
+
+                                                  });
+
+                                                  </script>
+
+                  <p>
+
+                    <input type="text" id="datepicker" name="datepicker" class="span6 m-wrap required"/>
+
+                </div>
+
+              </div>
+
+              </p>
+
+              <div class="control-group">
+
+                <label class="control-label">Photo<span class="required"></span></label>
+
+                <div class="controls">
+
+                   <input type="file" name="file[]" class="span6 m-wrap required"  multiple="true" id="file" style="color:black" /><br/>
+
+
+
+                </div>
+
+              </div>
+
+              <div class="control-group">
+
+                <label class="control-label">Address<span class="required"></span></label>
+
+                <div class="controls">
+
+                  <textarea name="address" rows="5" value="<?php echo $db_member[0]['address']; ?>" class="span6 m-wrap required"/>
+
+                  </textarea>
+
+                </div>
+
+              </div>
+
+              <div class="control-group">
+
+                <label class="control-label">Country living in<span class="required">*</span></label>
+
+                <div class="controls">
+
+                  <select name="drpCountry"  id="drpCountry" class="span6 m-wrap required">
+
+                    <option value="">---Select---</option>
+
+                    <option value="India" style="color:#004F00" <?php if($db_category[0]['country']=="India") { ?> selected="selected" <?php } ?>>India</option>
+
+                    <option value="United States of America" <?php if($db_category[0]['country']=="United States of America") { ?> selected="selected" <?php } ?> style="color:#004F00">United States of America</option>
+
+                    <option value="United Arab Emirates" <?php if($db_category[0]['country']=="United Arab Emirates") { ?> selected="selected" <?php } ?> style="color:#004F00">United Arab Emirates</option>
+
+                    <option value="United Kingdom" <?php if($db_category[0]['country']=="United Kingdom") { ?> selected="selected" <?php } ?> style="color:#004F00">United Kingdom</option>
+
+                    <option value="Australia" <?php if($db_category[0]['country']=="Australia") { ?> selected="selected" <?php } ?> style="color:#004F00">Australia</option>
+
+                    <option value="Singapore"  <?php if($db_category[0]['country']=="Singapore") { ?> selected="selected" <?php } ?>  style="color:#004F00">Singapore</option>
+
+                    <option value="Canada" <?php if($db_category[0]['country']=="Canada") { ?> selected="selected" <?php } ?> style="color:#004F00">Canada</option>
+
+                    <option value="Qatar" <?php if($db_category[0]['country']=="Qatar") { ?> selected="selected" <?php } ?> style="color:#004F00">Qatar</option>
+
+                    <option value="Kuwait" <?php if($db_category[0]['country']=="Kuwait") { ?> selected="selected" <?php } ?> style="color:#004F00">Kuwait</option>
+
+                    <option value="Oman" <?php if($db_category[0]['country']=="Oman") { ?> selected="selected" <?php } ?> style="color:#004F00">Oman</option>
+
+                    <option value="Bahrain" <?php if($db_category[0]['country']=="Bahrain") { ?> selected="selected" <?php } ?> style="color:#004F00">Bahrain</option>
+
+                    <option value="Saudi Arabia" <?php if($db_category[0]['country']=="Saudi Arabia") { ?> selected="selected" <?php } ?> style="color:#004F00">Saudi Arabia</option>
+
+                    <option value="Malaysia" <?php if($db_category[0]['country']=="Malasiya") { ?> selected="selected" <?php } ?> style="color:#004F00">Malasiya </option>
+
+                    <option value="Germany" <?php if($db_category[0]['country']=="Germany") { ?> selected="selected" <?php } ?> style="color:#004F00">Germany</option>
+
+                    <option value="New Zealand" <?php if($db_category[0]['country']=="New Zealand") { ?> selected="selected" <?php } ?> style="color:#004F00">New Zealand</option>
+
+                    <option value="France"  style="color:#004F00" <?php if($db_category[0]['country']=="France") { ?> selected="selected" <?php } ?>>France</option>
+
+                    <option value="Ireland" <?php if($db_category[0]['country']=="Ireland") { ?> selected="selected" <?php } ?> style="color:#004F00">Ireland</option>
+
+                    <option value="Switzerland"  <?php if($db_category[0]['country']=="Switzerland") { ?> selected="selected" <?php } ?> style="color:#004F00">Switzerland</option>
+
+                    <option value="South Africa" <?php if($db_category[0]['country']=="South Africa") { ?> selected="selected" <?php } ?> style="color:#004F00">South Africa</option>
+
+                    <option value="Sri Lanka" <?php if($db_category[0]['country']=="Sri Lanka") { ?> selected="selected" <?php } ?> style="color:#004F00">Sri Lanka</option>
+
+                    <option value="Indonesia" <?php if($db_category[0]['country']=="Indonesia") { ?> selected="selected" <?php } ?> style="color:#004F00">Indonesia</option>
+
+                    <option value="Nepal" <?php if($db_category[0]['country']=="Nepal") { ?> selected="selected" <?php } ?> style="color:#004F00">Nepal</option>
+
+                    <option value="Pakistan" <?php if($db_category[0]['country']=="Pakistan") { ?> selected="selected" <?php } ?> style="color:#004F00">Pakistan</option>
+
+                    <option value="Bangladesh" <?php if($db_category[0]['country']=="Bangladesh") { ?> selected="selected" <?php } ?> style="color:#004F00">Bangladesh</option>
+
+                    <option value="Afghanistan" <?php if($db_category[0]['country']=="Afghanistan") { ?> selected="selected" <?php } ?> style="color:#004F00">Afghanistan</option>
+
+                  </select>
+
+                </div>
+
+              </div>
+
+              <div id="drpMobcodedata"  class="m-wrap">
+
+                <?php
+
+				$select_codes = "select * from mobile_codes";
+
+				 $db_code = $obj->select($select_codes);
+
+				if($db_category[0]['mob_code'] != "")
+
+				{
+
+				?>
+
+                <div class="controls">
+
+                  <select  id="drpMobcode" class="span6 m-wrap">
+
+                    <?php foreach($db_code as $db) {  ?>
+
+                    <option value="<?php echo $db['mob_code']; ?>" <?php if($db['mob_code'] == $db_category[0]['mob_code']){ $curr = $db['mob_code'];  ?> selected="selected" <?php } ?>><?php echo $db['mob_code']; ?></option>
+
+                    <?php  } ?>
+
+                  </select>
+
+                  <div class="controls">
+
+                    <input type="hidden" name="mob_code" class="m-wrap medium"  value="<?php echo $curr; ?>" />
+
+                  </div>
+
+                </div>
+
+                <?php	
+
+				}
+
+				?>
+
+              </div>
+
+              <div class="control-group">
+
+                <label class="control-label">Contact No<span class="required">*</span></label>
+
+                <div class="controls">
+
+                  <input type="text" name="contact_no" value="<?php echo $db_member[0]['contact_no']; ?>" class="span6 m-wrap required"/>
+
+                </div>
+
+              </div>
+
+              <div class="control-group">
+
+                <label class="control-label">Success Story<span class="required">*</span></label>
+
+                <div class="controls">
+
+                  <textarea name="story" cols="15" rows="5" value="<?php echo $db_member[0]['story']; ?>" class="span6 m-wrap required"/>
+
+                  </textarea>
+
+                </div>
+
+              </div>
+              
+              <div class="control-group">
+
+                <label class="control-label">Status<span class="required">*</span></label>
+
+                <div class="controls">
+					<select id="drpStatus" name="drpStatus" class="span6 m-wrap required">
+                    	<option value="">---select---</option>
+                    	<option value="Approve">Approve</option>
+                        <option value="DisApprove">DisApprove</option>
+                    </select>
+				
+
+                </div>
+
+              </div>
+
+              <div class="form-actions">
+
+                <?php if($_GET['id'] == '') { ?>
+
+                <input type="submit" name="submit" class="btn blue" value="Add">
+
+                <?php } else { ?>
+
+                <input type="submit" name="update" class="btn blue" value="Edit">
+
+                <?php } ?>
+
+              </div>
+
+            </form>
+
+          </div>
+
+                </div>
+
+                <!-- END VALIDATION STATES-->
+
+            </div>
+
+        </div>
+
+        <!-- END PAGE CONTENT-->         
+
+    </div>
+
+    <!-- END PAGE CONTAINER-->
+
+</div>
+<script>
+ $(document).ready(function(){
+  $("#bride_name").autocomplete("autocomplete.php?gender=f", {
+        selectFirst: true
+  });
+  
+    $("#groom_name").autocomplete("autocomplete.php?gender=m", {
+        selectFirst: true
+  });
+
+ });
+</script>
