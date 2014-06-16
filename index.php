@@ -13,6 +13,8 @@ session_start();
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <script src="assets/plugins/jquery-1.10.1.min.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+
 </head>
 <body>
 <?PHP
@@ -240,17 +242,19 @@ $error = "Invalid Email id or Password";
                         <div class="input-group input-group-lg col-md-5 pull-left col-sm-12 col-xs-12">
                             <input name="password" placeholder="Password" type="password" id="password"
                                    class="form-control col-md-11 col-sm-12 col-xs-12">
+
+                            <div class="box1_text"><a href="forgot_password.php">Forgot Pasword?</a></div>
                         </div>
                         <div class="box2 col-sm-12 col-md-2 col-xs-12">
-                            <input type="submit" name="submit" value="Log In" onclick="return check_form();" class=" col-sm-12 col-xs-12 btn btn-lg btn-danger"/></div>
+                            <input type="submit" name="submit" value="Log In" onclick="return check_form();"
+                                   class="col-sm-12 col-xs-12 btn btn-lg btn-danger"/></div>
                     </form>
                 </div>
             </div>
-            <!--header text start-->
-            <div class="header_text">
-                <img src="images/header_text.png" alt=""/>
-                <a href="register.php"><img src="images/register_bt.png" alt=""/></a>
+            <div class="register col-md-12">Join us &amp; "Experience the magic of love"
+                <a class="btn btn-lg btn-danger col-md-12 col-sm-12 col-xs-12" href="register.php">Register</a>
             </div>
+            <!--header text start-->
             <div class="landing-copy">All rights reserved @Findmyjodi.com</div>
         </div>
     </div>

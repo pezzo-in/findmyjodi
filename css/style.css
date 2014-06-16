@@ -5396,7 +5396,7 @@ ul.profl-list .griddetail {
     top: 0;
     left: 0;
     text-align: left;
-    padding: 7px 0 0 0;
+    padding: 20px 0;
 }
 
 .logo {
@@ -5435,8 +5435,8 @@ ul.profl-list .griddetail {
     text-decoration: none;
     text-align: right;
     float: right;
-    font-size: 13px;
-    padding: 0 5px 0 0;
+    font-size: 16px;
+    padding: 10px 27px 0 0;
 }
 
 .box1_text a:hover {separate

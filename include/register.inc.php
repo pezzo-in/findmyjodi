@@ -21,12 +21,12 @@
 		//$interval = $today->diff($birthdate);
 		$age = $interval;//$interval->format('%y');
 		$one_time_pass=redemption_code();
-		
+
 $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, religion,mother_tongue , caste, country, mob_code, mobile_no, email_id, password, status, reg_date,day, month,year, one_time_pass, annual_income, star, occupation, manglik_dosham)values (NULL, '".$_POST['drpProfFor']."', '".$_POST['username']."', '".$_POST['Rdgender']."', '".$birthdate."', '".$age."', '".$_POST['drpReligion']."', '".$_POST['drpMotherlanguage']."', '".$_POST['drpCaste']."', '".$_POST['drpCountry']."', '".$_POST['mob_code']."', '".$_POST['txtMobNo']."', '".$_POST['email']."', '".md5($_POST['password'])."', 'Deactive', '".date('Y-m-d')."', '".date('d')."', '".date('m')."', '".date('Y')."', '".$one_time_pass."', '".$_POST['drpIncome']."', '".$_POST['drpStar']."', '".$_POST['drpOccupation']."', '".$_POST['drpManglik']."')";
-		
+
 		$db_ins=$obj->insert($insert);
-		
-		$inserted_id =  mysql_insert_id();	
+
+		$inserted_id =  mysql_insert_id();
 	if(strlen($inserted_id) == "1")
 	{
 		$mem_id = "FMJ0000".$inserted_id;
@@ -61,19 +61,19 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
 			if ((move_uploaded_file($_FILES["file"]["tmp_name"][$i], $source))) {
 				$insert="INSERT into member_photos(id,member_id,photo)
 						 values
-					 		(NULL,'".$db_member[0]['id']."','".$_FILES["file"]["name"][$i]."')";						
+					 		(NULL,'".$db_member[0]['id']."','".$_FILES["file"]["name"][$i]."')";
 				$db_ins=$obj->insert($insert);
-			}			
+			}
 		}
 		//end photo  upload
 	}
-	$rand=mt_rand(100000,999999); 
-	$rand=mt_rand(100000,999999); 
+	$rand=mt_rand(100000,999999);
+	$rand=mt_rand(100000,999999);
 	///// Sms gateway integration - Krupa ///
-	
+
 	$mobileno = $_REQUEST['mob_code'].$_REQUEST['txtMobNo'];
 	$mobileno = substr($mobileno,1);
-	
+
 	$ch = curl_init('http://www.txtguru.in/imobile/api.php?');
 	curl_setopt($ch, CURLOPT_POST, 1);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, "username=findmyjoditrans&password=Ganesha@1985&source=senderid&dmobile=$mobileno&message=Thank you for registering with our site. Use Following code for activating your account.  $rand ");
@@ -90,7 +90,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
 						'fl' =>0,
 						'gwid' =>2
 				    );
-					
+
 	foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
 	rtrim($fields_string, '&');
 	$ch = curl_init();
@@ -100,39 +100,39 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	$result = curl_exec($ch);
 	curl_close($ch);*/
-	
+
 	$updt="update members set Activation_code='".$rand."' where id='".$db_ins."'";
 	$obj->edit($updt);
-	
-		
+
+
 		$to=$_POST['email'];
 		$subject = "Registration with Find My Jodi";
-		
+
 		$loginurl = $obj->SITEURL."activation.php?uid=".base64_encode($db_ins);
 		$message = '<div style="width:98%;border:1px solid #ccc;padding:10px;border-radius:5px">
 			<a href="'.$obj->SITEURL.'"><img src="'.$obj->SITEURL.'images/logo2.png" height="100" width="160" /></a><br /><br />';
 		$message .= '<strong>Dear Sir/Madam,</strong><br /><br />';
-		
+
 		$message .= "Congrats!..You have successfully registered with our site<br /><br />
 					To activate your account <a href='".$obj->SITEURL."activation.php?uid=".base64_encode($db_ins)."' style='font-size:13px; font-weight:bold;'>Click Here</a><br><br>
 							 Your registration detail is as follow:<br>
 							 Email ID : ". $_POST['email']."<br />
-							 Password : ".$_POST['password']."<br /><br />";					
+							 Password : ".$_POST['password']."<br /><br />";
 		//$message.= "To activate your account. <a href='".$loginurl."'><strong>Click here</strong></a>\n\n";
-		
+
 		$message.= "<br /><br /><strong>Thank You,</strong><br />";
 		$message.= "<strong>Find My Jodi</strong><br />";
 		$message .= '</div>';
-					 
+
 		$headers = "MIME-Version: 1.0" . "\r\n";
-		$headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";	
+		$headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
 		$headers .= 'From: Find My Jodi <info@findmyjodi.com>';
 		if(mail($to,$subject,$message,$headers))
 		{
-			
+
 			echo "<script> window.location.href='activation.php?uid=".base64_encode($db_ins)."';</script>";
 		}
-		
+
 	}
 ?>
     <div class="mid">
@@ -140,9 +140,9 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
         	<?php
 			$select_banner = "select * from advertise where adv_position = 'Register Top (622 X 197)' AND status = 'Active'";
 			$db_banner = $obj->select($select_banner);
-			if(count($db_banner) > 0) 
+			if(count($db_banner) > 0)
 			{
-				if($db_banner[0]['banner_file'] != '') 
+				if($db_banner[0]['banner_file'] != '')
 				{
 					if(file_exists('upload/banners/'.$db_banner[0]['banner_file'])) {
 			?>
@@ -150,8 +150,8 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
             <?php } } } ?>
      		<h2 style="width:622px;">Create an account</h2>
     <form id="formID" class="form-horizontal" method="post" onsubmit="return check_form()">
-    
-    <div class="new_acc">           
+
+    <div class="new_acc">
          <div class="left" style="width:100%">
      		 <table width="100%" align="center" border="0" cellpadding="5" cellspacing="0" class="tbl_control">
              	<tr>
@@ -175,14 +175,14 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 </tr>
                 <tr>
                 	<td width="30%"><label style="margin-top:-18px">Date of Birth<font color="#FF0000">*</font></label></td>
-                    <td> 
-                  
+                    <td>
+
                  <input type="text" id="dob" tabindex="3" name="dob" onchange="drpProfFor_fun(this.id)"  style="clear:none;" />
                   <br /><span id="edob" class="err_msg">Enter date of birth</span>
                     </td>
                 </tr>
-                
-				
+
+
                 <?php if (isset($error)) { echo "<p class='message'>" .$error. "</p>" ;} ?>
                 <tr>
                 	<td width="30%"><label style="margin-top:-18px">Gender<font color="#FF0000">*</font></label></td>
@@ -201,7 +201,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 	<td width="30%"><label style="margin-top:-18px">Email<font color="#FF0000">*</font></label></td>
                     <td><input type="text" name="email" id="email" onblur="return check_form1()" tabindex="5" style="clear:none;">
                      <br /><span id="mail" class="err_msg">Enter valid mail address</span>
-                    
+
                     </td>
                 </tr>
                 <tr>
@@ -251,7 +251,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                         	<option value="<?php echo $res['name']; ?>"><?php echo $res['name']; ?></option>
                         <?php } ?>
                     </select>
-                       <br /><span id="mtoungue" class="err_msg">Select mother tongue</span> 
+                       <br /><span id="mtoungue" class="err_msg">Select mother tongue</span>
                     </td>
                 </tr>
                 <tr>
@@ -266,8 +266,8 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                         <option value="<?php echo $res['country']; ?>"><?php echo $res['country']; ?></option>
                         <?php } ?>
                     </select>
-                    <br /><span id="country" class="err_msg">Select country</span> 
-                    
+                    <br /><span id="country" class="err_msg">Select country</span>
+
                     </td>
                 </tr>
                 <tr>
@@ -279,24 +279,24 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
 						//print_r($db_category2);
 						?>
                         <select  id="txtcurr" name="txtcurr" style="width:75px;">
-                      
+
                         <?php foreach($db_category2 as $db) {  ?>
-                        	
+
 							<option value="<?php echo $db['curr_code']; ?>"><?php echo $db['curr_code']; ?></option>
-                            
+
 <?php } ?>
-						</select> 
+						</select>
 					</div>
-                   
+
 					<!--<input type="text" name="txtcurr" id="txtcurr" maxlength="10" style=" float:left; width:50px; text-align:right;" value="" readonly="readonly" tabindex="14" />-->
 				<input type="text" name="drpIncome" id="drpIncome" style="width:188px; margin-left:5px; clear:none;"  />
-                    
-                    <br /><span id="aincome" class="err_msg">Enter annual income</span> 
+
+                    <br /><span id="aincome" class="err_msg">Enter annual income</span>
                     </td>
                 </tr>
                 <tr>
                 	<td width="30%"><label style="margin-top:-18px">Star</label></td>
-                    <td><?php 
+                    <td><?php
 						$list = "select * from horoscope_star_master";
 						$data = $obj->select($list);
 					?>
@@ -306,7 +306,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                         	<option value="<?php echo $res['star']; ?>"><?php echo $res['star']; ?></option>
                         <?php } ?>
                     </select>
-                    <br /><span id="star" class="err_msg">Select your star</span> 
+                    <br /><span id="star" class="err_msg">Select your star</span>
                     </td>
                 </tr>
                 <tr>
@@ -320,12 +320,12 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                         <select  id="drpMobcode" name="mob_code" style="width:75px;">
                         <?php foreach($db_category2 as $db) {  ?>
 <option value="<?php echo $db['mob_code']; ?>" <?php if($db['mob_code'] == $logged_in_member[0]['mob_code']){ ?> selected="selected" <?php } ?>><?php echo $db['mob_code']; ?></option>
-                            
+
 <?php } ?>
-						</select> 
+						</select>
 					</div>
                     <input type="text" name="txtMobNo" id="txtMobNo" maxlength="10" style="width: 170px;margin-left: 5px;clear: none;" onchange="return check_form1()" onkeypress="return isNumber(event)" tabindex="14" />
-                    <br /><span id="mnumber" class="err_msg">Enter mobile number</span> 
+                    <br /><span id="mnumber" class="err_msg">Enter mobile number</span>
                     </td>
                 </tr>
                 <tr>
@@ -340,7 +340,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                         	<option value="<?php echo $res['occupation']; ?>"><?php echo $res['occupation']; ?></option>
                         <?php } ?>
                     </select>
-                    <br /><span id="occupation" class="err_msg">Select occupation</span> 
+                    <br /><span id="occupation" class="err_msg">Select occupation</span>
                     </td>
                 </tr>
                 <tr>
@@ -348,9 +348,9 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                     <td><select name="drpManglik" id="drpManglik" tabindex="16" style="clear:none;" />
                     	<option value="Dont Know">Don't know</option>
                     	<option value="Y">Yes</option>
-                    	<option value="N">No</option>                        
+                    	<option value="N">No</option>
                     </select>
-                    <br /><span id="manglik" class="err_msg">Select one value</span> 
+                    <br /><span id="manglik" class="err_msg">Select one value</span>
                     </td>
                 </tr>
              </table>
@@ -358,7 +358,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
          <br class="clear" />
                 <div class="terms_line">
                 <label class="checkbox"><input checked="checked" tabindex="17" type="checkbox" id="chk" value="1" /> I agree to the Find My Jodi <a href="privacy_policy.php">Privacy Policy</a> and <a href="terms_conditions.php">Terms and Conditions.</a></label>
-                <span id="chkmsg" class="err_msg">Check Terms and condition box</span> 
+                <span id="chkmsg" class="err_msg">Check Terms and condition box</span>
                 <input type="submit" name="submit" onclick="return validate()" tabindex="18"/>
                 </div>
                 </form>
@@ -374,19 +374,19 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
             <?php
 			$select_banner_right = "select * from advertise where adv_position = 'Register Right (280 X 245)' AND status = 'Active'";
 			$db_banner_right = $obj->select($select_banner_right);
-			if(count($db_banner_right) > 0) 
+			if(count($db_banner_right) > 0)
 			{
-				if($db_banner_right[0]['banner_file'] != '') 
+				if($db_banner_right[0]['banner_file'] != '')
 				{
 					if(file_exists('upload/banners/'.$db_banner_right[0]['banner_file'])) {
-			?>    
+			?>
             <div class="box">
             	<a href="<?php echo $db_banner_right[0]['banner_link']; ?>" target="_blank"><img src="upload/banners/<?php echo $db_banner_right[0]['banner_file']; ?>" /></a>
             </div>
             <?php } } } ?>
             <div class="box" class="success_story" >
             	<h2>Success Story</h2>
-            	<?php 
+            	<?php
 					$select_success_story="select * from success_member_details where status='Approve' order by id DESC Limit 3"; 
 					$db_success_story=$obj->select($select_success_story);
 					for($i=0;$i<count($db_success_story);$i++)
@@ -404,14 +404,14 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 </div>
                 <?php } ?>
             </div>
-            
+
             <div class="box">
             	<div class="fb-like-box" data-href="https://www.facebook.com/findmyjodi?ref=hl" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="false"></div>
             </div>
         </div>
-    </div>   
+    </div>
     <script>
-var error = 0;	
+var error = 0;
 var error_email=0;
 var error_mobile=0;
 function drpProfFor_fun(id)
@@ -428,10 +428,10 @@ function drpProfFor_fun(id)
 	}
 }
 function check_form1()
-{	
+{
 	$('#email').css('border','1px solid #ccc');
 	$('#txtMobNo').css('border','1px solid #ccc');
-	
+
 	if(document.getElementById('email').value!=null)
 	{
 		var x=document.getElementById('email').value;
@@ -462,20 +462,20 @@ function check_form1()
 						error_email=0;
 					}
 				}
-			});	
+			});
 		}
 	}
-	
+
 	if(document.getElementById('txtMobNo').value!=null)
 	{
 		var val = document.getElementById('txtMobNo').value;
 		var phoneno = /^\d{10}$/;
 		if(!val.match(phoneno)){
-			
+
 			$('#txtMobNo').css('border','1px solid red');
 			error_mobile=1;
 		}
-		
+
 		$.ajax({
 			url: 'chkExistPhone.php',
 			dataType: 'html',
@@ -492,11 +492,11 @@ function check_form1()
 				}
 			}
 		});
-		
+
 	}
-	
+
 }
-	
+
 function check_form()
 {
 	error = 0
@@ -555,7 +555,7 @@ function check_form()
 		$('#nm').css('visibility','hidden');
 	}
 	//return true;
-	
+
 	if(document.getElementById('genderRadio').value=='undefined')
 	{
 		$('#genderRadio').css('border','1px solid red');
@@ -576,18 +576,18 @@ function check_form()
 	{
 			$('#edob').css('visibility','hidden');
 	}
-	
+
 	if(document.getElementById('txtMobNo').value=='')
 	{
 		$('#txtMobNo').css('border','1px solid red');
-		$('#mnumber').css('visibility','visible');	
+		$('#mnumber').css('visibility','visible');
 		error=1
 	}
 	else
 	{
 		$('#mnumber').css('visibility','hidden');
 	}
-	
+
 	if(document.getElementById('drpCountry').value=='')
 	{
 		$('#drpCountry').css('border','1px solid red');
@@ -598,7 +598,7 @@ function check_form()
 	{
 		$('#country').css('visibility','hidden');
 	}
-	
+
 	if(document.getElementById('drpReligion').value=='')
 	{
 		$('#drpReligion').css('border','1px solid red');
@@ -609,7 +609,7 @@ function check_form()
 	{
 		$('#religion').css('visibility','hidden');
 	}
-	
+
 	if(document.getElementById('drpCaste').value=='')
 	{
 		$('#drpCaste').css('border','1px solid red');
@@ -635,26 +635,26 @@ function check_form()
 	{
 		$('#username').css('border','1px solid red');
 		$('#nm').css('visibility','visible');
-		
+
 		error=1
 	}
 	else
 	{
 		$('#mail').css('visibility','hidden');
 	}
-	
+
 	if(document.getElementById('password').value=='')
 	{
 		$('#password').css('border','1px solid red');
 		$('#pass').css('visibility','visible');
-		
+
 		error=1
 	}
 	else
 	{
 		$('#pass').css('visibility','hidden');
 	}
-	
+
 	if(document.getElementById('drpMotherlanguage').value=='')
 	{
 		$('#drpMotherlanguage').css('border','1px solid red');
@@ -665,7 +665,7 @@ function check_form()
 	{
 		$('#mtoungue').css('visibility','hidden');
 	}
-	
+
 	if(error_email==1)
 	{
 		$('#email').css('border','1px solid red');
@@ -675,7 +675,7 @@ function check_form()
 	{
 		$('#mail').css('visibility','hidden');
 	}
-	
+
 	if(error_mobile==1)
 	{
 		$('#txtMobNo').css('border','1px solid red');
@@ -686,14 +686,14 @@ function check_form()
 		$('#mnumber').css('visibility','hidden');
 	}
 	if(!$("#chk").is(':checked'))
-	{	
+	{
 		$('#chk').css('border','1px solid red');
 		$('#chkmsg').css('visibility','visible');
 		return false;
 	}
 	else
 	{
-		
+
 		$('#chkmsg').css('visibility','hidden');
 	}
 	$(document).scrollTop(0);
@@ -701,11 +701,11 @@ function check_form()
 		return true;
 	else
 		return false;
-		
-		
+
+
 }
 $(function() {
-	
+
 		$('#drpCountry').change( function() {
 			var val = $(this).val();
 				$.ajax({
@@ -716,12 +716,12 @@ $(function() {
 					   var aa = data.split('~')
 					   $('#drpMobcodedata').html( aa[0] );
 					   $('#drpcurrcodedata').html( aa[1] );
-					   
-					 
+
+
 				   }
 				});
-						
-		});	
+
+		});
 		$('#drpMobcodedata').change( function() {
 			var val = $('#drpMobcode').val();
 				$.ajax({
@@ -731,7 +731,7 @@ $(function() {
 				   success: function(data) {
 					   $('#drpCountry').html( data );
 				   }
-				});			
+				});
 		});
 		$('#drpcurrcodedata').change( function() {
 			var val = $('#txtcurr').val();
@@ -742,9 +742,9 @@ $(function() {
 				   success: function(data) {
 					   $('#drpCountry').html( data );
 				   }
-				});			
+				});
 		});
-				
+
 		$('#drpProfFor').click( function() {
 			var val = $('#drpProfFor').val();
 				$.ajax({
@@ -754,10 +754,10 @@ $(function() {
 				   success: function(data) {
 					   $('#genderRadio').html( data );
 				   }
-				});			
-		});	
-	});  
-</script>  
+				});
+		});
+	});
+</script>
 <script>
 	$('#drpProfFor').change(function(){
 		if($('#drpProfFor').val()!='')
@@ -783,35 +783,35 @@ $(function() {
 			$('#country').css('visibility','hidden');
 		}
 	});
-	
+
 	$('#drpReligion').change(function(){
 		if($('#drpReligion').val()!='')
 		{
 			$('#religion').css('visibility','hidden');
 		}
 	});
-	
+
 	$('#email').blur(function(){
 		if($('#email').val()!='')
 		{
 			$('#mail').css('visibility','hidden');
 		}
 	});
-	
+
 	$('#username').blur(function(){
 		if($('#username').val()!='')
 		{
 			$('#nm').css('visibility','hidden');
 		}
 	});
-	
+
 	$('#password').blur(function(){
 		if($('#password').val()!='')
 		{
 			$('#pass').css('visibility','hidden');
 		}
 	});
-	
+
 	$('#drpMotherlanguage').change(function(){
 		if($('#drpMotherlanguage').val()!='')
 		{
@@ -823,7 +823,7 @@ $(function() {
 		{
 			$('#cast').css('visibility','hidden');
 		}
-	}); 
+	});
 function isNumber(evt) {
     evt = (evt) ? evt : window.event;
     var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -846,9 +846,9 @@ function onlyAlphabets(e, t) {
                 else
                     return false;
             }
-		 
+
 function validate() {
-	
+
 	var age_date = $('#dob').val();
 	var date = age_date.split('-');
 	var this_year = new Date().getFullYear()

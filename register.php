@@ -19,13 +19,14 @@ if($_SESSION['UserEmail']!='' && $_SESSION['IsActive']=='Yes')
 <link rel="stylesheet" href="css/vigo.datepicker.css" />
 <link rel="stylesheet" href="assets/validation_css/validationEngine.jquery.css" type="text/css"/>
 <link rel="stylesheet" href="assets/validation_css/template.css" type="text/css"/>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <script src="assets/plugins/jquery-1.10.1.min.js" type="text/javascript"></script>
 <script src="assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
 	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>  
+<script src="assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="assets/js/script.js"></script>
 <script type="text/javascript" src="assets/js/jquery-1.7.1.min.js"></script>
 <!--<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>-->
@@ -45,7 +46,7 @@ if($_SESSION['UserEmail']!='' && $_SESSION['IsActive']=='Yes')
 
 								numberOfMonths: 1,
 
-								dateFormat  : 'dd-mm-yy',
+								dateFormat : 'dd-mm-yy',
 
 								yearRange: '-50:-18',
 
@@ -63,7 +64,7 @@ if($_SESSION['UserEmail']!='' && $_SESSION['IsActive']=='Yes')
 								changeYear: true,
 								changeMonth: true,
 								numberOfMonths: 1,
-								dateFormat  : 'dd/mm/yy',
+								dateFormat : 'dd/mm/yy',
 								yearRange: '-50:-18',
 								reverseYearRange: true,
 								defaultDate: '-18y'
@@ -87,29 +88,32 @@ if($_SESSION['UserEmail']!='' && $_SESSION['IsActive']=='Yes')
 		}
 	</script>-->
 </head>
-		
+
 <body>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
+ var js, fjs = d.getElementsByTagName(s)[0];
+ if (d.getElementById(id)) return;
+ js = d.createElement(s); js.id = id;
+ js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+ fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<div class="container">
+    <div class="row">
 <div class="topMain">
 	<div class="wrapper">
-    	<?php include('include/header.inc.php'); ?>
+  	<?php include('include/header.inc.php'); ?>
 		<div class="header inn">
-        	<div class="titlebox">
-            	<h2>New Account</h2>
-            </div>
-        </div>
+    	<div class="titlebox">
+      	<h2>New Account</h2>
+      </div>
     </div>
+  </div>
 </div>
 <div class="wrapper">
 	 <?php include('include/register.inc.php'); ?>
-     <?php include('include/footer.inc.php'); ?>
+   <?php include('include/footer.inc.php'); ?>
+</div></div>
 </div>
 
 <script>
