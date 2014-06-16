@@ -141,7 +141,7 @@ textarea {
     padding-bottom: 6px;
     position: relative;
     z-index: 9;
-    border:1px solid #E4E4E4;
+    border: 1px solid #E4E4E4;
     border-top: none;
     border-bottom: none;
 }
@@ -1129,11 +1129,7 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
 }
 
 .new_acc label {
-    clear: both;
-    float: left;
-    color: #383838;
-    font-size: 15px;
-    padding-bottom: 2px;
+    display: inline;
 }
 
 .new_acc input[type="text"], .new_acc input[type="password"] {
@@ -4826,7 +4822,7 @@ ul.profl-list .griddetail {
     height: 20px !important;
     float: left;
     clear: both;
-    visibility: hidden;
+    display: none;
 }
 
 .new_acc .tbl_control input[type="text"], .new_acc .tbl_control input[type="password"], .new_acc .tbl_control input[type="radio"] {
@@ -5415,8 +5411,8 @@ ul.profl-list .griddetail {
     padding: 10px 27px 0 0;
 }
 
-.box1_text a:hover {separate
-    color: #fff;
+.box1_text a:hover {
+    separate color: #fff;
     text-decoration: underline;
 }
 
