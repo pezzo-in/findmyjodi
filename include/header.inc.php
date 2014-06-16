@@ -67,14 +67,14 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
 		}
 	}
 ?>
-<div class="top">
-    <div class="topIn">
+<div class="top col-md-12">
+    <div class="topIn col-md-12">
     <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
-        <a href="index.php" class="logo" style="margin-top:-20px;"><img src="images/logo2.png" alt="Find My Jodi" title="Find My Jodi" width="130" /></a>
+        <a href="index.php" class="logo col-md-2" style="margin-top:-20px;"><img src="images/logo2.png" alt="Find My Jodi" title="Find My Jodi" width="130" /></a>
         <?php }else { ?>
-        <a href="my_account.php" class="logo" style="margin-top:-20px;"><img src="images/logo2.png" alt="Find My Jodi" title="Find My Jodi" width="130" /></a>
+        <a href="my_account.php" class="logo col-md-2" style="margin-top:-20px;"><img src="images/logo2.png" alt="Find My Jodi" title="Find My Jodi" width="130" /></a>
         <?php } ?>
-        <div class="topLogin">
+        <div class="topLogin col-md-3 pull-right">
             <div class="loginlink">
                         	
             <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
@@ -100,7 +100,7 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
             <?php } ?>
         </div>
         <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?> 
-        <ul class="menu" id="menu">
+        <ul class="menu col-md-6" id="menu">
             <li <?php //if($url[2] == "index.php") { echo "class='active'"; } ?>><a href="index.php" title="Home">Home</a></li>
             <li <?php //if($url[2] == "search.php") { echo "class='active'"; } ?>><a href="search.php" title="Search">Search</a>
                <ul>

@@ -126,32 +126,29 @@ textarea {
 }
 
 .wrapper {
-    width: 1000px;
     margin: 0 auto;
 }
 
 /*Default CSS End*/
 .topMain {
-    width: 100%;
     float: left; /*background:url(../images/blue_bg.jpg) repeat-x center bottom;*/
     position: relative;
     z-index: 99;
 }
 
 .top {
-    width: 100%;
     float: left;
-    background: url(../images/topwhite_botbg.png) no-repeat center bottom;
     padding-bottom: 6px;
     position: relative;
     z-index: 9;
+    border:1px solid #333333;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
 }
 
 .topIn {
-    width: 956px;
     min-height: 58px;
     float: left;
-    background: url(../images/topwhite_mainbg.png) repeat-y center top;
     padding: 26px 22px 0;
 }
 
@@ -161,7 +158,6 @@ textarea {
 
 .topLogin {
     float: right;
-    margin-left: 30px;
 }
 
 .link-signin {
@@ -388,7 +384,6 @@ ul.menu ul ul {
 
 .header {
     width: 100%;
-    min-height: 430px;
     float: left;
     padding: 0;
     position: relative;
@@ -750,12 +745,11 @@ ul.foot_link li a:hover {
 }
 
 .header.inn {
-    min-height: 46px;
 }
 
 .titlebox {
-    width: 956px;
-    padding: 12px 22px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .titlebox h2 {

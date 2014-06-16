@@ -100,20 +100,21 @@ if($_SESSION['UserEmail']!='' && $_SESSION['IsActive']=='Yes')
 }(document, 'script', 'facebook-jssdk'));</script>
 <div class="container">
     <div class="row">
-<div class="topMain">
-	<div class="wrapper">
-  	<?php include('include/header.inc.php'); ?>
-		<div class="header inn">
-    	<div class="titlebox">
-      	<h2>New Account</h2>
-      </div>
+        <div class="topMain col-md-12">
+            <div class="wrapper col-md-12">
+                <?php include('include/header.inc.php'); ?>
+                    <div class="header inn">
+                    <div class="titlebox col-md-12">
+                        New Account
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+             <?php include('include/register.inc.php'); ?>
+           <?php include('include/footer.inc.php'); ?>
+        </div>
     </div>
-  </div>
-</div>
-<div class="wrapper">
-	 <?php include('include/register.inc.php'); ?>
-   <?php include('include/footer.inc.php'); ?>
-</div></div>
 </div>
 
 <script>
