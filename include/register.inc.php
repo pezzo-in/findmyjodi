@@ -135,8 +135,8 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
 
 	}
 ?>
-    <div class="mid">
- 		<div class="cont_left">
+    <div class="mid col-md-12">
+ 		<div class="cont_left col-md-8">
         	<?php
 			$select_banner = "select * from advertise where adv_position = 'Register Top (622 X 197)' AND status = 'Active'";
 			$db_banner = $obj->select($select_banner);
@@ -148,12 +148,11 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
 			?>
             <div class="banner_inner"><a href="<?php echo $db_banner[0]['banner_link']; ?>" target="_blank"><img src="upload/banners/<?php echo $db_banner[0]['banner_file']; ?>" /></a></div>
             <?php } } } ?>
-     		<h2 style="width:622px;">Create an account</h2>
+     		<h2>Create an account</h2>
     <form id="formID" class="form-horizontal" method="post" onsubmit="return check_form()">
 
     <div class="new_acc">
-         <div class="left" style="width:100%">
-     		 <table width="100%" align="center" border="0" cellpadding="5" cellspacing="0" class="tbl_control">
+         <table width="100%" align="center" border="0" cellpadding="5" cellspacing="0" class="tbl_control">
              	<tr>
                 	<td width="30%"><label style="margin-top:-18px">Matrimony profile created for<font color="#FF0000">*</font></label></td>
                     <td><select id="drpProfFor" name="drpProfFor" onchange="drpProfFor_fun(this.id)" tabindex="1" style="clear:none;" >
@@ -354,7 +353,6 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                     </td>
                 </tr>
              </table>
-         </div>
          <br class="clear" />
                 <div class="terms_line">
                 <label class="checkbox"><input checked="checked" tabindex="17" type="checkbox" id="chk" value="1" /> I agree to the Find My Jodi <a href="privacy_policy.php">Privacy Policy</a> and <a href="terms_conditions.php">Terms and Conditions.</a></label>
@@ -364,7 +362,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 </form>
 		</div>
     </div>
-    <div class="sidebarr">
+    <div class="sidebarr col-md-4">
         	<div class="box contact">
                 <h2>LIVE Support</h2>
                 <p>Customer Service Help line:</p>

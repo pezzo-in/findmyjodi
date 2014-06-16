@@ -141,9 +141,9 @@ textarea {
     padding-bottom: 6px;
     position: relative;
     z-index: 9;
-    border:1px solid #333333;
+    border:1px solid #E4E4E4;
     border-top: none;
-    border-radius: 0 0 6px 6px;
+    border-bottom: none;
 }
 
 .topIn {
@@ -540,7 +540,7 @@ ul.menu ul ul {
     text-align: center;
     background: url(../images/head_btm_border.png) no-repeat center bottom;
     padding-bottom: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
     clear: both;
     padding-top: 15px;
 }
@@ -1128,11 +1128,6 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
     overflow: hidden;
 }
 
-.new_acc {
-    width: 100%;
-    float: left;
-}
-
 .new_acc label {
     clear: both;
     float: left;
@@ -1187,12 +1182,6 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
 
 .new_acc select option {
     padding-left: 8px;
-}
-
-.new_acc .left {
-    width: auto;
-    float: left;
-    margin-left: 20px;
 }
 
 .new_acc .right {
@@ -3056,19 +3045,12 @@ ul.pagination li.inactive a:link, ul.pagination li.inactive a:visited {
 
 /*registration_new*/
 .cont_left {
-    width: 654px;
-    float: left;
-    margin-top: 3px;
 }
 
 .cont_left .new_acc {
-    width: 590px;
 }
 
 .sidebarr {
-    width: 300px;
-    float: right;
-    margin-top: 3px;
 }
 
 .sidebarr h2 {
