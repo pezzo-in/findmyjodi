@@ -151,7 +151,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
      		<h2>Create an account</h2>
     <form id="formID" class="form-horizontal" method="post" onsubmit="return check_form()">
         <div class="new_acc">
-            <div class="col-md-4"><label style="margin-top:-18px">Matrimony profile created for<font color="#FF0000">*</font></label></div>
+            <div class="col-md-4"><label style="margin-top:-18px">Profile created for<font color="#FF0000">*</font></label></div>
             <div class="col-md-8"><select id="drpProfFor" name="drpProfFor" onchange="drpProfFor_fun(this.id)" tabindex="1" style="clear:none;" >
                 <option value="">-Select-</option>
                 <option value="Myself">Myself</option>
