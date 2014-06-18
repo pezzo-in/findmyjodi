@@ -1,5 +1,5 @@
 <div class="footer-main">
-    <div class="footer">
+    <div class="footer col-md-12">
         <div class="foot_copy">All rights reserved @Findmyjodi.com</div>
         <ul class="foot_link">
         <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>

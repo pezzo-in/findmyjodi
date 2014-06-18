@@ -74,13 +74,13 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
         <?php }else { ?>
         <a href="my_account.php" class="logo col-md-2" style="margin-top:-20px;"><img src="images/logo2.png" alt="Find My Jodi" title="Find My Jodi" width="130" /></a>
         <?php } ?>
-        <div class="topLogin col-md-3 pull-right">
+        <div class="topLogin col-md-3 pull-right text-right">
             <div class="loginlink">
                         	
             <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
-                <a href="javascript:;" class="link-signin" title="Login to your profile">Sign In</a> 
+                <a href="javascript:;" class="btn btn-info btn-md" title="Login to your profile">Sign In</a>
 				<?php } else { ?>
-                <a href="logout.php" class="link-reg" title="Sign Out">Sign Out</a> 
+                <a href="logout.php" class="link-reg" title="Sign Out">Sign Out</a>
                 <?php } ?>
 				<div class="loginbox">
                     <div class="loginboxtop"></div>
@@ -96,7 +96,7 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
                 </div>
             </div>
             <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
-            <a href="register.php" class="link-reg" title="Create your profile">Register</a>            
+            <a href="register.php" class="btn btn-danger btn-md" title="Create your profile">Register</a>
             <?php } ?>
         </div>
         <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?> 
@@ -114,7 +114,7 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
                </ul>
             </li>
             <li><a href="upgrade.php" title="Upgrade">Packages</a></li>
-            <li <?php //if($url[2] == "quick_tour.php") { echo "class='active'"; } ?>><a href="quick_tour.php" title="Take A Quick Tour">Take A Quick Tour</a></li>
+            <li <?php //if($url[2] == "quick_tour.php") { echo "class='active'"; } ?>><a href="quick_tour.php" title="Quick Tour">Quick Tour</a></li>
             <li <?php //if($url[2] == "help.php") { echo "class='active'"; } ?>><a href="help.php" title="Contact Us">Contact Us</a></li>
         </ul>
        <?php }else { ?>

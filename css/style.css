@@ -193,7 +193,8 @@ textarea {
 
 .loginlink {
     position: relative;
-    float: left;
+    display: inline;
+    margin: 0 20px 0 0;
 }
 
 .loginbox {
@@ -445,14 +446,8 @@ ul.menu ul ul {
 }
 
 .searchbox, .titlebox {
-    width: 940px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: #0082b9; /*background:url(../images/searchbox_bg.png) no-repeat left top;*/
-    padding: 22px 30px 16px 30px;
+    background: #0082b9;
     color: #fff;
-    font-size: 18px;
     border-bottom: 1px solid #38a8d7;
 }
 
@@ -527,13 +522,8 @@ ul.menu ul ul {
 }
 
 .mid {
-    float: left;
-    background: #fff;
-    padding: 20px 22px;
     border-left: 1px solid #e4e4e4;
     border-right: 1px solid #e4e4e4;
-    clear: both;
-    width: 954px;
 }
 
 .mid h2 {
@@ -700,22 +690,12 @@ ul.menu ul ul {
     margin-top: 0;
 }
 
-.footer-main {
-    width: 100%;
-    float: left;
-    padding-bottom: 33px;
-}
-
 .footer {
-    width: 956px;
-    min-height: 44px;
+    background: none repeat scroll 0 0 #6BBAD9;
+    color: #FFFFFF;
     float: left;
-    padding: 25px 22px 0;
-    background: url(../images/searchbox_bg.png) no-repeat left top;
-    border-bottom: 1px solid #47aed8;
-    color: #fff;
-    font-size: 14px;
-    margin-top: -3px;
+    min-height: 44px;
+    padding: 15px 22px !important;
 }
 
 .foot_copy {
@@ -745,6 +725,7 @@ ul.foot_link li a:hover {
 }
 
 .header.inn {
+    min-height:46px;
 }
 
 .titlebox {
@@ -1129,11 +1110,13 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
 }
 
 .new_acc label {
-    display: inline;
+    display: block;
+    margin: 0;
+    padding: 5px 0;
 }
 
 .new_acc input[type="text"], .new_acc input[type="password"] {
-    width: 268px;
+    width: 100%;
     float: left;
     clear: both;
     border: 1px solid #cfcdcd;
@@ -1162,7 +1145,7 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
 }
 
 .new_acc select {
-    width: 290px;
+    width: 100%;
     float: left;
     clear: both;
     border: 1px solid #cfcdcd;
@@ -1191,7 +1174,7 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
     min-height: 29px;
     clear: none !important;
     color: #848484 !important;
-    margin-right: 15px;
+    margin-right: 15px !important;
     padding-top: 4px;
     padding-bottom: 18px !important;
 }
@@ -1212,25 +1195,16 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
 }
 
 .terms_line {
-    padding-left: 20px;
+    overflow: hidden;
+    padding-left: 40px;
 }
 
 .new_acc input[type="submit"] {
-    width: 90px;
-    height: 33px;
-    float: left;
     clear: both;
-    background: url(../images/submit_btn.png) no-repeat left top;
-    border: none;
-    text-indent: -9999px;
-    overflow: hidden;
-    font-size: 0;
-    text-align: left;
+    color: #FFFFFF;
     cursor: pointer;
-    color: #f46989;
-    *margin-right: 30px;
-    margin-top: 10px;
-    outline: 0;
+    float: left;
+    margin: 10px 0 30px;
 }
 
 .profile_details {

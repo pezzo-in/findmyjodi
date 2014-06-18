@@ -151,7 +151,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
      		<h2>Create an account</h2>
     <form id="formID" class="form-horizontal" method="post" onsubmit="return check_form()">
         <div class="new_acc">
-            <div class="col-md-4"><label style="margin-top:-18px">Profile created for<font color="#FF0000">*</font></label></div>
+            <div class="col-md-4"><label">Profile created for<font color="#FF0000">*</font></label></div>
             <div class="col-md-8"><select id="drpProfFor" name="drpProfFor" onchange="drpProfFor_fun(this.id)" tabindex="1" style="clear:none;" >
                 <option value="">-Select-</option>
                 <option value="Myself">Myself</option>
@@ -162,14 +162,14 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 <option value="Relative">Relative</option>
                 <option value="Friend">Friend</option>
             </select><span id="profile_for" class="err_msg">Select for whom this profile is for</span></div>
-            <div class="col-md-4"><label style="margin-top:-18px">Name<font color="#FF0000">*</font></label></div>
+            <div class="col-md-4"><label">Name<font color="#FF0000">*</font></label></div>
             <div class="col-md-8"><input type="text" name="username" id="username" onkeypress="return onlyAlphabets(event,this);" tabindex="2" style="clear:none;">
                 <span id="nm" class="err_msg">Enter valid name</span></div>
-            <div class="col-md-4"><label style="margin-top:-18px">Date of Birth<font color="#FF0000">*</font></label></div>
+            <div class="col-md-4"><label">Date of Birth<font color="#FF0000">*</font></label></div>
             <div class="col-md-8"><input type="text" id="dob" tabindex="3" name="dob" onchange="drpProfFor_fun(this.id)"  style="clear:none;" />
                 <span id="edob" class="err_msg">Enter date of birth</span></div>
             <?php if (isset($error)) { echo "<p class='message'>" .$error. "</p>" ;} ?>
-            <div class="col-md-4"><label style="margin-top:-18px">Gender<font color="#FF0000">*</font></label></div>
+            <div class="col-md-4"><label">Gender<font color="#FF0000">*</font></label></div>
             <div class="col-md-8"><div id="genderRadio">
                 <label class="radiobtn">
                     <input type="radio" tabindex="4" name="Rdgender" id="Rdgenderm" value="M" checked="checked" />Male
@@ -179,13 +179,13 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 </label>
             </div>
                 <span id="gen" class="err_msg">Select gender</span></div>
-            <div class="col-md-4"><label style="margin-top:-18px">Email<font color="#FF0000">*</font></label></div>
+            <div class="col-md-4"><label">Email<font color="#FF0000">*</font></label></div>
             <div class="col-md-8"><input type="text" name="email" id="email" onblur="return check_form1()" tabindex="5" style="clear:none;">
                 <span id="mail" class="err_msg">Enter valid mail address</span></div>
-            <div class="col-md-4"><label style="margin-top:-18px">Password<font color="#FF0000">*</font></label></div>
+            <div class="col-md-4"><label">Password<font color="#FF0000">*</font></label></div>
             <div class="col-md-8"><input type="password" name="password" onchange="drpProfFor_fun(this.id)" id="password" tabindex="6" style="clear:none;">
                 <span id="pass" class="err_msg">Enter password</span></div>
-            <div class="col-md-4"><label style="margin-top:-18px">Religion<font color="#FF0000">*</font></label></div>
+            <div class="col-md-4"><label">Religion<font color="#FF0000">*</font></label></div>
             <div class="col-md-8"><?php
                             $religion_list = "select * from religions";
                             $data = $obj->select($religion_list);
@@ -197,7 +197,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                     <?php } ?>
                 </select>
                 <span id="religion" class="err_msg">Select religion</span></div>
-            <div class="col-md-4"><label style="margin-top:-18px">Caste<font color="#FF0000">*</font></label></div>
+            <div class="col-md-4"><label">Caste<font color="#FF0000">*</font></label></div>
             <div class="col-md-8"><?php
                             $caste_list = "select * from caste";
                             $data = $obj->select($caste_list);
@@ -212,7 +212,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                             $list = "select * from mother_tongues";
                             $data = $obj->select($list);
             ?>
-            <div class="col-md-4"><label style="margin-top:-18px">Mother Tongue<font color="#FF0000">*</font></label></div>
+            <div class="col-md-4"><label">Mother Tongue<font color="#FF0000">*</font></label></div>
             <div class="col-md-8"><select name="drpMotherlanguage" id="drpMotherlanguage" onchange="drpProfFor_fun(this.id)" tabindex="9" style="clear:none;" />
                 <option value=""> -Select- </option>
                 <?php foreach($data as $res) { ?>
@@ -220,7 +220,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 <?php } ?>
                 </select>
                 <span id="mtoungue" class="err_msg">Select mother tongue</span></div>
-            <div class="col-md-4"><label style="margin-top:-18px">Country Living In<font color="#FF0000">*</font></label></div>
+            <div class="col-md-4"><label">Country Living In<font color="#FF0000">*</font></label></div>
             <div class="col-md-8"><?php
                             $country_list = "select * from mobile_codes";
                             $data = $obj->select($country_list);
@@ -232,7 +232,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 <?php } ?>
                 </select>
                 <span id="country" class="err_msg">Select country</span></div>
-            <div class="col-md-4"><label style="margin-top:-18px">Annual Income</label></div>
+            <div class="col-md-4"><label">Annual Income</label></div>
             <div class="col-md-8"><div id="drpcurrcodedata" style="float:left;">
                 <?php
                             $select_category2 = "select distinct(curr_code) from mobile_codes where curr_code!=''";
@@ -253,7 +253,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 <input type="text" name="drpIncome" id="drpIncome" style="width:188px; margin-left:5px; clear:none;"  />
 
                 <span id="aincome" class="err_msg">Enter annual income</span></div>
-            <div class="col-md-4"><label style="margin-top:-18px">Star</label></div>
+            <div class="col-md-4"><label">Star</label></div>
             <div class="col-md-8"><?php
                             $list = "select * from horoscope_star_master";
                             $data = $obj->select($list);
@@ -266,7 +266,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 </select>
                 <span id="star" class="err_msg">Select your star</span></div>
             <?php //echo "test".$logged_in_member[0]['mob_code']; ?>
-            <div class="col-md-4"><label style="margin-top:-18px">Mobile Number<font color="#FF0000">*</font></label></div>
+            <div class="col-md-4"><label">Mobile Number<font color="#FF0000">*</font></label></div>
             <div class="col-md-8"><div id="drpMobcodedata" style="float:left;">
                 <?php
                             $select_category2 = "select * from mobile_codes";
@@ -281,7 +281,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
             </div>
                 <input type="text" name="txtMobNo" id="txtMobNo" maxlength="10" style="width: 170px;margin-left: 5px;clear: none;" onchange="return check_form1()" onkeypress="return isNumber(event)" tabindex="14" />
                 <span id="mnumber" class="err_msg">Enter mobile number</span></div>
-            <div class="col-md-4"><label style="margin-top:-18px">Occupation</label></div>
+            <div class="col-md-4"><label">Occupation</label></div>
             <div class="col-md-8"><?php
                             $list = "select * from occupation_master";
                             $data = $obj->select($list);
@@ -293,7 +293,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 <?php } ?>
                 </select>
                 <span id="occupation" class="err_msg">Select occupation</span></div>
-            <div class="col-md-4"><label style="margin-top:-18px">Manglik</label></div>
+            <div class="col-md-4"><label">Manglik</label></div>
             <div class="col-md-8"><select name="drpManglik" id="drpManglik" tabindex="16" style="clear:none;" />
                 <option value="Dont Know">Don't know</option>
                 <option value="Y">Yes</option>
@@ -304,7 +304,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                     <div class="terms_line">
                     <label class="checkbox"><input checked="checked" tabindex="17" type="checkbox" id="chk" value="1" /> I agree to the Find My Jodi <a href="privacy_policy.php">Privacy Policy</a> and <a href="terms_conditions.php">Terms and Conditions.</a></label>
                     <span id="chkmsg" class="err_msg">Check Terms and condition box</span>
-                    <input type="submit" name="submit" onclick="return validate()" tabindex="18"/>
+                    <input type="submit" name="submit" onclick="return validate()" value="Register" class="btn btn-info" tabindex="18"/>
                     </div>
 		</div>
     </form>
