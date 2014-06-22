@@ -463,118 +463,118 @@ function check_form()
 	if(document.getElementById('drpIncome').value=='')
 	{
 		$('#drpIncome').css('border','1px solid red');
-		$('#aincome').css('display','inline');
+		$('#aincome').css('visibility','visible');
 		error=1;
 	}else if(!drpIncome.value.match(digit11))
 	{
 		$('#drpIncome').css('border','1px solid red');
-		$('#aincome').css('display','inline');
+		$('#aincome').css('visibility','visible');
 		error=1;
 	}else
 	{
-		$('#aincome').css('display','inline');
+		$('#aincome').css('visibility','hidden');
 	}
 	if(document.getElementById('drpProfFor').value=='')
 	{
 		$('#drpProfFor').css('border','1px solid red');
-		$('#profile_for').css('display','inline');
+		$('#profile_for').css('visibility','visible');
 		error=1;
 	}
 	else
 	{
-		$('#profile_for').css('display','inline');
+		$('#profile_for').css('visibility','hidden');
 	}
 	var letters = /^[a-zA-Z\séåü]+$/;
 	var space = " ";
 	if(username.value == "")
 	{
 		$('#username').css('border','1px solid red');
-		$('#nm').css('display','inline');
+		$('#nm').css('visibility','visible');
 		error=1;
 	}else if(!username.value.match(letters))
 	{
 		$('#username').css('border','1px solid red');
-		$('#nm').css('display','inline');
+		$('#nm').css('visibility','visible');
 		error=1;
 	}else
 	{
-		$('#nm').css('display','inline');
+		$('#nm').css('visibility','hidden');
 	}
 	//return true;
 
 	if(document.getElementById('genderRadio').value=='undefined')
 	{
 		$('#genderRadio').css('border','1px solid red');
-		$('#gen').css('display','inline');
+		$('#gen').css('visibility','visible');
 		error=1;
 	}
 		else
 	{
-		$('#gen').css('display','inline');
+		$('#gen').css('visibility','hidden');
 	}
 	if(document.getElementById('dob').value=='')
 	{
 		$('#dob').css('border','1px solid red');
-		$('#edob').css('display','inline');
+		$('#edob').css('visibility','visible');
 		error=1
 	}
 	else
 	{
-			$('#edob').css('display','inline');
+			$('#edob').css('visibility','hidden');
 	}
 
 	if(document.getElementById('txtMobNo').value=='')
 	{
 		$('#txtMobNo').css('border','1px solid red');
-		$('#mnumber').css('display','inline');
+		$('#mnumber').css('visibility','visible');	
 		error=1
 	}
 	else
 	{
-		$('#mnumber').css('display','inline');
+		$('#mnumber').css('visibility','hidden');
 	}
 
 	if(document.getElementById('drpCountry').value=='')
 	{
 		$('#drpCountry').css('border','1px solid red');
-		$('#country').css('display','inline');
+		$('#country').css('visibility','visible');
 		error=1
 	}
 	else
 	{
-		$('#country').css('display','inline');
+		$('#country').css('visibility','hidden');
 	}
 
 	if(document.getElementById('drpReligion').value=='')
 	{
 		$('#drpReligion').css('border','1px solid red');
-		$('#religion').css('display','inline');
+		$('#religion').css('visibility','visible');
 		error=1
 	}
 	else
 	{
-		$('#religion').css('display','inline');
+		$('#religion').css('visibility','hidden');
 	}
 
 	if(document.getElementById('drpCaste').value=='')
 	{
 		$('#drpCaste').css('border','1px solid red');
-		$('#cast').css('display','inline');
+		$('#cast').css('visibility','visible');
 		error=1
 	}
 	else
 	{
-		$('#cast').css('display','inline');
+		$('#cast').css('visibility','hidden');
 	}
 	if(document.getElementById('email').value=='')
 	{
 		$('#email').css('border','1px solid red');
-		$('#mail').css('display','inline');
+		$('#mail').css('visibility','visible');
 		error=1
 	}
 	else
 	{
-		$('#mail').css('display','inline');
+		$('#mail').css('visibility','hidden');
 	}
 	var lnm=document.getElementById('username').value;
 	if(document.getElementById('username').value=='' || lnm.length>256)
@@ -586,50 +586,50 @@ function check_form()
 	}
 	else
 	{
-		$('#mail').css('display','inline');
+		$('#mail').css('visibility','hidden');
 	}
 
 	if(document.getElementById('password').value=='')
 	{
 		$('#password').css('border','1px solid red');
-		$('#pass').css('display','inline');
+		$('#pass').css('visibility','visible');
 
 		error=1
 	}
 	else
 	{
-		$('#pass').css('display','inline');
+		$('#pass').css('visibility','hidden');
 	}
 
 	if(document.getElementById('drpMotherlanguage').value=='')
 	{
 		$('#drpMotherlanguage').css('border','1px solid red');
-		$('#mtoungue').css('display','inline');
+		$('#mtoungue').css('visibility','visible');
 		error=1
 	}
 	else
 	{
-		$('#mtoungue').css('display','inline');
+		$('#mtoungue').css('visibility','hidden');
 	}
 
 	if(error_email==1)
 	{
 		$('#email').css('border','1px solid red');
-		$('#mail').css('display','inline');
+		$('#mail').css('visibility','visible');
 	}
 	else
 	{
-		$('#mail').css('display','inline');
+		$('#mail').css('visibility','hidden');
 	}
 
 	if(error_mobile==1)
 	{
 		$('#txtMobNo').css('border','1px solid red');
-		$('#mnumber').css('display','inline');
+		$('#mnumber').css('visibility','visible');
 	}
 	else
 	{
-		$('#mnumber').css('display','inline');
+		$('#mnumber').css('visibility','hidden');
 	}
 	if(!$("#chk").is(':checked'))
 	{
@@ -714,33 +714,33 @@ $(function() {
 	$('#dob').blur(function(){
 		if($('#dob').val()!='')
 		{
-			$('#edob').css('display','inline');
+			$('#edob').css('visibility','hidden');
 		}
 	});
 	$('#txtMobNo').blur(function(){
 		if($('#txtMobNo').val()!='')
 		{
-			$('#mnumber').css('display','inline');
+			$('#mnumber').css('visibility','hidden');
 		}
 	});
 	$('#drpCountry').change(function(){
 		if($('#drpCountry').val()!='')
 		{
-			$('#country').css('display','inline');
+			$('#country').css('visibility','hidden');
 		}
 	});
 
 	$('#drpReligion').change(function(){
 		if($('#drpReligion').val()!='')
 		{
-			$('#religion').css('display','inline');
+			$('#religion').css('visibility','hidden');
 		}
 	});
 
 	$('#email').blur(function(){
 		if($('#email').val()!='')
 		{
-			$('#mail').css('display','inline');
+			$('#mail').css('visibility','hidden');
 		}
 	});
 
@@ -754,20 +754,20 @@ $(function() {
 	$('#password').blur(function(){
 		if($('#password').val()!='')
 		{
-			$('#pass').css('display','inline');
+			$('#pass').css('visibility','hidden');
 		}
 	});
 
 	$('#drpMotherlanguage').change(function(){
 		if($('#drpMotherlanguage').val()!='')
 		{
-			$('#mtoungue').css('display','inline');
+			$('#mtoungue').css('visibility','hidden');
 		}
 	});
 	$('#drpCaste').change(function(){
 		if($('#drpCaste').val()!='')
 		{
-			$('#cast').css('display','inline');
+			$('#cast').css('visibility','hidden');
 		}
 	});
 function isNumber(evt) {

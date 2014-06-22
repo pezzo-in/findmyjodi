@@ -20,6 +20,7 @@ if($_SESSION['UserEmail']!='' && $_SESSION['IsActive']=='Yes')
 <link rel="stylesheet" href="assets/validation_css/validationEngine.jquery.css" type="text/css"/>
 <link rel="stylesheet" href="assets/validation_css/template.css" type="text/css"/>
 <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
 
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>

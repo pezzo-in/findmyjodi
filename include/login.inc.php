@@ -185,14 +185,14 @@
 				
 	}
 ?>
-<div class="mid">
-        	<div class="span1 first">
+<div class="mid col-md-12">
+        	<div class="col-md-6">
                	<h2>New User</h2>
                 <p></p>
                 <a href="register.php" class="creat_acc_btn"></a>
                 
            	</div>
-            <div class="span1">
+            <div class="col-md-6">
             	<h2>Registered User</h2>
                 <p>If you have an account with us, please log in.</p>
                 <span class="req_field_text">* Required Fields</span>

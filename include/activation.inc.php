@@ -58,12 +58,12 @@ if(isset($_REQUEST['submit']))
 	
 }
 ?>
-    <div class="mid" style="width:954px;">
+    <div class="mid col-md-12">
  
      		<h2>Activate Your Account</h2>
     <form id="formID" class="form-horizontal" method="post" onsubmit="return check_form()">
     <input type="hidden" name="uid" id="uid" value="<?php echo $_REQUEST['uid']; ?>" />
-       <div class="new_acc">           
+       <div class="new_acc col-md-8 col-md-offset-2">
          <div class="left" style="width:100%">
          <?php if($_GET['msg']!='') { ?>
          <?php if($_GET['msg']=='msg1') { ?>
@@ -85,8 +85,8 @@ if(isset($_REQUEST['submit']))
          </div>
          <br class="clear" />
                 <div class="terms_line">
-                <input type="submit" name="submit" />
-                <a href="activation.php?uid=<?php echo $_GET['uid'] ?>&resend=1" class="" style="padding: 5px;"><img src="../images/resendit_btn.png" style="margin-top:10px;"></a>
+                <input type="submit" name="submit" class="btn btn-success" />
+                <a href="activation.php?uid=<?php echo $_GET['uid'] ?>&resend=1" class="" style="padding: 5px; display:none;"><img src="../images/resendit_btn.png" style="margin-top:10px;"></a>
                 </div>
                 </div>
                 </form>

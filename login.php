@@ -17,6 +17,8 @@ if($_SESSION['UserEmail']!='' && $_SESSION['IsActive']=='Yes')
 
 <script src="assets/plugins/jquery-1.10.1.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -27,19 +29,27 @@ $(document).ready(function(){
 </head>
 		
 <body>
-<div class="topMain">
-	<div class="wrapper">
-    	<?php include('include/header.inc.php'); ?>
-		<div class="header inn">
-        	<div class="titlebox">
-            	<h2>Login</h2>
+<div class="container">
+    <div class="row">
+        <div class="topMain col-md-12">
+            <div class="wrapper col-md-12">
+                <?php include('include/header.inc.php'); ?>
+                <div class="header inn">
+                    <div class="titlebox col-md-12">
+                        <h2>Login</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="wrapper col-md-12">
+                <div class="wrapper">
+                     <?php include('include/login.inc.php'); ?>
+                     <?php include('include/footer.inc.php'); ?>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="wrapper">
-	 <?php include('include/login.inc.php'); ?>
-     <?php include('include/footer.inc.php'); ?>
 </div>
 
 </body>
