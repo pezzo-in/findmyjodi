@@ -6,6 +6,7 @@ body {
     line-height: 22px;
     margin: 0;
     padding: 0;
+    background: #F6F6F6 url('../img/pattern.gif');
 }
 h1, h2, h3, form, input {
     margin: 0;
@@ -329,6 +330,9 @@ ul.menu ul ul {
 }
 .header h1 span {
     font-size: 40px;
+}
+.header > img {
+    width: 100%;
 }
 .banner-text {
     color: #fff;
@@ -927,7 +931,7 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
     font-size: 14px;
     font-weight: normal;
     margin-bottom: 1px;
-    padding: 6px 10px;
+    padding: 3px 5px;
     vertical-align: top;
     width: 100%;
 }
@@ -985,7 +989,6 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
 }
 .terms_line {
     overflow: hidden;
-    padding-left: 40px;
 }
 .new_acc input[type="submit"] {
     clear: both;
@@ -2675,7 +2678,6 @@ ul.list-prfl li a:hover {
 }
 .sidebar-main-tab #tab-container {
     float: left;
-    width: 220px;
 }
 .sidebar-main-tab .sidebar-cont ul.msgtab {
     margin-bottom: -1px;
@@ -2683,16 +2685,10 @@ ul.list-prfl li a:hover {
     width: 220px;
 }
 .sidebar-main-tab .msgtab_content {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    border-color: -moz-use-text-color #dfdfdf #dfdfdf;
-    border-image: none;
-    border-style: none solid solid;
-    border-width: medium 1px 1px;
+    border: 1px solid #dfdfdf;
+    margin: -1px 0 0;
     padding: 10px 14px;
-    width: 190px;
+    z-index: 0;
 }
 .sel_picture {
     float: left;

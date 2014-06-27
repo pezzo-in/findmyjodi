@@ -1,7 +1,6 @@
-<div class="sidebar">           
+<div class="sidebar col-md-4">
            <div class="sidebar-main sidebar-main-tab">
-                <div class="sidebar-cont">
-                    <div id="tab-container">
+                <div id="tab-container">
                         <ul class="msgtab">
                             <li style="width:110px;margin-left:0px;"><a href="#msgtab-1" style="font-size:14px;">My Profile</a></li>
                             <li style="width:109px;font-size:14px;"><a href="#msgtab-2" style="padding: 5px 2px; font-size:14px;">Conversations</a></li>
@@ -163,14 +162,12 @@ $sql="select express_interest.* from express_interest right join members on expr
                             </div>                               
                         </div>
                     </div>
-                </div>
             </div>
             
             
             
             <?php /*?><div class="sidebar-main sidebar-main-tab">
             	<h2>Messages</h2>
-                <div class="sidebar-cont">
                     <div id="tab-container">
                         <ul class="msgtab">
                             <li><a href="#msgtab-1">Inbox</a></li>
@@ -180,60 +177,60 @@ $sql="select express_interest.* from express_interest right join members on expr
                         	<div class="list-msgs">
                                 <h3>Personalised Messages</h3>
                                 <?php
-									$sql="select * from messages 
+									$sql="select * from messages
 				  						  where
-									      to_mem = '".$_SESSION['logged_user'][0]['member_id']."'";	 			  
+									      to_mem = '".$_SESSION['logged_user'][0]['member_id']."'";
 									$ans=$obj->select($sql);
 								?>
                                 <ul class="list1">
                                  <li><a href="received_msgs.php"><span class="icon msgnew"></span>Message received(<?php echo count($ans); ?>)</a></li>
-                                   
+
                                     <div class="colorbox">
                                         <div id="inline_content">
                                             <div class="colorbox-content">
-                                                Lorem ipsum dolor sit amet, 
+                                                Lorem ipsum dolor sit amet,
                                             </div>
                                         </div>
                                     </div>
                                      <?php
-									$sql="select * from not_interested_members 
+									$sql="select * from not_interested_members
 				  						  where
-									      from_mem = '".$_SESSION['logged_user'][0]['member_id']."'";				  
+									      from_mem = '".$_SESSION['logged_user'][0]['member_id']."'";
 									$ans=$obj->select($sql);
 								?>
                                 </ul>
-                               
-							</div>   
+
+							</div>
                             <div class="list-msgs">
                             	<h3>New Interest</h3>
                                 <?php
 									$sql="select express_interest.* from express_interest,members where express_interest.to_mem = '".$_SESSION['logged_user'][0]['member_id']."' AND members.member_id=express_interest.to_mem AND members.is_profile_active='Y' AND express_interest.is_accepted='N' AND is_more_time=0 AND is_more_info=0";
-										 
+
 									$new_int=$obj->select($sql);
 								?>
                                 <ul class="list1">
                                     <li><a href="new_interest.php" id="new_interest"><span class="icon expnew"></span>New (<?php echo count($new_int); ?>)</a></li>
                                     <?php
 									//$sql="select * from express_interest where to_mem = '".$_SESSION['logged_user'][0]['member_id']."' and is_accepted='Y'";
-									$sql="select express_interest.* from express_interest,members where express_interest.to_mem = '".$_SESSION['logged_user'][0]['member_id']."' AND members.member_id=express_interest.to_mem AND members.is_profile_active='Y' AND express_interest.is_accepted=1";										  
+									$sql="select express_interest.* from express_interest,members where express_interest.to_mem = '".$_SESSION['logged_user'][0]['member_id']."' AND members.member_id=express_interest.to_mem AND members.is_profile_active='Y' AND express_interest.is_accepted=1";
 									$accpted=$obj->select($sql);
-									 ?>	
+									 ?>
                                     <li><a href="accepted_interest.php" id="accepted"><span class="icon expacpt"></span>Accepted (<?php echo count($accpted); ?>)</a></li>
                                     <?php
 									$sql="select express_interest.* from express_interest,members where express_interest.to_mem = '".$_SESSION['logged_user'][0]['member_id']."' AND members.member_id=express_interest.to_mem AND members.is_profile_active='Y' AND express_interest.is_more_info=1 AND  express_interest.is_accepted='N'";
-										  
+
 									$need_info=$obj->select($sql);
-									 ?>	
+									 ?>
                                     <li><a href="need_more_info.php"><span class="icon expinfo"></span>Need More Info (<?php echo count($need_info); ?>)</a></li>
                                     <?php
 									//$sql="select * from need_more_info_time where to_mem = '".$_SESSION['logged_user'][0]['member_id']."'";
 									$sql="select express_interest.* from express_interest,members where express_interest.to_mem = '".$_SESSION['logged_user'][0]['member_id']."' AND members.member_id=express_interest.to_mem AND members.is_profile_active='Y' AND express_interest.is_more_time=1 AND  express_interest.is_accepted='N'";
 									$need_time=$obj->select($sql);
-									 ?>	
+									 ?>
                                     <li><a href="need_more_time.php"><span class="icon expinfo"></span>Need More Time (<?php echo count($need_time); ?>)</a></li>
                                 </ul>
-                                
-							</div>   
+
+							</div>
                             <div class="list-msgs">
                                 <h3>Requests</h3>
                                 <ul class="list1">
@@ -244,33 +241,33 @@ $sql="select express_interest.* from express_interest right join members on expr
                                     <li><a href="photo_request_received.php"><span class="icon reqphoto"></span>Photo (<?php echo count($db_photo_request_received); ?>)</a></li>
                                     <li><a href="#"><span class="icon referenceicon "></span>Reference (0)</a></li>
                                 </ul>
-                               
+
 							</div>
-                            
+
                             <div class="list-msgs">
-                                <h3><a href="daily_match_watch.php">Daily Match Watch</a></h3>                               
+                                <h3><a href="daily_match_watch.php">Daily Match Watch</a></h3>
 							</div>
-                                                            
+
                         </div>
                         <div class="msgtab_content" id="msgtab-2">
                             <div class="list-msgs">
                                 <h3>Personalised Messages</h3>
                                 <ul class="list1">
-                                
+
                                     <?php
 										$sql = "select * from messages
 												where from_mem = '".$_SESSION['logged_user'][0]['member_id']."'";
-										$data = $obj->select($sql);		
+										$data = $obj->select($sql);
 									 ?>
                                     <li><a href="sent_messages.php"><span class="icon msgreadpaid"></span>Messages sent (<?php echo count($data); ?>)</a></li>
                                 </ul>
-                                
-							</div>   
+
+							</div>
                             <div class="list-msgs">
                              <?php
-									$sql="select * from express_interest 
+									$sql="select * from express_interest
 				  						  where
-									      to_mem = '".$_SESSION['logged_user'][0]['member_id']."' and is_accepted='Y'";				  
+									      to_mem = '".$_SESSION['logged_user'][0]['member_id']."' and is_accepted='Y'";
 									$total_acc=$obj->select($sql);
 								?>
                                 <h3>Express Interest</h3>
@@ -296,7 +293,7 @@ $sql="select express_interest.* from express_interest right join members on expr
 									?>
                                     <li><a href="reply_more_time.php"><span class="icon expdec"></span>Need More Time (<?php echo count($more_time); ?>)</a></li>
                                 </ul>
-							</div>   
+							</div>
                             <div class="list-msgs">
                                 <h3>Requests</h3>
                                 <ul class="list1">
@@ -307,14 +304,13 @@ $sql="select express_interest.* from express_interest right join members on expr
                                     <li><a href="photo_request_send.php"><span class="icon reqphoto"></span>Photo (<?php echo count($db_photo_request_sent); ?>)</a></li>
                                     <li><a href="#"><span class="icon referenceicon "></span>Reference (0)</a></li>
                                 </ul>
-                                
-							</div>   
+
+							</div>
                             <div class="list-msgs">
                                 <h3>Voice Messages <span>(0)</span></h3>
-							</div>          
+							</div>
                         </div>
                     </div>
-                </div>
             </div><?php */?>
             
             

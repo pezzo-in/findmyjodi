@@ -20,8 +20,10 @@ include('lib/myclass.php');
 <script type="text/javascript" src="assets/js/script.js"></script>
 
 <script type="text/javascript" src="assets/js/jquery-1.7.1.min.js"></script>
-      
 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all" />
@@ -48,27 +50,33 @@ include('lib/myclass.php');
 </head>
 		
 <body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<div class="topMain">
-	<div class="wrapper">
-    	<?php include('include/header.inc.php'); ?>
-		<div class="header inn">
-        	<div class="titlebox">
-            	<h2>Registration Step 2</h2>
+<div class="container">
+    <div class="row">
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <div class="topMain col-md-12">
+            <div class="wrapper col-md-12">
+                <?php include('include/header.inc.php'); ?>
+                <div class="header inn">
+                    <div class="titlebox col-md-12">
+                        <h2>Registration Step 2</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="wrapper col-md-12">
+                 <?php include('include/registration-step-2.inc.php'); ?>
+                 <?php include('include/footer.inc.php'); ?>
             </div>
         </div>
     </div>
-</div>
-<div class="wrapper">
-	 <?php include('include/registration-step-2.inc.php'); ?>
-     <?php include('include/footer.inc.php'); ?>
 </div>
 
 </body>

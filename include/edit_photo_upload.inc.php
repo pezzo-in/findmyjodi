@@ -160,7 +160,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	$logged_in_member=$obj->select($sql_login);
 	
 ?>
-        <div class="content">
+        <div class="content col-md-8">
         	<div class="profile_details">
     			<div class="new_acc"> 
                 <h3>Your Photo Gallery <span style="float:right;color:#093; font-size:14px;"><?php if($_GET['Profile']=='Success'){ ?>Profile Picture Uploaded Successfully, Waiting for admin approval.<?php }else if($_GET['Gallery']=='Success'){ ?><?php } ?></span> </h3>

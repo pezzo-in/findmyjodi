@@ -96,7 +96,7 @@ $db_date = $obj->select($select_date);
 		$exp_date=date('d M Y',strtotime('+1 month '.$db_date[0]['reg_date']));
 	}*/
 ?>
-<div class="mid_top1">
+<div class="mid_top1 col-md-12">
     <div class="prf_comp_percnt">
     	<?php
 		$profile_complate=0;

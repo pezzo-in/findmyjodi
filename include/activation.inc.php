@@ -73,19 +73,19 @@ if(isset($_REQUEST['submit']))
      		 <p style="color:#F00">Please enter valid activation code.</p>
          <?php } ?>    
          <?php } ?>    
-             <p>You will receive your verification code on your mobile, please enter here to continue. if you do not get code please resend it.</p>
+             <p>You will receive your verification code on your mobile, please enter here to continue.<!--if you do not get code please resend it.--></p>
              
              <table width="100%" align="center" border="0" cellpadding="5" cellspacing="0">
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Activation Code</label></td>
-                    <td><input type="text" name="ac_code" id="ac_code" tabindex="2" style="clear:none;" placeholder="Your 6 digit activation code"></td>
+                    <td><input type="text" name="ac_code" id="ac_code" tabindex="2" style="clear:none;" class="form-control" placeholder="Your 6 digit activation code"></td>
                     <td>&nbsp;</td>
                 </tr>
              </table>
          </div>
          <br class="clear" />
                 <div class="terms_line">
-                <input type="submit" name="submit" class="btn btn-success" />
+                <input type="submit" name="submit" class="btn btn-success form-control" />
                 <a href="activation.php?uid=<?php echo $_GET['uid'] ?>&resend=1" class="" style="padding: 5px; display:none;"><img src="../images/resendit_btn.png" style="margin-top:10px;"></a>
                 </div>
                 </div>
