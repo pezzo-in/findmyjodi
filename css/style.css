@@ -1,12 +1,12 @@
 
 body {
+    background: url("../img/pattern.gif") repeat scroll 0 0 #f6f6f6;
     color: #787474;
     font-family: 'avenir_45_bookregular';
     font-size: 13px;
     line-height: 22px;
     margin: 0;
     padding: 0;
-    background: #F6F6F6 url('../img/pattern.gif');
 }
 h1, h2, h3, form, input {
     margin: 0;
@@ -110,6 +110,7 @@ textarea {
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #ffffff;
     border-color: -moz-use-text-color #e4e4e4;
     border-image: none;
     border-style: none solid;
@@ -441,6 +442,7 @@ ul.menu ul ul {
     width: 167px;
 }
 .mid {
+    background: none repeat scroll 0 0 #ffffff;
     border-left: 1px solid #e4e4e4;
     border-right: 1px solid #e4e4e4;
 }
@@ -615,7 +617,7 @@ ul.foot_link li a:hover {
 }
 .sidebar {
     float: left;
-    width: 220px;
+    padding: 0 !important;
 }
 .sidebar-main {
     background: url("../images/sidebar_btm_bg1.png") no-repeat scroll center bottom rgba(0, 0, 0, 0);
@@ -681,7 +683,6 @@ ul.foot_link li a:hover {
 }
 .content {
     float: right;
-    width: 712px;
 }
 ul.profl-list {
     list-style: none outside none;
@@ -1733,7 +1734,7 @@ ul.list1 li a:link, ul.list1 li a:visited {
 .row2 .last {
     margin-left: 19px;
 }
-partner_search1 {
+.partner_search1 {
     float: left;
     width: 100%;
 }
@@ -2454,10 +2455,9 @@ ul.pagination li.inactive a:link, ul.pagination li.inactive a:visited {
     width: 200px;
 }
 .list-chkbox label input[type="checkbox"] {
-    left: 0;
+    display: inline;
+    height: auto;
     margin-right: 5px;
-    position: absolute;
-    top: 5px;
 }
 .backtolink {
     float: right;
@@ -2588,8 +2588,7 @@ ul.list-prfl li a:hover {
     border: 1px solid #dfdfdf;
     float: left;
     margin-bottom: 20px;
-    padding: 15px 17px;
-    width: 917px;
+    padding: 10px 0 !important;
 }
 .prf_comp_percnt {
     color: #676767;

@@ -5,6 +5,8 @@ if(count($dbonline1)>0)
 {
 	
 ?>
+<script src="../js/chat.js"></script>
+<div class="openChat">Chat >></div>
 <div class="online_member">
 <div class="ol-users">
 <h3><span>Online Members</span></h3>

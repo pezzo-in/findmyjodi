@@ -2,7 +2,7 @@
 	$sql = "SELECT * from contents where id=5";			 			  
 	$data=$obj->select($sql);
 ?>
-<div class="mid">
+<div  class="mid col-md-12 col-sm-12 col-xs-12">
 	<div class="content_data">	
 		 <?php echo $data[0]['detail']; ?>
     </div>     

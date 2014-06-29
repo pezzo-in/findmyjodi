@@ -296,7 +296,7 @@ if(isset($_POST['submit']))
 
 		
 ?>
-<div class="mid">
+<div  class="mid col-md-12 col-sm-12 col-xs-12">
 
 <div class="mid_top">
         	<a class="ajax send_email_btn upload_pic inline" href="#upload_photo" >

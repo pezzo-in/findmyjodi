@@ -6,7 +6,7 @@
 	$ans = $obj->select($lastid);
 	
 ?>
-<div class="mid" style="height:300px;">
+<div  class="mid col-md-12 col-sm-12 col-xs-12" style="height:300px;">
 <div class="backtolink"><a href="photo_upload.php">Skip this page »&nbsp;&nbsp;&nbsp;</a>||<a href="index.php?logged=y&mem_id=<?php echo $ans[0]['last_id']; ?>">&nbsp;&nbsp;&nbsp;Continue To Home Page »</a></div>
 			
             <h3>Upload multiple photos to increase your response.</h3>

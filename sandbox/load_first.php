@@ -340,7 +340,7 @@ $members = $obj->select($sql);
 $members2 = $obj->select($sql2);
 }
 ?>
-<div class="mid" style="position:relative;">
+<div  class="mid col-md-12 col-sm-12 col-xs-12" style="position:relative;">
 <div class="loader" style="display:none;">
 <img src="images/bigloader.gif" alt="" />
 </div>

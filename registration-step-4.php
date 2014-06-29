@@ -47,30 +47,36 @@ include('lib/myclass.php');
 		}
 	</script>-->
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 </head>
 		
 <body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<div class="topMain">
-	<div class="wrapper">
-    	<?php include('include/header.inc.php'); ?>
-		<div class="header inn">
-        	<div class="titlebox">
-            	<h2>Registration Step 4</h2>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="wrapper">
-	 <?php include('include/registration-step-4.inc.php'); ?>
-     <?php include('include/footer.inc.php'); ?>
+<div class="container">
+    <div class="row">
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<div class="topMain">
+			<div class="wrapper">
+		    	<?php include('include/header.inc.php'); ?>
+				<div class="header inn">
+		        	<div class="titlebox">
+		            	<h2>Registration Step 4</h2>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<div class="wrapper">
+			 <?php include('include/registration-step-4.inc.php'); ?>
+		     <?php include('include/footer.inc.php'); ?>
+		</div>
+	</div>
 </div>
 
 </body>

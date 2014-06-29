@@ -9,7 +9,7 @@ function redirectTopaypal()
     },3000);
 }
 </script>
-<div class="mid" style="min-height:360px;">
+<div  class="mid col-md-12 col-sm-12 col-xs-12" style="min-height:360px;">
 	<span style='text-align: center;'><p style='margin-top: 20px;border: 1px solid;border-radius: 6px;padding: 8px 25px;margin-top:110px;'>Please<strong> do not</strong> close the PayPal window until you have been redirected to the thank you confirmation page on our website otherwise your order will not be processed.<br/><br/><br/>Please wait while we redirect you to Paypal...</p></span>
  
  	<?php

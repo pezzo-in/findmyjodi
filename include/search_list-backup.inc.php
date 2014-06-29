@@ -681,7 +681,7 @@ else
 } ?>
    
     
-<div class="mid">
+<div  class="mid col-md-12 col-sm-12 col-xs-12">
 <?php
 $select_banner = "select * from advertise where adv_position = 'Search Result Top (954 X 100)'";
 $db_banner = $obj->select($select_banner);

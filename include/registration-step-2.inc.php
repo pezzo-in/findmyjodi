@@ -56,7 +56,7 @@ $select_caste = "select * from caste where caste = '".$db_member[0]['caste']."'"
 $db_select_caste = $obj->select($select_caste);
  
 ?>
-    <div class="mid col-md-12">
+    <div  class="mid col-md-12 col-sm-12 col-xs-12">
  		<div class="cont_left col-md-8">
         	<?php
 		$select_banner = "select * from advertise where adv_position = 'Registration-step-2 Top (622 X 197)' AND status = 'Active'";

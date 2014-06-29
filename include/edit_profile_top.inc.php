@@ -97,7 +97,7 @@ $db_date = $obj->select($select_date);
 	}*/
 ?>
 <div class="mid_top1 col-md-12">
-    <div class="prf_comp_percnt">
+    <div class="prf_comp_percnt col-md-6 col-xs-12">
     	<?php
 		$profile_complate=0;
 		$select_member="select * from members where id='".$_SESSION['logged_user'][0]['id']."'";
@@ -229,7 +229,7 @@ $db_date = $obj->select($select_date);
 		</span>
 	</div>
     
-    <div class="membership_status">
+    <div class="membership_status col-md-6 col-xs-12">
     <div class="welcum-user">Welcome Back, <?php echo ucfirst($logged_in_member[0]['name']);?> (<?php echo $logged_in_member[0]['member_id']; ?>)</div>
     <h2>Membership Status: <span><?php if(count($db_member_plan)==0){ ?>Free Membership<?php }else{ echo $db_plan[0]['plan_name']; } ?></span></h2>
     

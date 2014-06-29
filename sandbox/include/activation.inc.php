@@ -58,7 +58,7 @@ if(isset($_REQUEST['submit']))
 	
 }
 ?>
-    <div class="mid" style="width:954px;">
+    <div  class="mid col-md-12 col-sm-12 col-xs-12" style="width:954px;">
  
      		<h2>Activate Your Account</h2>
     <form id="formID" class="form-horizontal" method="post" onsubmit="return check_form()">

@@ -149,17 +149,41 @@ $db_user_plan = $obj->select($user_plan);
                 <?php if(!empty($members[0]['relationship_status']) || !empty($members[0]['noof_children_living_status']) || !empty($members[0]['profile_for']) || !empty($members[0]['annual_income']) || !empty($members[0]['star']) || !empty($members[0]['occupation']) || !empty($members[0]['state']) || !empty($members[0]['city'])){ ?>
                 <div class="row-detail">
                 	<span class="about_me1"></span><h3>More About Me<?php //echo $members[0]['name']; ?></h3>
-                	<?php if(!empty($members[0]['relationship_status'])) { ?><ul><li>Marital Status</li><li>:</li><li><?php echo $members[0]['relationship_status']; ?></li></ul><?php } ?>
-                    <?php if(!empty($members[0]['noof_children_living_status'])) { ?><ul><li>Have Children</li><li>:</li><li><?php if(!empty($members[0]['noof_children_living_status'])){ echo $members[0]['noof_children_living_status']; } else { echo "No"; }  ?></li></ul><?php } ?>
-                    <?php if(!empty($members[0]['profile_for'])) { ?><ul><li>Created By</li><li>:</li><li><?php 
+                	<?php if(!empty($members[0]['relationship_status'])) { ?><ul>
+                  <li>Marital Status</li>
+                  <li>:</li>
+                  <li><?php echo $members[0]['relationship_status']; ?></li></ul><?php } ?>
+                    <?php if(!empty($members[0]['noof_children_living_status'])) { ?><ul>
+                    <li>Have Children</li>
+                    <li>:</li>
+                    <li><?php if(!empty($members[0]['noof_children_living_status'])){ echo $members[0]['noof_children_living_status']; } else { echo "No"; }  ?></li></ul><?php } ?>
+                    <?php if(!empty($members[0]['profile_for'])) { ?><ul>
+                    <li>Created By</li>
+                    <li>:</li>
+                    <li><?php
 					if($members[0]['profile_for']=="Son" or $members[0]['profile_for']=="Daughter") { echo "Parent"; } 
 					else { echo $members[0]['profile_for']; } ?></li></ul><?php } ?>
-                    <?php if(!empty($members[0]['star'])) { ?><ul><li>Star</li><li>:</li><li><?php echo $members[0]['star']; ?></li></ul><?php } ?>
-        <?php if(!empty($members[0]['country'])) { ?><ul><li>Country Living In</li><li>:</li><li><?php echo ucfirst($members[0]['country']); ?></li></ul><?php } ?>           
-        <?php if(!empty($members[0]['state'])) { ?><ul><li>Residing State</li><li>:</li><li><?php echo ucfirst($members[0]['state']); ?></li></ul><?php } ?>
-           <?php if(!empty($members[0]['city'])) { ?><ul><li>Residing City</li><li>:</li><li><?php echo ucfirst($members[0]['city']); ?></li></ul><?php } ?>
+                    <?php if(!empty($members[0]['star'])) { ?><ul>
+                    <li>Star</li>
+                    <li>:</li>
+                    <li><?php echo $members[0]['star']; ?></li></ul><?php } ?>
+        <?php if(!empty($members[0]['country'])) { ?><ul>
+        <li>Country Living In</li>
+        <li>:</li>
+        <li><?php echo ucfirst($members[0]['country']); ?></li></ul><?php } ?>
+        <?php if(!empty($members[0]['state'])) { ?><ul>
+        <li>Residing State</li>
+        <li>:</li>
+        <li><?php echo ucfirst($members[0]['state']); ?></li></ul><?php } ?>
+           <?php if(!empty($members[0]['city'])) { ?><ul>
+           <li>Residing City</li>
+           <li>:</li>
+           <li><?php echo ucfirst($members[0]['city']); ?></li></ul><?php } ?>
                     
-                   <ul><li>Last Login</li><li>:</li><li><?php if($logged_in_member[0]['last_login'] == '0000-00-00') { ?>
+                   <ul>
+                   <li>Last Login</li>
+                   <li>:</li>
+                   <li><?php if($logged_in_member[0]['last_login'] == '0000-00-00') { ?>
                     <?php echo date('d M Y'); ?>
                     <?php } else { ?>
                     <?php echo date('d M Y',strtotime($members[0]['last_login'])); ?>
@@ -170,8 +194,11 @@ $db_user_plan = $obj->select($user_plan);
 <?php if(!empty($members[0]['height']) || !empty($members[0]['weight']) || !empty($members[0]['complexion']) || !empty($members[0]['body_type']) || !empty($members[0]['physical_status'])){ ?>
                 <div class="row-detail">
                 	<span class="looks1"></span><h3><?php //echo $members[0]['name']; ?> Physical Appearance & Looks</h3>
-                	<?php if(!empty($members[0]['height'])) { ?><ul><li>Height</li><li>:</li>
-                    	<li>
+                	<?php if(!empty($members[0]['height'])) { ?><ul>
+                  <li>Height</li>
+                  <li>:</li>
+                    	
+                      <li>
                             <?php 
 							$select_height="select * from height where Id='".$members[0]['height']."'";
 							$db_height=$obj->select($select_height);
@@ -181,71 +208,155 @@ $db_user_plan = $obj->select($user_plan);
                         </li>
                     </ul>
                     <?php } ?>
-              <?php if(!empty($members[0]['weight'])) { ?><ul><li>Weight</li><li>:</li><li><?php echo $members[0]['weight']; ?></li></ul><?php } ?>
- <?php if(!empty($members[0]['complexion'])) { ?><ul><li>Complexion</li><li>:</li><li><?php echo ucfirst($members[0]['complexion']); ?></li></ul><?php } ?>
- <?php if(!empty($members[0]['body_type'])) { ?><ul><li>Body Type</li><li>:</li><li><?php echo ucfirst($members[0]['body_type']); ?></li></ul><?php } ?>
-<?php if(!empty($members[0]['physical_status'])) { ?><ul><li>Physical Status</li><li>:</li><li><?php echo ucfirst($members[0]['physical_status']); ?></li></ul><?php } ?>
+              <?php if(!empty($members[0]['weight'])) { ?><ul>
+              <li>Weight</li>
+              <li>:</li>
+              <li><?php echo $members[0]['weight']; ?></li></ul><?php } ?>
+ <?php if(!empty($members[0]['complexion'])) { ?><ul>
+ <li>Complexion</li>
+ <li>:</li>
+ <li><?php echo ucfirst($members[0]['complexion']); ?></li></ul><?php } ?>
+ <?php if(!empty($members[0]['body_type'])) { ?><ul>
+ <li>Body Type</li>
+ <li>:</li>
+ <li><?php echo ucfirst($members[0]['body_type']); ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['physical_status'])) { ?><ul>
+<li>Physical Status</li>
+<li>:</li>
+<li><?php echo ucfirst($members[0]['physical_status']); ?></li></ul><?php } ?>
                 </div>
                 <?php } ?>
                 
                 <?php if(!empty($members[0]['education']) || !empty($members[0]['employed_in'])){ ?>
                 <div class="row-detail">
                 	<span class="Qualification1"></span><h3><?php //echo $members[0]['name']; ?> Education & Occupation</h3>
-                	<?php if(!empty($members[0]['education'])) { ?><ul><li>Highest Qualification</li><li>:</li><li>
+                	<?php if(!empty($members[0]['education'])) { ?><ul>
+                  <li>Highest Qualification</li>
+                  <li>:</li>
+                  <li>
                     <?php
 					$select_education="select * from education_course where Id='".$members[0]['education']."'";
 					$db_education=$obj->select($select_education);
 					echo ucfirst($db_education[0]['Title']);
 					?>
                     </li></ul><?php } ?>
-<?php if(!empty($members[0]['employed_in'])) { ?><ul><li>Employed in</li><li>:</li><li><?php echo ucfirst($members[0]['employed_in']); ?></li></ul><?php } ?>
-<?php if(!empty($members[0]['annual_income'])) { ?><ul><li>Income</li><li>:</li><li><?php echo $members[0]['annual_income']; ?></li></ul><?php } ?>
-<?php if(!empty($members[0]['occupation'])) { ?><ul><li>Occupation</li><li>:</li><li><?php echo ucfirst($members[0]['occupation']); ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['employed_in'])) { ?><ul>
+<li>Employed in</li>
+<li>:</li>
+<li><?php echo ucfirst($members[0]['employed_in']); ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['annual_income'])) { ?><ul>
+<li>Income</li>
+<li>:</li>
+<li><?php echo $members[0]['annual_income']; ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['occupation'])) { ?><ul>
+<li>Occupation</li>
+<li>:</li>
+<li><?php echo ucfirst($members[0]['occupation']); ?></li></ul><?php } ?>
                 </div>
                 <?php } ?>
                 
                 <?php if(!empty($members[0]['religion']) || !empty($members[0]['mother_tongue']) || !empty($members[0]['caste']) || !empty($members[0]['subcaste']) || !empty($members[0]['manglik_dosham']) || !empty($members[0]['gothram'])){ ?>
                 <div class="row-detail">
                 	<span class="religion1"></span><h3><?php //echo $members[0]['name']; ?> Religion and Social info</h3>
-<?php if(!empty($members[0]['religion'])) { ?><ul><li>Religion</li><li>:</li><li><?php echo ucfirst($members[0]['religion']); ?></li></ul><?php } ?>
-<?php if(!empty($members[0]['mother_tongue'])) { ?><ul><li>Mother Tongue</li><li>:</li><li><?php echo ucfirst($members[0]['mother_tongue']); ?></li></ul><?php } ?>
-<?php if(!empty($members[0]['caste'])) { ?><ul><li>Caste</li><li>:</li><li><?php echo ucfirst($members[0]['caste']); ?></li></ul><?php } ?>
-<?php if(!empty($members[0]['subcaste'])) { ?><ul><li>Sub Caste</li><li>:</li><li><?php echo ucfirst($members[0]['subcaste']); ?></li></ul><?php } ?>
-<?php if(!empty($members[0]['manglik_dosham'])) { ?><ul><li>Manglik</li><li>:</li><li>
+<?php if(!empty($members[0]['religion'])) { ?><ul>
+<li>Religion</li>
+<li>:</li>
+<li><?php echo ucfirst($members[0]['religion']); ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['mother_tongue'])) { ?><ul>
+<li>Mother Tongue</li>
+<li>:</li>
+<li><?php echo ucfirst($members[0]['mother_tongue']); ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['caste'])) { ?><ul>
+<li>Caste</li>
+<li>:</li>
+<li><?php echo ucfirst($members[0]['caste']); ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['subcaste'])) { ?><ul>
+<li>Sub Caste</li>
+<li>:</li>
+<li><?php echo ucfirst($members[0]['subcaste']); ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['manglik_dosham'])) { ?><ul>
+<li>Manglik</li>
+<li>:</li>
+<li>
 <?php if($members[0]['manglik_dosham'] == 'N') { echo "No"; }elseif($members[0]['manglik_dosham'] == 'Y') { echo "Yes"; }elseif($members[0]['manglik_dosham'] == 'Dont Know') { echo "Dont Know"; } ?></li></ul><?php } ?>
-<?php if(!empty($members[0]['gothram'])) { ?><ul><li>Gotra /Gothram </li><li>:</li><li><?php echo $members[0]['gothram']; ?></li></ul><?php } ?>
-<?php if(!empty($members[0]['horoscope_match'])) { ?><ul><li>Horoscope </li><li>:</li><li><?php echo $members[0]['horoscope_match']; ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['gothram'])) { ?><ul>
+<li>Gotra /Gothram </li>
+<li>:</li>
+<li><?php echo $members[0]['gothram']; ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['horoscope_match'])) { ?><ul>
+<li>Horoscope </li>
+<li>:</li>
+<li><?php echo $members[0]['horoscope_match']; ?></li></ul><?php } ?>
                 </div>
                 <?php } ?>
                 
                 <?php if(!empty($members[0]['date_of_birth']) || !empty($members[0]['country'])){ ?>
                 <div class="row-detail">
                 	<span class="astro1"></span><h3><?php //echo $members[0]['name']; ?> Astro info</h3>
-                	<?php if(!empty($members[0]['date_of_birth'])) { ?><ul><li>Date Of Birth</li><li>:</li><li><?php echo date('d M Y',strtotime(($members[0]['date_of_birth']))); ?></li></ul><?php } ?>
-<?php if(!empty($members[0]['country'])) { ?><ul><li>Country of birth</li><li>:</li><li><?php echo ucfirst($members[0]['place_of_birth']); ?></li></ul><?php } ?>
+                	<?php if(!empty($members[0]['date_of_birth'])) { ?><ul>
+                  <li>Date Of Birth</li>
+                  <li>:</li>
+                  <li><?php echo date('d M Y',strtotime(($members[0]['date_of_birth']))); ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['country'])) { ?><ul>
+<li>Country of birth</li>
+<li>:</li>
+<li><?php echo ucfirst($members[0]['place_of_birth']); ?></li></ul><?php } ?>
                 </div>
                 <?php } ?>
                 
                 <?php if(!empty($members[0]['father_occupation']) || !empty($members[0]['mother_occupation']) || !empty($members[0]['no_of_brothers']) || !empty($members[0]['no_of_sisters']) || !empty($members[0]['living_with_parents']) || !empty($members[0]['family_value']) || !empty($members[0]['family_type']) || !empty($members[0]['family_status'])){ ?>
                 <div class="row-detail">
                 	<span class="family1"></span><h3><?php //echo $members[0]['name']; ?> Family</h3>
-                	<?php if(!empty($members[0]['father_occupation'])) { ?><ul><li>Father's Occupation</li><li>:</li><li><?php echo $members[0]['father_occupation']; ?></li></ul><?php } ?>
-                    <?php if(!empty($members[0]['mother_occupation'])) { ?><ul><li>Mother's Occupation</li><li>:</li><li><?php echo $members[0]['mother_occupation']; ?></li></ul><?php } ?>
-                    <?php if(!empty($members[0]['no_of_brothers'])) { ?><ul><li>Brothers</li><li>:</li><li><?php echo $members[0]['no_of_brothers']; ?> Brother (<?php echo $members[0]['bro_married']; ?> Married)</li></ul><?php } ?>
-                    <?php if(!empty($members[0]['no_of_sisters'])) { ?><ul><li>Sisters</li><li>:</li><li><?php echo $members[0]['no_of_sisters']; ?> Sisters (<?php echo $members[0]['sis_married']; ?> Married)</li></ul><?php } ?>
-                    <?php if(!empty($members[0]['living_with_parents'])) { ?> <ul><li>Living with parents?</li><li>:</li><li>
+                	<?php if(!empty($members[0]['father_occupation'])) { ?><ul>
+                  <li>Father's Occupation</li>
+                  <li>:</li>
+                  <li><?php echo $members[0]['father_occupation']; ?></li></ul><?php } ?>
+                    <?php if(!empty($members[0]['mother_occupation'])) { ?><ul>
+                    <li>Mother's Occupation</li>
+                    <li>:</li>
+                    <li><?php echo $members[0]['mother_occupation']; ?></li></ul><?php } ?>
+                    <?php if(!empty($members[0]['no_of_brothers'])) { ?><ul>
+                    <li>Brothers</li>
+                    <li>:</li>
+                    <li><?php echo $members[0]['no_of_brothers']; ?> Brother (<?php echo $members[0]['bro_married']; ?> Married)</li></ul><?php } ?>
+                    <?php if(!empty($members[0]['no_of_sisters'])) { ?><ul>
+                    <li>Sisters</li>
+                    <li>:</li>
+                    <li><?php echo $members[0]['no_of_sisters']; ?> Sisters (<?php echo $members[0]['sis_married']; ?> Married)</li></ul><?php } ?>
+                    <?php if(!empty($members[0]['living_with_parents'])) { ?> <ul>
+                    <li>Living with parents?</li>
+                    <li>:</li>
+                    <li>
 				   <?php if( $members[0]['living_with_parents'] == "Y") { echo "Yes"; } else { echo "No"; }?></li></ul><?php } ?>
-<?php if(!empty($members[0]['family_value'])) { ?> <ul><li>Family values</li><li>:</li><li><?php echo ucfirst($members[0]['family_value']); ?></li></ul><?php } ?>
-<?php if(!empty($members[0]['family_type'])) { ?><ul><li>Family Type</li><li>:</li><li><?php echo ucfirst($members[0]['family_type']); ?></li></ul><?php } ?>
-<?php if(!empty($members[0]['family_status'])) { ?><ul><li>Family Status</li><li>:</li><li><?php echo ucfirst($members[0]['family_status']); ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['family_value'])) { ?> <ul>
+<li>Family values</li>
+<li>:</li>
+<li><?php echo ucfirst($members[0]['family_value']); ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['family_type'])) { ?><ul>
+<li>Family Type</li>
+<li>:</li>
+<li><?php echo ucfirst($members[0]['family_type']); ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['family_status'])) { ?><ul>
+<li>Family Status</li>
+<li>:</li>
+<li><?php echo ucfirst($members[0]['family_status']); ?></li></ul><?php } ?>
                 </div>
                 <?php } ?>
                 
                 <div class="row-detail">
                 	<span class="life_style1"></span><h3><?php //echo $members[0]['name']; ?> Lifestyle</h3>
-                    <ul><li>Smoking</li><li>:</li><li><?php if($members[0]['is_smoker']=='N'){ echo 'No'; }else{ echo 'Yes'; } ?></li></ul>
-                    <ul><li>Drinking</li><li>:</li><li><?php if($members[0]['is_drinker ']=='N'){ echo 'No'; }else{ echo 'Yes'; } ?></li></ul>
-                    <?php if(!empty($members[0]['food'])) { ?><ul><li>Food</li><li>:</li><li><?php echo $members[0]['food']; ?></li></ul><?php } ?>
+                    <ul>
+                    <li>Smoking</li>
+                    <li>:</li>
+                    <li><?php if($members[0]['is_smoker']=='N'){ echo 'No'; }else{ echo 'Yes'; } ?></li></ul>
+                    <ul>
+                    <li>Drinking</li>
+                    <li>:</li>
+                    <li><?php if($members[0]['is_drinker ']=='N'){ echo 'No'; }else{ echo 'Yes'; } ?></li></ul>
+                    <?php if(!empty($members[0]['food'])) { ?><ul>
+                    <li>Food</li>
+                    <li>:</li>
+                    <li><?php echo $members[0]['food']; ?></li></ul><?php } ?>
                 </div>
                 
                 <?php
@@ -258,7 +369,9 @@ $db_user_plan = $obj->select($user_plan);
                  <div class="row-detail row-detail-hobbies">
                 	<span class="hobbies1"></span><h3>Hobbies & Interests</h3>
                      
-					 <?php if($db_memebr_hobbies_interest[0]['hobbies']!=''){?><ul style="width:100%"><li>Hobbies</li><li class="nthchild2">:</li><li><?php
+					 <?php if($db_memebr_hobbies_interest[0]['hobbies']!=''){?><ul style="width:100%">
+            <li>Hobbies</li><li class="nthchild2">:</li>
+           <li><?php
 						$select_hobbies="select * from hobbies where id IN(".$db_memebr_hobbies_interest[0]['hobbies'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -270,7 +383,9 @@ $db_user_plan = $obj->select($user_plan);
 						}
 					 ?></li></ul><?php } ?>
                      
-                     <?php if($db_memebr_hobbies_interest[0]['interests']!=''){?><ul style="width:100%"><li>Interests</li><li class="nthchild2">:</li><li><?php
+                     <?php if($db_memebr_hobbies_interest[0]['interests']!=''){?><ul style="width:100%">
+                      <li>Interests</li><li class="nthchild2">:</li>
+                     <li><?php
 						$select_hobbies="select * from interest where id IN(".$db_memebr_hobbies_interest[0]['interests'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -282,7 +397,9 @@ $db_user_plan = $obj->select($user_plan);
 						}
 					 ?></li></ul><?php } ?>
                      
-                     <?php if($db_memebr_hobbies_interest[0]['music']!=''){?><ul style="width:100%"><li>Favourite Music</li><li class="nthchild2">:</li><li><?php
+                     <?php if($db_memebr_hobbies_interest[0]['music']!=''){?><ul style="width:100%">
+                      <li>Favourite Music</li><li class="nthchild2">:</li>
+                     <li><?php
 						$select_hobbies="select * from music where id IN(".$db_memebr_hobbies_interest[0]['music'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -294,7 +411,9 @@ $db_user_plan = $obj->select($user_plan);
 						}
 					 ?></li></ul><?php } ?>
                      
-                     <?php if($db_memebr_hobbies_interest[0]['read_book']!=''){?><ul style="width:100%"><li>Favourite Read</li><li class="nthchild2">:</li><li><?php
+                     <?php if($db_memebr_hobbies_interest[0]['read_book']!=''){?><ul style="width:100%">
+                      <li>Favourite Read</li><li class="nthchild2">:</li>
+                     <li><?php
 						$select_hobbies="select * from tbl_read where id IN(".$db_memebr_hobbies_interest[0]['read_book'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -306,7 +425,9 @@ $db_user_plan = $obj->select($user_plan);
 						}
 					 ?></li></ul><?php } ?>
                      
-                     <?php if($db_memebr_hobbies_interest[0]['movies']!=''){?><ul style="width:100%"><li>Favourite movie</li><li class="nthchild2">:</li><li><?php
+                     <?php if($db_memebr_hobbies_interest[0]['movies']!=''){?><ul style="width:100%">
+                      <li>Favourite movie</li><li class="nthchild2">:</li>
+                     <li><?php
 						$select_hobbies="select * from movies where id IN(".$db_memebr_hobbies_interest[0]['movies'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -318,7 +439,9 @@ $db_user_plan = $obj->select($user_plan);
 						}
 					 ?></li></ul><?php } ?>
                      
-                     <?php if($db_memebr_hobbies_interest[0]['sports']!=''){?><ul style="width:100%"><li>Sports/fitness Activities</li><li class="nthchild2">:</li><li><?php
+                     <?php if($db_memebr_hobbies_interest[0]['sports']!=''){?><ul style="width:100%">
+                      <li>Sports/fitness Activities</li><li class="nthchild2">:</li>
+                     <li><?php
 						$select_hobbies="select * from activities where id IN(".$db_memebr_hobbies_interest[0]['sports'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -330,7 +453,9 @@ $db_user_plan = $obj->select($user_plan);
 						}
 					 ?></li></ul><?php } ?>
                      
-                     <?php if($db_memebr_hobbies_interest[0]['cuisine']!=''){?><ul style="width:100%"><li>Favourite Couisine</li><li class="nthchild2">:</li><li><?php
+                     <?php if($db_memebr_hobbies_interest[0]['cuisine']!=''){?><ul style="width:100%">
+                      <li>Favourite Couisine</li><li class="nthchild2">:</li>
+                     <li><?php
 						$select_hobbies="select * from couisine where id IN(".$db_memebr_hobbies_interest[0]['cuisine'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -342,7 +467,9 @@ $db_user_plan = $obj->select($user_plan);
 						}
 					 ?></li></ul><?php } ?>
                      
-                      <?php if($db_memebr_hobbies_interest[0]['dress_style']!=''){?><ul style="width:100%"><li>Dress Style</li><li class="nthchild2">:</li><li><?php
+                      <?php if($db_memebr_hobbies_interest[0]['dress_style']!=''){?><ul style="width:100%">
+                        <li>Dress Style</li><li class="nthchild2">:</li>
+                      <li><?php
 						$select_hobbies="select * from dress_style where id IN(".$db_memebr_hobbies_interest[0]['dress_style'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -354,7 +481,9 @@ $db_user_plan = $obj->select($user_plan);
 						}
 					 ?></li></ul><?php } ?>
                      
-                     <?php if($db_memebr_hobbies_interest[0]['spoken_lang']!=''){?><ul style="width:100%"><li>Spoken Languages</li><li class="nthchild2">:</li><li><?php
+                     <?php if($db_memebr_hobbies_interest[0]['spoken_lang']!=''){?><ul style="width:100%">
+                      <li>Spoken Languages</li><li class="nthchild2">:</li>
+                     <li><?php
 						$select_hobbies="select * from languages where id IN(".$db_memebr_hobbies_interest[0]['spoken_lang'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -379,22 +508,31 @@ $db_user_plan = $obj->select($user_plan);
                         <span class="patner1"></span><h3>Partner Prefrence</h3>   
                         <?php if($db_preferred_partner[0]['preferred_age']!=''){ ?>
                         <ul>
-                        	<li>Age</li>
+                        	
+                          <li>Age</li>
+                            
                             <li>:</li>
+                            
                             <li><?php echo $db_preferred_partner[0]['preferred_age']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['marital_status']!=''){ ?>
                         <ul>
-                        	<li>Marital Status</li>
+                        	
+                          <li>Marital Status</li>
+                            
                             <li>:</li>
+                            
                             <li><?php echo $db_preferred_partner[0]['marital_status']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['height']!=''){ ?>
                         <ul>
-                        	<li>Height</li>
+                        	
+                          <li>Height</li>
+                            
                             <li>:</li>
+                            
                             <li>
                                 <?php
 								$ht=explode("to",$db_preferred_partner[0]['height']);
@@ -411,109 +549,153 @@ $db_user_plan = $obj->select($user_plan);
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['physical_status']!=''){ ?>
                         <ul>
-                        	<li>Physical Status</li>
+                        	
+                          <li>Physical Status</li>
+                            
                             <li>:</li>
+                            
                             <li><?php echo $db_preferred_partner[0]['physical_status']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['religion']!=''){ ?>
                         <ul>
-                        	<li>Religion</li>
+                        	
+                          <li>Religion</li>
+                            
                             <li>:</li>
+                            
                             <li><?php echo $db_preferred_partner[0]['religion']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['mother_tongue']!=''){ ?>
                         <ul>
-                        	<li>Mother Tongue</li>
+                        	
+                          <li>Mother Tongue</li>
+                            
                             <li>:</li>
+                            
                             <li><?php echo $db_preferred_partner[0]['mother_tongue']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['caste']!=''){ ?>
                         <ul>
-                        	<li>Caste</li>
+                        	
+                          <li>Caste</li>
+                            
                             <li>:</li>
+                            
                             <li><?php echo $db_preferred_partner[0]['caste']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['manglik']!=''){ ?>
                         <ul>
-                        	<li>Manglik</li>
+                        	
+                          <li>Manglik</li>
+                            
                             <li>:</li>
+                            
                             <li><?php if($db_preferred_partner[0]['manglik']=='Y'){ echo 'Yes'; }else{ echo 'No'; } ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['star']!=''){ ?>
                         <ul>
-                        	<li>Star</li>
+                        	
+                          <li>Star</li>
+                            
                             <li>:</li>
+                            
                             <li><?php echo $db_preferred_partner[0]['star']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['food']!=''){ ?>
                         <ul>
-                        	<li>Food</li>
+                        	
+                          <li>Food</li>
+                            
                             <li>:</li>
+                            
                             <li><?php echo $db_preferred_partner[0]['food']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['is_drinker']!=''){ ?>
                         <ul>
-                        	<li>Drinking</li>
+                        	
+                          <li>Drinking</li>
+                            
                             <li>:</li>
+                            
                             <li><?php if($db_preferred_partner[0]['is_drinker']=='N'){ echo 'No'; }else{ echo 'Yes'; } ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['is_smoker']!=''){ ?>
                         <ul>
-                        	<li>Smoking</li>
+                        	
+                          <li>Smoking</li>
+                            
                             <li>:</li>
+                            
                             <li><?php if($db_preferred_partner[0]['is_smoker']=='N'){ echo 'No'; }else{ echo 'Yes'; } ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['country']!=''){ ?>
                         <ul>
-                        	<li>Country</li>
+                        	
+                          <li>Country</li>
+                            
                             <li>:</li>
+                            
                             <li><?php echo $db_preferred_partner[0]['country']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['city']!=''){ ?>
                         <ul>
-                        	<li>City</li>
+                        	
+                          <li>City</li>
+                            
                             <li>:</li>
+                            
                             <li><?php echo $db_preferred_partner[0]['city']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['education']!=''){ ?>
                         <ul>
-                        	<li>Education</li>
+                        	
+                          <li>Education</li>
+                            
                             <li>:</li>
                             <?php 
 								$select_education_details="select * from education_details where id='".$db_preferred_partner[0]['education']."'"; 
 								$db_education_details=$obj->select($select_education_details);
 							?>
+                            
                             <li><?php echo $db_education_details[0]['degree']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['occupation']!=''){ ?>
                         <ul>
-                        	<li>Occupation</li>
+                        	
+                          <li>Occupation</li>
+                            
                             <li>:</li>
+                            
                             <li><?php echo $db_preferred_partner[0]['occupation']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['annual_income']!=''){ ?>
                         <ul>
-                        	<li>Annual Income</li>
+                        	
+                          <li>Annual Income</li>
+                            
                             <li>:</li>
+                            
                             <li><?php echo $db_preferred_partner[0]['annual_income']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['partner_description']!=''){ ?>
                         <ul style="width:100%">
-                        	<li>Partner Description</li>
+                        	
+                          <li>Partner Description</li>
+                            
                             <li>:</li>
                             <li style="width:450px;"><?php echo $db_preferred_partner[0]['partner_description']; ?></li>
                         </ul>

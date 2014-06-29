@@ -185,7 +185,7 @@
 				
 	}
 ?>
-<div class="mid col-md-12">
+<div  class="mid col-md-12 col-sm-12 col-xs-12">
         	<div class="col-md-6">
                	<h2>New User</h2>
                 <p></p>

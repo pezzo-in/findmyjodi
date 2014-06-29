@@ -340,7 +340,7 @@ $members = $obj->select($sql);
 $members2 = $obj->select($sql2);
 }
 ?>
-<div class="mid" style="position:relative;">
+<div  class="mid col-md-12 col-sm-12 col-xs-12" style="position:relative;">
 <div class="loader" style="display:none;">
 <img src="images/bigloader.gif" alt="" />
 </div>
@@ -361,7 +361,7 @@ $user_plan = "select new_membership_plans.*,member_plans.plan_id from new_member
 $db_user_plan = $obj->select($user_plan);
  ?>
 <?php if(!empty($members)){ ?>
-<div class="sidebar">
+<div class="sidebar col-md-3 col-xs-12 col-sm-4">
         	<div class="sidebar-main">
             	<h2>Refine Search<a href="load_data.php?clear=all" style="float:right; font-size:12px; color:red;">Clear All</a></h2>
                 <form action="" method="post" name="profileform" id="profileform">
@@ -662,7 +662,7 @@ $db_user_plan = $obj->select($user_plan);
             </div>
         </div>
         
- <div class="content" id="content_data">
+ <div class="content col-sm-8 col-xs-12 col-md-9" id="content_data">
  <div class="mid_top_checkbox" style="clear: both;margin: 19px;float: right;margin-top: 0;"><span style="float:left; margin-right:15px; font-weight:bold"">Total Profiles : <?php echo count($members2); ?></span><a href="javascript:;" class="list_view">List View</a><a href="javascript:;" class="grid_view">Grid View</a></div><br clear="all" />     
         <input type="hidden" value="<?php echo count($members2); ?>" name="ttl_profile" id="ttl_profile">
                 <input type="hidden" value="8" name="limit" id="limit">

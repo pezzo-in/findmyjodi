@@ -8,7 +8,7 @@ $pref_partner = "select * from preferred_partner_details where from_mem = '".$_S
 $ans2 = $obj->select($pref_partner);
 
 ?>
-<div class="mid">
+<div  class="mid col-md-12 col-sm-12 col-xs-12">
 <?php if($_GET['hint'] == "add_pic") { ?>
 <h3>Add/Edit Photo</h3>
 	<form name="photo_upload_form" method="post" style="padding-top:30px" enctype="multipart/form-data">

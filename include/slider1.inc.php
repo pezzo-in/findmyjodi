@@ -30,7 +30,7 @@ for($i=0;$i<count($db_cover_img);$i++)
     <?php }else{ ?>
 	<img src="images/header_img1.jpg"  />
     <?php } ?>
-     <div class="searchbox profilebox col-md-12">
+     <div class="searchbox profilebox col-md-12 col-sm-12 col-xs-12">
 		<!--<a href="#" class="header-pname">Hitesh Solanki</a>-->
 		<div class="timeline-thumb"><a href="#">
 	

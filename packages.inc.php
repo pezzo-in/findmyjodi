@@ -5,7 +5,7 @@
 	$sql_mem = "SELECT * from member_plans where member_id='".$_SESSION['logged_user'][0]['id']."' and expiry_date>'".date('Y-m-d')."'";
 	$data_mem=$obj->select($sql_mem);
 ?>
-<div class="mid">
+<div  class="mid col-md-12 col-sm-12 col-xs-12">
 <?php if($_GET['redirect']=='account'){ ?>
 <div class="backtolink"><a href="thank-you.php">&nbsp;&nbsp;&nbsp;Continue To Home Page »</a></div>
 <?php } ?>
