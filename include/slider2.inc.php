@@ -31,7 +31,7 @@ for($i=0;$i<count($db_cover_img);$i++)
     <?php } }else{ ?>
 	<img src="images/header_img1.jpg"  />
     <?php } ?>
-     <div class="searchbox profilebox">
+     <div class="searchbox profilebox col-md-12">
 		<div class="timeline-thumb"><a href="#">
         <?php
 			if(!empty($logged_in_member[0]['photo']) AND $logged_in_member[0]['Approve'] == 1)

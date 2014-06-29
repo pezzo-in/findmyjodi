@@ -2529,6 +2529,7 @@ ul.pagination li.inactive a:link, ul.pagination li.inactive a:visited {
 }
 .profilebox {
     background: none repeat scroll 0 0 #0082b9;
+    padding: 10px 0 0;
 }
 .timeline-thumb {
     float: left;

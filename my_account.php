@@ -132,7 +132,7 @@ $(document).ready(function(){
     </div>
 </div>
 <div class="wrapper col-md-12">
-	<div class="mid">
+	<div class="mid col-md-12">
     	 <?php include('include/edit_profile_top.inc.php'); ?>
          <?php include('include/profile_leftbar.inc.php'); ?>
 		 <?php include('include/my_account.inc.php'); ?>
