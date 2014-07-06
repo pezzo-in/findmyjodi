@@ -435,9 +435,7 @@ $db_select_caste = $obj->select($select_caste);
 				</tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">About Yourself<font color="#FF0000">*</font></label></td>
-                    <td><input class="form-control"type="text" name="about" onchange="change_status_fun(this.id)" id="about" tabindex="20" style="clear:none;">
-                                 <span id="abt" class="err_msg">Write about your self</span> 
-                    </td>
+                          <td><textarea style='float:left;margin-bottom: 0px;clear:none;width:290px;resize: none;' name="about" onchange="change_status_fun(this.id);" id="about" tabindex="20" rows='3' cols='30' ></textarea></td>
 				</tr>
 			</table>
          </div>
