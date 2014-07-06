@@ -297,7 +297,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
             <div class="col-md-8"><select class="form-control" name="drpManglik" id="drpManglik" tabindex="16" style="clear:none;" />
                 <option value="Dont Know">Don't know</option>
                 <option value="Y">Yes</option>
-                <option value="N">No</option>
+                <option value="N"><input class="form-control" type="submit" name="submit">No</option>
                 </select>
                 <span id="manglik" class="err_msg">Select one value</span></div>
                 <br class="clear" />

@@ -65,11 +65,11 @@ include('lib/myclass.php');
 		<div class="topMain">
 			<div class="wrapper">
 		    	<?php include('include/header.inc.php'); ?>
-				<div class="header inn">
-		        	<div class="titlebox">
-		            	<h2>Registration Step 4</h2>
-		            </div>
-		        </div>
+                <div class="header inn">
+                    <div class="titlebox col-md-12">
+                        <h2>Registration Step 4</h2>
+                    </div>
+                </div>
 		    </div>
 		</div>
 		<div class="wrapper">

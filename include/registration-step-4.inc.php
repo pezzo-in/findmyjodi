@@ -121,10 +121,10 @@
 		?>
 		<div class="banner_inner"><a href="<?php echo $db_banner[0]['banner_link']; ?>" target="_blank"><img src="upload/banners/<?php echo $db_banner[0]['banner_file']; ?>" /></a></div>
 		<?php } } } ?>
-     		<h2 style="width:622px;">Enhance your profile with Hobbies & Interests</h2>
+     		<h2 class="col-md-12">Enhance your profile with Hobbies & Interests</h2>
             
-            <div class="backtolink" style="padding:0px;margin-right:34px;"><a href="packages.php?redirect=account">Proceed to My Home »</a></div>
-    <form id="formID" class="form-horizontal" method="post" >
+            <div class="backtolink col-md-12" style="padding:0px;margin-right:34px;"><a href="packages.php?redirect=account">Proceed to My Home »</a></div>
+    <form id="formID" class="form-horizontal col-md-12" method="post" >
     
     <div class="new_acc">     
            <?php $sql = "select * from hobbies";
@@ -133,10 +133,10 @@
          <div class="hobbieslist-label">
      		 <h3 style="color:#C33">Hobbies</h3><hr />
             
-             	<div class="list-chkbox">
+             	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($hobbies as $h) { 						 
 				?>
-                  		 <label><input class="form-control" type="checkbox" name="chkHobbies[]"  value="<?php echo $h['id']; ?>"><?php echo $h['name']; ?></label>
+                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkHobbies[]"  value="<?php echo $h['id']; ?>"><?php echo $h['name']; ?></label>
                         <?php }  ?>                
                 </div>
              </div>
@@ -146,10 +146,10 @@
              <div class="hobbieslist-label">
      		 <h3 style="color:#C33">Interests</h3><hr />
             
-             	<div class="list-chkbox">
+             	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($interests as $int) { 
 						 ?>
-                  		 <label><input class="form-control" type="checkbox" name="chkInterests[]" value="<?php echo $int['id']; ?>"><?php echo $int['name']; ?></label>					
+                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkInterests[]" value="<?php echo $int['id']; ?>"><?php echo $int['name']; ?></label>					
 						 <?php }  ?>                
                 </div>
              </div>
@@ -159,10 +159,10 @@
              <div class="hobbieslist-label">
      		 <h3 style="color:#C33">Favourite music</h3><hr />
             
-             	<div class="list-chkbox">
+             	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($musics as $m) { 
 		  			   	?>
-                  		 <label><input class="form-control" type="checkbox" name="chkMusic[]" value="<?php echo $m['id']; ?>"
+                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkMusic[]" value="<?php echo $m['id']; ?>"
                         ><?php echo $m['name']; ?></label>											                 <?php }  ?>                
                 </div>
              </div>
@@ -172,10 +172,10 @@
              <div class="hobbieslist-label">
      		 <h3 style="color:#C33">Favourite read</h3><hr />
             
-             	<div class="list-chkbox">
+             	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($reads as $r) { 
 				 		?>
-                  		 <label><input class="form-control" type="checkbox" name="chkRead[]" value="<?php echo $r['id']; ?>"
+                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkRead[]" value="<?php echo $r['id']; ?>"
                          ><?php echo $r['name']; ?></label>											                 <?php }  ?>                
                 </div>
              </div>
@@ -185,10 +185,10 @@
              <div class="hobbieslist-label">
      		 <h3 style="color:#C33">Favourite movie</h3><hr />
             
-             	<div class="list-chkbox">
+             	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($movies as $m) { 
 				 		 ?>
-                  		 <label><input class="form-control" type="checkbox" name="chkMovies[]" value="<?php echo $m['id']; ?>"
+                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkMovies[]" value="<?php echo $m['id']; ?>"
                         ><?php echo $m['name']; ?></label>											                 <?php }  ?>                
                 </div>
              </div>
@@ -199,10 +199,10 @@
              <div class="hobbieslist-label">
      		 <h3 style="color:#C33">Sports/fitness activities</h3><hr />
             
-             	<div class="list-chkbox">
+             	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($activities as $act) {
 						 ?>
-                  		 <label><input class="form-control" type="checkbox" name="chkSports[]" value="<?php echo $act['id']; ?>"
+                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkSports[]" value="<?php echo $act['id']; ?>"
                           ><?php echo $act['name']; ?></label>											                 <?php }  ?>                
                 </div>
              </div>
@@ -214,10 +214,10 @@
              <div class="hobbieslist-label">
      		 <h3 style="color:#C33">Favourite couisine</h3><hr />
             
-             	<div class="list-chkbox">
+             	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($couisine as $cou) {
 						 ?>
-                  		 <label><input class="form-control" type="checkbox" name="chkCouisine[]" value="<?php echo $cou['id']; ?>"
+                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkCouisine[]" value="<?php echo $cou['id']; ?>"
                           ><?php echo $cou['name']; ?></label>											                 <?php }  ?>                
                 </div>
              </div>
@@ -229,10 +229,10 @@
              <div class="hobbieslist-label">
      		 <h3 style="color:#C33">Preferred dress style</h3><hr />
             
-             	<div class="list-chkbox">
+             	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($couisine as $dre) { 
 				 		  ?>
-                  		 <label><input class="form-control" type="checkbox" name="chkDress[]" value="<?php echo $dre['id']; ?>"
+                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkDress[]" value="<?php echo $dre['id']; ?>"
                          ><?php echo $dre['name']; ?></label>											                 <?php }  ?>                
                 </div>
              </div>  
@@ -242,10 +242,10 @@
              <div class="hobbieslist-label">
      		 <h3 style="color:#C33">Spoken languages</h3><hr />
             
-             	<div class="list-chkbox">
+             	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($couisine as $lang) { 
 				 		   ?>
-                  		 <label><input class="form-control" type="checkbox" name="chkLang[]" value="<?php echo $lang['id']; ?>"><?php echo $lang['name']; ?></label>											                 <?php }  ?>                
+                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkLang[]" value="<?php echo $lang['id']; ?>"><?php echo $lang['name']; ?></label>											                 <?php }  ?>                
                 </div>
              </div>       
              

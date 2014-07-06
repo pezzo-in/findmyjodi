@@ -70,15 +70,14 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
 <div class="top col-md-12">
     <div class="topIn col-md-12">
     <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
-        <a href="index.php" class="logo col-md-2" style="margin-top:-20px;"><img src="images/logo2.png" alt="Find My Jodi" title="Find My Jodi" width="130" /></a>
+        <a href="index.php" class="logo col-md-2 col-xs-offset-3 col-sm-offset-0" style="margin-top:-20px;"><img src="images/logo2.png" alt="Find My Jodi" title="Find My Jodi" width="130" /></a>
         <?php }else { ?>
         <a href="my_account.php" class="logo col-md-2" style="margin-top:-20px;"><img src="images/logo2.png" alt="Find My Jodi" title="Find My Jodi" width="130" /></a>
         <?php } ?>
-        <div class="topLogin col-md-3 pull-right text-right">
-            <div class="loginlink">
-                        	
+        <div class="topLogin col-md-3 pull-right text-right col-xs-12">
+            <div class="loginlink col-md-6 col-xs-6 col-sm-6">
             <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
-                <a href="javascript:;" class="btn btn-info btn-md" title="Login to your profile">Sign In</a>
+                <a href="javascript:;" class="btn btn-info btn-md col-md-12 col-xs-12 col-sm-12" title="Login to your profile">Sign In</a>
 				<?php } else { ?>
                 <a href="logout.php" class="link-reg" title="Sign Out">Sign Out</a>
                 <?php } ?>
@@ -96,7 +95,7 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
                 </div>
             </div>
             <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
-            <a href="register.php" class="btn btn-danger btn-md" title="Create your profile">Register</a>
+            <a href="register.php" class="btn btn-danger btn-md col-md-6 col-xs-5 col-sm-6" title="Create your profile">Register</a>
             <?php } ?>
         </div>
         <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?> 
