@@ -27,14 +27,18 @@ $db_content = $obj->select($select_content);
 <meta name="keywords" content="<?php echo $db_content[0]['SeoKeywords']; ?>" />
 
 <link href="css/style.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 
 </head>
 
-		
+
 
 <body>
 
 
+<div class="container">
+    <div class="row">
 
 <?php
 include("common_user_fetch.php");
@@ -132,17 +136,17 @@ include("common_user_fetch.php");
 
 
 
-<div class="topMain">
+<div class="topMain col-md-12">
 
-	<div class="wrapper">
+	<div class="col-md-12">
 
     	<?php include('include/header.inc.php'); ?>        
 
 		<div class="header inn">
 
-        	<div class="titlebox">
+        	<div class="titlebox col-md-12">
 
-            	<h2>Quick Tour</h2>
+            	Quick Tour
 
             </div>
 
@@ -152,12 +156,15 @@ include("common_user_fetch.php");
 
 </div>
 
-<div class="wrapper">
+<div class="col-md-12">
 
 	 <?php include('include/quick_tour.inc.php'); ?>
 
-     <?php include('include/footer.inc.php'); ?>
-
+     <div class="col-md-12">
+         <?php include('include/footer.inc.php'); ?>
+     </div>
+</div>
+</div>
 </div>
 
 

@@ -48,10 +48,13 @@ $search_coockie_data = json_decode(stripslashes($search_coockie_data),true);
 
 <script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 </head>
 
 <body>
-
+<div class="container">
+    <div class="row">
 <?php
 include("common_user_fetch.php");
 /*if($_SESSION['UserEmail']!='')
@@ -244,31 +247,30 @@ $(document).ready(function(){
 
 <div class="topMain">
 
-	<div class="wrapper">
 
     	<?php include('include/header.inc.php'); ?>
 
 		<div class="header inn">
 
-        	<div class="titlebox">
+        	<div class="titlebox col-md-12">
 
-            	<h2>Search</h2>
+            	Search
 
             </div>
 
         </div>
 
-    </div>
 
 </div>
 
-<div class="wrapper">
+<div class="col-md-12">
 
 	 <?php include('load_first.php'); ?>
 
      <?php include('include/footer.inc.php'); ?>
 </div>
-
+    </div>
+</div>
 <script src="chosen.jquery.js" type="text/javascript"></script>
 
   <script src="docsupport/prism.js" type="text/javascript" charset="utf-8"></script>

@@ -44,6 +44,8 @@ if($_SESSION['UserEmail']=='')
 
 
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 </head>
 
 		
@@ -51,6 +53,8 @@ if($_SESSION['UserEmail']=='')
 <body>
 
 
+<div class="container">
+<div class="row">
 
 <?php
 include("common_user_fetch.php");
@@ -341,6 +345,8 @@ $(document).ready(function(){
 
      <?php include('include/footer.inc.php'); ?>
 
+</div>
+</div>
 </div>
 
 

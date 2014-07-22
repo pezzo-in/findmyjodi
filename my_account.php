@@ -144,9 +144,3 @@ $(document).ready(function(){
 
 </body>
 </html>
-<style>
-.row-detail ul{ width:50%; }
-.row-detail ul li:first-child{ width:133px; }
-.row-detail ul li:nth-child(3) { width:178px; }
-.row-detail-hobbies ul li:nth-child(3) { width:530px;text-align:justify; }
-</style>

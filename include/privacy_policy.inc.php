@@ -3,17 +3,7 @@
 	$data=$obj->select($sql);
 ?>
 <div  class="mid col-md-12 col-sm-12 col-xs-12">
-	<div class="content_data">	
+	<div class="col-md-12">
 		 <?php echo $data[0]['detail']; ?>
     </div>     
 </div>
-<style>
-.content_data
-{
-	width:950px;
-	text-align:justify;
-	font-family: avenir_45_bookregular; 
-	font-size:14px;     
-}
-
-</style>

@@ -52,7 +52,7 @@ if(count($db_banner) > 0)
 
                 <form name="regular_search_form" id="regular_search_form" method="post" action="load_data.php">
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>Gender</label>
 
@@ -78,7 +78,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>Age</label> 
 
@@ -90,7 +90,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>Height</label>
 
@@ -136,7 +136,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                         <label>Marital Status</label>
 
@@ -150,7 +150,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                             <label>Mother Tongue</label>
 
@@ -176,7 +176,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
-                    <div class="row">       
+                    <div class="search-row">       
 
                     <label>Religion</label>
 
@@ -202,7 +202,7 @@ if(count($db_banner) > 0)
 
                     </div>                            
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>Caste</label>
 
@@ -232,7 +232,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
-                    <div class="row">       
+                    <div class="search-row">       
 
                     <label>Country</label>
 
@@ -258,7 +258,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
-                    <div class="row">       
+                    <div class="search-row">       
 
                     <label>Education</label>
 
@@ -304,7 +304,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>Show Profile</label>
 
@@ -314,7 +314,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>&nbsp;</label>
 
@@ -372,7 +372,7 @@ The results of this search will be closer to your expectations. </p>
 
                 <form name="advanced_search_form" id="advanced_search_form" method="post" action="load_data.php">
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>Gender</label>
 
@@ -392,7 +392,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>Age</label>
 
@@ -404,7 +404,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>Height</label>
 
@@ -452,7 +452,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                         <label>Marital Status</label>
 
@@ -466,7 +466,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                             <label>Mother Tongue</label>
 
@@ -492,7 +492,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>   
 
-                     <div class="row">       
+                     <div class="search-row">       
 
                     <label>Religion</label>
 
@@ -518,7 +518,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>                         
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>Caste</label>
 
@@ -548,7 +548,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                   <div class="row">       
+                   <div class="search-row">       
 
                     <label>Country</label>
 
@@ -574,7 +574,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">       
+                    <div class="search-row">       
 
                     <label>Education</label>
 
@@ -622,7 +622,7 @@ The results of this search will be closer to your expectations. </p>
 
                     
 
-                    <div class="row">       
+                    <div class="search-row">       
 
                     <label>Occupation</label>
 
@@ -650,7 +650,7 @@ The results of this search will be closer to your expectations. </p>
 
                     
 
-                    <div class="row">       
+                    <div class="search-row">       
 
                     <label>Annual Income</label>
 
@@ -680,7 +680,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <h2>Horoscope</h2>
 
-                    <div class="row">       
+                    <div class="search-row">       
 
                     <label>Star</label>
 
@@ -708,7 +708,7 @@ The results of this search will be closer to your expectations. </p>
 
                    
 
-                   <div class="row">
+                   <div class="search-row">
 
                     <label>Manglik</label>
 
@@ -724,7 +724,7 @@ The results of this search will be closer to your expectations. </p>
 
                     
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>Show Profile</label>
 
@@ -738,7 +738,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <h2>Mutual Interest</h2>
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <?php
 
@@ -772,7 +772,7 @@ The results of this search will be closer to your expectations. </p>
 
                     
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>&nbsp;</label>
 
@@ -828,7 +828,7 @@ The results of this search will be closer to your expectations. </p>
 
                 <form name="soulmate_search" id="soulmate_search" method="post" action="load_data.php">
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>Gender</label>
 
@@ -838,7 +838,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>Age</label>
 
@@ -850,7 +850,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>Height</label>
 
@@ -924,7 +924,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                         <label>Marital Status</label>
 
@@ -940,7 +940,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">       
+                    <div class="search-row">       
 
                     <label>Religion</label>
 
@@ -966,7 +966,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                             <label>Mother Tongue</label>
 
@@ -992,7 +992,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>                            
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>Caste</label>
 
@@ -1018,7 +1018,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">       
+                    <div class="search-row">       
 
                     <label>Country</label>
 
@@ -1044,7 +1044,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">       
+                    <div class="search-row">       
 
                     <label>Education</label>
 
@@ -1072,7 +1072,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">       
+                    <div class="search-row">       
 
                     <label>Mutual Interest</label>
 
@@ -1112,7 +1112,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>Show Profile</label>
 
@@ -1122,7 +1122,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>&nbsp;</label>
 
@@ -1146,7 +1146,7 @@ The results of this search will be closer to your expectations. </p>
 
                 <form name="keyword_search" id="keyword_search" method="post" action="load_data.php">
 
-                    <div class="row">
+                    <div class="search-row">
 
                         <label>Enter Keyword</label>
 
@@ -1162,7 +1162,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <?php
 
@@ -1190,7 +1190,7 @@ The results of this search will be closer to your expectations. </p>
 
                         </div>
 
-                    <div class="row">
+                    <div class="search-row">
 
                     <label>&nbsp;</label>
 
@@ -1248,7 +1248,7 @@ The results of this search will be closer to your expectations. </p>
 
                         <form name="who_online_form" id="who_online_form" method="post" action="search_list.php">
 
-                            <div class="row">
+                            <div class="search-row">
 
                             <label>Search By</label>
 
@@ -1262,7 +1262,7 @@ The results of this search will be closer to your expectations. </p>
 
                             
 
-                            <div class="row">
+                            <div class="search-row">
 
                             <label>&nbsp;</label>
 
@@ -1288,7 +1288,7 @@ The results of this search will be closer to your expectations. </p>
 
                         <form name="by_id_form" id="by_id_form" method="post" action="load_data.php">
 
-                            <div class="row">
+                            <div class="search-row">
 
                             <label>Member ID</label>
 
@@ -1302,7 +1302,7 @@ The results of this search will be closer to your expectations. </p>
 
                             
 
-                            <div class="row">
+                            <div class="search-row">
 
                             <label>&nbsp;</label>
 

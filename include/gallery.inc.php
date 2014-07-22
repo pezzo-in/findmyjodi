@@ -45,7 +45,7 @@ if(isset($_FILES['file1']) && $_FILES['file1']['name']!='')
 	echo '<script>window.location.href="gallery.php"</script>';
 }
 ?>
-<div class="content">
+<div class="content col-md-9 col-xs-12 col-sm-12">
 <div class="about_right">
 <h2 style="text-align:left">Approved Album Photos</h2>
 <?php

@@ -40,12 +40,16 @@ $(document).ready(function(){
 	$(document).ready(function(){
 		$(".inline").colorbox({inline:true, maxWidth:"900px;"});
 	});
-</script> 
-    
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 
 </head>
 		<?php if($_POST['paypal']=='paypal')   {  ?>
 <body onLoad="redirectTopaypal();">
+<div class="container">
+    <div class="row">
 <div class="topMain">
 	<div class="wrapper">
     	<?php include('include/header.inc.php'); ?>
@@ -79,6 +83,7 @@ $(document).ready(function(){
 </div>
 <?php } ?>
 
-
+</div>
+</div>
 </body>
 </html>

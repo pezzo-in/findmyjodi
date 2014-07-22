@@ -77,22 +77,28 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
         <div class="topLogin col-md-3 pull-right text-right col-xs-12">
             <div class="loginlink col-md-6 col-xs-6 col-sm-6">
             <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
-                <a href="javascript:;" class="btn btn-info btn-md col-md-12 col-xs-12 col-sm-12" title="Login to your profile">Sign In</a>
-				<?php } else { ?>
-                <a href="logout.php" class="link-reg" title="Sign Out">Sign Out</a>
-                <?php } ?>
-				<div class="loginbox">
-                    <div class="loginboxtop"></div>
-                    <div class="loginboxmain">
-                        <form method="post" name="login">
-                            <div class="row"><input type="text" name="username" placeholder="Email OR MemberId" /></div>
-                            <div class="row"><input type="password" name="password" placeholder="Password" /></div>
-                            <input type="submit" class="loginnow" value="Login now" name="login" />
-                            <label><!--<input type="checkbox" />Stay Signed in--></label>
-                            <a href="forgot_password.php" style="font-size: 12px;margin-top: 12px;">Forgot Password?</a>
-                        </form>
-                    </div>
+                <div class="dropdown">
+                    <a data-toggle="dropdown" href="login.php" class="btn btn-info btn-md col-md-12 col-xs-12 col-sm-12" title="Login to your profile">Sign In</a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <li>
+                            <div class="loginbox">
+                                <div class="loginboxtop"></div>
+                                <div class="loginboxmain">
+                                    <form method="post" name="login">
+                                        <div class="row"><input type="text" name="username" placeholder="Email OR MemberId" /></div>
+                                        <div class="row"><input type="password" name="password" placeholder="Password" /></div>
+                                        <input type="submit" class="loginnow" value="Login now" name="login" />
+                                        <label><!--<input type="checkbox" />Stay Signed in--></label>
+                                        <a href="forgot_password.php" style="font-size: 12px;margin-top: 12px;">Forgot Password?</a>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
+                <?php } else { ?>
+                <a href="logout.php" class="link-reg btn btn-danger btn-md pull-right" title="Sign Out">Sign Out</a>
+                <?php } ?>
             </div>
             <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
             <a href="register.php" class="btn btn-danger btn-md col-md-6 col-xs-5 col-sm-6" title="Create your profile">Register</a>

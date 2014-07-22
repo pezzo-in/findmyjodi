@@ -152,7 +152,7 @@ if(isset($_POST['submit']))
 	$logged_in_member=$obj->select($sql_login);		
 ?>
         <?php if(!empty($logged_in_member)) { ?>	  
-        <div class="content">
+        <div class="content col-md-9 col-xs-12 col-sm-12">
         
         	<div class="profile_details">
             
@@ -160,16 +160,18 @@ if(isset($_POST['submit']))
                <?php if (isset($error)) { echo "<p class='message'>" .$error. "</p>" ;} ?>
                 <div class="row-detail new_acc editprof">
                   <h3>About Me</h3>
-                   <textarea id="about_me" rows="5" style="width: 470px;" name="about_me"><?php echo $logged_in_member[0]['about_me']; ?></textarea>
+                   <textarea id="about_me" rows="5" class="col-md-12" name="about_me"><?php echo $logged_in_member[0]['about_me']; ?></textarea>
                </div>
                
                <div class="row-detail new_acc editprof">
                   <h3>More About Me</h3>
-                   <ul><li> <label>Name</label>
+                   <ul>
+                   	<li> <label>Name</label>
                     <input type="text" name="username" id="username" value="<?php echo $logged_in_member[0]['name']; ?>" />
                    </li></ul>
                    
-                   <ul><li> <label>Gender</label><br class="clear" />
+                   <ul>
+                   	<li> <label>Gender</label><br class="clear" />
                             <div id="genderRadio">
                             <label class="radiobtn">
                                 <input type="radio" name="Rdgender" id="Rdgenderm" value="M" <?php if($logged_in_member[0]['gender'] == 'M') { ?> checked="checked"  <?php } ?> />Male
@@ -180,7 +182,8 @@ if(isset($_POST['submit']))
                             </div>
                    </li></ul>
                    
-                   <ul><li><label>Marital Status</label><?php
+                   <ul>
+                   	<li><label>Marital Status</label><?php
 						$relation_list = "select * from relationship_status";
 						$data = $obj->select($relation_list);
 					?>
@@ -193,7 +196,8 @@ if(isset($_POST['submit']))
                         <?php } ?>
                     </select>
                     </li></ul>
-                    <ul><li><label>Matrimony Profile For</label><select id="drpProfFor" name="drpProfFor">
+                    <ul>
+                    	<li><label>Matrimony Profile For</label><select id="drpProfFor" name="drpProfFor">
                                 <option value="">-Select-</option>
                                 <option value="Myself" <?php if($logged_in_member[0]['profile_for'] == "Myself") { ?>  selected="selected" <?php } ?> >Myself</option>
                                 <option value="Son" <?php if($logged_in_member[0]['profile_for'] == "Son") { ?>  selected="selected" <?php } ?>>Son</option>
@@ -205,7 +209,8 @@ if(isset($_POST['submit']))
                     		</select>
                     </li></ul>
                     
-                    <ul><li><label>Country Living in</label><?php
+                    <ul>
+                    	<li><label>Country Living in</label><?php
 								$country_list = "select * from mobile_codes";
 								$data = $obj->select($country_list);
 							?>
@@ -218,13 +223,15 @@ if(isset($_POST['submit']))
 								<?php } ?>
 							</select>
                     </li></ul>
-                    <ul><li><label>State</label>
+                    <ul>
+                    	<li><label>State</label>
                  			<input type="text" name="state" id="state" value="<?php echo $logged_in_member[0]['state']; ?>">
                     </li></ul>
                     <ul class="clear"><li><label>City</label>
                  			<input type="text" name="city" id="city" value="<?php echo $logged_in_member[0]['city']; ?>">
                     </li></ul>
-                    <ul><li> <label>Star</label>
+                    <ul>
+                    	<li> <label>Star</label>
                              <select name="drpstar" id="drpstar"/>>
                                 <option value="">Select</option>
                                 <?php
@@ -247,13 +254,15 @@ if(isset($_POST['submit']))
                                 <?php } ?>
                                 </select><input type="text" name="txtMobNo" value="<?php echo $logged_in_member[0]['mobile_no']; ?>"  id="txtMobNo" />
                     </li></ul>
-                     <ul><li><label>Horoscope</label><br clear="all" />
+                     <ul>
+                     	<li><label>Horoscope</label><br clear="all" />
 							 	<input type="text" name="horoscope" value="<?php echo $logged_in_member[0]['horoscope_match']; ?>"  id="horoscope" />
                     </li></ul>
                     </div>
                     <div class="row-detail new_acc editprof">
                           <h3>Education & Occupation</h3>
-                           <ul><li><label>Education</label>
+                           <ul>
+                           	<li><label>Education</label>
                                    <select id="education"  name="education" >
                                     
                                         <option value="">--Select--</option>
@@ -278,7 +287,8 @@ if(isset($_POST['submit']))
                                     </select>
                             </li></ul>
                             
-                            <ul><li><label>Employed In</label>
+                            <ul>
+                            	<li><label>Employed In</label>
                                     <select id="employed_in"  name="employed_in"  >	
                                         <option value="">--Select--</option>
                                         <option value="Government" <?php if($logged_in_member[0]['employed_in'] == "Government"){?> selected="selected" <?php } ?>>Government</option>
@@ -289,7 +299,8 @@ if(isset($_POST['submit']))
                                     </select>
                             </li></ul>
                              
-                             <ul><li><label>Annual Income</label>
+                             <ul>
+                             	<li><label>Annual Income</label>
 									<?php
                                         $income = "select * from annual_income_master";
                                         $data = $obj->select($income);
@@ -304,7 +315,8 @@ if(isset($_POST['submit']))
                                     </select>
                             </li></ul>
                             
-                            <ul><li> <label>Occupation</label>
+                            <ul>
+                            	<li> <label>Occupation</label>
 									<?php
                                         $list = "select * from occupation_master";
                                         $data = $obj->select($list);
@@ -324,7 +336,8 @@ if(isset($_POST['submit']))
                     
                     <div class="row-detail new_acc editprof">
                           <h3>Physical Appearance & Looks</h3>
-                           <ul><li><label>Height</label>
+                           <ul>
+                           	<li><label>Height</label>
                                     <select id="drpHeight" name="drpHeight" >
                                        <option value="">- Feet/Inches -</option>
                                        <?php 
@@ -337,7 +350,8 @@ if(isset($_POST['submit']))
                                     </select>
                             </li></ul>
                             
-                             <ul><li><label>Weight</label>
+                             <ul>
+                             	<li><label>Weight</label>
                                         <select id="drpWeight" name="drpWeight" >
                                            <option value="">- Kgs -</option>
                                            <?php for($i=41;$i<=140;$i++) { ?>
@@ -346,7 +360,8 @@ if(isset($_POST['submit']))
                                         </select>
                             </li></ul>
                             
-                             <ul><li> <label>Complexion</label>
+                             <ul>
+                             	<li> <label>Complexion</label>
                                        <select id="drpComplexion" name="drpComplexion">
                                            <option value="">-Select-</option>
                                            <option value="Very Fair" <?php if($logged_in_member[0]['complexion']=="Very Fair") { ?> selected="selected" <?php } ?>>Very Fair</option>
@@ -357,7 +372,8 @@ if(isset($_POST['submit']))
                                         </select>
                             </li></ul>
                             
-                             <ul><li><label>Body type</label>
+                             <ul>
+                             	<li><label>Body type</label>
                                          <select name="drpBodyType" id="drpBodyType" >
                                             <option value="">Select</option>
                                             <option value="Slim" <?php if($logged_in_member[0]['body_type'] == "Slim") { ?> selected="selected" <?php } ?>>Slim</option>
@@ -367,7 +383,8 @@ if(isset($_POST['submit']))
                                         </select> 
                             </li></ul>
                             
-                            <ul><li><label>Physical Status</label>
+                            <ul>
+                            	<li><label>Physical Status</label>
                                          <select id="drpPhysicalStatus"  name="drpPhysicalStatus" >
                                            <option value="">-Select-</option>
                                            <option value="normal" <?php if($logged_in_member[0]['physical_status'] == "normal") { ?> selected="selected" <?php } ?>>Normal</option>
@@ -377,7 +394,8 @@ if(isset($_POST['submit']))
                     </div>
                     <div class="row-detail new_acc editprof">
                           <h3>Religion and Social info</h3>
-                           <ul><li> <label>Religion</label>
+                           <ul>
+                           	<li> <label>Religion</label>
 									<?php
                                         $religion_list = "select * from religions";
                                         $data = $obj->select($religion_list);
@@ -392,7 +410,8 @@ if(isset($_POST['submit']))
                                     </select>
                             </li></ul>
                             
-                             <ul><li><label>Mother Tongue</label> 
+                             <ul>
+                             	<li><label>Mother Tongue</label> 
 										 <?php
                                             $list = "select * from mother_tongues";
                                             $data = $obj->select($list);
@@ -407,7 +426,8 @@ if(isset($_POST['submit']))
                                         </select> 
                             </li></ul>
                             
-                             <ul><li><label>Caste</label>
+                             <ul>
+                             	<li><label>Caste</label>
 										<?php
 											$select_caste_rel = "select id from religions where religion='".$logged_in_member[0]['religion']."'";
 											$db_rel_cast = $obj->select($select_caste_rel);
@@ -427,7 +447,8 @@ if(isset($_POST['submit']))
                                         </div>
                             </li></ul>
                             
-                             <ul><li><label>Manglik</label>
+                             <ul>
+                             	<li><label>Manglik</label>
                                        <select name="manglik" id="manglik" />
                                             <option value="Dont Know" <?php if($logged_in_member[0]['manglik_dosham'] == 'Dont Know') {  ?> selected="selected" <?php } ?>>Don't Know</option>
                                             <option value="Y" <?php if($logged_in_member[0]['manglik_dosham'] == 'Y') {  ?> selected="selected" <?php } ?>>Yes</option>
@@ -435,27 +456,31 @@ if(isset($_POST['submit']))
                                         </select>
 							</li></ul>
                             
-                             <ul><li><label>Gotra /Gothram</label>
+                             <ul>
+                             	<li><label>Gotra /Gothram</label>
  									<input type="text" name="gothram" value="<?php echo $logged_in_member[0]['gothram']; ?>" id="gothram">
                             </li></ul>
                     </div>
                     
                     <div class="row-detail new_acc editprof">
                           <h3>Astro info</h3>
-                           <ul><li><label>Date of Birth</label>
+                           <ul>
+                           	<li><label>Date of Birth</label>
                      		<div class="controls">
           <input type="text" class="date-picker" value="<?php echo date('d-m-Y',strtotime($logged_in_member[0]['date_of_birth'])); ?>" id="dob" name="dob" />
                             </div>
                             </li></ul>
                             
-                            <ul><li><label>Place of Birth</label>
+                            <ul>
+                            	<li><label>Place of Birth</label>
                    					 <div><input type="text" name="place_of_birth" id="place_of_birth" value="<?php echo $logged_in_member[0]['place_of_birth']; ?>"  /></div>
                     		</li></ul>
                     </div>
                     
                     <div class="row-detail new_acc editprof">
                           <h3>Family</h3>
-                           <ul><li><label>Brothers</label>
+                           <ul>
+                           	<li><label>Brothers</label>
 								<br class="clear" />
                              <select id="num_bro" name="num_bro" style="width:80px;">	
                 
@@ -490,7 +515,8 @@ if(isset($_POST['submit']))
                                      </select><span style="padding:8px 4px 0; float:left;">are married</span>
              				</li></ul>
                             
-                            <ul><li><label>Living with Parents?</label>
+                            <ul>
+                            	<li><label>Living with Parents?</label>
                                      <select name="drpLiving" id="drpLiving" >
                                         <option value="">Select</option>
                                         <option value="Y" <?php if($logged_in_member[0]['living_with_parents'] == "Y"){?> selected="selected" <?php } ?>>Yes</option>	
@@ -498,7 +524,8 @@ if(isset($_POST['submit']))
                                      </select>
                             </li></ul>
                             
-                            <ul><li><label>Family Values</label>
+                            <ul>
+                            	<li><label>Family Values</label>
 									<select id="drpFamilyValues" name="drpFamilyValues" tabindex="19">	
                         				<option value="">--Select--</option>
                         		        <option value="orthodox" <?php if($logged_in_member[0]['family_value'] == "orthodox") { ?> selected="selected" <?php } ?>>Orthodox</option>
@@ -508,7 +535,8 @@ if(isset($_POST['submit']))
                                     </select>
                             </li></ul>
                             
-                            <ul><li><label>Family Type</label>
+                            <ul>
+                            	<li><label>Family Type</label>
 										<select id="drpFamilyType" name="drpFamilyType" tabindex="18">	
                         			        <option value="">--Select--</option>
                         			        <option value="joint" <?php if($logged_in_member[0]['family_type'] == "joint") { ?> selected="selected" <?php } ?>>Joint</option>
@@ -516,7 +544,8 @@ if(isset($_POST['submit']))
                         			    </select>
                             </li></ul>
                             
-                            <ul><li><label>Family Status</label>
+                            <ul>
+                            	<li><label>Family Status</label>
 									 <select id="drpFamilyStatus" name="drpFamilyStatus" tabindex="17">	
                         					<option value="">--Select--</option>
                         					<option value="Middle" <?php if($logged_in_member[0]['family_status'] == "Middle") { ?> selected="selected" <?php } ?>>Middle class</option>
@@ -529,7 +558,8 @@ if(isset($_POST['submit']))
                     
                     <div class="row-detail new_acc editprof">
                           <h3>Lifestyle</h3>
-                           <ul><li><label>Smoking Habits</label>
+                           <ul>
+                           	<li><label>Smoking Habits</label>
                                     <select name="drpSmoking" id="drpSmoking" />
                                         <option value="">Select</option>
                                         <option value="Y" <?php if($logged_in_member[0]['is_smoker'] == "Y"){?> selected="selected"<?PHP } ?>>Yes</option>
@@ -538,7 +568,8 @@ if(isset($_POST['submit']))
                                     </select>
                             </li></ul>
                             
-                             <ul><li> <label>Drinking Habits</label>
+                             <ul>
+                             	<li> <label>Drinking Habits</label>
                                         <select name="drpDrinking" id="drpDrinking"  />
                                             <option value="">Select</option>
                                             <option value="Y" <?php if($logged_in_member[0]['is_drinker'] == "Y"){?> selected="selected"<?PHP } ?>>Yes</option>
@@ -547,7 +578,8 @@ if(isset($_POST['submit']))
                                         </select> 
                             </li></ul>
                             
-                             <ul><li> <label>Eating Habits</label>
+                             <ul>
+                             	<li> <label>Eating Habits</label>
                                         <select name="drpEatingHabits" id="drpEatingHabits"  />
                                             <option value="">Select</option>
                                             <option value="Vegetarian" <?php if($logged_in_member[0]['food'] == "Vegetarian"){?> selected="selected"<?PHP } ?>>Vegetarian   </option>
@@ -559,7 +591,8 @@ if(isset($_POST['submit']))
                     </div>
                     
                      <div class="row-detail new_acc editprof">
-                           <ul><li><label><input type="checkbox" name="mail_alerts" style="margin-right:7px;" value="1" <?php if($logged_in_member[0]['mail_alerts']==1){ ?> checked="checked" <?php } ?> />Do you want mail alerts?</label><br /><br />
+                           <ul>
+                           	<li><label><input type="checkbox" name="mail_alerts" style="margin-right:7px;" value="1" <?php if($logged_in_member[0]['mail_alerts']==1){ ?> checked="checked" <?php } ?> />Do you want mail alerts?</label><br /><br />
 							<?php
 								 $select_member_plan="select member_plans.* from member_plans, members where member_plans.member_id='".$_SESSION['logged_user'][0]['id']."' AND members.id=member_plans.member_id";
 								$db_member_plan=$obj->select($select_member_plan);

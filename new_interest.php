@@ -21,10 +21,15 @@ if($_SESSION['UserEmail']=='')
 <link rel="stylesheet" href="assets/css/colorbox.css" />
 <link rel="stylesheet" href="css/colorbox.css" />
 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 </head>
 		
 <body>
 
+<div class="container">
+    <div class="row">
 <?php
 include("common_user_fetch.php");
 /*if($_SESSION['UserEmail']!='')
@@ -147,26 +152,22 @@ $(document).ready(function(){
 </script>
 
 <div class="topMain">
-	<div class="wrapper">
-    	<?php include('include/header.inc.php'); ?>
-		<?php include('include/slider1.inc.php'); ?>
-		<div class="header inn" style="display:none">
-        	<div class="titlebox">
-            	<h2>New Interest</h2>
-                
-               
-            </div>
+    <?php include('include/header.inc.php'); ?>
+    <?php include('include/slider1.inc.php'); ?>
+    <div class="header inn" style="display:none">
+        <div class="titlebox col-md-12">
+            New Interest
         </div>
     </div>
 </div>
-<div class="wrapper">
+<div class="col-md-12">
 	<div  class="mid col-md-12 col-sm-12 col-xs-12">
     	 <?php include('include/edit_profile_top.inc.php'); ?>
          <?php include('include/profile_leftbar.inc.php'); ?>
 		 <?php include('include/new_interest.inc.php'); ?>
     </div>
-<div class="wrapper">
      <?php include('include/footer.inc.php'); ?>
+</div>
 </div>
 </div>
 </body>

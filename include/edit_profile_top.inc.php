@@ -96,8 +96,8 @@ $db_date = $obj->select($select_date);
 		$exp_date=date('d M Y',strtotime('+1 month '.$db_date[0]['reg_date']));
 	}*/
 ?>
-<div class="mid_top1 col-md-12">
-    <div class="prf_comp_percnt col-md-6 col-xs-12">
+<div class="mid_top1 col-md-12 col-xs-12">
+    <div class="prf_comp_percnt col-md-4 col-xs-12">
     	<?php
 		$profile_complate=0;
 		$select_member="select * from members where id='".$_SESSION['logged_user'][0]['id']."'";
@@ -224,12 +224,12 @@ $db_date = $obj->select($select_date);
 		
 		?>
     	Your Profile Completed <?php echo $profile_complate; ?>%<br />
-        <span class="cbar1">
+        <span class="cbar1 col-md-12 col-xs-12 col-sm-12">
         	<span class="cbar1_in" style="width:<?php echo $profile_complate; ?>%;<?php if($profile_complate>70){ echo "background:green"; }else if($profile_complate>50 && $profile_complate<=70){ echo 'background:#ff7f00'; } ?>"></span>
 		</span>
 	</div>
     
-    <div class="membership_status col-md-6 col-xs-12">
+    <div class="membership_status col-md-8 col-xs-12">
     <div class="welcum-user">Welcome Back, <?php echo ucfirst($logged_in_member[0]['name']);?> (<?php echo $logged_in_member[0]['member_id']; ?>)</div>
     <h2>Membership Status: <span><?php if(count($db_member_plan)==0){ ?>Free Membership<?php }else{ echo $db_plan[0]['plan_name']; } ?></span></h2>
     

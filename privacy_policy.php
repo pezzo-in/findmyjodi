@@ -32,11 +32,15 @@ $(document).ready(function(){
 });
 
 </script>
-    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 
 </head>
 		
 <body>
+<div class="container">
+    <div class="row">
 <?php 
 include("common_user_fetch.php");
 /*if($_SESSION['UserEmail']!='')
@@ -60,19 +64,19 @@ include("common_user_fetch.php");
 	}
 }*/
 ?>
-<div class="topMain">
-	<div class="wrapper">
+<div class="topMain col-md-12">
     	<?php include('include/header.inc.php'); ?>
 		<div class="header inn">
-        	<div class="titlebox">
-            	<h2>Privacy Policy</h2>
+        	<div class="titlebox col-md-12">
+            	Privacy Policy
             </div>
         </div>
     </div>
-</div>
-<div class="wrapper">
+<div class="col-md-12">
 	 <?php include('include/privacy_policy.inc.php'); ?>
      <?php include('include/footer.inc.php'); ?>
+</div>
+</div>
 </div>
 
 </body>

@@ -101,7 +101,7 @@ $(document).ready(function(e) {
 </script>
 <?php unset($_SESSION['profile_update']); } ?>
         <?php if(!empty($logged_in_member)) { ?>	
-        <div class="content">
+        <div class="content col-md-9 col-xs-12 col-sm-12">
         <div class="profile_details">
             	<?php if($_GET['msg'] == 'D'){
 						echo "Your profile is successfully Deactivated.";
@@ -109,40 +109,6 @@ $(document).ready(function(e) {
 						echo "Your profile is successfully Activated.";
 					}
 					?>
-            	<div class="profile_img">
-                    <div class="profile-img-box">
-                    <?php
-						
-						if(!empty($logged_in_member[0]['photo']) && $logged_in_member[0]['Approve']=='1')
-						{
-							$path = "upload/".$logged_in_member[0]['photo'];
-							if (file_exists($path)) { 
-                       			echo '<img class="size" src="'.$path.'"/>';
-							}
-							else{
-								if($_SESSION['logged_user'][0]['gender']=='M')
-									echo '<img title="click here to upload photo" class="" src="'."images/male-user1.png".'"/>';
-								else
-									echo '<img title="click here to upload photo" class="" src="'."images/female-user1.png".'"/>';
-							}
-						}
-						else{
-								if($_SESSION['logged_user'][0]['gender']=='M')
-									echo '<img title="click here to upload photo" class="" src="'."images/male-user1.png".'"/>';
-								else
-									echo '<img title="click here to upload photo" class="" src="'."images/female-user1.png".'"/>';
-							}?>
-                    </div>
-                     <div align="right"><a href="edit_profile.php">Edit Profile</a></div>  
-                    <h2><?php echo ucfirst($logged_in_member[0]['name']).' ('.$logged_in_member[0]['member_id'] .') ' ?></h2>  
-                    <p><?php echo ucfirst($logged_in_member[0]['name']); ?> ( <?php echo $logged_in_member[0]['member_id']; ?> )<br>
-    <?php echo $logged_in_member[0]['age']; ?> Yrs<br>
-    <?php
-	$select_education="select * from education_course where Id='".$logged_in_member[0]['education']."'";
-	$db_education=$obj->select($select_education);
-	echo $db_education[0]['Title'];
-	?>
-    			</div>
                 
                 <?php if($logged_in_member[0]['about_me']!=''){ ?>
                 <div class="row-detail">
@@ -154,17 +120,17 @@ $(document).ready(function(e) {
                 <?php if($logged_in_member[0]['relationship_status']!='' || $logged_in_member[0]['noof_children_living_status'] || $logged_in_member[0]['profile_for'] || $logged_in_member[0]['annual_income'] || $logged_in_member[0]['star'] || $logged_in_member[0]['occupation'] || $logged_in_member[0]['state'] || $logged_in_member[0]['city']){ ?>
                 <div class="row-detail">
                 	<span class="about_me1"></span><h3>More About Me<?php //echo $logged_in_member[0]['name']; ?></h3>
-                	<?php if(!empty($logged_in_member[0]['relationship_status'])) { ?><ul><li>Marital Status</li><li>:</li><li><?php echo $logged_in_member[0]['relationship_status']; ?></li></ul><?php } ?>
-                    <?php if(!empty($logged_in_member[0]['noof_children_living_status'])) { ?><ul><li>Have Children</li><li>:</li><li><?php if(!empty($logged_in_member[0]['noof_children_living_status'])){ echo $logged_in_member[0]['noof_children_living_status']; } else { echo "No"; }  ?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['profile_for'])) { ?><ul><li>Created By</li><li>:</li><li><?php if($logged_in_member[0]['profile_for']=="Son" || $logged_in_member[0]['profile_for']=="Daughter") {echo "Parent";} else { echo $logged_in_member[0]['profile_for']; } ?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['star'])) { ?><ul><li>Star</li><li>:</li><li><?php echo $logged_in_member[0]['star']; ?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['country'])) { ?><ul><li>Country Living In</li><li>:</li><li><?php echo $logged_in_member[0]['country']; ?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['state'])) { ?><ul><li>Residing State</li><li>:</li><li><?php echo $logged_in_member[0]['state']; ?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['city'])) { ?><ul><li>Residing City</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['city']); ?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['mobile_no'])) { ?><ul><li>Mobile No.</li><li>:</li><li><?php echo $logged_in_member[0]['mob_code'].' '.$logged_in_member[0]['mobile_no']; ?></li></ul><?php } ?>
+                	<?php if(!empty($logged_in_member[0]['relationship_status'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Marital Status</li><li>:</li><li><?php echo $logged_in_member[0]['relationship_status']; ?></li></ul><?php } ?>
+                    <?php if(!empty($logged_in_member[0]['noof_children_living_status'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Have Children</li><li>:</li><li><?php if(!empty($logged_in_member[0]['noof_children_living_status'])){ echo $logged_in_member[0]['noof_children_living_status']; } else { echo "No"; }  ?></li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['profile_for'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Created By</li><li>:</li><li><?php if($logged_in_member[0]['profile_for']=="Son" || $logged_in_member[0]['profile_for']=="Daughter") {echo "Parent";} else { echo $logged_in_member[0]['profile_for']; } ?></li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['star'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Star</li><li>:</li><li><?php echo $logged_in_member[0]['star']; ?></li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['country'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Country Living In</li><li>:</li><li><?php echo $logged_in_member[0]['country']; ?></li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['state'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Residing State</li><li>:</li><li><?php echo $logged_in_member[0]['state']; ?></li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['city'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Residing City</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['city']); ?></li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['mobile_no'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Mobile No.</li><li>:</li><li><?php echo $logged_in_member[0]['mob_code'].' '.$logged_in_member[0]['mobile_no']; ?></li></ul><?php } ?>
                     
                     
-                    <ul><li>Last Login</li><li>:</li><li>
+                    <ul class="col-md-6 col-sm-6 col-xs-12"><li>Last Login</li><li>:</li><li>
 					<?php if($logged_in_member[0]['last_login'] == '0000-00-00') { ?>
                     <?php echo date('d M Y'); ?>
                     <?php } else { ?>
@@ -177,17 +143,17 @@ $(document).ready(function(e) {
                 <?php if($logged_in_member[0]['education']!='' || $logged_in_member[0]['employed_in']!=''){ ?>
                 <div class="row-detail">
                 	<span class="Qualification1"></span><h3><?php //echo $logged_in_member[0]['name']; ?> Education & Occupation</h3>
-                	<?php if(!empty($logged_in_member[0]['education'])) { ?><ul><li>Education</li><li>:</li><li>
+                	<?php if(!empty($logged_in_member[0]['education'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Education</li><li>:</li><li>
                     <?php
 					$select_education="select * from education_course where Id='".$logged_in_member[0]['education']."'";
 					$db_education=$obj->select($select_education);
 					echo $db_education[0]['Title'];
 					?>
                     </li></ul><?php } ?>
-                    <?php if(!empty($logged_in_member[0]['employed_in'])) { ?><ul><li>Employed in</li><li>:</li><li><?php echo $logged_in_member[0]['employed_in']; ?></li></ul><?php } ?>
+                    <?php if(!empty($logged_in_member[0]['employed_in'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Employed in</li><li>:</li><li><?php echo $logged_in_member[0]['employed_in']; ?></li></ul><?php } ?>
                     
-                    <?php if(!empty($logged_in_member[0]['annual_income'])) { ?><ul><li>Income</li><li>:</li><li><?php echo $logged_in_member[0]['annual_income']; ?></li></ul><?php } ?>
-					 <?php if(!empty($logged_in_member[0]['occupation'])) { ?><ul><li>Occupation</li><li>:</li><li><?php echo $logged_in_member[0]['occupation']; ?></li></ul><?php } ?>
+                    <?php if(!empty($logged_in_member[0]['annual_income'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Income</li><li>:</li><li><?php echo $logged_in_member[0]['annual_income']; ?></li></ul><?php } ?>
+					 <?php if(!empty($logged_in_member[0]['occupation'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Occupation</li><li>:</li><li><?php echo $logged_in_member[0]['occupation']; ?></li></ul><?php } ?>
                                         
                 </div>
                 <?php } ?>
@@ -196,7 +162,7 @@ $(document).ready(function(e) {
                 <div class="row-detail">
                 	<span class="looks1"></span><h3><?php //echo $logged_in_member[0]['name']; ?> Physical Appearance & Looks</h3>
                 	<?php if(!empty($logged_in_member[0]['height'])) { ?>
-                    	<ul><li>Height</li><li>:</li>
+                    	<ul class="col-md-6 col-sm-6 col-xs-12"><li>Height</li><li>:</li>
                         	<li>
 								<?php 
 								$select_height="select * from height where Id='".$logged_in_member[0]['height']."'";
@@ -207,47 +173,47 @@ $(document).ready(function(e) {
                             </li>
                         </ul>
 						<?php } ?>
-<?php if(!empty($logged_in_member[0]['weight'])) { ?><ul><li>Weight</li><li>:</li><li><?php echo $logged_in_member[0]['weight']; ?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['complexion'])) { ?><ul><li>Complexion</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['complexion']); ?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['body_type'])) { ?><ul><li>Body Type</li><li>:</li><li><?php echo $logged_in_member[0]['body_type']; ?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['physical_status'])) { ?><ul><li>Physical Status</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['physical_status']); ?></li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['weight'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Weight</li><li>:</li><li><?php echo $logged_in_member[0]['weight']; ?></li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['complexion'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Complexion</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['complexion']); ?></li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['body_type'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Body Type</li><li>:</li><li><?php echo $logged_in_member[0]['body_type']; ?></li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['physical_status'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Physical Status</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['physical_status']); ?></li></ul><?php } ?>
                 </div>
                 <?php } ?>
                
                 <?php if($logged_in_member[0]['religion']!='' || $logged_in_member[0]['mother_tongue']!='' || $logged_in_member[0]['caste']!='' || $logged_in_member[0]['subcaste']!='' || $logged_in_member[0]['manglik_dosham']!='' || $logged_in_member[0]['gothram']!=''){ ?>
                 <div class="row-detail">
                 	<span class="religion1"></span><h3><?php //echo $logged_in_member[0]['name']; ?> Religion and Social info</h3>
-                	<?php if(!empty($logged_in_member[0]['religion'])) { ?><ul><li>Religion</li><li>:</li><li><?php echo $logged_in_member[0]['religion']; ?></li></ul><?php } ?>
-                    <?php if(!empty($logged_in_member[0]['mother_tongue'])) { ?><ul><li>Mother Tongue</li><li>:</li><li><?php echo $logged_in_member[0]['mother_tongue']; ?></li></ul><?php } ?>
-                    <?php if(!empty($logged_in_member[0]['caste'])) { ?><ul><li>Caste</li><li>:</li><li><?php echo $logged_in_member[0]['caste']; ?></li></ul><?php } ?>
-                    <?php if(!empty($logged_in_member[0]['subcaste'])) { ?><ul><li>Sub Caste</li><li>:</li><li><?php echo $logged_in_member[0]['subcaste']; ?></li></ul><?php } ?>
-                   <?php if(!empty($logged_in_member[0]['manglik_dosham'])) { ?><ul><li>Manglik</li><li>:</li><li>
+                	<?php if(!empty($logged_in_member[0]['religion'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Religion</li><li>:</li><li><?php echo $logged_in_member[0]['religion']; ?></li></ul><?php } ?>
+                    <?php if(!empty($logged_in_member[0]['mother_tongue'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Mother Tongue</li><li>:</li><li><?php echo $logged_in_member[0]['mother_tongue']; ?></li></ul><?php } ?>
+                    <?php if(!empty($logged_in_member[0]['caste'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Caste</li><li>:</li><li><?php echo $logged_in_member[0]['caste']; ?></li></ul><?php } ?>
+                    <?php if(!empty($logged_in_member[0]['subcaste'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Sub Caste</li><li>:</li><li><?php echo $logged_in_member[0]['subcaste']; ?></li></ul><?php } ?>
+                   <?php if(!empty($logged_in_member[0]['manglik_dosham'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Manglik</li><li>:</li><li>
 				   <?php if($logged_in_member[0]['manglik_dosham'] == 'N') { echo "No"; }elseif($logged_in_member[0]['manglik_dosham'] == 'Y') { echo "Yes"; }elseif($logged_in_member[0]['manglik_dosham'] == 'Dont Know') { echo "Dont Know"; } ?></li></ul><?php } ?>
-                    <?php if(!empty($logged_in_member[0]['gothram'])) { ?><ul><li>Gotra /Gothram </li><li>:</li><li><?php echo $logged_in_member[0]['gothram']; ?></li></ul><?php } ?>
-                    <?php if(!empty($logged_in_member[0]['horoscope_match'])) { ?><ul><li>Horoscope </li><li>:</li><li><?php echo $logged_in_member[0]['horoscope_match']; ?></li></ul><?php } ?>
+                    <?php if(!empty($logged_in_member[0]['gothram'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Gotra /Gothram </li><li>:</li><li><?php echo $logged_in_member[0]['gothram']; ?></li></ul><?php } ?>
+                    <?php if(!empty($logged_in_member[0]['horoscope_match'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Horoscope </li><li>:</li><li><?php echo $logged_in_member[0]['horoscope_match']; ?></li></ul><?php } ?>
                 </div>
                 <?php } ?>
                 
                 <?php if($logged_in_member[0]['date_of_birth']!='' || $logged_in_member[0]['place_of_birth']!='' ){ ?>
                 <div class="row-detail">
                 	<span class="astro1"></span><h3>Astro info</h3>
-                	<?php if(!empty($logged_in_member[0]['date_of_birth'])) { ?><ul><li>Date Of Birth</li><li>:</li><li><?php echo date('d M Y',strtotime(($logged_in_member[0]['date_of_birth']))); ?></li></ul><?php } ?>
-                    <?php if(!empty($logged_in_member[0]['place_of_birth'])) { ?><ul><li>Place of birth</li><li>:</li><li><?php echo $logged_in_member[0]['place_of_birth']; ?></li></ul><?php } ?>
+                	<?php if(!empty($logged_in_member[0]['date_of_birth'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Date Of Birth</li><li>:</li><li><?php echo date('d M Y',strtotime(($logged_in_member[0]['date_of_birth']))); ?></li></ul><?php } ?>
+                    <?php if(!empty($logged_in_member[0]['place_of_birth'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Place of birth</li><li>:</li><li><?php echo $logged_in_member[0]['place_of_birth']; ?></li></ul><?php } ?>
                 </div>
                 <?php } ?>
                 
                 <?php if($logged_in_member[0]['no_of_brothers']!='' || $logged_in_member[0]['no_of_sisters']!='' || $logged_in_member[0]['living_with_parents']!='' || $logged_in_member[0]['family_value']!='' || $logged_in_member[0]['family_type']!='' || $logged_in_member[0]['family_status']!=''){ ?>
                 <div class="row-detail">
                 	<span class="family1"></span><h3>Family</h3>
-<?php if(!empty($logged_in_member[0]['father_occupation'])) { ?><ul><li>Father's Occupation</li><li>:</li><li><?php echo $logged_in_member[0]['father_occupation']; ?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['mother_occupation'])) { ?><ul><li>Mother's Occupation</li><li>:</li><li><?php echo $logged_in_member[0]['mother_occupation']; ?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['no_of_brothers'])) { ?><ul><li>Brothers</li><li>:</li><li><?php echo $logged_in_member[0]['no_of_brothers']; ?> brother  (<?php echo $logged_in_member[0]['bro_married']; ?> Married)</li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['no_of_sisters'])) { ?><ul><li>Sisters</li><li>:</li><li><?php echo $logged_in_member[0]['no_of_sisters']; ?> sisters (<?php echo $logged_in_member[0]['sis_married']; ?> Married)</li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['living_with_parents'])) { ?> <ul><li>Living with parents?</li><li>:</li><li>
+<?php if(!empty($logged_in_member[0]['father_occupation'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Father's Occupation</li><li>:</li><li><?php echo $logged_in_member[0]['father_occupation']; ?></li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['mother_occupation'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Mother's Occupation</li><li>:</li><li><?php echo $logged_in_member[0]['mother_occupation']; ?></li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['no_of_brothers'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Brothers</li><li>:</li><li><?php echo $logged_in_member[0]['no_of_brothers']; ?> brother  (<?php echo $logged_in_member[0]['bro_married']; ?> Married)</li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['no_of_sisters'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Sisters</li><li>:</li><li><?php echo $logged_in_member[0]['no_of_sisters']; ?> sisters (<?php echo $logged_in_member[0]['sis_married']; ?> Married)</li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['living_with_parents'])) { ?> <ul class="col-md-6 col-sm-6 col-xs-12"><li>Living with parents?</li><li>:</li><li>
 <?php if( $logged_in_member[0]['living_with_parents'] == "Y") { echo "Yes"; } else { echo "No"; }?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['family_value'])) { ?> <ul><li>Family values</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['family_value']); ?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['family_type'])) { ?><ul><li>Family Type</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['family_type']); ?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['family_status'])) { ?><ul><li>Family Status</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['family_status']); ?></li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['family_value'])) { ?> <ul class="col-md-6 col-sm-6 col-xs-12"><li>Family values</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['family_value']); ?></li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['family_type'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Family Type</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['family_type']); ?></li></ul><?php } ?>
+<?php if(!empty($logged_in_member[0]['family_status'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Family Status</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['family_status']); ?></li></ul><?php } ?>
                 </div>
                 <?php } ?>
                 
@@ -255,9 +221,9 @@ $(document).ready(function(e) {
 						(!empty($logged_in_member[0]['is_drinker'])) || (!empty($logged_in_member[0]['eating_habits']))) { ?>
                 <div class="row-detail">
                 	<span class="life_style1"></span><h3><?php //echo $logged_in_member[0]['name']; ?> Lifestyle</h3>
-                     <?php if(!empty($logged_in_member[0]['is_smoker'])) { ?><ul><li>Smoking</li><li>:</li><li><?php if($logged_in_member[0]['is_smoker'] == 'N') { echo "No"; } elseif($logged_in_member[0]['is_smoker'] == "O"){ echo "Occasionally"; }else { echo "Yes"; } ?></li></ul><?php } ?>
-                    <?php if(!empty($logged_in_member[0]['is_drinker'])) { ?><ul><li>Drinking</li><li>:</li><li><?php if($logged_in_member[0]['is_drinker'] == "Y") { echo "Yes"; }elseif($logged_in_member[0]['is_drinker'] == "O"){ echo "Occasionally"; }else { echo "No"; } ?></li></ul><?php } ?>
-                     <?php if(!empty($logged_in_member[0]['food'])) { ?><ul><li>Food</li><li>:</li><li><?php echo $logged_in_member[0]['food']; ?></li></ul><?php } ?>
+                     <?php if(!empty($logged_in_member[0]['is_smoker'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Smoking</li><li>:</li><li><?php if($logged_in_member[0]['is_smoker'] == 'N') { echo "No"; } elseif($logged_in_member[0]['is_smoker'] == "O"){ echo "Occasionally"; }else { echo "Yes"; } ?></li></ul><?php } ?>
+                    <?php if(!empty($logged_in_member[0]['is_drinker'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Drinking</li><li>:</li><li><?php if($logged_in_member[0]['is_drinker'] == "Y") { echo "Yes"; }elseif($logged_in_member[0]['is_drinker'] == "O"){ echo "Occasionally"; }else { echo "No"; } ?></li></ul><?php } ?>
+                     <?php if(!empty($logged_in_member[0]['food'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Food</li><li>:</li><li><?php echo $logged_in_member[0]['food']; ?></li></ul><?php } ?>
                 </div>
                 <?php } ?>
                 
@@ -393,7 +359,7 @@ $(document).ready(function(e) {
                     <div class="row-detail">
                         <span class="patner1"></span><h3>Partner Prefrence</h3>   
                         <?php if($db_preferred_partner[0]['preferred_age']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Age</li>
                             <li>:</li>
                             <li><?php 
@@ -402,14 +368,14 @@ $(document).ready(function(e) {
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['marital_status']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Marital Status</li>
                             <li>:</li>
                             <li><?php echo $db_preferred_partner[0]['marital_status']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['height']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Height</li>
                             <li>:</li>
                             <li>
@@ -427,77 +393,77 @@ $(document).ready(function(e) {
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['physical_status']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Physical Status</li>
                             <li>:</li>
                             <li><?php echo ucfirst($db_preferred_partner[0]['physical_status']); ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['religion']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Religion</li>
                             <li>:</li>
                             <li><?php echo $db_preferred_partner[0]['religion']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['mother_tongue']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Mother Tongue</li>
                             <li>:</li>
                             <li><?php echo $db_preferred_partner[0]['mother_tongue']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['caste']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Caste</li>
                             <li>:</li>
                             <li><?php echo $db_preferred_partner[0]['caste']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['manglik']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Manglik</li>
                             <li>:</li>
                             <li><?php if($db_preferred_partner[0]['manglik']=='Y'){ echo 'Yes'; }else{ echo 'No'; } ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['star']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Star</li>
                             <li>:</li>
                             <li><?php echo $db_preferred_partner[0]['star']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['food']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Food</li>
                             <li>:</li>
                             <li><?php echo $db_preferred_partner[0]['food']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['is_drinker']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Drinking</li>
                             <li>:</li>
                             <li><?php if($db_preferred_partner[0]['is_drinker']=='N'){ echo 'No'; }else{ echo 'Yes'; } ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['is_smoker']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Smoking</li>
                             <li>:</li>
                             <li><?php if($db_preferred_partner[0]['is_smoker']=='N'){ echo 'No'; }else{ echo 'Yes'; } ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['country']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Country</li>
                             <li>:</li>
                             <li><?php echo $db_preferred_partner[0]['country']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['city']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>City</li>
                             <li>:</li>
                             <li><?php echo $db_preferred_partner[0]['city']; ?></li>
@@ -512,7 +478,7 @@ $(document).ready(function(e) {
 								
 							?>
                            
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Education</li>
                             <li>:</li>                            
                             <li><?php echo $db_education_details[0]['Title']; ?></li>
@@ -520,7 +486,7 @@ $(document).ready(function(e) {
                         
                         <?php }  ?>
                          <?php if($db_preferred_partner[0]['manglik']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Manglik</li>
                             <li>:</li>
                            	<?php if($db_preferred_partner[0]['manglik']=='N') {?>
@@ -533,21 +499,21 @@ $(document).ready(function(e) {
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['occupation']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Occupation</li>
                             <li>:</li>
                             <li><?php echo $db_preferred_partner[0]['occupation']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['annual_income']!=''){ ?>
-                        <ul>
+                        <ul class="col-md-6 col-sm-6 col-xs-12">
                         	<li>Annual Income</li>
                             <li>:</li>
                             <li><?php echo $db_preferred_partner[0]['annual_income']; ?></li>
                         </ul>
                         <?php } ?>
                         <?php if($db_preferred_partner[0]['partner_description']!=''){ ?>
-                        <ul style="width:100%">
+                        <ul class="col-md-12 col-sm-12 col-xs-12">
                         	<li>Partner Description</li>
                             <li>:</li>
                             <li style="width:450px;"><?php echo $db_preferred_partner[0]['partner_description']; ?></li>

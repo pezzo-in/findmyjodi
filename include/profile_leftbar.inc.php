@@ -1,4 +1,4 @@
-<div class="sidebar col-md-4">
+<div class="sidebar col-md-3">
            <div class="sidebar-main sidebar-main-tab">
                 <div id="tab-container">
                         <ul class="msgtab">
