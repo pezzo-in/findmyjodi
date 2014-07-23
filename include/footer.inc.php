@@ -1,7 +1,7 @@
 <div class="footer-main">
-    <div class="footer col-md-12">
+    <div class="footer col-md-12 col-sm-12 col-xs-12">
         <div class="foot_copy">All rights reserved @Findmyjodi.com</div>
-        <ul class="foot_link">
+        <ul class="foot_link hidden-sm hidden-xs">
         <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
             <li><a href="index.php">Home</a></li>
             <?php }else{ ?>

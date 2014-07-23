@@ -36,7 +36,7 @@ function chat($path){
 function chatLayout($path){
 	global $translateServ;
 	?>
-	<div id="chatCtr">
+	<div id="chatCtr" class="hidden-sm hidden-xs">
 		<ul>
 			<li id="prevT" style="display:none;">
 				<span id="tabsLeftP"> 0 </span><span class="icon next"></span>

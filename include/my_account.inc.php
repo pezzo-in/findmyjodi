@@ -236,7 +236,7 @@ $(document).ready(function(e) {
                  <div class="row-detail row-detail-hobbies">
                 	<span class="hobbies1"></span><h3>Hobbies & Interests</h3>
                      
-					 <?php if($db_memebr_hobbies_interest[0]['hobbies']!=''){?><ul style="width:100%"><li>Hobbies</li><li class="nthchild2">:</li><li>
+					 <?php if($db_memebr_hobbies_interest[0]['hobbies']!=''){?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Hobbies</li><li class="nthchild2">:</li><li>
 					 <?php
 						$select_hobbies="select * from hobbies where id IN(".$db_memebr_hobbies_interest[0]['hobbies'].")";
 						$db_hobbies=$obj->select($select_hobbies);
@@ -249,7 +249,7 @@ $(document).ready(function(e) {
 						}
 					 ?></li></ul><?php } ?>
                      
-                     <?php if($db_memebr_hobbies_interest[0]['interests']!=''){?><ul style="width:100%"><li>Interests</li><li class="nthchild2">:</li><li>
+                     <?php if($db_memebr_hobbies_interest[0]['interests']!=''){?><ul><li>Interests</li><li class="nthchild2">:</li><li>
 					 <?php
 						$select_hobbies="select * from interest where id IN(".$db_memebr_hobbies_interest[0]['interests'].")";
 						$db_hobbies=$obj->select($select_hobbies);
@@ -262,7 +262,7 @@ $(document).ready(function(e) {
 						}
 					 ?></li></ul><?php } ?>
                      
-                     <?php if($db_memebr_hobbies_interest[0]['music']!=''){?><ul style="width:100%"><li>Favourite Music</li><li class="nthchild2">:</li><li>		<?php
+                     <?php if($db_memebr_hobbies_interest[0]['music']!=''){?><ul><li>Favourite Music</li><li class="nthchild2">:</li><li>		<?php
 						$select_hobbies="select * from music where id IN(".$db_memebr_hobbies_interest[0]['music'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -274,7 +274,7 @@ $(document).ready(function(e) {
 						}
 					 ?></li></ul><?php } ?>
                      
-                     <?php if($db_memebr_hobbies_interest[0]['read_book']!=''){?><ul style="width:100%"><li>Favourite Read</li><li class="nthchild2">:</li><li><?php
+                     <?php if($db_memebr_hobbies_interest[0]['read_book']!=''){?><ul><li>Favourite Read</li><li class="nthchild2">:</li><li><?php
 						$select_hobbies="select * from tbl_read where id IN(".$db_memebr_hobbies_interest[0]['read_book'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -286,7 +286,7 @@ $(document).ready(function(e) {
 						}
 					 ?></li></ul><?php } ?>
                      
-                     <?php if($db_memebr_hobbies_interest[0]['movies']!=''){?><ul style="width:100%"><li>Favourite movie</li><li class="nthchild2">:</li><li><?php
+                     <?php if($db_memebr_hobbies_interest[0]['movies']!=''){?><ul><li>Favourite movie</li><li class="nthchild2">:</li><li><?php
 						$select_hobbies="select * from movies where id IN(".$db_memebr_hobbies_interest[0]['movies'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -298,7 +298,7 @@ $(document).ready(function(e) {
 						}
 					 ?></li></ul><?php } ?>
                      
-                     <?php if($db_memebr_hobbies_interest[0]['sports']!=''){?><ul style="width:100%"><li>Sports/fitness Activities</li><li class="nthchild2">:</li><li><?php
+                     <?php if($db_memebr_hobbies_interest[0]['sports']!=''){?><ul><li>Sports/fitness Activities</li><li class="nthchild2">:</li><li><?php
 						$select_hobbies="select * from activities where id IN(".$db_memebr_hobbies_interest[0]['sports'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -310,7 +310,7 @@ $(document).ready(function(e) {
 						}
 					 ?></li></ul><?php } ?>
                      
-                     <?php if($db_memebr_hobbies_interest[0]['cuisine']!=''){?><ul style="width:100%"><li>Favourite Couisine</li><li class="nthchild2">:</li><li><?php
+                     <?php if($db_memebr_hobbies_interest[0]['cuisine']!=''){?><ul><li>Favourite Couisine</li><li class="nthchild2">:</li><li><?php
 						$select_hobbies="select * from couisine where id IN(".$db_memebr_hobbies_interest[0]['cuisine'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -322,7 +322,7 @@ $(document).ready(function(e) {
 						}
 					 ?></li></ul><?php } ?>
                      
-                      <?php if($db_memebr_hobbies_interest[0]['dress_style']!=''){?><ul style="width:100%"><li>Dress Style</li><li class="nthchild2">:</li><li><?php
+                      <?php if($db_memebr_hobbies_interest[0]['dress_style']!=''){?><ul><li>Dress Style</li><li class="nthchild2">:</li><li><?php
 						$select_hobbies="select * from dress_style where id IN(".$db_memebr_hobbies_interest[0]['dress_style'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -334,7 +334,7 @@ $(document).ready(function(e) {
 						}
 					 ?></li></ul><?php } ?>
                      
-                     <?php if($db_memebr_hobbies_interest[0]['spoken_lang']!=''){?><ul style="width:100%"><li>Spoken Languages</li><li class="nthchild2">:</li><li><?php
+                     <?php if($db_memebr_hobbies_interest[0]['spoken_lang']!=''){?><ul><li>Spoken Languages</li><li class="nthchild2">:</li><li><?php
 						$select_hobbies="select * from languages where id IN(".$db_memebr_hobbies_interest[0]['spoken_lang'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)

@@ -196,7 +196,7 @@ include("common_user_fetch.php");
      </div>
      <div class="footer">
         	<div class="foot_copy">All rights reserved @Kanadalagna.com</div>
-            <ul class="foot_link">
+            <ul class="foot_link hidden-sm hidden-xs">
             	<li><a href="#">Home</a></li>
                 <li><a href="#">Search</a></li>
                 <li><a href="#">Upgrade</a></li>

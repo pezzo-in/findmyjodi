@@ -12,7 +12,7 @@ if(count($dbonline1)>0)
 
 ?>
 
-<div class="online_member">
+<div class="online_member hidden-xs hidden-sm">
 
 <div class="ol-users">
 

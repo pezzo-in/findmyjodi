@@ -1,5 +1,5 @@
 	
-	 	<div  class="mid col-md-12 col-sm-12 col-xs-12" style="width:954px;">
+	 	<div  class="mid col-md-12 col-sm-12 col-xs-12">
 			<div id="tab-container">
                       <h2 style="width:950px;">Success Story</h2>
                                               	
@@ -23,12 +23,7 @@
                                     </tr>
                                  
                                 </table> 
-		                   	</div>          
-                        
-                        
-                   	
-                  
-                        
+		                   	</div>
                     </div>
         </div>
 <style type="text/css">
@@ -37,7 +32,7 @@
 {
 width:90px; height:33px; float:left; clear:both; background:url(images/submit_btn.png) no-repeat left top;
  border:none; text-indent:-9999px; overflow:hidden; font-size:0; text-align: left; cursor:pointer; color:#f46989; 
- *margin-right:30px; margin-top:10px;margin-left:153px;
+ *margin-right:30px; margin-top:10px;margin-left:153px;row-detail row-detail-hobbies
 }
 </style>
         

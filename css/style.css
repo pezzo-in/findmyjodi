@@ -253,7 +253,7 @@ ul.menu {
     float: right;
     list-style: none outside none;
     margin: 0;
-    padding: 0;
+    padding: 5px 0 0;
 }
 
 ul.menu li {
@@ -719,7 +719,7 @@ ul.foot_link li a:hover {
     padding-bottom: 5px;
     position: relative;
     width: 100%;
-    z-index: 9999;
+    z-index: 99;
 }
 
 .sidebar h2 {
@@ -5591,4 +5591,8 @@ ul.profl-list .griddetail {
 
 .morebenefits-btn:hover {
     color: #fff;
+}
+
+.online_member{
+    z-index: 100;
 }

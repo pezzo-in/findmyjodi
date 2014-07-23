@@ -92,12 +92,16 @@ $(document).ready(function(){
 	$(document).ready(function(){
 		$(".inline").colorbox({inline:true, maxWidth:"900px;"});
 	});
-</script> 
-    
+</script>
 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 </head>
 		
 <body>
+<div class="container">
+    <div class="row">
 <?php
 include("common_user_fetch.php");
 /*if($_SESSION['UserEmail']!='')
@@ -121,19 +125,19 @@ include("common_user_fetch.php");
 	}
 }*/
 ?>
-<div class="topMain">
-	<div class="wrapper">
-    	<?php include('include/header.inc.php'); ?>
-		<div class="header inn">
-        	<div class="titlebox">
-            	<h2>Packages</h2>
-            </div>
+<div class="topMain col-md-12">
+    <?php include('include/header.inc.php'); ?>
+    <div class="header inn">
+        <div class="titlebox col-md-12">
+            <h2>Packages</h2>
         </div>
     </div>
 </div>
-<div class="wrapper">
+<div class="col-md-12">
 	 <?php include('include/packages.inc.php'); ?>
      <?php include('include/footer.inc.php'); ?>
+</div>
+</div>
 </div>
 
 </body>

@@ -71,6 +71,7 @@ echo '<a href="javascript:;" class="popper_profile" data-popbox="pop_profile"><i
 						echo '<img class="" width="130" height="130" src="'."images/female-user1.png".'"/>';
 				}?>
         <!--<img src="images/timeline-thumb.jpg" />--></a></div>
+
         <ul class="list-prfl">
         	<li><a href="timeline.php">Timeline</a></li>
             <li><a href="my_account.php">Profile</a></li>
@@ -84,15 +85,15 @@ $db_following = $obj->select($select_following);
 ?>
             <li><a href="<?php if(count($db_followers)>0){ ?>followers.php <?php } else {?> javascript:void(0); <?php } ?>">Followers</a><span><?php echo count($db_followers); ?></span></li>
             <li><a href="<?php if(count($db_following)>0){ ?>following.php<?php } else {?> javascript:void(0); <?php } ?>">Following</a><span><?php echo count($db_following); ?></span></li>
-            
+
             <li><a href="gallery.php">Album</a></li>
-            
+
             <?php
-$new_msg = "select M.*,U.*,U.id as uid from messages M left join members U on M.from_mem=U.member_id  where M.to_mem = '".$_SESSION['logged_user'][0]['member_id']."'";	
-			$total_msg = $obj->select($new_msg);	
-$new_msg1= "select M.*,U.*,U.id as uid from messages M left join members U on M.from_mem=U.member_id  where M.to_mem = '".$_SESSION['logged_user'][0]['member_id']."' AND is_read=0 ";	
-			$total_msg1 = $obj->select($new_msg1);	
-			
+$new_msg = "select M.*,U.*,U.id as uid from messages M left join members U on M.from_mem=U.member_id  where M.to_mem = '".$_SESSION['logged_user'][0]['member_id']."'";
+			$total_msg = $obj->select($new_msg);
+$new_msg1= "select M.*,U.*,U.id as uid from messages M left join members U on M.from_mem=U.member_id  where M.to_mem = '".$_SESSION['logged_user'][0]['member_id']."' AND is_read=0 ";
+			$total_msg1 = $obj->select($new_msg1);
+
 			?>
             <input type="hidden" id="ids" name="ids" value="<?php echo $_SESSION['logged_user'][0]['member_id']; ?>"/>
           <li style="position:relative;">
@@ -101,16 +102,16 @@ $new_msg1= "select M.*,U.*,U.id as uid from messages M left join members U on M.
           <?php if(count($total_msg1) > 0) { ?>
           <span class="total-noti cnt"><?php echo count($total_msg1); ?></span>
           <?php } ?>
-           
+
           </a>
           <div class="message_notification1" id="chatNoti1">
           	<div class="chatNotiHeader">
-            	<a href="#" class="link_1">Inbox 
+            	<a href="#" class="link_1">Inbox
                 <?php if(count($total_msg1) > 0) { ?>
                 <span class="cnt">(<?php echo count($total_msg1); ?>)</span>
                 <?php } ?>
                 </a><!--<a href="#" class="link_2">Other <span>(12)</span></a><a href="#" class="link_3"><span>Send a New Message</span></a>-->
-              
+
             </div>
             <div class="chatNotiList">
             	<ul>
@@ -129,7 +130,7 @@ $new_msg1= "select M.*,U.*,U.id as uid from messages M left join members U on M.
 			{
 				$pic="select * from member_photos where member_id='".$total_msg[$lpcntrl]['uid']."' and Approve=1";
 				$dbpic=$obj->select($pic);
-				
+
 				if($total_msg[$lpcntrl]['gender']=='M' && $dbpic[0]['photo']!='')
 				{
 					$pic="<img src='upload/".$dbpic[0]['photo']."' height='50' width='50' />";
@@ -158,7 +159,7 @@ $new_msg1= "select M.*,U.*,U.id as uid from messages M left join members U on M.
 				{
 					echo $pic;
 				}
-				
+
 			 ?>
                 <div class="chatMsgCont clearfix">
                     <span class="chatMsgName"><?php echo ucfirst($total_msg[$lpcntrl]['name']); ?></span>
@@ -186,17 +187,17 @@ $new_msg1= "select M.*,U.*,U.id as uid from messages M left join members U on M.
 			//echo $sql;
 			$new_int=$obj->select($sql); ?>
 			<?php //echo"<pre>";print_r($new_int); ?>
-		
+
             <li style="position:relative;"><a href="javascript:void(0)" id="notification2">
             <img src="images/icon-notify.png" style="border: solid 1px rgb(224, 238, 244);border-radius: 3px;"  title="Notification" />
             <?php if(count($new_int) > 0) { ?>
             <span class="total-noti cnt1"><?php echo count($new_int); ?></span>
             <?php } ?>
             </a>
-            
+
              <div class="message_notification1" id="chatNoti2">
             <div class="chatNotiHeader">
-          <a href="#" class="link_1">Notifications 
+          <a href="#" class="link_1">Notifications
           <?php if(count($new_int) > 0) { ?>
           <span class="cnt1">(<?php echo count($new_int); ?>)</span>
           <?php } ?>
@@ -220,12 +221,12 @@ $new_msg1= "select M.*,U.*,U.id as uid from messages M left join members U on M.
 				$select="select * from members where member_id='".$new_int[$lpcntrl]['from_id']."'";
 				$dbselect=$obj->select($select);
 				//echo"<pre>";print_r($dbselect);
-				
-				
+
+
 				$pic="select * from member_photos where member_id='".$dbselect[0]['id']."' AND APPROVE = '1'";
 				$dbpic=$obj->select($pic);
-				
-				//echo"<pre>";print_r($dbpic); 
+
+				//echo"<pre>";print_r($dbpic);
 				if($dbselect[0]['gender']=='M' && $dbpic[0]['photo']!='')
 				{
 					$pic="<img src='upload/".$dbpic[0]['photo']."' height='50' width='50' />";
@@ -255,7 +256,7 @@ $new_msg1= "select M.*,U.*,U.id as uid from messages M left join members U on M.
 					echo $pic1;
 				}
 				?>
-                
+
                 <?php if($new_int[$lpcntrl]['type'] == '1'){?>
                 	<?php $str = "Have you interested"; ?>
                 <?php } ?>
@@ -268,7 +269,7 @@ $new_msg1= "select M.*,U.*,U.id as uid from messages M left join members U on M.
                 <?php if($new_int[$lpcntrl]['type'] == '4'){
 					$str = "Need More Info";
 				}?>
-	 	     
+
           <?php
 $date1 = $new_int[$lpcntrl]['cdate'];
 $date2 = date('Y-m-d H:i');
@@ -305,7 +306,7 @@ $str1="1 m";
                   <span class="chatMsgahc"><?php echo $dbselect[0]['age']."Yrs- ".$dbselect[0]['height']."Ft- ".$dbselect[0]['city']; ?></span></br>
                      <span class="chatMsgahc"><?php echo $str; ?></span></br>
                   <span class="chatMsgText"><?php echo "";//$total_msg[$lpcntrl]['message']; ?></span>
-					
+
                   <span class="chatMsgDate"><?php echo $str1; ?></span>
               </div>
                         </a>
@@ -324,9 +325,9 @@ $str1="1 m";
 			<div class="chatNotiFooter clear">
             	<a href="new_interest.php#msgtab-2">See All</a>
             </div></div>
-            
+
            <!-- <li><a href="#"><img src="images/notifi-icon.png" /><span class="total-noti">0</span></a></li>-->
-            
+
             <!--<li><a href="#" class="following-btn"></a></li>
             <li><a href="#" class="follow-btn"></a></li>-->
         	</li>

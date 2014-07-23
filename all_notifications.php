@@ -12,11 +12,14 @@ include('class.paging.php');
 <title>Matrimonial</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="css/colorbox.css" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 </head>
 		
 <body>
 
+<div class="container">
+    <div class="row">
 <?php
 include("common_user_fetch.php");
 /*if($_SESSION['UserEmail']!='')
@@ -115,20 +118,20 @@ $(function() {
 </script> 
 <script type="text/javascript" src="js/jquery.cycle.all.js"></script>
 
-<div class="topMain">
-	<div class="wrapper">
-    	<?php include('include/header.inc.php'); ?>
-		<?php include('include/slider1.inc.php'); ?>
-		<div class="header inn" style="display:none">
-        	<div class="titlebox">
-            	<h2>Notifications</h2>
-            </div>
+<div class="topMain col-md-12">
+    <?php include('include/header.inc.php'); ?>
+    <?php include('include/slider1.inc.php'); ?>
+    <div class="header inn" style="display:none">
+        <div class="titlebox col-md-12">
+            <h2>Notifications</h2>
         </div>
     </div>
 </div>
-<div class="wrapper">
+<div class="col-md-12">
 	 <?php include('include/all_notifications.inc.php'); ?>
      <?php include('include/footer.inc.php'); ?>
+</div>
+</div>
 </div>
 
 </body>

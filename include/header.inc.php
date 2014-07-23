@@ -74,7 +74,7 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
         <?php }else { ?>
         <a href="my_account.php" class="logo col-md-2" style="margin-top:-20px;"><img src="images/logo2.png" alt="Find My Jodi" title="Find My Jodi" width="130" /></a>
         <?php } ?>
-        <div class="topLogin col-md-3 pull-right text-right col-xs-12">
+        <div class="topLogin col-md-3 pull-right text-right col-xs-1">
             <div class="loginlink col-md-6 col-xs-6 col-sm-6">
             <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
                 <div class="dropdown">
