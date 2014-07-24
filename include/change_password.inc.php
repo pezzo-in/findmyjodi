@@ -50,21 +50,21 @@ if(isset($_POST['change_password']))
 
                     	<label>Old Password</label>
 
-						<input type="password" name="old_pass" id="old_pass" value="<?php if($success==''){ echo $_POST['old_pass']; } ?>" style="margin-bottom:inherit;" />
+						<input type="password" name="old_pass" id="old_pass" value="<?php if($success==''){ echo $_POST['old_pass']; } ?>" style="margin-bottom:inherit;" class="col-md-4 col-xs-12 col-sm-8 form-control" />
 						<label style="color:#F00;font-size:13px;" class="old_pass_error"><?php echo $error; ?></label>
                         
                         <label>New Password</label>
 
-						<input type="password" name="new_pass" id="new_pass" value="<?php if($success==''){ echo $_POST['new_pass']; } ?>" style="margin-bottom:inherit;" />
+						<input type="password" name="new_pass" id="new_pass" value="<?php if($success==''){ echo $_POST['new_pass']; } ?>" style="margin-bottom:inherit;" class="col-md-4 col-xs-12 col-sm-8 form-control" />
 						<label style="color:#F00;font-size:13px;" class="new_pass_error"></label>
                         
                         <label>Confirm Password</label>
 
-						<input type="password" name="confirm_pass" id="confirm_pass" value="<?php if($success==''){ echo $_POST['confirm_pass']; } ?>" style="margin-bottom:inherit;" />
+						<input type="password" name="confirm_pass" id="confirm_pass" value="<?php if($success==''){ echo $_POST['confirm_pass']; } ?>" style="margin-bottom:inherit;" class="col-md-4 col-xs-12 col-sm-8 form-control" />
 						<label style="color:#F00;font-size:13px;" class="confirm_pass_error"></label>
           				
 
-                        <input type="submit" name="change_password" class="update_btn_new1" onclick="return check_form()" value="Update">
+                        <input type="submit" name="change_password" class="update_btn_new1 btn btn-success btn-sm" onclick="return check_form()" value="Update">
                         
 
         			 </div>

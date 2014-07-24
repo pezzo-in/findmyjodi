@@ -80,12 +80,12 @@ if(count($db_banner) > 0)
         	<div class="new_acc" style="min-height:375px;">           
             	
             	<div class="left" style="margin-left:0px;">
-                    <input type="text" name="txtEmail" id="txtEmail" class="col-md-4 col-xs-12 col-sm-8" placeholder="Your Email Id" value="<?php if(isset($_POST['txtEmail'])) { echo $_POST['txtEmail']; } ?>" onchange="return check_form()" style="margin-bottom:0px;" >
+                    <input type="text" name="txtEmail" id="txtEmail" class="col-md-4 col-xs-12 col-sm-8 form-control" placeholder="Your Email Id" value="<?php if(isset($_POST['txtEmail'])) { echo $_POST['txtEmail']; } ?>" onchange="return check_form()" style="margin-bottom:0px;" >
                 </div>
                 
                 <br class="clear" />
                 <div class="terms_line" style="padding-left:0px;">
-                    <input type="submit" name="submit" class="btn btn-danger" value="Submit">
+                    <input type="submit" name="submit" class="btn btn-success btn-sm" value="Submit">
                 </div>
                 </form>
                 </div>

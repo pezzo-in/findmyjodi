@@ -75,7 +75,7 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
         <a href="my_account.php" class="logo col-md-2" style="margin-top:-20px;"><img src="images/logo2.png" alt="Find My Jodi" title="Find My Jodi" width="130" /></a>
         <?php } ?>
         <div class="topLogin col-md-3 pull-right text-right col-xs-1">
-            <div class="loginlink col-md-6 col-xs-6 col-sm-6">
+            <div class="loginlink col-md-6 col-xs-6 col-sm-6 pull-left">
             <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
                 <div class="dropdown">
                     <a data-toggle="dropdown" href="login.php" class="btn btn-info btn-md col-md-12 col-xs-12 col-sm-12" title="Login to your profile">Sign In</a>
@@ -85,9 +85,9 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
                                 <div class="loginboxtop"></div>
                                 <div class="loginboxmain">
                                     <form method="post" name="login">
-                                        <div class="row"><input type="text" name="username" placeholder="Email OR MemberId" /></div>
-                                        <div class="row"><input type="password" name="password" placeholder="Password" /></div>
-                                        <input type="submit" class="loginnow" value="Login now" name="login" />
+                                        <div class="row"><input type="text" name="username" placeholder="Email OR MemberId" class="form-control" /></div>
+                                        <div class="row"><input type="password" name="password" placeholder="Password" class="form-control" /></div>
+                                        <input type="submit" class="loginnow" value="Login now" name="login" class="btn btn-success btn-sm" />
                                         <label><!--<input type="checkbox" />Stay Signed in--></label>
                                         <a href="forgot_password.php" style="font-size: 12px;margin-top: 12px;">Forgot Password?</a>
                                     </form>

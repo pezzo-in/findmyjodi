@@ -249,6 +249,10 @@ textarea {
     color: #005678;
 }
 
+#menu a:hover {
+    text-decoration: none;
+}
+
 ul.menu {
     float: right;
     list-style: none outside none;
@@ -501,6 +505,7 @@ ul.menu ul ul {
     background: none repeat scroll 0 0 #ffffff;
     border-left: 1px solid #e4e4e4;
     border-right: 1px solid #e4e4e4;
+    padding-top: 15px;
 }
 
 .mid h2 {
@@ -1070,18 +1075,6 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
     display: block;
     margin: 0;
     padding: 5px 0;
-}
-
-.new_acc input[type="text"], .new_acc input[type="password"] {
-    border: 1px solid #cfcdcd;
-    clear: both;
-    color: #848484;
-    float: left;
-    font-size: 14px;
-    font-weight: normal;
-    margin-bottom: 1px;
-    padding: 3px 5px;
-    vertical-align: top;
 }
 
 .new_acc input[type="textarea"] {
@@ -5139,11 +5132,7 @@ ul.profl-list .griddetail {
 }
 
 .chng-pwd-form label {
-    margin-top: 5px;
-}
-
-.chng-pwd-form label:first-child {
-    margin-top: 0;
+    clear: both
 }
 
 .edit-hobbi input[type="submit"] {
@@ -5593,6 +5582,6 @@ ul.profl-list .griddetail {
     color: #fff;
 }
 
-.online_member{
+.online_member {
     z-index: 100;
 }
