@@ -11,12 +11,12 @@ if(count($db_select_online) > 0)
 	//$delete = "delete from chat_users where email = '".$_SESSION['UserEmail']."'";
 	//$db = $obj->sql_query($delete);
 }
-
+$_SESSION['UserEmail']='';
 $_SESSION['chatUserId']='';
 $_SESSION['chatUserName']='';
 $_SESSION['chatUserEmail']='';
 $_SESSION['chatStat']='';
-
+$_SESSION['inserted_id']='';
 session_unset();
 session_destroy();
 

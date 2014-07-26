@@ -20,7 +20,7 @@ for($i=0;$i<count($db_cover_img);$i++)
 	list($width, $height, $type, $attr) = getimagesize("upload/".$cover_img);
 	if($width>999 || $height >431)
 	{ ?>
-	<img src="timthumb.php?src=upload/<?php echo $cover_img; ?>&amp;w=999&amp;h=431"/>
+	<img src="timthumb.php?src=<?php echo $obj->SITEURL; ?>upload/<?php echo $cover_img; ?>&amp;w=999&amp;h=431"/>
  	<?php }else{ ?>
 	 <img src="upload/<?php echo $cover_img; ?>" width="999px" height="431px"  />
 	<?php	 

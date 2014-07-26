@@ -2,21 +2,30 @@
 
 if($_GET['resend']==1)
 {
-	$get_uid="select * from members where id='".base64_decode($_REQUEST['uid'])."'";
+	$get_uid="select * from members where id='".$_SESSION['inserted_id']."'";
 	
 	$get_uid_data=$obj->select($get_uid);
+	$act_code=$get_uid_data[0]['Activation_code'];
 	
 	
-	$rand=mt_rand(100000,999999); 
-	$rand=mt_rand(100000,999999); 
 	
-	$url = 'http://203.124.105.204/smsapi/pushsms.aspx';
+	$mobileno = $get_uid_data['0']['mob_code'].$get_uid_data['0']['mobile_no'];
+	$mobileno = substr($mobileno,1);
+	
+	$ch = curl_init('http://www.txtguru.in/imobile/api.php?');
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, "username=findmyjoditrans&password=Ganesha@1985&source=senderid&dmobile=$mobileno&message=Thank you for registering with our site. Use Following code for activating your account.  $act_code ");
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+	$data = curl_exec($ch);
+        curl_close($ch);
+	
+/*	$url = 'http://203.124.105.204/smsapi/pushsms.aspx';
 	$fields = array(
 						'user' =>'reddymax', //reddymax	14378
 						'pwd' =>'reddymax@123', //Reddy123	xu6170DI
 						'sid' =>'CATHUB',
 						'to' =>$get_uid_data[0]['mobile_no'],
-						'msg' =>'Thank you for registering with our site. Use Following code for activating your account '.$rand,
+						'msg' =>'Thank you for registering with our site. Use Following code for activating your account '.$act_code,
 						'fl' =>0,
 						'gwid' =>2
 				    );
@@ -29,14 +38,15 @@ if($_GET['resend']==1)
 	curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	$result = curl_exec($ch);
-	curl_close($ch);
-	$updt="update members set Activation_code='".$rand."' where id='".base64_decode($_REQUEST['uid'])."'";
-	$obj->edit($updt);
+	curl_close($ch); */
+	//$updt="update members set Activation_code='".$rand."' where id='".base64_decode($_REQUEST['uid'])."'";
+	//$obj->edit($updt);
 	//echo '<script>alert("Verification code sent to your mobile.")
 	echo "<script> window.location.href = 'activation.php?msg=msg1&uid=".$_REQUEST['uid']."' </script>";
 }
 if(isset($_REQUEST['submit']))
 {
+		unset($_SESSION['gender_status']);
 		$get_uid="select email_id,Activation_code,password,one_time_pass from members where id='".base64_decode($_REQUEST['uid'])."'";
 		$get_uid_data=$obj->select($get_uid);
 		if($get_uid_data[0]['Activation_code']==99999999)
@@ -46,9 +56,21 @@ if(isset($_REQUEST['submit']))
 		}
 		else if($get_uid_data[0]['Activation_code']==$_REQUEST['ac_code'])
 		{
-	$updt="update members set password='".md5($get_uid_data[0]['password'])."', Activation_code=99999999 where id='".base64_decode($_REQUEST['uid'])."'";
+	$updt="update members set password='".$get_uid_data[0]['password']."',status='Active', Activation_code=99999999 where id='".base64_decode($_REQUEST['uid'])."'";
 			$obj->edit($updt);
-			echo "<script> window.location.href = 'login.php?visit=1&mem_id=".$get_uid_data[0]['one_time_pass']."' </script>";
+                        $get_uid="select * from members where id='".$_SESSION['inserted_id']."'";
+	                $get_uid_data=$obj->select($get_uid);
+	                $mobileno = $get_uid_data['0']['mob_code'].$get_uid_data['0']['mobile_no'];
+	                $mobileno = substr($mobileno,1);
+	
+	$ch = curl_init('http://www.txtguru.in/imobile/api.php?');
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, "username=findmyjoditrans&password=Ganesha@1985&source=senderid&dmobile=$mobileno&message=Your profile has been activated in Find My Jodi.");
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+	$data = curl_exec($ch);
+        curl_close($ch);
+			//echo "<script> window.location.href = 'login.php?visit=1&mem_id=".$get_uid_data[0]['one_time_pass']."' </script>";
+                        echo "<script> window.location.href = 'login.php' </script>";
 		}
 		else
 		{
@@ -73,7 +95,7 @@ if(isset($_REQUEST['submit']))
      		 <p style="color:#F00">Please enter valid activation code.</p>
          <?php } ?>    
          <?php } ?>    
-             <p>You will receive your verification code on your mobile, please enter here to continue.<!--if you do not get code please resend it.--></p>
+             <p>You will receive your verification code on your mobile, please enter here to continue. if you do not get code please resend it.</p>
              
              <table width="100%" align="center" border="0" cellpadding="5" cellspacing="0">
                 <tr>

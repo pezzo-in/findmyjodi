@@ -58,36 +58,9 @@ if($_SESSION['UserEmail']!='' && $_SESSION['IsActive']=='Yes')
 												});
 
 						});
-							/* var d = new Date();
-							var year = d.getFullYear() - 18;
-						$(function() {
-							var dates = $( "#dob" ).datepicker({
-								changeYear: true,
-								changeMonth: true,
-								numberOfMonths: 1,
-								dateFormat : 'dd/mm/yy',
-								yearRange: '-50:-18',
-								reverseYearRange: true,
-								defaultDate: '-18y'
-												});
-						});*/
+						
 					</script>
-<!--<script src="assets/validation_js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
-<script src="assets/validation_js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
-	<script>
-		jQuery(document).ready(function(){
-			// binds form submission and fields to the validation engine
-			jQuery("#formID").validationEngine();
-		});
 
-		
-		function checkHELLO(field, rules, i, options){
-			if (field.val() != "HELLO") {
-				// this allows to use i18 for the error msgs
-				return options.allrules.validate2fields.alertText;
-			}
-		}
-	</script>-->
 </head>
 
 <body>

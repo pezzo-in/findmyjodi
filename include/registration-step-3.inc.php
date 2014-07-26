@@ -8,7 +8,7 @@
 
 			$pref_age = $_POST['drpAgeFrom']."to".$_POST['drpAgeTo'];
 
-                $select_last_id = "SELECT id as last_id from members where email_id = '".$_SESSION['UserEmail']."'";
+                $select_last_id = "SELECT id as last_id from members where id = '".$_SESSION['inserted_id']."'";
 
                 $last_ins_id =  $obj->select($select_last_id);
 
@@ -540,7 +540,7 @@
 
       <div class="terms_line">
 
-        <input class="form-control" type="submit" name="submit" tabindex="19" />
+        <input type="submit" class="form-control" id="nextbtn" name="submit" tabindex="19" />
 
       </div>
 

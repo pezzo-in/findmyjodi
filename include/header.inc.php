@@ -159,7 +159,7 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
                     </div>
                </ul> 
             </li>   
-            <li><a href="https://www.findmyjodi.com/packages.php" title="Upgrade">Upgrade</a></li>
+            <li><a href="packages.php" title="Upgrade">Upgrade</a></li>
             <li <?php //if($url[2] == "all_notifications.php") { echo "class='active'"; } ?>><a href="received_msgs.php#msgtab-2"  title="Messages">
             <?php $new_msg = "select * from messages 
 			                  where to_mem = '".$_SESSION['logged_user'][0]['member_id']."'";							   

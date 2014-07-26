@@ -58,7 +58,7 @@
 	
 				
 	
-			$select_last_id = "SELECT id as last_id from members where email_id = '".$_SESSION['UserEmail']."'";
+			$select_last_id = "SELECT id as last_id,mob_code,mobile_no,email_id from members where id = '".$_SESSION['inserted_id']."'";
 	
 			$last_id = $obj->select($select_last_id); 	
 			
@@ -100,11 +100,130 @@
 	
 							  
 	
-			echo "<script>window.location='packages.php?redirect=account'</script>";	
+                        $db_ins=$_SESSION['inserted_id'];
 	
+                        $rand=mt_rand(100000,999999); 
+	
+	///// Sms gateway integration - Krupa ///
+	
+	$mobileno = $last_id['0']['mob_code'].$last_id['0']['mobile_no'];
+	$mobileno = substr($mobileno,1);
+	
+	$ch = curl_init('http://www.txtguru.in/imobile/api.php?');
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, "username=findmyjoditrans&password=Ganesha@1985&source=senderid&dmobile=$mobileno&message=Thank you for registering with our site. Use Following code for activating your account.  $rand ");
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+	$data = curl_exec($ch);
+        curl_close($ch);
+	////////////////////////////////////////////////////
+	/*$url = 'http://203.124.105.204/smsapi/pushsms.aspx';
+	$fields = array(
+						'user' =>'reddymax', //reddymax	14378
+						'pwd' =>'reddymax@123', //Reddy123	xu6170DI
+						'sid' =>'CATHUB',
+						'to' =>$_REQUEST['txtMobNo'],
+						'msg' =>'Thank you for registering with our site. Use Following code for activating your account '.$rand,
+						'fl' =>0,
+						'gwid' =>2
+				    );
+					
+	foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+	rtrim($fields_string, '&');
+	$ch = curl_init();
+	curl_setopt($ch,CURLOPT_URL, $url);
+	curl_setopt($ch,CURLOPT_POST, count($fields));
+	curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$result = curl_exec($ch);
+	curl_close($ch);*/
+	
+	$updt="update members set Activation_code='".$rand."' where id='".$db_ins."'";
+	$obj->edit($updt);
+	
+		
+		$to=$last_id['0']['email_id'];
+		$subject = "Registration with Find My Jodi";
+		
+		$loginurl = $obj->SITEURL."activation.php?uid=".base64_encode($db_ins);
+		$message = '<div style="width:98%;border:1px solid #ccc;padding:10px;border-radius:5px">
+			<a href="'.$obj->SITEURL.'"><img src="'.$obj->SITEURL.'images/logo2.png" height="100" width="160" /></a><br /><br />';
+		$message .= '<strong>Dear Sir/Madam,</strong><br /><br />';
+		
+		$message .= "Congrats!..You have successfully registered with our site<br /><br />
+					To activate your account <a href='".$obj->SITEURL."activation.php?uid=".base64_encode($db_ins)."' style='font-size:13px; font-weight:bold;'>Click Here</a><br><br>
+							 Your registration detail is as follow:<br>
+							 Email ID : ". $last_id['3']['email_id']."<br />
+							 Password : ".$last_id['4']['password']."<br /><br />";					
+		//$message.= "To activate your account. <a href='".$loginurl."'><strong>Click here</strong></a>\n\n";
+		
+		$message.= "<br /><br /><strong>Thank You,</strong><br />";
+		$message.= "<strong>Find My Jodi</strong><br />";
+		$message .= '</div>';
+					 
+		$headers = "MIME-Version: 1.0" . "\r\n";
+		$headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";	
+		$headers .= 'From: Find My Jodi <info@findmyjodi.com>';
+		if(mail($to,$subject,$message,$headers))
+		{
+			
+			echo "<script> window.location.href='activation.php?uid=".base64_encode($db_ins)."';</script>";
 			}
 	
 	
+	
+	
+			//echo "<script>window.location='packages.php?redirect=account'</script>";	
+	
+			}
+	
+	     if($_REQUEST["skip"]==1){
+                 $rand=mt_rand(100000,999999);  
+                 $select_last_id = "SELECT id as last_id,mob_code,mobile_no,email_id from members where id = '".$_SESSION['inserted_id']."'";
+	
+			$last_id = $obj->select($select_last_id); 
+                 $db_ins=$_SESSION['inserted_id'];
+                 $mobileno = $last_id['0']['mob_code'].$last_id['0']['mobile_no'];
+	$mobileno = substr($mobileno,1);
+	
+	$ch = curl_init('http://www.txtguru.in/imobile/api.php?');
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, "username=findmyjoditrans&password=Ganesha@1985&source=senderid&dmobile=$mobileno&message=Thank you for registering with our site. Use Following code for activating your account.  $rand ");
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+	$data = curl_exec($ch);
+        curl_close($ch);
+	
+	$updt="update members set Activation_code='".$rand."' where id='".$db_ins."'";
+	$obj->edit($updt);
+	
+		
+		$to=$last_id['0']['email_id'];
+		$subject = "Registration with Find My Jodi";
+		
+		$loginurl = $obj->SITEURL."activation.php?uid=".base64_encode($db_ins);
+		$message = '<div style="width:98%;border:1px solid #ccc;padding:10px;border-radius:5px">
+			<a href="'.$obj->SITEURL.'"><img src="'.$obj->SITEURL.'images/logo2.png" height="100" width="160" /></a><br /><br />';
+		$message .= '<strong>Dear Sir/Madam,</strong><br /><br />';
+		
+		$message .= "Congrats!..You have successfully registered with our site<br /><br />
+					To activate your account <a href='".$obj->SITEURL."activation.php?uid=".base64_encode($db_ins)."' style='font-size:13px; font-weight:bold;'>Click Here</a><br><br>
+							 Your registration detail is as follow:<br>
+							 Email ID : ". $last_id['3']['email_id']."<br />
+							 Password : ".$last_id['4']['password']."<br /><br />";					
+		//$message.= "To activate your account. <a href='".$loginurl."'><strong>Click here</strong></a>\n\n";
+		
+		$message.= "<br /><br /><strong>Thank You,</strong><br />";
+		$message.= "<strong>Find My Jodi</strong><br />";
+		$message .= '</div>';
+					 
+		$headers = "MIME-Version: 1.0" . "\r\n";
+		$headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";	
+		$headers .= 'From: Find My Jodi <info@findmyjodi.com>';
+		if(mail($to,$subject,$message,$headers))
+		{
+			
+			echo "<script> window.location.href='activation.php?uid=".base64_encode($db_ins)."';</script>";
+		}
+             }
 	
 	?>
     <div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
@@ -123,8 +242,9 @@
 		<?php } } } ?>
      		<h2 class="col-md-12">Enhance your profile with Hobbies & Interests</h2>
             
-            <div class="backtolink col-md-12" style="padding:0px;margin-right:34px;"><a href="packages.php?redirect=account">Proceed to My Home »</a></div>
-    <form id="formID" class="form-horizontal col-md-12" method="post" >
+           <!--    <div class="backtolink col-md-12" style="padding:0px;margin-right:34px;"><a href="packages.php?redirect=account">Proceed to My Home »</a></div> -->
+           <div class="backtolink col-md-12" style="padding-top:0px;margin-right:34px;"><a href="registration-step-4.php?skip=1">Skip this page »&nbsp&nbsp&nbsp</a></div>
+ <form id="formID" class="form-horizontal col-md-12" method="post" >
     
     <div class="new_acc">     
            <?php $sql = "select * from hobbies";

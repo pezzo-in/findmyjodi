@@ -21,12 +21,13 @@
 		//$interval = $today->diff($birthdate);
 		$age = $interval;//$interval->format('%y');
 		$one_time_pass=redemption_code();
-
-$insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, religion,mother_tongue , caste, country, mob_code, mobile_no, email_id, password, status, reg_date,day, month,year, one_time_pass, annual_income, star, occupation, manglik_dosham)values (NULL, '".$_POST['drpProfFor']."', '".$_POST['username']."', '".$_POST['Rdgender']."', '".$birthdate."', '".$age."', '".$_POST['drpReligion']."', '".$_POST['drpMotherlanguage']."', '".$_POST['drpCaste']."', '".$_POST['drpCountry']."', '".$_POST['mob_code']."', '".$_POST['txtMobNo']."', '".$_POST['email']."', '".md5($_POST['password'])."', 'Deactive', '".date('Y-m-d')."', '".date('d')."', '".date('m')."', '".date('Y')."', '".$one_time_pass."', '".$_POST['drpIncome']."', '".$_POST['drpStar']."', '".$_POST['drpOccupation']."', '".$_POST['drpManglik']."')";
+		$_SESSION['gender_status']=$_POST['Rdgender'];
+$insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, religion,mother_tongue , caste, country, mob_code, mobile_no, email_id, password, status, reg_date,day, month,year, one_time_pass, annual_income, star, occupation, manglik_dosham,Activation_code)values (NULL, '".$_POST['drpProfFor']."', '".$_POST['username']."', '".$_POST['Rdgender']."', '".$birthdate."', '".$age."', '".$_POST['drpReligion']."', '".$_POST['drpMotherlanguage']."', '".$_POST['drpCaste']."', '".$_POST['drpCountry']."', '".$_POST['mob_code']."', '".$_POST['txtMobNo']."', '".$_POST['email']."', '".md5($_POST['password'])."', 'Inactive', '".date('Y-m-d')."', '".date('d')."', '".date('m')."', '".date('Y')."', '".$one_time_pass."', '".$_POST['drpIncome']."', '".$_POST['drpStar']."', '".$_POST['drpOccupation']."', '".$_POST['drpManglik']."','1')";
 
 		$db_ins=$obj->insert($insert);
 
 		$inserted_id =  mysql_insert_id();
+                $_SESSION['inserted_id']=$inserted_id;
 	if(strlen($inserted_id) == "1")
 	{
 		$mem_id = "FMJ0000".$inserted_id;
@@ -49,7 +50,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
 	}
 	$update_page="UPDATE members SET member_id = '".$mem_id."' where id = '".$inserted_id."'";
 	$db_updatepage=$obj->edit($update_page);
-	if(!empty($_FILES['file']['name'][0]))
+/*	if(!empty($_FILES['file']['name'][0]))
 	{
 		$select_category = "SELECT max(id) as id FROM members";
 		$db_member = $obj->select($select_category);
@@ -66,72 +67,8 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
 			}
 		}
 		//end photo  upload
-	}
-	$rand=mt_rand(100000,999999);
-	$rand=mt_rand(100000,999999);
-	///// Sms gateway integration - Krupa ///
-
-	$mobileno = $_REQUEST['mob_code'].$_REQUEST['txtMobNo'];
-	$mobileno = substr($mobileno,1);
-
-	$ch = curl_init('http://www.txtguru.in/imobile/api.php?');
-	curl_setopt($ch, CURLOPT_POST, 1);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, "username=findmyjoditrans&password=Ganesha@1985&source=senderid&dmobile=$mobileno&message=Thank you for registering with our site. Use Following code for activating your account.  $rand ");
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-	$data = curl_exec($ch);
-	////////////////////////////////////////////////////
-	/*$url = 'http://203.124.105.204/smsapi/pushsms.aspx';
-	$fields = array(
-						'user' =>'reddymax', //reddymax	14378
-						'pwd' =>'reddymax@123', //Reddy123	xu6170DI
-						'sid' =>'CATHUB',
-						'to' =>$_REQUEST['txtMobNo'],
-						'msg' =>'Thank you for registering with our site. Use Following code for activating your account '.$rand,
-						'fl' =>0,
-						'gwid' =>2
-				    );
-
-	foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
-	rtrim($fields_string, '&');
-	$ch = curl_init();
-	curl_setopt($ch,CURLOPT_URL, $url);
-	curl_setopt($ch,CURLOPT_POST, count($fields));
-	curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	$result = curl_exec($ch);
-	curl_close($ch);*/
-
-	$updt="update members set Activation_code='".$rand."' where id='".$db_ins."'";
-	$obj->edit($updt);
-
-
-		$to=$_POST['email'];
-		$subject = "Registration with Find My Jodi";
-
-		$loginurl = $obj->SITEURL."activation.php?uid=".base64_encode($db_ins);
-		$message = '<div style="width:98%;border:1px solid #ccc;padding:10px;border-radius:5px">
-			<a href="'.$obj->SITEURL.'"><img src="'.$obj->SITEURL.'images/logo2.png" height="100" width="160" /></a><br /><br />';
-		$message .= '<strong>Dear Sir/Madam,</strong><br /><br />';
-
-		$message .= "Congrats!..You have successfully registered with our site<br /><br />
-					To activate your account <a href='".$obj->SITEURL."activation.php?uid=".base64_encode($db_ins)."' style='font-size:13px; font-weight:bold;'>Click Here</a><br><br>
-							 Your registration detail is as follow:<br>
-							 Email ID : ". $_POST['email']."<br />
-							 Password : ".$_POST['password']."<br /><br />";
-		//$message.= "To activate your account. <a href='".$loginurl."'><strong>Click here</strong></a>\n\n";
-
-		$message.= "<br /><br /><strong>Thank You,</strong><br />";
-		$message.= "<strong>Find My Jodi</strong><br />";
-		$message .= '</div>';
-
-		$headers = "MIME-Version: 1.0" . "\r\n";
-		$headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
-		$headers .= 'From: Find My Jodi <info@findmyjodi.com>';
-		if(mail($to,$subject,$message,$headers))
-		{
-
-			echo "<script> window.location.href='activation.php?uid=".base64_encode($db_ins)."';</script>";
-		}
+	} */
+	echo "<script>window.location='registration-step-2.php'</script>";
 
 	}
 ?>
@@ -366,12 +303,12 @@ function drpProfFor_fun(id)
 	if(document.getElementById(id).value!='')
 	{
 		$('#'+id).css('border','1px solid #ccc');
-		$('#cast').css('visibility','hidden');
+	
 	}
 	else
 	{
 		$('#'+id).css('border','1px solid red');
-		$('#cast').css('visibility','visible');
+		
 	}
 }
 function check_form1()

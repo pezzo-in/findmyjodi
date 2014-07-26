@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('lib/myclass.php');
-if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No')
+if($_SESSION['UserEmail']=='')
 {
 	echo "<script>window.location='login.php' </script>";
 }

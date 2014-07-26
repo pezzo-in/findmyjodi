@@ -1,6 +1,8 @@
 <?php
+	
 	if(isset($_POST['submit']))
 	{
+             $liveinlaws=($_POST['live_inlaws']==1 ? '' : $_POST['live_inlaws']); 
                /* $select_last_id = "SELECT max(id) as last_id from members";
                 $last_ins_id =  $obj->select($select_last_id);*/
 				
@@ -35,7 +37,6 @@
 					 is_drinker = '".$_POST['drpDrinking']."',
 					
 					 living_with_parents = '".$_POST['live_parent']."',
-						
 					 family_status = '".$_POST['drpFamilyStatus']."',
 					 family_type = '".$_POST['drpFamilyType']."',
 					 family_value = '".$_POST['drpFamilyValues']."',
@@ -43,8 +44,14 @@
 					 no_of_sisters = '".$_POST['num_sis']."',
 					 bro_married = '".$_POST['num_bro_married']."',
 					 sis_married = '".$_POST['num_sis_married']."',
+                                         wishtosettle = '".$_POST['wishtosettle']."',
+                                         school= '".$_POST['school']."',
+                                         college= '".$_POST['college']."',
+                                         live_inlaws = '".$liveinlaws."',
+                                         inttowork= '".$_POST['inttowork']."',
+                                         aboutfamily= '".$_POST['aboutfamily']."',
 					 about_me = '".$_POST['about']."'
-				 where email_id = '".$_SESSION['UserEmail']."'";
+				 where id = '".$_SESSION['inserted_id']."'";
         		//echo $update; 
 					  
 			$db_ins=$obj->edit($update);
@@ -130,6 +137,12 @@ $db_select_caste = $obj->select($select_caste);
                     <span id="rcity" class="err_msg">Enter your city</span> 
                     </td>
                 </tr>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">Where do you wish to settle?</label></td>
+                    <td><input class="form-control"type="text" name="wishtosettle" id="wishtosettle" onchange="change_status_fun(this.id)" tabindex="5" style="clear:none;"> 
+                    <span id="wishtosettleerr" class="err_msg">Enter your city</span> 
+                    </td>
+                </tr>
 			</table>
              
            
@@ -211,6 +224,18 @@ $db_select_caste = $obj->select($select_caste);
          <hr />
          <table width="100%" align="center" border="0" cellpadding="5" cellspacing="0" class="tbl_control">
              	<tr>
+                	<td width="20%"><label style="margin-top:-18px">School</label></td>
+                    <td><input class="form-control"type="text" name="school" id="school" onchange="change_status_fun(this.id)" tabindex="5" style="clear:none;"> 
+                    <span id="schoolerr" class="err_msg">Enter your school</span> 
+                    </td>
+                </tr>
+                <tr>
+                	<td width="20%"><label style="margin-top:-18px">College</label></td>
+                    <td><input class="form-control"type="text" name="college" id="college" onchange="change_status_fun(this.id)" tabindex="5" style="clear:none;"> 
+                    <span id="collegeerr" class="err_msg">Enter your college</span> 
+                    </td>
+                </tr>
+             	<tr>
                 	<td width="20%"><label style="margin-top:-18px">Education<font color="#FF0000">*</font></label></td>
                     <td><select class="form-control"id="drpEducation" onchange="change_status_fun(this.id)" name="drpEducation"  tabindex="11" style="clear:none;">
                     <option value="">--Select--</option>
@@ -266,6 +291,16 @@ $db_select_caste = $obj->select($select_caste);
                     </select>
                     <span id="occupation" class="err_msg">Select your occupation</span> 
                      </td>
+				</tr>
+                                 <tr>
+                	<td width="20%"><label style="margin-top:-18px">Interested to work after marriage?<font color="#FF0000">*</font></label></td>
+                    <td><select class="form-control" id="inttowork" name="inttowork" tabindex="17" style="clear:none;">	
+                    	<option value="">--Select--</option>
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>
+             </select>
+             <span id="inttoworkerr" class="err_msg">Select Interested to work after marriage</span> 
+             </td>
 				</tr>
                <?php /*?> <tr>
                 	<td width="20%"><label style="margin-top:-18px">Annual Income</label></td>
@@ -366,9 +401,23 @@ $db_select_caste = $obj->select($select_caste);
                         <option value="Y">Yes</option>
                         <option value="N">No</option>
              </select>
-             <span id="fstatus" class="err_msg">Select Living with parents</span> 
+             <span id="live_parenterr" class="err_msg">Select Living with parents</span> 
              </td>
 				</tr>
+                <?php if( $_SESSION['gender_status']=='F'){ ?>                
+                   <tr>
+                	<td width="20%"><label style="margin-top:-18px">Live with in-laws?<font color="#FF0000">*</font></label></td>
+                    <td><select class="form-control" id="live_inlaws" name="live_inlaws" tabindex="17" style="clear:none;">	
+                    	<option value="">--Select--</option>
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>
+             </select>
+             <span id="live_inlawserr" class="err_msg">Select Live with in-laws</span> 
+             </td>
+				</tr>
+                <?php }else{ ?>
+                                <input id="live_inlaws" name="live_inlaws" value="1" type="hidden"  style="clear:none;">         
+                <?php } ?>
                 
              	<tr>
                 	<td width="20%"><label style="margin-top:-18px">Family Status<font color="#FF0000">*</font></label></td>
@@ -434,16 +483,27 @@ $db_select_caste = $obj->select($select_caste);
              </td>
 				</tr>
                 <tr>
+                	<td width="20%"><label style="margin-top:-18px">About Family</label></td>
+                        <td><textarea style='float:left;margin-bottom: 0px;clear:none;width:290px;resize: none;' name="aboutfamily" onchange="change_status_fun(this.id);" id="aboutfamily" tabindex="20" rows='5' cols='42' ></textarea>
+                                 <span id="abtoutfamilyerr" class="err_msg">Write about your family</span> 
+                    </td>
+				</tr>
+                <tr>
                 	<td width="20%"><label style="margin-top:-18px">About Yourself<font color="#FF0000">*</font></label></td>
-                          <td><textarea style='float:left;margin-bottom: 0px;clear:none;width:290px;resize: none;' name="about" onchange="change_status_fun(this.id);" id="about" tabindex="20" rows='3' cols='30' ></textarea></td>
+                        <td><textarea style='float:left;margin-bottom: 0px;clear:none;width:290px;resize: none;' name="about" onchange="change_status_fun(this.id);" id="about" tabindex="20" rows='5' cols='42' ></textarea>
+                                 <span id="abt" class="err_msg">Write about your self</span> 
+                    </td>
 				</tr>
 			</table>
          </div>
+         
+         
+         
+         
         <br class="clear" />
         <div class="terms_line">
-        <label class="checkbox"><input class="form-control"checked="checked" type="checkbox" id="chk"  tabindex="21" value="1" />I agree to the Find My Jodi <a href="privacy_policy.php">Privacy Policy</a> and <a href="terms_conditions.php">Terms and Conditions.</a></label>
-        <span id="chkmsg" class="err_msg">Check Terms and condition box</span>
-        <input class="form-control"type="submit" name="submit" tabindex="22" class="btn btn-success" value="Save" />
+                
+                <input type="submit" id="nextbtn" name="submit" tabindex="22" />
     </div>
 </div>
 </form>
@@ -558,6 +618,16 @@ function check_form()
 		$('#ftype').css('visibility','hidden');
 	}
 	
+	if(document.getElementById('live_parent').value=='')
+	{
+		$('#live_parent').css('border','1px solid red');
+		$('#live_parenterr').css('visibility','visible');
+		error=1;
+	}
+	else
+	{
+		$('#live_parenterr').css('visibility','hidden');
+	}
 	if(document.getElementById('drpFamilyStatus').value=='')
 	{
 		$('#drpFamilyStatus').css('border','1px solid red');
@@ -569,6 +639,17 @@ function check_form()
 		$('#fstatus').css('visibility','hidden');
 	}
 	
+        if(document.getElementById('live_inlaws').value=='')
+	{
+		$('#live_inlaws').css('border','1px solid red');
+		$('#live_inlawserr').css('visibility','visible');
+		error=1;
+	}
+	else
+	{
+		$('#live_inlawserr').css('visibility','hidden');
+	} 
+	
 	if(document.getElementById('drpEmployedIn').value=='')
 	{
 		$('#drpEmployedIn').css('border','1px solid red');
@@ -578,6 +659,16 @@ function check_form()
 	else
 	{
 		$('#occupation').css('visibility','hidden');
+	}
+        if(document.getElementById('inttowork').value=='')
+	{
+		$('#inttowork').css('border','1px solid red');
+		$('#inttoworkerr').css('visibility','visible');
+		error=1;
+	}
+	else
+	{
+		$('#inttoworkerr').css('visibility','hidden');
 	}
 	
 	/*if(document.getElementById('drpOccupation').value=='')
@@ -651,16 +742,7 @@ function check_form()
 	{
 		$('#mstatus').css('visibility','hidden');
 	}
-	if(!$("#chk").is(':checked'))
-	{
-		$('#chk').css('border','1px solid red');
-		$('#chkmsg').css('visibility','visible');
-		return false;
-	}
-	else
-	{
-		$('#chkmsg').css('visibility','hidden');
-	}
+	
 	$(document).scrollTop(0);
 	if(error==0)
 		return true;
@@ -729,6 +811,18 @@ function check_form()
 		if($('#drpFamilyType').val()!='')
 		{
 			$('#ftype').css('visibility','hidden');
+		}
+	});
+        $('#live_parent').change(function(){
+		if($('#live_parent').val()!='')
+		{
+			$('#live_parenterr').css('visibility','hidden');
+		}
+	});
+        $('#inttowork').change(function(){
+		if($('#inttowork').val()!='')
+		{
+			$('#inttoworkerr').css('visibility','hidden');
 		}
 	});
 	

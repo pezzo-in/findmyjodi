@@ -1,8 +1,10 @@
 <?php
 	$sessionVar = 'chatUser';
-	if($_GET['visit']=='1' && $_GET['mem_id']!='')
+	//if($_GET['visit']=='1' && $_GET['mem_id']!='')
+        if(isset($_SESSION['inserted_id']))
 	{
-		$select_member="select * from members where one_time_pass='".$_GET['mem_id']."' AND status='Deactive'";
+	    //  $select_member="select * from members where one_time_pass='".$_GET['mem_id']."' AND status='Active'";
+               $select_member="select * from members where id='".$_SESSION['inserted_id']."' AND status='Active'";
 		$db_member=$obj->select($select_member);
 		
 		if(count($db_member)>0)
@@ -19,7 +21,7 @@
 		//	$_SESSION['id']=$db_member[0]['id'];
 			
 			$_SESSION['UserEmail']=$db_member[0]['email_id'];	
-			$_SESSION['IsActive']='No';
+			//$_SESSION['IsActive']='No';
 			$_SESSION['logged_user'] = $db_member;
 			$select_member_plan="select member_plans.* from member_plans, members where member_plans.member_id='".$db_member[0]['id']."' AND members.id=member_plans.member_id and member_plans.expiry_date>'".date('Y-m-d')."'";
 			$db_member_plan=$obj->select($select_member_plan);
@@ -57,7 +59,7 @@
 				}
 			}
 			
-			echo "<script> window.location='registration-step-2.php'</script>";
+			echo "<script> window.location='my_account.php'</script>";
 		}
 		else
 		{

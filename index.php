@@ -40,8 +40,7 @@ $db_member=$obj->select($select_member);
 $_SESSION['UserEmail']=$db_member[0]['email_id'];
 $_SESSION['IsActive']='No';
 $_SESSION['logged_user'] = $db_member;
-$select_member_plan="select member_plans.* from member_plans, members where
-member_plans.member_id='".$db_member[0]['id']."' AND members.id=member_plans.member_id";
+			$select_member_plan="select member_plans.* from member_plans, members where member_plans.member_id='".$db_member[0]['id']."' AND members.id=member_plans.member_id";
 $db_member_plan=$obj->select($select_member_plan);
 
 $exp_date=date('Y-m-d');
@@ -65,35 +64,29 @@ $db_chat_user=$obj->select($select_chat_user);
 
 if(count($db_chat_user)>0)
 {
-$update_chat_user="update chat_users set status='1', name='".$db_member[0]['name']."', chat_last_activity='".date('Y-m-d
-H:i:s')."' where email='".$_SESSION['UserEmail']."'";
+					$update_chat_user="update chat_users set status='1', name='".$db_member[0]['name']."', chat_last_activity='".date('Y-m-d H:i:s')."' where email='".$_SESSION['UserEmail']."'";
 $obj->edit($update_chat_user);
 }
 else
 {
-$insert_online = "insert into chat_users(id, name, email, status) values(null, '".$db_member[0]['name']."',
-'".$_SESSION['UserEmail']."', '1')";
+					$insert_online = "insert into chat_users(id, name, email, status) values(null, '".$db_member[0]['name']."', '".$_SESSION['UserEmail']."', '1')";
 $db_insert_online = $obj->insert($insert_online);
 }
 }
 
-echo "
-<script> window.location = 'registration-step-2.php'</script>
-";
+			echo "<script> window.location='registration-step-2.php'</script>";
 }
 else
 {
-echo "
-<script> window.location = 'error.php?msg=Invalid'</script>
-";
+			echo "<script> window.location='error.php?msg=Invalid'</script>";	
 }
 }
 if(isset($_POST['submit']))
 {
+			
 if(isset($_GET['visit']))
 {
-$sql="select * from members where (email_id = '".$_POST['email']."' or member_id = '".$_POST['email']."') and password =
-'".md5($_POST['password'])."'";
+				 $sql="select * from members where (email_id = '".$_POST['email']."' or member_id = '".$_POST['email']."') and password = '".md5($_POST['password'])."'";	
 $ans=$obj->select($sql);
 if(!empty($ans))
 {
@@ -108,8 +101,7 @@ $_SESSION['UserEmail']=$ans[0]['email_id'];
 $_SESSION['IsActive']='Yes';
 $_SESSION['logged_user'] = $ans;
 
-$select_member_plan="select member_plans.* from member_plans, members where member_plans.member_id='".$_GET['mem_id']."'
-AND members.id=member_plans.member_id";
+					$select_member_plan="select member_plans.* from member_plans, members where member_plans.member_id='".$_GET['mem_id']."' AND members.id=member_plans.member_id";
 $db_member_plan=$obj->select($select_member_plan);
 
 $exp_date=date('Y-m-d');
@@ -133,36 +125,51 @@ $db_chat_user=$obj->select($select_chat_user);
 
 if(count($db_chat_user)>0)
 {
-$update_chat_user="update chat_users set status='1', name='".$ans[0]['name']."', chat_last_activity='".date('Y-m-d
-H:i:s')."' where email='".$_SESSION['UserEmail']."'";
+							$update_chat_user="update chat_users set status='1', name='".$ans[0]['name']."', chat_last_activity='".date('Y-m-d H:i:s')."' where email='".$_SESSION['UserEmail']."'";
 $obj->edit($update_chat_user);
 }
 else
 {
-$insert_online = "insert into chat_users(id, name, email, status) values(null, '".$ans[0]['name']."',
-'".$_SESSION['UserEmail']."', '1')";
+							$insert_online = "insert into chat_users(id, name, email, status) values(null, '".$ans[0]['name']."', '".$_SESSION['UserEmail']."', '1')";
 $db_insert_online = $obj->insert($insert_online);
 }
 }
-echo "
-<script> window.location = 'my_account.php'</script>
-";
+					echo "<script> window.location='my_account.php'</script>";
 }
 else
 {
-echo "
-<script>alert('Invalid Email or Password');</script>
-";
+					echo "<script>alert('Invalid Email or Password');</script>";
 $error = "Invalid Email id or Password";
 }
 }
 else
 {
-$sql="select * from members where (email_id = '".$_POST['email']."' or member_id = '".$_POST['email']."') and password =
-'".md5($_POST['password'])."' and status = 'Active'";
+				$sql="select * from members where (email_id = '".$_POST['email']."' or member_id = '".$_POST['email']."') and password = '".md5($_POST['password'])."' ";		
 $ans=$obj->select($sql);
-if(!empty($ans))
+                                if(!empty($ans) && $ans[0]['status']=='Inactive')
+                                {
+                                    if($ans[0]['Activation_code']==1)
+                                        {
+                                          
+                                           $_SESSION['inserted_id']=$ans[0]['id'];
+                                           if($ans[0]['relationship_status']=='')
+                                           {
+                                           echo "<script> window.location='registration-step-2.php'</script>";
+                                           } else{
+                                             echo "<script> window.location='registration-step-4.php?skip=1'</script>";  
+                                           }
+                                        }  else  if($ans[0]['Activation_code']!=1 && $ans[0]['Activation_code']!=99999999 ){
+                                            $_SESSION['inserted_id']=$ans[0]['id'];
+                                            $uid=base64_encode($ans[0]['id']);
+                                            echo "<script> window.location='activation.php?uid=".$uid."&resend=1'</script>";
+                                        } 
+                                }
+                             
+				if(!empty($ans) && $ans[0]['status']=='Active')
 {
+					 
+                                      
+                                    
 $update_last_login="UPDATE members SET last_login = NOW() where id = '".$ans[0]['id']."'";
 $db_update=$obj->edit($update_last_login);
 
@@ -171,8 +178,7 @@ $_SESSION['UserEmail']=$ans[0]['email_id'];
 $_SESSION['logged_user'] = $ans;
 $_SESSION['IsActive']='Yes';
 
-$select_member_plan="select member_plans.* from member_plans, members where member_plans.member_id='".$ans[0]['id']."'
-AND members.id=member_plans.member_id";
+$select_member_plan="select member_plans.* from member_plans, members where member_plans.member_id='".$ans[0]['id']."' AND members.id=member_plans.member_id";
 $db_member_plan=$obj->select($select_member_plan);
 
 $exp_date=date('Y-m-d');
@@ -197,26 +203,20 @@ $db_chat_user=$obj->select($select_chat_user);
 
 if(count($db_chat_user)>0)
 {
-$update_chat_user="update chat_users set status='1', name='".$ans[0]['name']."', chat_last_activity='".date('Y-m-d
-H:i:s')."' where email='".$_SESSION['UserEmail']."'";
+							$update_chat_user="update chat_users set status='1', name='".$ans[0]['name']."', chat_last_activity='".date('Y-m-d H:i:s')."' where email='".$_SESSION['UserEmail']."'";
 $obj->edit($update_chat_user);
 }
 else
 {
-$insert_online = "insert into chat_users(id, name, email, status) values(null, '".$ans[0]['name']."',
-'".$_SESSION['UserEmail']."', '1')";
+							$insert_online = "insert into chat_users(id, name, email, status) values(null, '".$ans[0]['name']."', '".$_SESSION['UserEmail']."', '1')";
 $db_insert_online = $obj->insert($insert_online);
 }
 }
-echo "
-<script> window.location = 'my_account.php'</script>
-";
+					echo "<script> window.location='my_account.php'</script>";
 }
 else
 {
-echo "
-<script>alert('Invalid Email or Password');</script>
-";
+					echo "<script>alert('Invalid Email or Password');</script>";
 $error = "Invalid Email id or Password";
 }
 }
@@ -260,16 +260,19 @@ $error = "Invalid Email id or Password";
     </div>
 </div>
 <script language="javascript" type="text/javascript">
-    function check_form() {
+function check_form()
+{
         var pass = $('#password').val();
         var email = $('#Emailid').val();
 
-        if (email == '') {
+	if(email == '')
+	{
 
             alert('Enter Email or MemberId')
             return false;
         }
-        if (pass == '') {
+	if(pass=='')
+	{
             alert('Enter Password');
             //$('#password').css('border','1px solid red');
             return false;

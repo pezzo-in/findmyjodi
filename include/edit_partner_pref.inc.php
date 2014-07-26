@@ -531,7 +531,7 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                     <td width="20%" valign="top"><label>Partner Description</label></td>
 
-                    <td><textarea name="partner_description" id="partner_description" rows="3" cols="42" style='clear:none;'><?php echo $logged_in_member[0]['partner_description']; ?></textarea>
+                    <td><textarea name="partner_description" id="partner_description" rows="5" cols="42" style='clear:none;resize: none;'><?php echo $logged_in_member[0]['partner_description']; ?></textarea>
                    </td>
 
                 </tr>
