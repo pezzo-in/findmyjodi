@@ -1,5 +1,5 @@
 	
-	 	<div  class="mid col-md-12 col-sm-12 col-xs-12" style="width:954px;">
+	 	<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding" style="width:954px;">
 			<div id="tab-container">
                       <h2 style="width:950px;">Success Story</h2>
                                               	

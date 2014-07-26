@@ -25,7 +25,7 @@ if(isset($_GET['id']))
 	}
 ?>
     
-<div  class="mid col-md-12 col-sm-12 col-xs-12">
+<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
 <div id="tab-container">
                         <ul class="msgtab">
                             <li><a href="#msgtab-1">Messages</a></li>

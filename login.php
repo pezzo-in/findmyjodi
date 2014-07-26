@@ -31,8 +31,8 @@ $(document).ready(function(){
 <body>
 <div class="container">
     <div class="row">
-        <div class="topMain col-md-12">
-            <div class="wrapper col-md-12">
+        <div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
+            <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
                 <?php include('include/header.inc.php'); ?>
                 <div class="header inn">
                     <div class="titlebox col-md-12">
@@ -41,8 +41,8 @@ $(document).ready(function(){
                 </div>
             </div>
         </div>
-        <div class="col-md-12">
-            <div class="wrapper col-md-12">
+        <div class="col-md-12 nopadding">
+            <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
                 <div class="wrapper">
                      <?php include('include/login.inc.php'); ?>
                      <?php include('include/footer.inc.php'); ?>

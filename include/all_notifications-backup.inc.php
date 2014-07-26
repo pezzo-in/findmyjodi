@@ -26,7 +26,7 @@ if(isset($_GET['id']))
 	}
 ?>
     
-<div  class="mid col-md-12 col-sm-12 col-xs-12">
+<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
 <?php
 $select_banner = "select * from advertise where adv_position = 'Notification Top (954 X 100)'";
 $db_banner = $obj->select($select_banner);

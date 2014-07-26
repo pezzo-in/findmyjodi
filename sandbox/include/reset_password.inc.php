@@ -28,7 +28,7 @@ echo "<script> window.location.href = 'index.php' </script>";
 
 	}
 ?>
-<div  class="mid col-md-12 col-sm-12 col-xs-12" style="width:95.3%;min-height: 380px;">
+<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding" style="width:95.3%;min-height: 380px;">
         	
             <div class="span1">
             	

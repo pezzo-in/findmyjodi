@@ -118,7 +118,7 @@ $(function() {
 </script> 
 <script type="text/javascript" src="js/jquery.cycle.all.js"></script>
 
-<div class="topMain col-md-12">
+<div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
     <?php include('include/header.inc.php'); ?>
     <?php include('include/slider1.inc.php'); ?>
     <div class="header inn" style="display:none">
@@ -127,7 +127,7 @@ $(function() {
         </div>
     </div>
 </div>
-<div class="col-md-12">
+<div class="col-md-12 nopadding">
 	 <?php include('include/all_notifications.inc.php'); ?>
      <?php include('include/footer.inc.php'); ?>
 </div>

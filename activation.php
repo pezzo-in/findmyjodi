@@ -33,8 +33,8 @@ if($_SESSION['UserEmail']!='' && $_SESSION['IsActive']=='Yes')
 <body>
 <div class="container">
     <div class="row">
-        <div class="topMain col-md-12">
-            <div class="wrapper col-md-12">
+        <div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
+            <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
                 <?php include('include/header.inc.php'); ?>
                 <div class="header inn">
                     <div class="titlebox col-md-12">
@@ -43,10 +43,10 @@ if($_SESSION['UserEmail']!='' && $_SESSION['IsActive']=='Yes')
                 </div>
             </div>
         </div>
-        <div class="col-md-12">
-            <div class="wrapper col-md-12">
+        <div class="col-md-12 nopadding">
+            <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
                  <?php include('include/activation.inc.php'); ?>
-                 <div class="wrapper col-md-12">
+                 <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
                  <?php include('include/footer.inc.php'); ?>
                  </div>
             </div>

@@ -136,9 +136,9 @@ include("common_user_fetch.php");
 
 
 
-<div class="topMain col-md-12">
+<div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
 
-	<div class="col-md-12">
+	<div class="col-md-12 nopadding">
 
     	<?php include('include/header.inc.php'); ?>        
 
@@ -156,11 +156,11 @@ include("common_user_fetch.php");
 
 </div>
 
-<div class="col-md-12">
+<div class="col-md-12 nopadding">
 
 	 <?php include('include/quick_tour.inc.php'); ?>
 
-     <div class="col-md-12">
+     <div class="col-md-12 nopadding">
          <?php include('include/footer.inc.php'); ?>
      </div>
 </div>

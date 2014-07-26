@@ -24,7 +24,7 @@
 	}
 	
 ?>
-<div  class="mid col-md-12 col-sm-12 col-xs-12">
+<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
 <?php if($_GET['flag'] != 'from_menu') { ?>
 <div class="backtolink"><a href="my_account.php">&nbsp;&nbsp;&nbsp;Continue To Home Page »</a></div>
 <?php } ?>

@@ -52,7 +52,7 @@ $unique_id = substr(md5(uniqid(rand(), true)), 15, 15);
 
 	}
 ?>
-<div  class="mid col-md-12 col-sm-12 col-xs-12">
+<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
 <?php
 $select_banner = "select * from advertise where adv_position = 'Forgot Password Top (954 X 100)' AND status = 'Active'";
 $db_banner = $obj->select($select_banner);

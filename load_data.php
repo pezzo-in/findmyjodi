@@ -263,7 +263,7 @@ $(document).ready(function(){
 
 </div>
 
-<div class="col-md-12">
+<div class="col-md-12 nopadding">
 
 	 <?php include('load_first.php'); ?>
 

@@ -135,7 +135,7 @@ $(document).ready(function(){
     </div>
 </div>
 <div class="wrapper">
-	<div  class="mid col-md-12 col-sm-12 col-xs-12">
+	<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
 	 <?php include('include/view_profile.inc.php'); ?>
      <?php //include('include/profile_leftbar.inc.php'); ?>
 	</div>

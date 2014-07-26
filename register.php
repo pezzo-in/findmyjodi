@@ -101,7 +101,7 @@ if($_SESSION['UserEmail']!='' && $_SESSION['IsActive']=='Yes')
 }(document, 'script', 'facebook-jssdk'));</script>
 <div class="container">
     <div class="row">
-        <div class="wrapper col-md-12">
+        <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
             <?php include('include/header.inc.php'); ?>
                 <div class="header inn">
                 <div class="titlebox col-md-12">
@@ -109,7 +109,7 @@ if($_SESSION['UserEmail']!='' && $_SESSION['IsActive']=='Yes')
                 </div>
             </div>
         </div>
-        <div class="wrapper col-md-12">
+        <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
              <?php include('include/register.inc.php'); ?>
            <?php include('include/footer.inc.php'); ?>
         </div>

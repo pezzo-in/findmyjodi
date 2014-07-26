@@ -61,7 +61,7 @@ include("common_user_fetch.php");
     </div>
 </div>
 <div class="wrapper">
-	 <div  class="mid col-md-12 col-sm-12 col-xs-12">
+	 <div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
      	<div class="sidebar">
         	<div class="sidebar-main">
             	<h2>Refine Search</h2>

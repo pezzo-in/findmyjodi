@@ -67,8 +67,8 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
 		}
 	}
 ?>
-<div class="top col-md-12">
-    <div class="topIn col-md-12">
+<div class="top col-md-12 col-xs-12 col-sm-12">
+    <div class="topIn col-md-12 col-xs-12 col-sm-12">
     <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
         <a href="index.php" class="logo col-md-2 col-xs-offset-3 col-sm-offset-0"><img src="images/logo2.png" alt="Find My Jodi" title="Find My Jodi" width="130" /></a>
         <?php }else { ?>
@@ -105,23 +105,41 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
             <?php } ?>
         </div>
         <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?> 
+        <nav role="navigation" class="navbar">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="menu col-md-6" id="menu">
             <li <?php //if($url[2] == "index.php") { echo "class='active'"; } ?>><a href="index.php" title="Home">Home</a></li>
             <li <?php //if($url[2] == "search.php") { echo "class='active'"; } ?>><a href="search.php" title="Search">Search</a>
                <ul>
-               		<div>
-                    <li><a href="search.php?flag=rag">Simple Search</a></li>
-               		<li><a href="search.php?flag=adv">Advanced Search</a></li>
-                    <li><a href="search.php?flag=key">Keyword Search</a></li>
-                    <li><a href="search.php?flag=id">Search by ID</a></li>
-                    <li><a href="save_search.php">Saved Search</a></li>                    
+                    <div>
+                        <li><a href="search.php?flag=rag">Simple Search</a></li>
+                        <li><a href="search.php?flag=adv">Advanced Search</a></li>
+                        <li><a href="search.php?flag=key">Keyword Search</a></li>
+                        <li><a href="search.php?flag=id">Search by ID</a></li>
+                        <li><a href="save_search.php">Saved Search</a></li>                    
                    </div>
                </ul>
             </li>
             <li><a href="upgrade.php" title="Upgrade">Packages</a></li>
             <li <?php //if($url[2] == "quick_tour.php") { echo "class='active'"; } ?>><a href="quick_tour.php" title="Quick Tour">Quick Tour</a></li>
             <li <?php //if($url[2] == "help.php") { echo "class='active'"; } ?>><a href="help.php" title="Contact Us">Contact Us</a></li>
-        </ul>
+        </ul>  
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+        
        <?php }else { ?>
        <ul class="menu" id="menu">
             <!--<li><a href="index.php">Home</a></li>-->

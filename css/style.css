@@ -1023,22 +1023,6 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
     padding-bottom: 2px;
 }
 
-.login-user input[type="submit"] {
-    background: url("../images/login-btn.png") no-repeat scroll left top rgba(0, 0, 0, 0);
-    border: medium none;
-    clear: both;
-    color: #f46989;
-    cursor: pointer;
-    float: left;
-    font-size: 0;
-    height: 33px;
-    margin-top: 10px;
-    overflow: hidden;
-    text-align: left;
-    text-indent: -9999px;
-    width: 90px;
-}
-
 .req_field {
     color: #f30000;
     font-size: 12px;
@@ -1120,6 +1104,7 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
 .new_acc input[type="submit"] {
     float: left;
     margin: 10px 0 30px;
+    clear: both;
 }
 
 .profile_img {

@@ -89,7 +89,7 @@ xmlhttp.send();
 }
 </script>  
 
-<div class="topMain col-md-12">
+<div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
     <?php include('include/header.inc.php'); ?>
     <div class="header inn">
         <div class="titlebox col-md-12">
@@ -97,7 +97,7 @@ xmlhttp.send();
         </div>
     </div>
 </div>
-<div class="col-md-12">
+<div class="col-md-12 nopadding">
 	 <?php include('include/view_success_story.inc.php'); ?>
      <?php include('include/footer.inc.php'); ?>
 </div>

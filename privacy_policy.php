@@ -64,7 +64,7 @@ include("common_user_fetch.php");
 	}
 }*/
 ?>
-<div class="topMain col-md-12">
+<div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
     	<?php include('include/header.inc.php'); ?>
 		<div class="header inn">
         	<div class="titlebox col-md-12">
@@ -72,7 +72,7 @@ include("common_user_fetch.php");
             </div>
         </div>
     </div>
-<div class="col-md-12">
+<div class="col-md-12 nopadding">
 	 <?php include('include/privacy_policy.inc.php'); ?>
      <?php include('include/footer.inc.php'); ?>
 </div>

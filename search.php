@@ -95,7 +95,7 @@ function keyword_search_save_submit()
 }   
 </script>
 
-<div class="topMain col-md-12">
+<div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
     <?php include('include/header.inc.php'); ?>
     <div class="header inn">
         <div class="titlebox col-md-12">
@@ -103,7 +103,7 @@ function keyword_search_save_submit()
         </div>
     </div>
 </div>
-<div class="col-md-12">
+<div class="col-md-12 nopadding">
 	 <?php include('include/search.inc.php'); ?>
      <?php include('include/footer.inc.php'); ?>
 </div>

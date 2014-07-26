@@ -132,7 +132,7 @@ include("common_user_fetch.php");
     </div>
 </div>
 <div class="wrapper">
-	<div  class="mid col-md-12 col-sm-12 col-xs-12">
+	<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
     	 <?php include('include/edit_profile_top.inc.php'); ?>
          <?php include('include/profile_leftbar.inc.php'); ?>
 		 <?php include('include/need_more_info_by_others.inc.php'); ?>
