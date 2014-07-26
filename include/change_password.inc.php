@@ -1,82 +1,41 @@
 <?php
-
 $error='';
-
 $success='';
-
 if(isset($_POST['change_password']))
-
 {
-
 	$select_member="select * from members where id='".$_SESSION['logged_user'][0]['id']."' AND password='".md5($_POST['old_pass'])."' ";
-
 	$db_member=$obj->select($select_member);
-
-	
-
 	if(count($db_member)==0)
-
 	{
-
 		$error='Old password is not matching. Please enter correct password.';
-
 	}
-
 	else
-
 	{
-
 		$update_password="update members set password='".md5($_POST['new_pass'])."' where id='".$_SESSION['logged_user'][0]['id']."'";
-
 		$obj->edit($update_password);
-
-		$success='Password Change Successfully.';		
-
+		$success='Password Change Successfully.';
 	}
-
-}	
-
+}
 ?>
-
-
-
       <div class="content col-md-9 col-xs-12 col-sm-12">
-
 		      <h3>Change Password <label style="margin-left:10px;color:green;"><?php echo $success; ?></label> </h3>
-
-	       		 <form name="photo_upload_form" method="post" style="padding-top:10px" enctype="multipart/form-data">
-
-       				<div class="new_acc chng-pwd-form">
-
-                    	<label>Old Password</label>
-
-						<input type="password" name="old_pass" id="old_pass" value="<?php if($success==''){ echo $_POST['old_pass']; } ?>" style="margin-bottom:inherit;" class="col-md-4 col-xs-12 col-sm-8 form-control" />
-						<label style="color:#F00;font-size:13px;" class="old_pass_error"><?php echo $error; ?></label>
-                        
-                        <label>New Password</label>
-
-						<input type="password" name="new_pass" id="new_pass" value="<?php if($success==''){ echo $_POST['new_pass']; } ?>" style="margin-bottom:inherit;" class="col-md-4 col-xs-12 col-sm-8 form-control" />
-						<label style="color:#F00;font-size:13px;" class="new_pass_error"></label>
-                        
-                        <label>Confirm Password</label>
-
-						<input type="password" name="confirm_pass" id="confirm_pass" value="<?php if($success==''){ echo $_POST['confirm_pass']; } ?>" style="margin-bottom:inherit;" class="col-md-4 col-xs-12 col-sm-8 form-control" />
-						<label style="color:#F00;font-size:13px;" class="confirm_pass_error"></label>
-          				
-
-                        <input type="submit" name="change_password" class="update_btn_new1 btn btn-success btn-sm" onclick="return check_form()" value="Update">
-                        
-
-        			 </div>
-
-      			</form>
-
-      </div>    
-
+             <form name="photo_upload_form" method="post" style="padding-top:10px" enctype="multipart/form-data">
+                <div class="new_acc chng-pwd-form">
+                    <label>Old Password</label>
+                    <input type="password" name="old_pass" id="old_pass" value="<?php if($success==''){ echo $_POST['old_pass']; } ?>" style="margin-bottom:inherit;" class="col-md-4 col-xs-12 col-sm-8 form-control" />
+                    <label style="color:#F00;font-size:13px;" class="old_pass_error"><?php echo $error; ?></label>
+                    <label>New Password</label>
+                    <input type="password" name="new_pass" id="new_pass" value="<?php if($success==''){ echo $_POST['new_pass']; } ?>" style="margin-bottom:inherit;" class="col-md-4 col-xs-12 col-sm-8 form-control" />
+                    <label style="color:#F00;font-size:13px;" class="new_pass_error"></label>
+                    <label>Confirm Password</label>
+                    <input type="password" name="confirm_pass" id="confirm_pass" value="<?php if($success==''){ echo $_POST['confirm_pass']; } ?>" style="margin-bottom:inherit;" class="col-md-4 col-xs-12 col-sm-8 form-control" />
+                    <label style="color:#F00;font-size:13px;" class="confirm_pass_error"></label>
+                    <input type="submit" name="change_password" class="update_btn_new1 btn btn-success btn-sm" onclick="return check_form()" value="Update">
+                 </div>
+            </form>
+      </div>
      <script>
-
 	 function check_form()
-
 	 {
 
 		$('.old_pass_error').html('');

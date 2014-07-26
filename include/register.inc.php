@@ -152,7 +152,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
     <form id="formID" class="form-horizontal" method="post" onsubmit="return check_form()">
         <div class="new_acc">
             <div class="col-md-4"><label>Profile created for<font color="#FF0000">*</font></label></div>
-            <div class="col-md-8"><select class="form-control" id="drpProfFor" name="drpProfFor" onchange="drpProfFor_fun(this.id)" tabindex="1" style="clear:none;" >
+            <div class="col-md-8"><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpProfFor" name="drpProfFor" onchange="drpProfFor_fun(this.id)" tabindex="1" style="clear:none;" >
                 <option value="">-Select-</option>
                 <option value="Myself">Myself</option>
                 <option value="Son">Son</option>
@@ -163,10 +163,10 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 <option value="Friend">Friend</option>
             </select><span id="profile_for" class="err_msg">Select for whom this profile is for</span></div>
             <div class="col-md-4"><label>Name<font color="#FF0000">*</font></label></div>
-            <div class="col-md-8"><input class="form-control" type="text" name="username" id="username" onkeypress="return onlyAlphabets(event,this);" tabindex="2" style="clear:none;">
+            <div class="col-md-8"><input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="username" id="username" onkeypress="return onlyAlphabets(event,this);" tabindex="2" style="clear:none;">
                 <span id="nm" class="err_msg">Enter valid name</span></div>
             <div class="col-md-4"><label>Date of Birth<font color="#FF0000">*</font></label></div>
-            <div class="col-md-8"><input class="form-control" type="text" id="dob" tabindex="3" name="dob" onchange="drpProfFor_fun(this.id)"  style="clear:none;" />
+            <div class="col-md-8"><input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" id="dob" tabindex="3" name="dob" onchange="drpProfFor_fun(this.id)"  style="clear:none;" />
                 <span id="edob" class="err_msg">Enter date of birth</span></div>
             <?php if (isset($error)) { echo "<p class='message'>" .$error. "</p>" ;} ?>
             <div class="col-md-4"><label>Gender<font color="#FF0000">*</font></label></div>
@@ -180,17 +180,17 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
             </div>
                 <span id="gen" class="err_msg">Select gender</span></div>
             <div class="col-md-4"><label>Email<font color="#FF0000">*</font></label></div>
-            <div class="col-md-8"><input class="form-control" type="text" name="email" id="email" onblur="return check_form1()" tabindex="5" style="clear:none;">
+            <div class="col-md-8"><input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="email" id="email" onblur="return check_form1()" tabindex="5" style="clear:none;">
                 <span id="mail" class="err_msg">Enter valid mail address</span></div>
             <div class="col-md-4"><label>Password<font color="#FF0000">*</font></label></div>
-            <div class="col-md-8"><input class="form-control" type="password" name="password" onchange="drpProfFor_fun(this.id)" id="password" tabindex="6" style="clear:none;">
+            <div class="col-md-8"><input class="form-control col-md-12 col-sm-12 col-xs-12" type="password" name="password" onchange="drpProfFor_fun(this.id)" id="password" tabindex="6" style="clear:none;">
                 <span id="pass" class="err_msg">Enter password</span></div>
             <div class="col-md-4"><label>Religion<font color="#FF0000">*</font></label></div>
             <div class="col-md-8"><?php
                             $religion_list = "select * from religions";
                             $data = $obj->select($religion_list);
                 ?>
-                <select class="form-control" name="drpReligion" id="drpReligion" onchange="drpProfFor_fun(this.id); change_religion(this.value);" tabindex="7" style="clear:none;">
+                <select class="form-control col-md-12 col-xs-12 col-sm-12" name="drpReligion" id="drpReligion" onchange="drpProfFor_fun(this.id); change_religion(this.value);" tabindex="7" style="clear:none;">
                     <option value=""> -Select- </option>
                     <?php foreach($data as $res) { ?>
                     <option value="<?php echo $res['religion']; ?>"><?php echo $res['religion']; ?></option>
@@ -203,7 +203,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                             $data = $obj->select($caste_list);
                 ?>
                 <div id="caste_drp_div">
-                    <select class="form-control" name="drpCaste" id="drpCaste" onchange="drpProfFor_fun(this.id)" tabindex="8" style="clear:none;">
+                    <select class="form-control col-md-12 col-xs-12 col-sm-12" name="drpCaste" id="drpCaste" onchange="drpProfFor_fun(this.id)" tabindex="8" style="clear:none;">
                         <option value=""> -Select- </option>
                     </select>
                 </div>
@@ -213,7 +213,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                             $data = $obj->select($list);
             ?>
             <div class="col-md-4"><label>Mother Tongue<font color="#FF0000">*</font></label></div>
-            <div class="col-md-8"><select class="form-control" name="drpMotherlanguage" id="drpMotherlanguage" onchange="drpProfFor_fun(this.id)" tabindex="9" style="clear:none;" />
+            <div class="col-md-8"><select class="form-control col-md-12 col-xs-12 col-sm-12" name="drpMotherlanguage" id="drpMotherlanguage" onchange="drpProfFor_fun(this.id)" tabindex="9" style="clear:none;" />
                 <option value=""> -Select- </option>
                 <?php foreach($data as $res) { ?>
                 <option value="<?php echo $res['name']; ?>"><?php echo $res['name']; ?></option>
@@ -225,7 +225,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                             $country_list = "select * from mobile_codes";
                             $data = $obj->select($country_list);
                 ?>
-                <select class="form-control" name="drpCountry" id="drpCountry" onchange="drpProfFor_fun(this.id)" tabindex="10" style="clear:none;"/>
+                <select class="form-control col-md-12 col-xs-12 col-sm-12" name="drpCountry" id="drpCountry" onchange="drpProfFor_fun(this.id)" tabindex="10" style="clear:none;"/>
                 <option value="">- Select -</option>
                 <?php foreach($data as $res) { ?>
                 <option value="<?php echo $res['country']; ?>"><?php echo $res['country']; ?></option>
@@ -239,7 +239,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                             $db_category2 = $obj->select($select_category2);
                 //print_r($db_category2);
                 ?>
-                <select class="form-control"  id="txtcurr" name="txtcurr" style="width:75px;">
+                <select class="form-control col-md-12 col-xs-12 col-sm-12"  id="txtcurr" name="txtcurr" style="width:75px;">
 
                     <?php foreach($db_category2 as $db) {  ?>
 
@@ -249,8 +249,8 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 </select>
             </div>
 
-                <!--<input class="form-control" type="text" name="txtcurr" id="txtcurr" maxlength="10" style=" float:left; width:50px; text-align:right;" value="" readonly="readonly" tabindex="14" />-->
-                <input class="form-control" type="text" name="drpIncome" id="drpIncome" style="width:188px; margin-left:5px; clear:none;"  />
+                <!--<input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="txtcurr" id="txtcurr" maxlength="10" style=" float:left; width:50px; text-align:right;" value="" readonly="readonly" tabindex="14" />-->
+                <input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="drpIncome" id="drpIncome" style="width:188px; margin-left:5px; clear:none;"  />
 
                 <span id="aincome" class="err_msg">Enter annual income</span></div>
             <div class="col-md-4"><label>Star</label></div>
@@ -258,7 +258,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                             $list = "select * from horoscope_star_master";
                             $data = $obj->select($list);
                 ?>
-                <select class="form-control" name="drpStar" id="drpStar" tabindex="12" style="clear:none;" />
+                <select class="form-control col-md-12 col-xs-12 col-sm-12" name="drpStar" id="drpStar" tabindex="12" style="clear:none;" />
                 <option value="0">Any</option>
                 <?php foreach($data as $res) { ?>
                 <option value="<?php echo $res['star']; ?>"><?php echo $res['star']; ?></option>
@@ -272,21 +272,21 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                             $select_category2 = "select * from mobile_codes";
                             $db_category2 = $obj->select($select_category2);
                 ?>
-                <select class="form-control"  id="drpMobcode" name="mob_code" style="width:75px;">
+                <select class="form-control col-md-12 col-xs-12 col-sm-12"  id="drpMobcode" name="mob_code" style="width:75px;">
                     <?php foreach($db_category2 as $db) {  ?>
                     <option value="<?php echo $db['mob_code']; ?>" <?php if($db['mob_code'] == $logged_in_member[0]['mob_code']){ ?> selected="selected" <?php } ?>><?php echo $db['mob_code']; ?></option>
 
                     <?php } ?>
                 </select>
             </div>
-                <input class="form-control" type="text" name="txtMobNo" id="txtMobNo" maxlength="10" style="width: 170px;margin-left: 5px;clear: none;" onchange="return check_form1()" onkeypress="return isNumber(event)" tabindex="14" />
+                <input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="txtMobNo" id="txtMobNo" maxlength="10" style="width: 170px;margin-left: 5px;clear: none;" onchange="return check_form1()" onkeypress="return isNumber(event)" tabindex="14" />
                 <span id="mnumber" class="err_msg">Enter mobile number</span></div>
             <div class="col-md-4"><label>Occupation</label></div>
             <div class="col-md-8"><?php
                             $list = "select * from occupation_master";
                             $data = $obj->select($list);
                 ?>
-                <select class="form-control" name="drpOccupation" id="drpOccupation" tabindex="15" style="clear:none;" />
+                <select class="form-control col-md-12 col-xs-12 col-sm-12" name="drpOccupation" id="drpOccupation" tabindex="15" style="clear:none;" />
                 <option value=""> Any</option>
                 <?php foreach($data as $res) { ?>
                 <option value="<?php echo $res['occupation']; ?>"><?php echo $res['occupation']; ?></option>
@@ -294,17 +294,17 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 </select>
                 <span id="occupation" class="err_msg">Select occupation</span></div>
             <div class="col-md-4"><label>Manglik</label></div>
-            <div class="col-md-8"><select class="form-control" name="drpManglik" id="drpManglik" tabindex="16" style="clear:none;" />
+            <div class="col-md-8"><select class="form-control col-md-12 col-xs-12 col-sm-12" name="drpManglik" id="drpManglik" tabindex="16" style="clear:none;" />
                 <option value="Dont Know">Don't know</option>
                 <option value="Y">Yes</option>
-                <option value="N"><input class="form-control" type="submit" name="submit">No</option>
+                <option value="N"><input class="form-control col-md-12 col-sm-12 col-xs-12" type="submit" name="submit">No</option>
                 </select>
                 <span id="manglik" class="err_msg">Select one value</span></div>
                 <br class="clear" />
                     <div class="terms_line">
                     <label class="checkbox"><input class="form-control" checked="checked" style="margin:-6px 10px 0 0" tabindex="17" type="checkbox" id="chk" value="1" /> I agree to the Find My Jodi <a href="privacy_policy.php">Privacy Policy</a> and <a href="terms_conditions.php">Terms and Conditions.</a></label>
                     <span id="chkmsg" class="err_msg">Check Terms and condition box</span>
-                    <input type="submit" name="submit" onclick="return validate()" value="Register" class="btn btn-info" tabindex="18"/>
+                    <input type="submit" name="submit" onclick="return validate()" value="Register" class="btn btn-info" tabindex="18" class="btn btn-success btn-sm" value="Register" />
                     </div>
 		</div>
     </form>

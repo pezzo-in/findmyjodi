@@ -200,10 +200,10 @@
                	<form method="post" name="login" onsubmit="return check_form()">
                 	<div class="login-user">
                     	<label>Email or Member Id<span class="req_field">*</span></label>
-                    	<input type="text" placeholder="Email ID OR Member ID" value="<?php if(isset($_POST['email'])) { echo $_POST['email']; } ?>" name="email" id="email" onchange="return check_form()">
+                    	<input class="col-md-4 col-sm-6 col-xs-12 form-control" type="text" placeholder="Email ID OR Member ID" value="<?php if(isset($_POST['email'])) { echo $_POST['email']; } ?>" name="email" id="email" onchange="return check_form()">
                         <label>Password <span class="req_field">*</span></label>
-                        <input type="password" placeholder="Password" name="password" value="<?php if(isset($_POST['password'])) { echo $_POST['password']; } ?>" id="password" onchange="return check_form()">
-                        <input type="submit" name="submit" />
+                        <input class="col-md-4 col-sm-6 col-xs-12 form-control" type="password" placeholder="Password" name="password" value="<?php if(isset($_POST['password'])) { echo $_POST['password']; } ?>" id="password" onchange="return check_form()">
+                        <input class="btn btn-success btn-sm" type="submit" name="submit" />
                         <div class="clear"></div><br />
                         <h3>Forgot your password?</h3>
                         <span>no worries, click <a href="forgot_password.php">here</a> to reset your password.</span>

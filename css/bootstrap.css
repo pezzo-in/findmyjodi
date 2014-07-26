@@ -5751,6 +5751,10 @@ button.close {
     display: none !important;
   }
 }
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
 .loginBG {
   position: fixed;
   top: 0;

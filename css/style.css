@@ -123,19 +123,8 @@ textarea {
 }
 
 .top {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    background: none repeat scroll 0 0 #ffffff;
-    border-color: -moz-use-text-color #e4e4e4;
-    border-image: none;
-    border-style: none solid;
-    border-width: medium 1px;
+    background: #ffffff;
     float: left;
-    padding-bottom: 6px;
-    position: relative;
-    z-index: 9;
 }
 
 .topIn {
@@ -795,6 +784,19 @@ ul.foot_link li a:hover {
     float: right;
 }
 
+.my-account ul li:first-child {
+    width: 50%;
+}
+
+.my-account ul li {
+    float: left;
+}
+
+.my-account ul li:last-child {
+    width: 40%;
+    padding-left: 10px;
+}
+
 ul.profl-list {
     list-style: none outside none;
     margin: 0;
@@ -1021,20 +1023,6 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
     padding-bottom: 2px;
 }
 
-.login-user input[type="text"], .login-user input[type="password"] {
-    border: 1px solid #e5e5e5;
-    clear: both;
-    color: #333333;
-    float: left;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 20px;
-    margin-bottom: 20px;
-    padding: 6px 10px;
-    vertical-align: top;
-    width: 248px;
-}
-
 .login-user input[type="submit"] {
     background: url("../images/login-btn.png") no-repeat scroll left top rgba(0, 0, 0, 0);
     border: medium none;
@@ -1092,18 +1080,6 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
     width: 248px;
 }
 
-.new_acc select {
-    border: 1px solid #cfcdcd;
-    clear: both;
-    color: #848484;
-    cursor: pointer;
-    float: left;
-    font-size: 14px;
-    font-weight: normal;
-    padding: 5px;
-    width: 100%;
-}
-
 .new_acc select option {
     padding-left: 8px;
 }
@@ -1142,9 +1118,6 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
 }
 
 .new_acc input[type="submit"] {
-    clear: both;
-    color: #ffffff;
-    cursor: pointer;
     float: left;
     margin: 10px 0 30px;
 }
@@ -1177,20 +1150,6 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
     float: left;
     padding-bottom: 10px;
     width: 100%;
-}
-
-.row-detail ul li {
-    float: left;
-    line-height: 15px !important;
-    margin: 3px 10px 3px 0;
-}
-
-.row-detail ul li:first-child {
-    width: 46%;
-}
-
-.row-detail ul li:nth-child(3) {
-    width: 39%;
 }
 
 #tab-container {
@@ -3778,10 +3737,6 @@ ul.profl-list .griddetail {
     width: 0 !important;
 }
 
-.new_acc textarea {
-    margin-bottom: 20px;
-}
-
 .chat1 {
     bottom: 0;
     box-shadow: 2px 0 2px -2px #b2b9c9 inset;
@@ -3977,26 +3932,6 @@ ul.profl-list .griddetail {
 
 .goto_profile a.icon-photo-activef span {
     background: url("../images/icon-photof.png") no-repeat scroll center -23px rgba(0, 0, 0, 0);
-}
-
-#txtMobNo {
-    clear: none;
-    margin-left: 5px;
-    width: 190px;
-}
-
-#about_me {
-    border: 1px solid #cfcdcd;
-    clear: both;
-    color: #848484;
-    float: left;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 20px;
-    margin-bottom: 0;
-    padding: 6px 10px;
-    vertical-align: top;
-    width: 270px;
 }
 
 .prfldetailtitle {
@@ -4815,10 +4750,6 @@ ul.profl-list .griddetail {
     margin-right: 10px;
 }
 
-.update_btn_new1 {
-    background: url("../images/update_btn1.png") no-repeat scroll left top rgba(0, 0, 0, 0) !important;
-}
-
 .submit_btn_new_small {
     background: url("../images/submit_small_btn1.png") no-repeat scroll left top rgba(0, 0, 0, 0) !important;
     border: medium none !important;
@@ -5031,10 +4962,6 @@ ul.profl-list .griddetail {
     margin: 20px 10px 0 0;
 }
 
-.editprof ul li {
-    width: auto !important;
-}
-
 .editprof input[type="text"], .editprof input[type="password"] {
     margin-bottom: 10px;
 }
@@ -5200,8 +5127,7 @@ ul.profl-list .griddetail {
 }
 
 .logo {
-    float: left;
-    margin: 0 0 0 17px;
+    text-align: center;
 }
 
 .box_left {
