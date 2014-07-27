@@ -14,9 +14,13 @@ $db_content = $obj->select($select_content);
 <meta name="keywords" content="<?php echo $db_content[0]['SeoKeywords']; ?>" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="css/colorbox.css" />
+    <script type="text/javascript" src="assets/js/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
 </head>
 		
 <body>
+<div class="container">
+    <div class="row">
 
 <?php
 include("common_user_fetch.php");
@@ -84,10 +88,10 @@ xmlhttp.onreadystatechange=function()
 xmlhttp.open("GET","selectcode.php?q="+str,true);
 xmlhttp.send();
 }
-</script>  
+</script>
 
-<div class="topMain">
-	<div class="wrapper">
+        <div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
+            <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
     	<?php include('include/header.inc.php'); ?>
 		<div class="header inn">
         	<div class="titlebox">
@@ -96,9 +100,11 @@ xmlhttp.send();
         </div>
     </div>
 </div>
-<div class="wrapper">
+<div class="wrapper col-md-12 col-sm-12 col-xs-12">
 	 <?php include('include/success_story.inc.php'); ?>
      <?php include('include/footer.inc.php'); ?>
+</div>
+</div>
 </div>
 <script src="js/jquery.colorbox.js"></script>
 <script>

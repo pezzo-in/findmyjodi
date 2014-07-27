@@ -191,9 +191,7 @@
         	<div class="col-md-6">
                	<h2>New User ?</h2>
                 <br/>
-                <br/>
-                <br/>
-                <a href="register.php" class="btn btn-danger btn-md col-xs-12 col-sm-12 col-md-4">Register for free</a>
+                <a href="register.php" class="btn btn-danger btn-md col-xs-12 col-sm-8 col-md-6">Register for free</a>
            	</div>
             <div class="col-md-6">
             	<h2>Registered User</h2>
@@ -202,10 +200,11 @@
                 <?php if (isset($error)) { echo "<p class='message' style='border:none'>" .$error. "</p>" ;} ?>
                	<form method="post" name="login" onsubmit="return check_form()">
                 	<div class="login-user">
-                    	<label class="col-md-4 col-sm-4 col-xs-12 nopadding">Email or Member Id<span class="req_field">*</span></label>
-                    	<input class="col-md-4 col-sm-6 col-xs-12 form-control" type="text" placeholder="Email ID OR Member ID" value="<?php if(isset($_POST['email'])) { echo $_POST['email']; } ?>" name="email" id="email" onchange="return check_form()">
-                        <label class="col-md-4 col-sm-4 col-xs-12 nopadding">Password <span class="req_field">*</span></label>
-                        <input class="col-md-4 col-sm-6 col-xs-12 form-control" type="password" placeholder="Password" name="password" value="<?php if(isset($_POST['password'])) { echo $_POST['password']; } ?>" id="password" onchange="return check_form()">
+                    	<input class="col-md-6 col-sm-12 col-xs-12 form-control" type="text" placeholder="Email ID OR Member ID" value="<?php if(isset($_POST['email'])) { echo $_POST['email']; } ?>" name="email" id="email" onchange="return check_form()">
+                        <br/>
+                        <br/>
+                        <input class="col-md-6 col-sm-12 col-xs-12 form-control" type="password" placeholder="Password" name="password" value="<?php if(isset($_POST['password'])) { echo $_POST['password']; } ?>" id="password" onchange="return check_form()">
+                        <br/>
                         <br/>
                         <input class="btn btn-success btn-sm col-xs-12 col-sm-12 col-md-6" type="submit" name="submit" value="Login" />
                         <div class="clear"></div><br />

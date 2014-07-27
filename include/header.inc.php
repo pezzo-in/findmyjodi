@@ -75,7 +75,7 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
         <a href="my_account.php" class="logo col-md-2 col-xs-12"><img src="images/logo2.png" alt="Find My Jodi" title="Find My Jodi" width="130" /></a>
         <?php } ?>
         <div class="topLogin col-md-3 pull-right text-right col-xs-12">
-            <div class="loginlink col-md-6 col-xs-6 col-sm-6 pull-left">
+            <div class="loginlink col-md-6 col-xs-6 col-sm-6 pull-right">
             <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
                 <div class="dropdown">
                     <a data-toggle="dropdown" href="login.php" class="btn btn-info btn-md col-md-12 col-xs-12 col-sm-12" title="Login to your profile">Sign In</a>
@@ -97,7 +97,7 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
                     </ul>
                 </div>
                 <?php } else { ?>
-                <a href="logout.php" class="link-reg btn btn-danger btn-md pull-right" title="Sign Out">Sign Out</a>
+                <a href="logout.php" class="link-reg btn btn-danger btn-md pull-right sign-out" title="Sign Out">Sign Out</a>
                 <?php } ?>
             </div>
             <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
@@ -105,40 +105,38 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
             <?php } ?>
         </div>
         <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?> 
-        <nav role="navigation" class="navbar">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
+       <!-- <nav role="navigation" class="navbar">
+            <div class="container-fluid">
+            &lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="menu col-md-6" id="menu">
-            <li <?php //if($url[2] == "index.php") { echo "class='active'"; } ?>><a href="index.php" title="Home">Home</a></li>
-            <li <?php //if($url[2] == "search.php") { echo "class='active'"; } ?>><a href="search.php" title="Search">Search</a>
-               <ul>
-                    <div>
-                        <li><a href="search.php?flag=rag">Simple Search</a></li>
-                        <li><a href="search.php?flag=adv">Advanced Search</a></li>
-                        <li><a href="search.php?flag=key">Keyword Search</a></li>
-                        <li><a href="search.php?flag=id">Search by ID</a></li>
-                        <li><a href="save_search.php">Saved Search</a></li>                    
-                   </div>
-               </ul>
-            </li>
-            <li><a href="upgrade.php" title="Upgrade">Packages</a></li>
-            <li <?php //if($url[2] == "quick_tour.php") { echo "class='active'"; } ?>><a href="quick_tour.php" title="Quick Tour">Quick Tour</a></li>
-            <li <?php //if($url[2] == "help.php") { echo "class='active'"; } ?>><a href="help.php" title="Contact Us">Contact Us</a></li>
-        </ul>  
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+                &lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+                    <ul class="menu col-md-6" id="menu">
+                        <li <?php //if($url[2] == "index.php") { echo "class='active'"; } ?>><a href="index.php" title="Home">Home</a></li>
+                        <li <?php //if($url[2] == "search.php") { echo "class='active'"; } ?>><a href="search.php" title="Search">Search</a>
+                            <ul>
+                                <li><a href="search.php?flag=rag">Simple Search</a></li>
+                                <li><a href="search.php?flag=adv">Advanced Search</a></li>
+                                <li><a href="search.php?flag=key">Keyword Search</a></li>
+                                <li><a href="search.php?flag=id">Search by ID</a></li>
+                                <li><a href="save_search.php">Saved Search</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="upgrade.php" title="Upgrade">Packages</a></li>
+                        <li <?php //if($url[2] == "quick_tour.php") { echo "class='active'"; } ?>><a href="quick_tour.php" title="Quick Tour">Quick Tour</a></li>
+                        <li <?php //if($url[2] == "help.php") { echo "class='active'"; } ?>><a href="help.php" title="Contact Us">Contact Us</a></li>
+                    </ul>
+                <!--</div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;
+            </div>&lt;!&ndash; /.container-fluid &ndash;&gt;
+        </nav>-->
         
        <?php }else { ?>
        <ul class="menu" id="menu">

@@ -103,15 +103,18 @@ if(isset($_POST['postsubmit']) && (trim($_POST['PostText'])!='') || $_POST['img_
 }
 ?>
 <?php if($_GET['id'] == '') { ?>
-<div class="content">
-	<div class="about_right">
+<div class="content col-md-9 col-sm-12 col-xs-12">
+	<div class="col-md-12 col-xs-12 col-sm-12">
         
-            <div class="top_textarea">
-                <form action="" method="post" name="frmpost">
-                <textarea name="PostText" cols="" rows=""></textarea>
-                <div class="right_btn">
-                    <input type="hidden" id="img_name" name="img_name" />
-                    <input name="postsubmit" type="submit" value="Post" />
+            <div class="top_textarea col-md-12 nopadding col-xs-12 col-sm-12">
+                <form action="" method="post" name="frmpost" class="col-md-12 col-sm-12 col-xs-12 nopadding">
+                <textarea name="PostText" cols="" rows="" class="col-md-12 col-sm-12 col-xs-12"></textarea>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="right_btn">
+                    <input type="hidden" id="img_name" name="img_name" value="Photo" class="pull-left" btn btn-success btn-sm />
+                    <input name="postsubmit" type="submit" value="Post" class="pull-left btn btn-success btn-sm" />
                 </div>
 				</form>
 				<form name="file_upload" action="upload_file_post.php" method="post" target="frame" enctype="multipart/form-data">
@@ -186,7 +189,8 @@ if(isset($_POST['postsubmit']) && (trim($_POST['PostText'])!='') || $_POST['img_
 			$db_select_photo = $obj->select($select_photo);
 		?>
          <div id="post_wrapper<?php echo $db_select_post[$i]['Id']; ?>">
-        <div class="mid_prof" id="mid_prof_<?php echo $db_select_post[$i]['Id']; ?>"> 
+             <br/>
+        <div class="mid_prof col-md-12 col-xs-12 col-sm-12" id="mid_prof_<?php echo $db_select_post[$i]['Id']; ?>">
         	<?php if($db_select_photo[0]['photo']!='') { ?>
             <img src="upload/<?php echo $db_select_photo[0]['photo']; ?>" width="47" height="46" alt="" />
             <?php 

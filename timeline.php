@@ -116,35 +116,38 @@ $(document).ready(function(){
       $('#tab-container').easytabs();
     });
 </script>
-<div class="topMain">
-	<div class="wrapper">
-    	<?php include('include/header.inc.php'); ?>
-        <?php 
-		if($_GET['id'] == '') 
-		{ 
-			include('include/slider1.inc.php'); 
-		}
-		else
-		{
-			include('include/slider2.inc.php'); 
-		}
-		
-		?>
-		<div class="header inn" style="display:none">
-        	<div class="titlebox">
-            	<h2>Timeline</h2>
+<div class="container">
+    <div class="row">
+        <div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
+            <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
+                <?php include('include/header.inc.php'); ?>
+                <?php
+                if($_GET['id'] == '')
+                {
+                    include('include/slider1.inc.php');
+                }
+                else
+                {
+                    include('include/slider2.inc.php');
+                }
+
+                ?>
+                <div class="header inn">
+                    <div class="titlebox col-md-12">
+                        <h2>Timeline</h2>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="col-md-12 nopadding mid">
+            <div class="wrapper col-md-12 col-sm-12 col-xs-12">
+                 <?php include('include/edit_profile_top.inc.php'); ?>
+                 <?php include('include/profile_leftbar.inc.php'); ?>
+                 <?php include('include/timeline.inc.php'); ?>
+            </div>
+            <?php include('include/footer.inc.php'); ?>
+        </div>
     </div>
-</div>
-<div class="wrapper">
-	<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
-    	
-    	 <?php include('include/edit_profile_top.inc.php'); ?>
-         <?php include('include/profile_leftbar.inc.php'); ?>
-		 <?php include('include/timeline.inc.php'); ?>
-    </div>
-     <?php include('include/footer.inc.php'); ?>
 </div>
 </div>
 </div>

@@ -122,15 +122,13 @@ $(document).ready(function(){
 </script>
 
 <div class="topMain">
-	<div class="wrapper">
-    	<?php include('include/header.inc.php'); ?>
-		<?php include('include/slider1.inc.php'); ?>
-		<div class="header inn" style="display:none">
-        	<div class="titlebox">
-            	<h2>Accepted Interested</h2>
-                
-               
-            </div>
+    <?php include('include/header.inc.php'); ?>
+    <?php include('include/slider1.inc.php'); ?>
+    <div class="header inn" style="display:none">
+        <div class="titlebox">
+            <h2>Accepted Interested</h2>
+
+
         </div>
     </div>
 </div>

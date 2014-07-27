@@ -88,8 +88,8 @@ if(isset($_POST['send_reply']))
  	if(!empty($messages)) 
 	{
 ?>
-<div class="content">
-	<div class="msgChat">
+<div class="col-md-9 col-xs-12 col-sm-12 nopadding">
+	<div class="msgChat col-xs-2 col-sm-4 col-md-4 nopadding">
     	<ul id="msgChat">
         <?php
 			
@@ -398,7 +398,6 @@ $('.not_int_msg_class').click(function() {
 <script type="text/javascript">
    $(function(){
 		$('#msgChat').slimscroll({
-			width: '300px',
 			height: '580px'
 		  });
 		  $('#msgAll').slimscroll({

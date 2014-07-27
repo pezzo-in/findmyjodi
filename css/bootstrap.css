@@ -5791,4 +5791,9 @@ button.close {
   .new_acc > div {
     clear: both;
   }
+  .sign-out {
+    position: absolute;
+    right: -10%;
+    top: -50px;
+  }
 }

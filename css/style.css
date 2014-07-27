@@ -1028,6 +1028,7 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
     font-size: 12px;
 }
 
+
 .login-user h3 {
     color: #555555;
     font-family: 'avenir_45_bookregular';
@@ -3196,25 +3197,9 @@ ul.list-prfl li a:hover {
     z-index: 99999;
 }
 
-.about_right {
-}
-
 .top_textarea {
     float: left;
     position: relative;
-}
-
-.top_textarea textarea {
-    border: 1px solid #ccc;
-    float: left;
-    font-family: 'avenir_45_bookregular';
-    font-size: 13px;
-    height: 53px;
-    line-height: 20px;
-    outline: medium none;
-    padding: 5px;
-    resize: none;
-    width: 540px;
 }
 
 .right_btn {
@@ -3222,21 +3207,9 @@ ul.list-prfl li a:hover {
     width: 95px;
 }
 
-.right_btn input[type="button"], .right_btn input[type="submit"] {
-    background: url("../images/post_btn1.png") no-repeat scroll left top rgba(0, 0, 0, 0);
-    border: medium none;
-    border-radius: 4px;
-    color: #f46a8a;
-    cursor: pointer;
-    float: left;
-    font-size: 0;
-    height: 30px;
-    margin: 0 0 0 6px;
-    overflow: hidden;
-    text-indent: -9999px;
-    width: 85px;
+.comment-div-repeat{
+    width: 100%;
 }
-
 .photo_attach {
     cursor: pointer;
     float: left;
@@ -3320,14 +3293,14 @@ ul.list-prfl li a:hover {
     background: none repeat scroll 0 0 #efefef;
     clear: both;
     float: left;
-    width: 550px;
+    width: 100%x;
 }
 
 .wholikes {
     border-bottom: 1px solid #fff;
     float: left;
     padding: 2px 10px;
-    width: 677px;
+    width: 100%;
 }
 
 .wholikes .like {
@@ -3382,7 +3355,7 @@ ul.list-prfl li a:hover {
     border-bottom: 1px solid #fff;
     float: left;
     padding: 5px 15px 5px 5px;
-    width: 677px;
+    width: 100%;
 }
 
 .cmmnts .pimg {
@@ -4402,13 +4375,6 @@ ul.profl-list .griddetail {
     padding: 0;
 }
 
-.msgChat ul li {
-    font-family: 'avenir_45_bookregular';
-    margin: 0;
-    padding: 0;
-    width: 300px;
-}
-
 .msgChat ul li:first-child {
     border-top: medium none;
 }
@@ -4501,10 +4467,6 @@ ul.profl-list .griddetail {
     position: absolute;
     right: 10px;
     top: 0;
-}
-
-.msgAll {
-    margin-left: 310px;
 }
 
 .msgAll .slimScrollDiv {
@@ -5012,8 +4974,9 @@ ul.profl-list .griddetail {
 .msginput {
     float: left;
     height: 20px;
-    padding-right: 25px;
-    width: 370px;
+    margin: 0 0 20px;
+    padding: 15px 25px;
+    width: 100%;
 }
 
 .msginput input[type="text"] {

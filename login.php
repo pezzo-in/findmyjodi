@@ -43,10 +43,8 @@ $(document).ready(function(){
         </div>
         <div class="col-md-12 nopadding">
             <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
-                <div class="wrapper">
-                     <?php include('include/login.inc.php'); ?>
-                     <?php include('include/footer.inc.php'); ?>
-                </div>
+                 <?php include('include/login.inc.php'); ?>
+                 <?php include('include/footer.inc.php'); ?>
             </div>
         </div>
     </div>
