@@ -1,4 +1,5 @@
 <?php
+
 if(isset($_POST['login']))
 {
 	$sql="select * from  admin where username='".$_POST['username']."' and password='".md5($_POST['password'])."'";

@@ -11,6 +11,7 @@ if(isset($_REQUEST['eid']) && $_REQUEST['eid']!='')
 			$select="select * from member_photo_gallery where id='".$_REQUEST['eid']."'";
 			$image=$obj->select($select);
 	}
+        $proimagename=$image[0]['photo'];
 }
 if($_REQUEST['crop_submit'])
 {
@@ -121,6 +122,7 @@ if($_REQUEST['crop_submit'])
                                     
                                     <input type="hidden" id="eid" name="eid" value="<?php echo $_REQUEST['eid']; ?>"/>
                                    <input type="submit" value="Crop Image" name="crop_submit" id="crop_submit" style="display:none" class="submit_btn_new" />
+                                  
                                 </form>
                                 </div>
                     </div>
@@ -130,7 +132,9 @@ if($_REQUEST['crop_submit'])
     </div> 
 </div>
 <script type="text/javascript">
-function doYouWantToChangeStatusPhoto1(status,id){
+
+   
+  function doYouWantToChangeStatusPhoto1(status,id){
 	 doIt=confirm('Are you sure to change status?');
 	  if(doIt){
 		window.location.href = 'member_photo_approval.php?status='+status+'&aid='+id;

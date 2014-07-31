@@ -179,7 +179,7 @@ $db_user_plan = $obj->select($user_plan);
            <li>Residing City</li>
            <li>:</li>
            <li><?php echo ucfirst($members[0]['city']); ?></li></ul><?php } ?>
-                    
+            <?php if(!empty($members[0]['wishtosettle'])) { ?><ul><li>Where do you wish to settle?</li><li>:</li><li><?php echo $members[0]['wishtosettle']; ?></li></ul><?php } ?>              
                    <ul>
                    <li>Last Login</li>
                    <li>:</li>
@@ -252,7 +252,37 @@ $db_user_plan = $obj->select($user_plan);
 <li>Occupation</li>
 <li>:</li>
 <li><?php echo ucfirst($members[0]['occupation']); ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['school'])) { ?><ul><li>School</li><li>:</li><li><?php echo $members[0]['school']; ?></li></ul><?php } ?> 
+                          <?php if(!empty($members[0]['college'])) { ?><ul><li>College</li><li>:</li><li><?php echo $members[0]['college']; ?></li></ul><?php } ?>
+                          
+                          <?php if(!empty($members[0]['inttowork'])) { ?> <ul><li>Interested to work after marriage?</li><li>:</li><li>
+<?php if( $members[0]['inttowork'] == "Y") { echo "Yes"; } else { echo "No"; }?></li></ul><?php } ?>
                 </div>
+                <?php } ?>
+				   <?php if(!empty($members[0]['linkedin_data'])){ $linkedindata=  json_decode($members[0]['linkedin_data']); $linkedinposition=$linkedindata->positions; ?>
+            <span style="float: left;height: 33px;width: 33px;margin-right: 4px;"><img src="./images/linkedin.png" /></span><h3><?php //echo $logged_in_member[0]['name']; ?> Career Graph</h3>
+            <div class="row-detail">
+                <span>
+                    <?php
+                 
+                          $totalcount=$linkedinposition->{'@attributes'}->total;
+                           for($i=0;$i<$totalcount;$i++)
+                            {
+                              if($linkedinposition->position->{'is-current'}=='true'){
+                            echo $linkedinposition->position->title."<br/>";
+                            echo $linkedinposition->position->company->name."<br/>";
+                            echo $linkedinposition->position->{'start-date'}->year." to ";
+                            if($linkedinposition->position->{'is-current'}=='true')
+                            {
+                                echo "Present";
+                            }else{    
+                                echo $linkedinposition->position->{'end-date'}->year;
+                                }
+                              }
+                            }
+                    ?>
+                </span>
+            </div>
                 <?php } ?>
                 
                 <?php if(!empty($members[0]['religion']) || !empty($members[0]['mother_tongue']) || !empty($members[0]['caste']) || !empty($members[0]['subcaste']) || !empty($members[0]['manglik_dosham']) || !empty($members[0]['gothram'])){ ?>
@@ -328,6 +358,8 @@ $db_user_plan = $obj->select($user_plan);
                     <li>:</li>
                     <li>
 				   <?php if( $members[0]['living_with_parents'] == "Y") { echo "Yes"; } else { echo "No"; }?></li></ul><?php } ?>
+				   <?php if(!empty($members[0]['live_inlaws'])) { ?> <ul><li>Live with in-laws?</li><li>:</li><li>
+<?php if( $members[0]['live_inlaws'] == "Y") { echo "Yes"; } else { echo "No"; }?></li></ul><?php } ?>
 <?php if(!empty($members[0]['family_value'])) { ?> <ul>
 <li>Family values</li>
 <li>:</li>
@@ -340,6 +372,7 @@ $db_user_plan = $obj->select($user_plan);
 <li>Family Status</li>
 <li>:</li>
 <li><?php echo ucfirst($members[0]['family_status']); ?></li></ul><?php } ?>
+<?php if(!empty($members[0]['aboutfamily'])) { ?><ul style="clear:both;width:100% !important;"><li>About Family</li><li>:</li><li style="width:65% !important;"><?php echo $members[0]['aboutfamily']; ?></li></ul><?php } ?>
                 </div>
                 <?php } ?>
                 

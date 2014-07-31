@@ -145,6 +145,13 @@ if(isset($_POST['submit']))
 ?>
         <?php if(!empty($logged_in_member)) { ?>	  
         <div class="content col-md-9 col-xs-12 col-sm-12">
+		 <div>
+                     <?php if(!isset($_SESSION["linkedin_id"])&&$_SESSION["linkedin_id"]!=1){ ?>
+                     <button type="button" class="btn_paidmship"  id="linkedin" name="linkedin" onclick="location.href='acesslinkedindata.php'">Add your Linkedin ID </button> 
+                     <?php }else{ ?>
+                     <span class="btn_paidmship" style="background-color: #fff;border: solid 1px; color: #000;font-weight: bold;"  id="removelinkedin" name="removelinkedin" > LinkedIn ID Added - <a href="edit_profile.php?removeid=true" onclick="return confirm('Do you want to remove Linkedin ID?');">Remove</a></span> 
+                     <?php } ?>
+                    </div>
         
         	<div class="profile_details">
             

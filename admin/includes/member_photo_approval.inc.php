@@ -88,14 +88,14 @@ if(isset($_GET['aid']))
                         </label>							
                     </div>
                 </div>
-                <h3 class="page-title"> <?php if($_GET['status']=='profile'){ ?> Members Profile Photo Approval<?php }else{ ?> Members Photo Gallary <?php } ?></h3>
+                <h3 class="page-title"> <?php if($_GET['status']=='profile'){ ?> Members Profile Photo Approval<?php }else{ ?> Members Photo Gallery <?php } ?></h3>
                 <ul class="breadcrumb">
                     <li>
                         <i class="icon-home"></i>
                         <a href="dashboard.php">Home</a> 
                         <i class="icon-angle-right"></i> 
                     </li>
-                    <li><?php if($_GET['status']=='profile'){ ?>Members Profile Photo Approval<?php }else{ ?> Members Photo Gallary<?php } ?></li>							
+                    <li><?php if($_GET['status']=='profile'){ ?>Members Profile Photo Approval<?php }else{ ?> Members Photo Gallery<?php } ?></li>							
                 </ul>
             </div>
         </div>
@@ -107,7 +107,7 @@ if(isset($_GET['aid']))
              </div>-->
             <div class="portlet box green">
                     <div class="portlet-title">
-<div class="caption"><i class="icon-globe"></i><?php if($_GET['status']=='profile'){ ?>Members Profile Photo Approval<?php }else{ ?> Members Photo Gallary<?php }?></div>
+<div class="caption"><i class="icon-globe"></i><?php if($_GET['status']=='profile'){ ?>Members Profile Photo Approval<?php }else{ ?> Members Photo Gallery<?php }?></div>
                         
                     </div>
                     
@@ -125,7 +125,7 @@ if(isset($_GET['aid']))
                                       <th>Member Name</th>
                                       <th>Email</th>
                                       <th>Approve/Unapprove</th> 
-                                      <th>Crop</th>
+                                      <th>Crop/rotate</th>
                                        <th>Delete</th> 
                                 </tr>
                             </thead>
@@ -189,7 +189,9 @@ if(isset($_GET['aid']))
 										 }?>
                                          </td>	 
                                     
-<td width="80px"><a href="crop_image.php?eid=<?php echo $res[$i]['pid']; ?>&imgtyp=profile" class="btn mini blue"><i class="icon-edit"></i>Crop</a></td>
+<td width="80px"><a href="crop_image.php?eid=<?php echo $res[$i]['pid']; ?>&imgtyp=profile" class="btn mini blue"><i class="icon-edit"></i>Crop</a>
+<a href="rotate_image.php?eid=<?php echo $res[$i]['pid']; ?>&imgtyp=profile" class="btn mini blue"><i class="icon-edit"></i>Rotate</a>
+</td>
                                     
                                    <td width="80px">
 <a onClick="return doYouWantTo('<?php echo $res[$i]['pid']; ?>','<?php echo $_GET['status']; ?>')" class="btn mini red"><i class="icon-edit"></i>Delete</a>
@@ -292,7 +294,9 @@ $select_photo_gallery="select member_photo_gallery.*,member_photo_gallery.id as 
 										<?php 
 										 }?>
                                          </td>
- <td width="80px"><a href="crop_image.php?eid=<?php echo $id; ?>&imgtyp=gallery&status=<?php echo $_GET['status']; ?>" class="btn mini blue"><i class="icon-edit"></i>Crop</a></td>
+ <td width="80px"><a href="crop_image.php?eid=<?php echo $id; ?>&imgtyp=gallery&status=<?php echo $_GET['status']; ?>" class="btn mini blue"><i class="icon-edit"></i>Crop</a>
+     <a href="rotate_image.php?eid=<?php echo $id; ?>&imgtyp=gallery&status=<?php echo $_GET['status']; ?>" class="btn mini blue"><i class="icon-edit"></i>Rotate</a>
+ </td>
 <td width="80px"><a onClick="return doYouWantTo('<?php echo $id; ?>','<?php echo $_GET['status']; ?>')" class="btn mini red"><i class="icon-edit"></i>Delete</a></td>        
 									</tr>
 									<?
@@ -329,6 +333,18 @@ function doYouWantToChangeStatusPhoto1(status,id){
  function doYouWantToChangeStatus(status,id){
 	 doIt=confirm('Are you sure to change status?');
 	  if(doIt){
+                  $.ajax({ 
+				url: 'watermark.php',
+				type:'post',
+                                async:false,
+				data: { 
+                                    id:id,
+                                     status:status
+                                     },
+				success: function(data) {
+					alert(data);
+				}
+			});  
 		window.location.href = 'member_photo_approval.php?status='+status+'&paid='+id;
 	  }
 	  else{

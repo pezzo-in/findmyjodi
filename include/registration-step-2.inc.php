@@ -391,7 +391,7 @@ $db_select_caste = $obj->select($select_caste);
           <div class="left">
          	<h3 style="color:#C33">Family Profile</h3>
          	<hr />
-            <p>You may not believe in horoscope matching, yet we recommend that you fill in your Astro details as a lot of members would be interested in these details.</p>
+           
             <table width="100%" align="center" border="0" cellpadding="5" cellspacing="0" class="tbl_control">
 				
                 <tr>
@@ -503,7 +503,7 @@ $db_select_caste = $obj->select($select_caste);
         <br class="clear" />
         <div class="terms_line">
                 
-                <input type="submit" id="nextbtn" name="submit" tabindex="22" />
+               <input class="btn btn-danger " type="submit" class="form-control" value="Next" name="submit" tabindex="22" />
     </div>
 </div>
 </form>

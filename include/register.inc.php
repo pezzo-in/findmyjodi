@@ -242,7 +242,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 <div class="terms_line">
                     <label class="checkbox"><input class="form-control" checked="checked" style="margin:-6px 10px 0 0" tabindex="17" type="checkbox" id="chk" value="1" /> I agree to the Find My Jodi <a href="privacy_policy.php">Privacy Policy</a> and <a href="terms_conditions.php">Terms and Conditions.</a></label>
                     <span id="chkmsg" class="err_msg">Check Terms and condition box</span>
-                    <input type="submit" name="submit" onclick="return validate()" value="Register" tabindex="18" class="btn btn-danger btn-sm col-md-4 col-xs-12 col-sm-12" value="Register" />
+                    <input type="submit" name="submit" onclick="return validate()" value="Register" tabindex="18" class="btn btn-danger" value="Register" />
                 </div>
 		</div>
     </form>

@@ -1,21 +1,25 @@
 <?php
 if(isset($_POST['update']))
 {	
-	
-		$update_page="UPDATE admin 
-					  SET password = '".md5($_POST['password'])."' where username = '".$_POST['username']."'";
-		$db_updatepage=$obj->edit($update_page);
-		
-		$update_page1="UPDATE tbl_sitename 
-					  SET password = '".$_POST['password']."' , Name = '".$_POST['site_name']."'";
-		$db_updatepage1=$obj->edit($update_page1);	
-		
-		echo "<script>alert('Password successfully change')</script>";	
-		
-		echo "<script>window.location='login.php'</script>";
-		
+	$is_exist = "select * from tbl_sitename
+				 where 
+				 username = '".$_POST['username']."'and password = '".$_POST['password']."'";
+	$db_exist = $obj->select($is_exist);
+	if(!empty($db_exist))
+	{
+		$update_page="UPDATE tbl_sitename 
+					  SET 
+					  Name = '".$_POST['site_name']."'";
+		$db_updatepage=$obj->edit($update_page);	
+		echo "<script>window.location='dashboard.php'</script>";
 	}
-
+	else
+	{
+		echo '<script language="javascript">';
+		echo 'alert("You are not authorised to access setting")';
+		echo '</script>';
+	}
+}
 $select_site = "select * from tbl_sitename";
 $db_site = $obj->select($select_site);
 ?>

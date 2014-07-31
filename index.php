@@ -177,7 +177,9 @@ $db_update=$obj->edit($update_last_login);
 $_SESSION['UserEmail']=$ans[0]['email_id'];
 $_SESSION['logged_user'] = $ans;
 $_SESSION['IsActive']='Yes';
-
+  if(!empty($ans[0]['linkedin_data'])){
+           $_SESSION["linkedin_id"]=1; 
+     }
 $select_member_plan="select member_plans.* from member_plans, members where member_plans.member_id='".$ans[0]['id']."' AND members.id=member_plans.member_id";
 $db_member_plan=$obj->select($select_member_plan);
 
@@ -247,7 +249,7 @@ $error = "Invalid Email id or Password";
                         </div>
                         <div class="box2 col-sm-12 col-md-2 col-xs-12">
                             <input type="submit" name="submit" value="Log In" onclick="return check_form();"
-                                   class="col-sm-12 col-xs-12 btn btn-lg btn-danger"/></div>
+                                   class="btn btn-lg btn-danger"/></div>
                     </form>
                 </div>
             </div>

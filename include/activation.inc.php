@@ -108,7 +108,7 @@ if(isset($_REQUEST['submit']))
          <br class="clear" />
                 <div class="terms_line">
                 <input type="submit" name="submit" class="btn btn-success form-control" />
-                <a href="activation.php?uid=<?php echo $_GET['uid'] ?>&resend=1" class="" style="padding: 5px; display:none;"><img src="../images/resendit_btn.png" style="margin-top:10px;"></a>
+                 <a href="activation.php?uid=<?php echo $_GET['uid'] ?>&resend=1" class="" style="padding: 5px;"><img src="./images/resendit_btn.png" style="margin-top:10px;"></a>
                 </div>
                 </div>
                 </form>

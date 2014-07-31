@@ -78,7 +78,7 @@
 
   
 
-  <div class="backtolink" style="padding-top:0px;margin-right:34px;"><a href="registration-step-4.php">Skip this page »&nbsp&nbsp&nbsp</a>||<a href="packages.php">&nbsp&nbsp&nbspContinue To Home Page »</a></div>
+  <div class="backtolink" style="padding-top:0px;margin-right:34px;"><a href="registration-step-4.php">Skip this page »&nbsp&nbsp&nbsp</a></div>
 
   <form id="formID" class="form-horizontal" method="post" >
 
@@ -540,7 +540,7 @@
 
       <div class="terms_line">
 
-        <input type="submit" class="form-control" id="nextbtn" name="submit" tabindex="19" />
+        <input class="btn btn-danger " type="submit" class="form-control" value="Next" name="submit" tabindex="19" />
 
       </div>
 

@@ -141,7 +141,7 @@
 					<!-- END DASHBOARD STARTS -->
 					<div class="clearfix"></div>
 					<div class="row-fluid">
-						<div class="span6" style="width:340px">
+						<div class="span6" style="width:320px;margin-left: 10px;">
 							<div class="portlet box blue">
 								<div class="portlet-title">
 									<div class="caption"><i class="icon-bell"></i>Site Statistics</div>
@@ -450,7 +450,7 @@
 						</div>
                         
                         
-                        <div class="span6" style="width:340px">
+                        <div class="span6" style="width:320px;margin-left: 10px;">
 							<div class="portlet box yellow tasks-widget">
 								<div class="portlet-title">
 									<div class="caption"><i class="icon-bell"></i>Site Configuration</div>
@@ -579,7 +579,7 @@
                         
             
                         
-                       <div class="span6" style="width:340px">
+                       <div class="span6" style="width:320px;margin-left: 10px;">
 							<div class="portlet box green tasks-widget">
 								<div class="portlet-title">
 									<div class="caption"><i class="icon-bell"></i>Members Approval</div>
@@ -717,7 +717,7 @@
               		<div class="clearfix"></div>
 					<div class="row-fluid">                  
                                 
-        <div class="span6" style="width:340px;">
+        <div class="span6" style="width:320px;margin-left: 10px;;">
 							<div class="portlet box green tasks-widget">
 								<div class="portlet-title">
 									<div class="caption"><i class="icon-bell"></i>Member Status</div>
@@ -866,7 +866,7 @@
 							</div>
 						</div>
                         
-<div class="span6" style="width:340px">
+<div class="span6" style="width:320px;margin-left: 10px;">
 							<div class="portlet box purple tasks-widget">
 								<div class="portlet-title">
 									<div class="caption"><i class="icon-bell"></i>Member Report</div>
@@ -1013,7 +1013,7 @@
 						</div>                        
          
                         
-                        <div class="span6" style="width:340px">
+                        <div class="span6" style="width:320px;margin-left: 10px;">
 							<div class="portlet box blue tasks-widget">
 								<div class="portlet-title">
 									<div class="caption"><i class="icon-bell"></i>Add New Detail</div>
@@ -1175,7 +1175,7 @@
                     <div class="clearfix"></div>
 					<div class="row-fluid">                  
                                 
-        <!--<div class="span6" style="width:340px;">
+        <!--<div class="span6" style="width:320px;margin-left: 10px;;">
 							<div class="portlet box green tasks-widget">
 								<div class="portlet-title">
 									<div class="caption"><i class="icon-bell"></i>Renewal Of Membership </div>
@@ -1255,7 +1255,7 @@
 								</div>
 							</div>
 						</div>-->
-                        <div class="span6" style="width:340px;">
+                        <div class="span6" style="width:320px;margin-left: 10px;;">
 							<div class="portlet box purple tasks-widget">
 								<div class="portlet-title">
 									<div class="caption"><i class="icon-bell"></i>Member Photo Approval</div>

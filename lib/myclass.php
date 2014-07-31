@@ -30,15 +30,15 @@ class myclass
 
   
 
-    var $DBASE             = "test";       // Set name of database to use         online:    "dphs_dphs"
+    var $DBASE             = "findmyjodi";       // Set name of database to use         online:    "dphs_dphs"
 
-	var $USER             = "findmyjodi";          // Set database username            online:    "dphs"
+	var $USER             = "root";          // Set database username            online:    "dphs"
 
-	var $PASS             = "findmyjodi";              // Set darabase R/W password      online:    "jaydev"
+	var $PASS             = "";              // Set darabase R/W password      online:    "jaydev"
 
-	var $SERVER         = "localhost:86";  // Set server name                online:    "localhost"
+	var $SERVER         = "localhost";  // Set server name                online:    "localhost"
 
-	var $SITEURL         = "F:\find my jodi";
+	var $SITEURL         = "http://localhost/findmyjodi/";
 
     // Admin Title
 

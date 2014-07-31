@@ -88,7 +88,8 @@ $db_site = $obj->select($select_site);
 	<!-- END CORE PLUGINS -->
 	<!-- BEGIN PAGE LEVEL PLUGINS -->
 	<script type="text/javascript" src="assets/plugins/select2/select2.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/data-tables/jquery.dataTables.min.js"></script>
+	<!--<script type="text/javascript" src="assets/plugins/data-tables/jquery.dataTables.min.js"></script> -->
+        <script type="text/javascript" src="assets/plugins/data-tables/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="assets/plugins/data-tables/DT_bootstrap.js"></script>
 	<!-- END PAGE LEVEL PLUGINS -->
 	<!-- BEGIN PAGE LEVEL SCRIPTS -->
@@ -102,11 +103,11 @@ $db_site = $obj->select($select_site);
 	</script>
     
     <script>
-	$(function() {
+	
 		var moveLeft = 0;
 		var moveDown = 0;
+	
 		$('a.popper').hover(function(e) {
-	   
 			var target = '#' + ($(this).attr('data-popbox'));
 			 
 			$(target).show();
@@ -144,11 +145,7 @@ $db_site = $obj->select($select_site);
 			}
 		 
 			$(target).css('top', topD).css('left', leftD);
-		 
-		 
 		});
-	 
-	});
 	</script>
 	<!-- END JAVASCRIPTS -->
 </body>

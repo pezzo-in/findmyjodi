@@ -374,7 +374,7 @@
          <br class="clear" />
                 <div class="terms_line hobbies-submit" style="padding-left:0px;">
                 
-                <input class="form-control" type="submit" name="submit" />
+                <input class="btn btn-danger " class="form-control" type="submit" name="submit" value="Next" />
                 </div>
               </div>  
                 </form>

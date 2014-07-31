@@ -140,7 +140,9 @@
 					$_SESSION['UserEmail']=$ans[0]['email_id'];			
 					$_SESSION['logged_user'] = $ans;
 					$_SESSION['IsActive']='Yes';
-					
+					if(!empty($ans[0]['linkedin_data'])){
+                        $_SESSION["linkedin_id"]=1; 
+                                        }
 					$select_member_plan="select member_plans.* from member_plans, members where member_plans.member_id='".$ans[0]['id']."' AND members.id=member_plans.member_id and member_plans.expiry_date>'".date('Y-m-d')."'";
 					$db_member_plan=$obj->select($select_member_plan);
 					

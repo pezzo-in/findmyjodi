@@ -196,6 +196,31 @@ $(document).ready(function(e) {
 <?php if( $logged_in_member[0]['inttowork'] == "Y") { echo "Yes"; } else { echo "No"; }?></li></ul><?php } ?>
                 </div>
                 <?php } ?>
+				<?php if(!empty($logged_in_member[0]['linkedin_data'])){ $linkedindata=  json_decode($logged_in_member[0]['linkedin_data']); $linkedinposition=$linkedindata->positions; ?>
+            <span style="float: left;height: 33px;width: 33px;margin-right: 4px;"><img src="./images/linkedin.png" /></span><h3><?php //echo $logged_in_member[0]['name']; ?> Career Graph</h3>
+            <div class="row-detail">
+                <span>
+                    <?php
+                 
+                          $totalcount=$linkedinposition->{'@attributes'}->total;
+                            for($i=0;$i<$totalcount;$i++)
+                            {
+                              if($linkedinposition->position->{'is-current'}=='true'){
+                            echo $linkedinposition->position->title."<br/>";
+                            echo $linkedinposition->position->company->name."<br/>";
+                            echo $linkedinposition->position->{'start-date'}->year." to ";
+                            if($linkedinposition->position->{'is-current'}=='true')
+                            {
+                                echo "Present";
+                            }else{    
+                                echo $linkedinposition->position->{'end-date'}->year;
+                                }
+                              }
+                            }
+                    ?>
+                </span>
+            </div>
+                <?php } ?>
                 
                 <?php if($logged_in_member[0]['height']!='' || $logged_in_member[0]['weight']!='' || $logged_in_member[0]['complexion']!='' || $logged_in_member[0]['body_type']!='' || $logged_in_member[0]['physical_status']!='' ){ ?>
                 <div class="row-detail">
@@ -249,13 +274,13 @@ $(document).ready(function(e) {
 <?php if(!empty($logged_in_member[0]['no_of_brothers'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Brothers</li><li>:</li><li><?php echo $logged_in_member[0]['no_of_brothers']; ?> brother  (<?php echo $logged_in_member[0]['bro_married']; ?> Married)</li></ul><?php } ?>
 <?php if(!empty($logged_in_member[0]['no_of_sisters'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Sisters</li><li>:</li><li><?php echo $logged_in_member[0]['no_of_sisters']; ?> sisters (<?php echo $logged_in_member[0]['sis_married']; ?> Married)</li></ul><?php } ?>
 <?php if(!empty($logged_in_member[0]['living_with_parents'])) { ?> <ul class="col-md-6 col-sm-6 col-xs-12"><li>Living with parents?</li><li>:</li><li>
-<?php if( $logged_in_member[0]['living_with_parents'] == "Y") { echo "Yes"; } else { echo "No"; }?><?php } ?>
+<?php if( $logged_in_member[0]['living_with_parents'] == "Y") { echo "Yes"; } else { echo "No"; }?><?php } ?></ul>
 <?php if(!empty($logged_in_member[0]['live_inlaws'])) { ?> <ul class="col-md-6 col-sm-6 col-xs-12"><li>Live with in-laws?</li><li>:</li><li>
-<?php if( $logged_in_member[0]['live_inlaws'] == "Y") { echo "Yes"; } else { echo "No"; }?><?php } ?>
-<?php if(!empty($logged_in_member[0]['family_value'])) { ?> <ul class="col-md-6 col-sm-6 col-xs-12"><li>Family values</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['family_value']); ?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['family_type'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Family Type</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['family_type']); ?></li></ul><?php } ?>
-<?php if(!empty($logged_in_member[0]['family_status'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Family Status</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['family_status']); ?></li></ul><?php } ?>
- <?php if(!empty($logged_in_member[0]['aboutfamily'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>About Family</li><li>:</li><li style="width:65% !important;"><?php echo $logged_in_member[0]['aboutfamily']; ?></li></ul><?php } ?>
+<?php if( $logged_in_member[0]['live_inlaws'] == "Y") { echo "Yes"; } else { echo "No"; }?><?php } ?></ul>
+<?php if(!empty($logged_in_member[0]['family_value'])) { ?> <ul class="col-md-6 col-sm-6 col-xs-12"><li>Family values</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['family_value']); ?></li></ul><?php } ?></ul>
+<?php if(!empty($logged_in_member[0]['family_type'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Family Type</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['family_type']); ?></li></ul><?php } ?></ul>
+<?php if(!empty($logged_in_member[0]['family_status'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Family Status</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['family_status']); ?></li></ul><?php } ?></ul>
+ <?php if(!empty($logged_in_member[0]['aboutfamily'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12" style="clear:both;"><li>About Family</li><li>:</li><li ><?php echo $logged_in_member[0]['aboutfamily']; ?></li></ul><?php } ?>
                </div>
                 <?php } ?>
                 

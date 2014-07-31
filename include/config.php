@@ -2,9 +2,9 @@
 
 // the variables needed for the chat //
 
-defined('USER') ?null:define('USER','findmyjodi');
+defined('USER') ?null:define('USER','root');
 
-defined('PASS') ?null:define('PASS','findmyjodi');
+defined('PASS') ?null:define('PASS','');
 
 defined('DB') ?null:define('DB','findmyjodi');
 

@@ -11,6 +11,14 @@ if($_SESSION['UserEmail']=='')
 	echo "<script>window.location='login.php' </script>";
 
 }
+if($_REQUEST['removeid']=='true')
+{
+    unset($_SESSION["linkedin_id"]);
+
+    $update="UPDATE members SET linkedin_data = ''  where id = '".$_SESSION['logged_user'][0]['id']."'";
+	$db_updatepage=$obj->edit($update);
+        echo "<script>window.location='edit_profile.php'</script>"; 
+}
 
 
 

@@ -4,7 +4,7 @@ session_start();
 
 include('../lib/myclass.php');
 
-if($_SESSION['id']=='')
+if($_SESSION['adminid']=='')
 
 {
 
