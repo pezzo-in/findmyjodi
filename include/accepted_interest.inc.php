@@ -268,7 +268,7 @@ if($_GET['flag'] == 'del_prof')
 
 
 
-<div class="content">
+<div class="col-md-9 col-sm-12 col-xs-12">
 
   <?=$PAGING->show_paging("accepted_interest.php");?>
 

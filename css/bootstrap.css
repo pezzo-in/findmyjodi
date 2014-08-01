@@ -3725,7 +3725,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-toggle {
   position: relative;
   float: right;
-  margin-right: 15px;
+  margin-right: -25px;
   padding: 9px 10px;
   margin-top: 8px;
   margin-bottom: 8px;
@@ -3906,8 +3906,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+  float: right;
+  margin: 10px 0 0;
 }
 .navbar-default .navbar-brand {
   color: #777777;
@@ -5793,7 +5793,33 @@ button.close {
   }
   .sign-out {
     position: absolute;
-    right: -10%;
+    right: -40px;
     top: -50px;
+  }
+  ul.menu li {
+    width: 100%;
+  }
+  .navbar-default {
+    border: none;
+  }
+  ul.list-prfl {
+    clear: both;
+  }
+  ul.list-prfl li {
+    width: 50%;
+  }
+  ul.msgtab > li {
+    margin: 0;
+    width: 50%;
+  }
+  .rightsend_btn {
+    padding: 5px 10px 0;
+  }
+  .searchby1 {
+    left: 40px;
+    top: 29px;
+  }
+  .msgChat ul li a {
+    padding: 0 3px;
   }
 }

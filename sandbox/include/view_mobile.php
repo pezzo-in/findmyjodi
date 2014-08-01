@@ -16,7 +16,7 @@ $obj->edit($update_mob_counter);
     <form  method="post" id="form_sample_2" name="form_sample_3" class="form-horizontal" enctype="multipart/form-data" onsubmit="return check_form()" >   
         <div class="profile_details">
             <div class="profile_img" style="padding-left:0px;">
-                <div class="profile-img-box" style="position:inherit">
+                <div class="profile-img-box first col-md-12 col-xs-12 col-md-12" style="position:inherit">
                      <?php
 					 if(($db_member[0]['photo']))
 						{

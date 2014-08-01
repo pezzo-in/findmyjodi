@@ -132,7 +132,7 @@ if($_GET['flag'] == 'del_prof')
 		//$select_new_msgs = "select *, express_interest.id as exp_int_id from express_interest where to_mem = '".$_SESSION['logged_user'][0]['member_id']."'";								
 		//$messages = $obj->select($select_new_msgs);
 		if(!empty($messages)) { ?>
-<div class="content">
+<div class="col-md-9 col-sm-12 col-xs-12 nopadding">
   <?=$PAGING->show_paging("sent_reply_panding.php");?>
   <div class=""> <!-- title_select_all -->
     <div class="floatr">

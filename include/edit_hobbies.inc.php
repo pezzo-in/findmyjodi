@@ -166,7 +166,7 @@ if(isset($_POST['save_hobbies']))
 
 ?>
 
-      <div class="content edithobbies">
+      <div class="col-md-9 col-xs-12 col-sm-12">
 
 		      <h3>Edit Hobbies and interests</h3><br />
 
@@ -192,7 +192,7 @@ if(isset($_POST['save_hobbies']))
 
 				?>
 
-                  		 <label><input type="checkbox" name="chkHobbies[]"  value="<?php echo $h['id']; ?>"
+                  		 <label class="col-md-4 col-sm-4 col-xs-12"><input type="checkbox" name="chkHobbies[]"  value="<?php echo $h['id']; ?>"
 
                          <?php if(in_array($h['id'],$ans)) { ?> checked="checked" <?php } ?>><?php echo $h['name']; ?></label>
 
@@ -228,7 +228,7 @@ if(isset($_POST['save_hobbies']))
 
 						  $ans = explode(",",$logged_in_member[0]['interests']); ?>
 
-                  		 <label><input type="checkbox" name="chkInterests[]" value="<?php echo $int['id']; ?>"
+                  		 <label class="col-md-4 col-sm-4 col-xs-12"><input type="checkbox" name="chkInterests[]" value="<?php echo $int['id']; ?>"
 
                           <?php if(in_array($int['id'],$ans)) { ?> checked="checked" <?php } ?>><?php echo $int['name']; ?></label>											                 <?php }  ?>                
 
@@ -260,7 +260,7 @@ if(isset($_POST['save_hobbies']))
 
 		  			     $ans = explode(",",$logged_in_member[0]['music']); ?>
 
-                  		 <label><input type="checkbox" name="chkMusic[]" value="<?php echo $m['id']; ?>"
+                  		 <label class="col-md-4 col-sm-4 col-xs-12"><input type="checkbox" name="chkMusic[]" value="<?php echo $m['id']; ?>"
 
                          <?php if(in_array($m['id'],$ans)) { ?> checked="checked" <?php } ?>><?php echo $m['name']; ?></label>											                 <?php }  ?>                
 
@@ -290,7 +290,7 @@ if(isset($_POST['save_hobbies']))
 
 				 		  $ans = explode(",",$logged_in_member[0]['read_book']); ?>
 
-                  		 <label><input type="checkbox" name="chkRead[]" value="<?php echo $r['id']; ?>"
+                  		 <label class="col-md-4 col-sm-4 col-xs-12"><input type="checkbox" name="chkRead[]" value="<?php echo $r['id']; ?>"
 
                           <?php if(in_array($r['id'],$ans)) { ?> checked="checked" <?php } ?>><?php echo $r['name']; ?></label>											                 <?php }  ?>                
 
@@ -318,7 +318,7 @@ if(isset($_POST['save_hobbies']))
 
 				 		 $ans = explode(",",$logged_in_member[0]['movies']); ?>
 
-                  		 <label><input type="checkbox" name="chkMovies[]" value="<?php echo $m['id']; ?>"
+                  		 <label class="col-md-4 col-sm-4 col-xs-12"><input type="checkbox" name="chkMovies[]" value="<?php echo $m['id']; ?>"
 
                          <?php if(in_array($m['id'],$ans)) { ?> checked="checked" <?php } ?>><?php echo $m['name']; ?></label>											                 <?php }  ?>                
 
@@ -348,7 +348,7 @@ if(isset($_POST['save_hobbies']))
 
 						 $ans = explode(",",$logged_in_member[0]['sports']); ?>
 
-                  		 <label><input type="checkbox" name="chkSports[]" value="<?php echo $act['id']; ?>"
+                  		 <label class="col-md-4 col-sm-4 col-xs-12"><input type="checkbox" name="chkSports[]" value="<?php echo $act['id']; ?>"
 
                           <?php if(in_array($act['id'],$ans)) { ?> checked="checked" <?php } ?>><?php echo $act['name']; ?></label>											                 <?php }  ?>                
 
@@ -376,7 +376,7 @@ if(isset($_POST['save_hobbies']))
 
 				 		  $ans = explode(",",$logged_in_member[0]['cuisine']); ?>
 
-                  		 <label><input type="checkbox" name="chkCouisine[]" value="<?php echo $cou['id']; ?>"
+                  		 <label class="col-md-4 col-sm-4 col-xs-12"><input type="checkbox" name="chkCouisine[]" value="<?php echo $cou['id']; ?>"
 
                           <?php if(in_array($cou['id'],$ans)) { ?> checked="checked" <?php } ?>><?php echo $cou['name']; ?></label>											                 <?php }  ?>                
 
@@ -404,7 +404,7 @@ if(isset($_POST['save_hobbies']))
 
 				 		  $ans = explode(",",$logged_in_member[0]['dress_style']); ?>
 
-                  		 <label><input type="checkbox" name="chkDress[]" value="<?php echo $dre['id']; ?>"
+                  		 <label class="col-md-4 col-sm-4 col-xs-12"><input type="checkbox" name="chkDress[]" value="<?php echo $dre['id']; ?>"
 
                           <?php if(in_array($dre['id'],$ans)) { ?> checked="checked" <?php } ?>><?php echo $dre['name']; ?></label>											                 <?php }  ?>                
 
@@ -432,7 +432,7 @@ if(isset($_POST['save_hobbies']))
 
 				 		  $ans = explode(",",$logged_in_member[0]['spoken_lang']); ?>
 
-                  		 <label><input type="checkbox" name="chkLang[]" value="<?php echo $lang['id']; ?>"
+                  		 <label class="col-md-4 col-sm-4 col-xs-12"><input type="checkbox" name="chkLang[]" value="<?php echo $lang['id']; ?>"
 
                           <?php if(in_array($lang['id'],$ans)) { ?> checked="checked" <?php } ?>><?php echo $lang['name']; ?></label>											                 <?php }  ?>                
 

@@ -54,7 +54,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Gender</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Gender</label>
 
                     <?php
 
@@ -80,7 +80,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Age</label> 
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Age</label> 
 
                         <input type="text" class="age1" name="Search_from_age" id="regular_from_age" onkeypress="return isNumber(event)" value="18" >
 
@@ -92,7 +92,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Height</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Height</label>
 
                     <select name="Search_from_drpHeight" style="width:175px;">                       
 
@@ -138,7 +138,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                        <label>Marital Status</label>
+                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Marital Status</label>
 
                         <label class="checkbox1"><input type="checkbox" name="Search_chk_marital_status[]" id="regular_chk_marital_status" value="Unmarried"/>Unmarried</label>
 
@@ -152,7 +152,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                            <label>Mother Tongue</label>
+                            <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Mother Tongue</label>
 
                             <select name="Search_drpMotherTongue[]" id="regular_drpMotherTongue" >
 
@@ -178,7 +178,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label>Religion</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Religion</label>
 
                     <select name="Search_drpReligion" id="regular_drpReligion" onchange="change_religion(this.value,1);">
 
@@ -204,7 +204,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Caste</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Caste</label>
 
                     <div id="caste_drp_div">
 
@@ -234,7 +234,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label>Country</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Country</label>
 
                      <select name="Search_drpCountry" id="regular_drpCountry" >
 
@@ -260,7 +260,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label>Education</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Education</label>
 
                     
 
@@ -306,7 +306,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Show Profile</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Show Profile</label>
 
                     <label class="checkbox1"><input type="checkbox" name="chk_with_photo" value="1" />With Photo</label>
 
@@ -316,7 +316,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>&nbsp;</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
 
 <input type="submit" name="regular_search" id="regular_search" class="regular_search search_new1"  value="Search" />
 
@@ -340,7 +340,7 @@ if(count($db_banner) > 0)
 
                                      <div class="left">
 
-                                        <label>Search Lable</label>
+                                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Search Lable</label>
 
                                         <input type="text" value="" id="Search_lable" name="Search_lable">
 
@@ -374,7 +374,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Gender</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Gender</label>
 
                     <?php if($_SESSION['logged_user'][0]['member_id'] != '' ){ ?>
 
@@ -394,7 +394,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Age</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Age</label>
 
                         <input type="text" class="age1" name="Search_from_age" id="advanced_from_age" onkeypress="return isNumber(event)" value="18" >
 
@@ -406,7 +406,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Height</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Height</label>
 
                     <select name="Search_from_drpHeight" style="width:175px;">                      
 
@@ -454,7 +454,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                        <label>Marital Status</label>
+                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Marital Status</label>
 
            
 
@@ -468,7 +468,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                            <label>Mother Tongue</label>
+                            <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Mother Tongue</label>
 
                             <select name="Search_drpMotherTongue[]" id="advanced_drpMotherTongue" >
 
@@ -494,7 +494,7 @@ The results of this search will be closer to your expectations. </p>
 
                      <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label>Religion</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Religion</label>
 
                     <select name="Search_drpReligion" id="advanced_drpReligion" onchange="change_religion(this.value,2);">
 
@@ -520,7 +520,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Caste</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Caste</label>
 
                    <div id="drp_adv_caste">
 
@@ -550,7 +550,7 @@ The results of this search will be closer to your expectations. </p>
 
                    <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label>Country</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Country</label>
 
                      <select name="Search_drpCountry" id="advanced_drpCountry" >
 
@@ -576,7 +576,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label>Education</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Education</label>
 
                     
 
@@ -624,7 +624,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label>Occupation</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Occupation</label>
 
                     <select name="advanced_drpOccupation" id="advanced_drpOccupation" >
 
@@ -652,7 +652,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label>Annual Income</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Annual Income</label>
 
                        <?php /*?><select name="advanced_drpIncome" id="advanced_drpIncome" >
 
@@ -682,7 +682,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label>Star</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Star</label>
 
                         <select name="advanced_drpStar" id="advanced_drpStar" >
 
@@ -710,7 +710,7 @@ The results of this search will be closer to your expectations. </p>
 
                    <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Manglik</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Manglik</label>
 
                         <label class="radio1"><input type="radio" id="advanced_rdManglik" name="advanced_rdManglik" value="Y" />Yes</label>
 
@@ -726,7 +726,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Show Profile</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Show Profile</label>
 
                     <label class="checkbox1"><input type="checkbox" name="chk_with_photo" value="1" />With Photo</label>
 
@@ -774,7 +774,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>&nbsp;</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
 
                     <input type="submit" name="advanced_search" id="advanced_search" class="advanced_search search_new1" value="Search" />
 
@@ -798,7 +798,7 @@ The results of this search will be closer to your expectations. </p>
 
                                      <div class="left">
 
-                                        <label>Search Lable</label>
+                                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Search Lable</label>
 
                                         <input type="text" value="" id="Adv_Search_lable" name="Adv_Search_lable">
 
@@ -830,7 +830,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Gender</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Gender</label>
 
                     <label class="radio1"><input type="radio" id="soulmate_rdGender" name="soulmate_rdGender" value="M" checked />Male</label>
 
@@ -840,7 +840,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Age</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Age</label>
 
                         <input type="text" class="age1" name="soulmate_from_age" id="soulmate_from_age" >
 
@@ -852,7 +852,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Height</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Height</label>
 
                     <select name="soul_drpHeight" style="width:175px;">
 
@@ -926,7 +926,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                        <label>Marital Status</label>
+                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Marital Status</label>
 
                     
 
@@ -942,7 +942,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label>Religion</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Religion</label>
 
                     <select name="soulmate_drpReligion" id="soulmate_drpReligion" >
 
@@ -968,7 +968,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                            <label>Mother Tongue</label>
+                            <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Mother Tongue</label>
 
                             <select name="soulmate_drpMotherTongue" id="soulmate_drpMotherTongue" >
 
@@ -994,7 +994,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Caste</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Caste</label>
 
                     <select name="soulmate_drpCaste" id="soulmate_drpCaste" >
 
@@ -1020,7 +1020,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label>Country</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Country</label>
 
                      <select name="soulmate_drpCountry" id="soulmate_drpCountry" >
 
@@ -1046,7 +1046,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label>Education</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Education</label>
 
                     
 
@@ -1074,7 +1074,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label>Mutual Interest</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Mutual Interest</label>
 
                     
 
@@ -1114,7 +1114,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>Show Profile</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Show Profile</label>
 
                     <label class="checkbox1"><input type="checkbox" name="chk_with_photo" value="1" />With Photo</label>
 
@@ -1124,7 +1124,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>&nbsp;</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
 
                     <input type="submit" name="soulmate_search" id="soulmate_search" />
 
@@ -1148,7 +1148,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                        <label>Enter Keyword</label>
+                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Enter Keyword</label>
 
                         <input type="text" name="txtKeyword" id="txtKeyword" onkeypress="return IsAlphaNumeric(event);" ondrop="return false;"
 
@@ -1170,7 +1170,7 @@ The results of this search will be closer to your expectations. </p>
 
 					$db_user5 = $obj->select($user4); ?>
 
-                        <label>Show Profile</label>
+                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Show Profile</label>
 
                        <?php if($_SESSION['logged_user'][0]['member_id'] != '' ){ 
 
@@ -1192,7 +1192,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label>&nbsp;</label>
+                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
 
 <input type="submit" name="keyword_search" id="keyword_search" class="keyword_search search_new1" value="Search" onclick="return validate1111();" />
 
@@ -1216,7 +1216,7 @@ The results of this search will be closer to your expectations. </p>
 
                                      <div class="left">
 
-                                        <label>Search Lable</label>
+                                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Search Lable</label>
 
                                         <input type="text" value="" id="keyword_search_lable" name="keyword_search_lable">
 
@@ -1250,7 +1250,7 @@ The results of this search will be closer to your expectations. </p>
 
                             <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                            <label>Search By</label>
+                            <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Search By</label>
 
                             <label class="radio1"><input type="radio" id="who_online" name="who_online" value="1" checked />Online Member</label>
 
@@ -1264,7 +1264,7 @@ The results of this search will be closer to your expectations. </p>
 
                             <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                            <label>&nbsp;</label>
+                            <label class="col-md-3 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
 
                             <input type="submit" name="who_online_search" id="who_online_search" class="search_new1" value="Search" />
 
@@ -1290,7 +1290,7 @@ The results of this search will be closer to your expectations. </p>
 
                             <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                            <label>Member ID</label>
+                            <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Member ID</label>
 
                             <input type="text" name="txt_by_id" id="txt_by_id" />
 
@@ -1304,7 +1304,7 @@ The results of this search will be closer to your expectations. </p>
 
                             <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                            <label>&nbsp;</label>
+                            <label class="col-md-3 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
 
                             <input type="submit" name="search_by_id" id="search_by_id" class="by_id_form search_new1" value="Search" />
 

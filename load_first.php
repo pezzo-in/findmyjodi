@@ -362,10 +362,10 @@ $db_user_plan = $obj->select($user_plan);
  ?>
 <?php if(!empty($members)){ ?>
 <div class="sidebar col-md-3 col-xs-12 col-sm-4">
-        	<div class="sidebar-main">
+        	<div class="sidebar-main hidden-xs">
             	<h2>Refine Search<a href="load_data.php?clear=all" style="float:right; font-size:12px; color:red;">Clear All</a></h2>
                 <form action="" method="post" name="profileform" id="profileform">
-                <div class="sidebar-cont" id="acc-list">
+                <div class="sidebar-cont col-md-12 col-xs-12 col-sm-12" id="acc-list">
                 	<div class="list-toggle">
                         <h3>Profile Type</h3>
                         <ul>
@@ -643,7 +643,7 @@ $db_user_plan = $obj->select($user_plan);
                         	<li class="morelink">
                                     <div class="searchby">
                                         <div class="searchbubblebox">
-                                           
+
                                             <div class="searchbubbleboxin">
 											<label><input type="checkbox" id="rdbOnline" name="online_data[]" value="1" onchange="refine_search()"/>Online members (<span id="count_online"></span>)</label>
                                             <label><input type="checkbox" id="rdbOffline" name="online_data[]" value="0" onchange="refine_search()"/>Offline members (<span id="count_offline"></span>)</label>
@@ -663,11 +663,14 @@ $db_user_plan = $obj->select($user_plan);
         </div>
         
  <div class="content col-sm-8 col-xs-12 col-md-9" id="content_data">
- <div class="mid_top_checkbox" style="clear: both;margin: 19px;float: right;margin-top: 0;"><span style="float:left; margin-right:15px; font-weight:bold"">Total Profiles : <?php echo count($members2); ?></span><a href="javascript:;" class="list_view">List View</a><a href="javascript:;" class="grid_view">Grid View</a></div><br clear="all" />     
+        <div class="mid_top_checkbox"><span style="float:left; margin-right:15px; font-weight:bold">Total Profiles : <?php echo count($members2); ?></span>
+            <a href="javascript:;" class="list_view hidden-xs">List View</a>
+            <a href="javascript:;" class="grid_view hidden-xs">Grid View</a>
+        </div>
+        <br clear="all" />
         <input type="hidden" value="<?php echo count($members2); ?>" name="ttl_profile" id="ttl_profile">
                 <input type="hidden" value="8" name="limit" id="limit">
                 <input type="hidden" value="1" name="offset" id="offset">
-                
          <ul class="profl-list" id="refine_data">
             <?php
 					for($j=0;$j<count($members2);$j++)
@@ -732,11 +735,11 @@ $db_user_plan = $obj->select($user_plan);
 						}
 					}
 					for($i=0;$i<count($members);$i++) { 	?>
-            	<li id="<?php echo $members[$i]['id']; ?>">
-                    <div class="profile-img-box">
+            	<li id="<?php echo $members[$i]['id']; ?>" class="message_box col-md-4 col-xs-12 col-md-6 nopadding">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $members[$i]['id']; ?>" target="_blank" class="popper" data-popbox="pop<?php echo $members[$i]['id']; ?>">
                      <?php 
-$membership="<label style='background:none; text-align:left; font-weight:bold; color:#000; font-size:14px; height:20px; color:#000; padding-bottom:5px;'>".$members[$i]['member_id']."</label>";
+$membership="<label style='background:none; text-align:left; font-weight:bold; color:#000; font-size:14px; height:20px; color:#000; padding-bottom:5px; display:block;'>".$members[$i]['member_id']."</label>";
 							
 					echo $membership;
 							?>

@@ -24,8 +24,6 @@ if($_SESSION['UserEmail']=='')
 </head>
 		
 <body>
-<div class="container">
-<div class="row">
 <?php
 include("common_user_fetch.php");
 /*if($_SESSION['UserEmail']!='')
@@ -140,7 +138,7 @@ $(document).ready(function(){
             </div>
         </div>
         <div class="col-md-12 nopadding mid">
-            <div class="wrapper col-md-12 col-sm-12 col-xs-12">
+            <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
                  <?php include('include/edit_profile_top.inc.php'); ?>
                  <?php include('include/profile_leftbar.inc.php'); ?>
                  <?php include('include/timeline.inc.php'); ?>

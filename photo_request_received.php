@@ -21,6 +21,8 @@ if($_SESSION['UserEmail']=='')
 <link rel="stylesheet" href="assets/css/colorbox.css" />
 <link rel="stylesheet" href="css/colorbox.css" />
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 </head>
 		
 <body>
@@ -145,12 +147,14 @@ $(document).ready(function(){
     });
 </script>
 
-<div class="topMain">
-	<div class="wrapper">
+<div class="container">
+    <div class="row">
+        <div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
+            <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
     	<?php include('include/header.inc.php'); ?>
 		<?php include('include/slider1.inc.php'); ?>
-		<div class="header inn" style="display:none">
-        	<div class="titlebox">
+                <div class="header inn">
+                    <div class="titlebox col-md-12">
             	<h2>New Interest</h2>
                 
                
@@ -158,13 +162,15 @@ $(document).ready(function(){
         </div>
     </div>
 </div>
-<div class="wrapper">
-	<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
+        <div class="col-md-12 nopadding mid">
+            <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
     	 <?php include('include/edit_profile_top.inc.php'); ?>
          <?php include('include/profile_leftbar.inc.php'); ?>
 		 <?php include('include/photo_request_received.inc.php'); ?>
     </div>
      <?php include('include/footer.inc.php'); ?>
+</div>
+</div>
 </div>
 </body>
 </html>

@@ -110,7 +110,7 @@ $(document).ready(function(e) {
 					}
 					?>
             	<div class="profile_img">
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <?php
 						
 						if(!empty($logged_in_member[0]['photo']) && $logged_in_member[0]['Approve']=='1')
@@ -251,7 +251,7 @@ $(document).ready(function(e) {
 <?php if(!empty($logged_in_member[0]['living_with_parents'])) { ?> <ul class="col-md-6 col-sm-6 col-xs-12"><li>Living with parents?</li><li>:</li><li>
 <?php if( $logged_in_member[0]['living_with_parents'] == "Y") { echo "Yes"; } else { echo "No"; }?><?php } ?>
 <?php if(!empty($logged_in_member[0]['live_inlaws'])) { ?> <ul class="col-md-6 col-sm-6 col-xs-12"><li>Live with in-laws?</li><li>:</li><li>
-<?php if( $logged_in_member[0]['live_inlaws'] == "Y") { echo "Yes"; } else { echo "No"; }?><?php } ?>
+<?php if( $logged_in_member[0]['live_inlaws'] == "Y") { echo "Yes"; } else { echo "No"; }?><?php } ?></li></ul>
 <?php if(!empty($logged_in_member[0]['family_value'])) { ?> <ul class="col-md-6 col-sm-6 col-xs-12"><li>Family values</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['family_value']); ?></li></ul><?php } ?>
 <?php if(!empty($logged_in_member[0]['family_type'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Family Type</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['family_type']); ?></li></ul><?php } ?>
 <?php if(!empty($logged_in_member[0]['family_status'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Family Status</li><li>:</li><li><?php echo ucfirst($logged_in_member[0]['family_status']); ?></li></ul><?php } ?>

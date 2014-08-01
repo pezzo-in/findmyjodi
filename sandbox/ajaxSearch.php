@@ -19,7 +19,7 @@ $members=$obj->select($sql);
             <?php
 					foreach($members as $res) { ?>
             	<li>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))

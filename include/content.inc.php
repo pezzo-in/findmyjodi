@@ -170,7 +170,7 @@ if(count($db_banner) > 0)
 
         <div class="profile <?php if($i == 0) { ?> select<?php } ?>">
 
-            <div class="profile-img-box">
+            <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
 
                 <a href="view_profile.php?id=<?php echo $res['id']; ?>" target="_blank"><?php
 

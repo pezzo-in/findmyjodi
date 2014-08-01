@@ -270,7 +270,7 @@ if($_GET['flag'] == 'del_prof')
 
 
 
-<div class="content">
+<div class="col-md-9 col-xs-12 col-sm-12">
 
   <?=$PAGING->show_paging("reply_accept.php");?>
 

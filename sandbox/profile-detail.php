@@ -126,7 +126,7 @@ include("common_user_fetch.php");
         <div class="content">
         	<div class="profile_details">
             	<div class="profile_img">
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                          <a href="#"><img src="images/prfl-list-img.jpg" /></a>
                     </div>
                     <h2>Gurav Jani</h2>

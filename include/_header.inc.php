@@ -1,30 +1,30 @@
-<?php 
+<?php
 $url=explode('/',$_SERVER['REQUEST_URI']);
 
 	/*if($_GET['flag'] == "deactive")
 	{
-		$update="UPDATE members 
-				  SET 
-				  	status = 'Deactive'				  		
-				 where 
+		$update="UPDATE members
+				  SET
+				  	status = 'Deactive'
+				 where
 				 	id = '".$_SESSION['logged_user'][0]['id']."'";
-		$db_updatepage=$obj->edit($update);	
+		$db_updatepage=$obj->edit($update);
 	   	echo "<script>window.location='edit_profile.php'</script>";
 	}
 	if($_GET['flag'] == "activate")
 	{
-		$update="UPDATE members 
-				  SET 
-				  		status = 'Active'				  		
-				 where 
+		$update="UPDATE members
+				  SET
+				  		status = 'Active'
+				 where
 				 		id = '".$_SESSION['logged_user'][0]['id']."'";
-		$db_updatepage=$obj->edit($update);	
+		$db_updatepage=$obj->edit($update);
 		echo "<script>window.location='edit_profile.php'</script>";
 	}
 	if($_GET['flag'] == "delete")
 	{
-		$delete_acc="delete from members 
-				 where 
+		$delete_acc="delete from members
+				 where
 				 id = '".$_SESSION['logged_user'][0]['id']."'";
 		$obj->sql_query($delete_acc);
 		echo "<script>window.location='logout.php'</script>";
@@ -40,18 +40,18 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
 	{
 		if($_POST['username'] != "" || $_POST['password'] != "")
 		{
-			$sql="select * from members 
+			$sql="select * from members
 			 	 where
-			  	email_id = '".$_POST['username']."' and 
+			  	email_id = '".$_POST['username']."' and
 				password = '".md5($_POST['password'])."' and
 				status = 'Active'";
-				
+
 			$ans=$obj->select($sql);
 			if(!empty($ans))
 			{
-				$_SESSION['logged_user'][0]['id']=$ans[0]['id'];	
+				$_SESSION['logged_user'][0]['id']=$ans[0]['id'];
 				$_SESSION['logged_user'] = $ans;
-	
+
 				echo "<script> window.location='edit_profile.php'</script>";
 			}
 			else
@@ -68,13 +68,13 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
 <div class="top">
     <div class="topIn">
         <a href="index.php" class="logo"><img src="images/logo.png" /></a>
-        
+
         <div class="topLogin">
-            <div class="loginlink">            	
+            <div class="loginlink">
             <?php if($_SESSION['logged_user'][0]['id']=='') { ?>
-                <a href="javascript:;" class="link-signin">Sign In</a> 
+                <a href="javascript:;" class="link-signin">Sign In</a>
 				<?php } else { ?>
-                <a href="logout.php" class="link-reg">Sign Out</a> 
+                <a href="logout.php" class="link-reg">Sign Out</a>
                 <?php } ?>
 				<div class="loginbox">
                     <div class="loginboxtop"></div>
@@ -90,10 +90,10 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
                 </div>
             </div>
             <?php if($_SESSION['logged_user'][0]['id']=='') { ?>
-            <a href="register.php" class="link-reg">Register</a>            
+            <a href="register.php" class="link-reg">Register</a>
             <?php } ?>
         </div>
-        <?php if($_SESSION['logged_user'][0]['id']=='') { ?> 
+        <?php if($_SESSION['logged_user'][0]['id']=='') { ?>
         <ul class="menu" id="menu">
             <li <?php if($url[3] == "index.php") { echo "class='active'"; } ?>><a href="index.php">Home</a></li>
             <li <?php if($url[3] == "search.php") { echo "class='active'"; } ?>><a href="search.php">Search</a>
@@ -102,7 +102,7 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
                     <li><a href="search.php?flag=rag">Regular search</a></li>
                		<li><a href="search.php#searchtab-2">Advanced search</a></li>
                     <li><a href="search.php?flag=soul">Soulmate search</a></li>
-                    <li><a href="search.php?flag=key">Keyword search</a></li>                    
+                    <li><a href="search.php?flag=key">Keyword search</a></li>
                    </div>
                </ul>
             </li>
@@ -120,10 +120,10 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
                     <li><a href="search.php?flag=soul">Soulmate search</a></li>
                     <li><a href="search.php?flag=key">Keyword search</a></li>
                     </div>
-               </ul> 
+               </ul>
             </li>
             <li <?php if($url[3] == "my_account.php") { echo "class='active'"; } ?>><a href="my_account.php">My Profile</a>
-            	<ul> 
+            	<ul>
 	                <div>
 	               	<li><a href="edit_profile.php">Edit profile</a></li>
                     <li><a href="edit_photo_upload.php">Upload photo</a></li>
@@ -138,23 +138,23 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
                     <li><a href="edit_profile.php?flag=active">Activate Profile</a></li><?php } ?>
                     <li><a href="edit_profile.php?flag=delete">Delete Profile</a></li>
                     </div>
-                </ul>    
-              </li>  
-                    
+                </ul>
+              </li>
+
             <li <?php if($url[3] == "all_notifications.php") { echo "class='active'"; } ?>><a href="all_notifications.php">
-            <?php $new_msg = "select * from messages 
+            <?php $new_msg = "select * from messages
 			                  where to_mem = '".$_SESSION['logged_user'][0]['member_id']."'
-							  and is_replied = 'N' and interested = 'Y'"; 
-				 $total_msg = $obj->select($new_msg);			  
+							  and is_replied = 'N' and interested = 'Y'";
+				 $total_msg = $obj->select($new_msg);
 							  ?>
             Messages<span><?php echo count($total_msg); ?></span></a></li>
             <li <?php if($url[3] == "help.php") { echo "class='active'"; } ?>><a href="help.php">Help</a></li>
         </ul>
-       <?php } ?> 
+       <?php } ?>
         <script type="text/javascript">
         var menu=new menu.dd("menu");
         menu.init("menu","menuhover");
-        </script> 
+        </script>
     </div>
 </div>
 <script>
@@ -164,21 +164,21 @@ $(document).ready(function(){
 			$(".loginbox").addClass("open");
 		}, function () {
 			$(".loginbox").removeClass("open");
-		}); 
+		});
     });
-	
+
 	$(document).mouseup(function (e)
 	{
 		var container = $(".loginbox");
-	
+
 		if (!container.is(e.target) // if the target of the click isn't the container...
 			&& container.has(e.target).length === 0) // ... nor a descendant of the container
 		{
 			container.hide(500);
 		}
 	});
-	
-	
+
+
 });
 </script>
  <?php

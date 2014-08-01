@@ -90,7 +90,7 @@ if(isset($_POST['send_reply']))
 ?>
 <div class="col-md-9 col-xs-12 col-sm-12 nopadding">
 	<div class="msgChat col-xs-2 col-sm-4 col-md-4 nopadding">
-    	<ul id="msgChat">
+    	<ul id="msgChat" style="height: 580px;">
         <?php
 			
 		for($lpcntrl=0;$lpcntrl<count($messages); $lpcntrl++)
@@ -134,7 +134,7 @@ if(isset($_POST['send_reply']))
 							echo $pic;
 						}
 						?>
-                        <div class="chatMsgCont clearfix">
+                        <div class="chatMsgCont hidden-xs clearfix">
                             <span class="chatMsgName" id="chantmsgname<?php echo $messages[$lpcntrl]['from_mem']."_".$messages[$lpcntrl]['to_mem']; ?>">
 								<?php echo ucfirst($dbmuser[0]['name']).' ('.$dbmuser[0]['member_id'].')'; ?>
                             </span>
@@ -142,8 +142,8 @@ if(isset($_POST['send_reply']))
 							//echo $last_message;
 								$db_last_msg = $obj->select($last_message);
 							?>
-                            <span class="chatMsgText"><?php echo $db_last_msg[0]['message']; ?></span>
-                            <span class="chatMsgDate"><?php echo date('d M Y',strtotime($db_last_msg[0]['send_date'])); ?></span>
+                            <span class="chatMsgText hidden-xs"><?php echo $db_last_msg[0]['message']; ?></span>
+                            <span class="chatMsgDate hidden-xs"><?php echo date('d M Y',strtotime($db_last_msg[0]['send_date'])); ?></span>
                         </div>
                     </div>
               	</a>
@@ -186,7 +186,7 @@ if(isset($_POST['send_reply']))
 							echo $pic;
 						}
 						?>
-                        <div class="chatMsgCont clearfix">
+                        <div class="chatMsgCont hidden-xs clearfix">
                             <span class="chatMsgName" id="chantmsgname<?php echo $messages[$lpcntrl]['to_mem']."_".$messages[$lpcntrl]['from_mem']; ?>">
 								<?php echo ucfirst($dbmuser[0]['name']).' ('.$dbmuser[0]['member_id'].')'; ?>
                             </span>
@@ -194,8 +194,8 @@ if(isset($_POST['send_reply']))
 							//echo $last_message;
 								$db_last_msg = $obj->select($last_message);
 							?>
-                            <span class="chatMsgText"><?php echo $db_last_msg[0]['message']; ?></span>
-                            <span class="chatMsgDate"><?php echo date('d M Y',strtotime($db_last_msg[0]['send_date'])); ?></span>
+                            <span class="chatMsgText hidden-xs"><?php echo $db_last_msg[0]['message']; ?></span>
+                            <span class="chatMsgDate hidden-xs"><?php echo date('d M Y',strtotime($db_last_msg[0]['send_date'])); ?></span>
                         </div>
                     </div>
               	</a>
@@ -205,7 +205,7 @@ if(isset($_POST['send_reply']))
             } } ?>
 		</ul>
     </div>
-    <div class="msgAll">             
+    <div class="msgAll col-md-8 col-xs-10 col-sm-8">
     	 <?php
 					if($messages[0]['to_mem']==$_SESSION['logged_user'][0]['member_id'])
 					{
@@ -226,7 +226,7 @@ if(isset($_POST['send_reply']))
 					$con_name = $obj->select($sql); ?>
 					<span class="converse-span1" style="font-size:20px;color:#0075A7;"><?php echo ucwords($con_name[0]['name']).' ('.$con_name[0]['member_id'].')' ?></span>
       
-                    <ul id="msgAll">
+                    <ul id="msgAll" style="height: 510px;">
 				
 <?php 					
 $conversation = "select * from messages where (to_mem = '".$to."' and from_mem='".$from."') or (to_mem = '".$from."' and from_mem='".$to."') order by id asc";
@@ -274,17 +274,17 @@ if(!empty($dbconversation))
 			}
 			?>
          </a>
-          <div class="chatMsgCont">
+          <div class="chatMsgCont hidden-xs">
              <?php if($dbmuser[0]['member_id']==$_SESSION['logged_user'][0]['member_id']):?>
                  <a href="my_account.php">
 			 <?php else: ?>
 					 <a href="view_profile.php?id=<?php echo $dbmuser[0]['id'];?>">             
 			 <?php endif;?>
 
-              	<span class="chatMsgName"><?php echo  ucfirst($dbmuser[0]['name']); ?></span>
+              	<span class="chatMsgName hidden-xs"><?php echo  ucfirst($dbmuser[0]['name']); ?></span>
               </a>
-			   <span class="chatMsgText"><?php echo $dbconversation[$lpcntrl]['message']; ?></span>
-               <span class="chatMsgDate"><?php echo date('d M Y', strtotime($dbconversation[$lpcntrl]['send_date'])); ?></span>
+			   <span class="chatMsgText hidden-xs"><?php echo $dbconversation[$lpcntrl]['message']; ?></span>
+               <span class="chatMsgDate hidden-xs"><?php echo date('d M Y', strtotime($dbconversation[$lpcntrl]['send_date'])); ?></span>
           </div>
       </div>
   </li>
@@ -293,12 +293,12 @@ if(!empty($dbconversation))
 }?>
                     </ul>
                     <?php if($_SESSION['Member_status']=='Paid') { ?>
-                      <div class="inputtxt msginput">
+                      <div class="inputtxt msginput col-xs-12 col-md-12 col-sm-12">
                         <input type="text" class="msg-send-text" name="Message" id="message_sent_<?php echo $from; ?>_<?php echo $to; ?>" value="">
                     <a class="msg_send_btn " id="message_sent_<?php echo $from; ?>_<?php echo $to; ?>" onclick="">click</a>
                     </div>
                     <?php } else { ?>
-                   	  <div class="inputtxt msginput">
+                   	  <div class="inputtxt msginput col-xs-12 col-md-12 col-sm-12">
                         <input type="text" disabled="disabled" placeholder="Your membership is expire please upgrade" >
                       </div>
                     <?php } ?>
@@ -394,7 +394,7 @@ $('.not_int_msg_class').click(function() {
 	  return true;
 	}
 </script> 
-<script type="text/javascript" src="js/slimScroll.js"></script>
+<script type="text/javascript" src="js/slimScroll.js"></scriptslimScrollDiv>
 <script type="text/javascript">
    $(function(){
 		$('#msgChat').slimscroll({
@@ -457,7 +457,7 @@ $('.msg_send_btn').click(function(){
 					Msg:message,
 				   } ,      
 			 success: function(data) {
-				 	 
+
 					 $('#msgAll').append(data);
 					 $('.msg-send-text').val("");
 					 // $("p").css("color","red");

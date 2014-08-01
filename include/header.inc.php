@@ -67,6 +67,7 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
 		}
 	}
 ?>
+<script src="../js/bootstrap.min.js"></script>
 <div class="top col-md-12 col-xs-12 col-sm-12">
     <div class="topIn col-md-12 col-xs-12 col-sm-12">
     <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
@@ -104,10 +105,8 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
             <a href="register.php" class="btn btn-danger btn-md col-md-6 col-xs-5 col-sm-6" title="Create your profile">Register</a>
             <?php } ?>
         </div>
-        <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?> 
-       <!-- <nav role="navigation" class="navbar">
-            <div class="container-fluid">
-            &lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;
+        <nav role="navigation" class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
@@ -116,10 +115,10 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-
-                &lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
-                    <ul class="menu col-md-6" id="menu">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nopadding" id="bs-example-navbar-collapse-1" style="overflow: visible;">
+                    <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
+                    <ul class="menu col-md-12 col-sm-12 col-xs-12" id="menu">
                         <li <?php //if($url[2] == "index.php") { echo "class='active'"; } ?>><a href="index.php" title="Home">Home</a></li>
                         <li <?php //if($url[2] == "search.php") { echo "class='active'"; } ?>><a href="search.php" title="Search">Search</a>
                             <ul>
@@ -134,39 +133,37 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
                         <li <?php //if($url[2] == "quick_tour.php") { echo "class='active'"; } ?>><a href="quick_tour.php" title="Quick Tour">Quick Tour</a></li>
                         <li <?php //if($url[2] == "help.php") { echo "class='active'"; } ?>><a href="help.php" title="Contact Us">Contact Us</a></li>
                     </ul>
-                <!--</div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;
-            </div>&lt;!&ndash; /.container-fluid &ndash;&gt;
-        </nav>-->
-        
-       <?php }else { ?>
-       <ul class="menu" id="menu">
-            <!--<li><a href="index.php">Home</a></li>-->
-            
-            <li <?php //if($url[2] == "my_account.php") { echo "class='active'"; } ?>><a href="my_account.php" title="My Profile">My Profile</a>
-            	   
-              </li>  
-                 <li <?php //if($url[2] == "search.php") { echo "class='active'"; } ?>><a href="search.php" title="Search">Search</a>
-               <ul><div>
-	               	<li><a href="search.php?flag=rag">Simple Search</a></li>
-               		<li><a href="search.php?flag=adv">Advanced Search</a></li>
-                    <!--<li><a href="search.php?flag=soul">Soulmate search</a></li>-->
-                    <li><a href="search.php?flag=key">Keyword Search</a></li>
-                    <!--<li><a href="search.php?flag=online">Who's Online</a></li>-->
-                    <li><a href="search.php?flag=id">Search by ID</a></li>
-                    <li><a href="save_search.php">Saved Search</a></li>                    
-                    </div>
-               </ul> 
-            </li>   
-            <li><a href="packages.php" title="Upgrade">Upgrade</a></li>
-            <li <?php //if($url[2] == "all_notifications.php") { echo "class='active'"; } ?>><a href="received_msgs.php#msgtab-2"  title="Messages">
-            <?php $new_msg = "select * from messages 
-			                  where to_mem = '".$_SESSION['logged_user'][0]['member_id']."'";							   
-				 $total_msg = $obj->select($new_msg);			  
-							  ?>
-            Messages<?php /*?><span><?php echo count($total_msg); ?></span><?php */?></a></li>
-            <li <?php //if($url[2] == "help.php") { echo "class='active'"; } ?>><a href="help.php" title="Contact Us">Contact Us</a></li>
-        </ul>
-       <?php } ?> 
+                   <?php }else { ?>
+                   <ul class="menu col-md-12 col-sm-12 col-xs-12" id="menu">
+                        <!--<li><a href="index.php">Home</a></li>-->
+
+                        <li <?php //if($url[2] == "my_account.php") { echo "class='active'"; } ?>><a href="my_account.php" title="My Profile">My Profile</a>
+
+                          </li>
+                             <li <?php //if($url[2] == "search.php") { echo "class='active'"; } ?>><a href="search.php" title="Search">Search</a>
+                           <ul><div>
+                                <li><a href="search.php?flag=rag">Simple Search</a></li>
+                                <li><a href="search.php?flag=adv">Advanced Search</a></li>
+                                <!--<li><a href="search.php?flag=soul">Soulmate search</a></li>-->
+                                <li><a href="search.php?flag=key">Keyword Search</a></li>
+                                <!--<li><a href="search.php?flag=online">Who's Online</a></li>-->
+                                <li><a href="search.php?flag=id">Search by ID</a></li>
+                                <li><a href="save_search.php">Saved Search</a></li>
+                                </div>
+                           </ul>
+                        </li>
+                        <li><a href="packages.php" title="Upgrade">Upgrade</a></li>
+                        <li <?php //if($url[2] == "all_notifications.php") { echo "class='active'"; } ?>><a href="received_msgs.php#msgtab-2"  title="Messages">
+                        <?php $new_msg = "select * from messages
+                                          where to_mem = '".$_SESSION['logged_user'][0]['member_id']."'";
+                             $total_msg = $obj->select($new_msg);
+                                          ?>
+                        Messages<?php /*?><span><?php echo count($total_msg); ?></span><?php */?></a></li>
+                        <li <?php //if($url[2] == "help.php") { echo "class='active'"; } ?>><a href="help.php" title="Contact Us">Contact Us</a></li>
+                    </ul>
+                   <?php } ?>
+                </div><!-- /.navbar-collapse -->
+        </nav>
         <script type="text/javascript">
         var menu=new menu.dd("menu");
         menu.init("menu","menuhover");
