@@ -392,7 +392,7 @@ if(isset($_POST['delete_account']))
 					?>
                     <div class="profile_details">
             	 	<div class="profile_img">
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <?php
 						if(!empty($get_each_msg[0]['photo']))
 						{
@@ -419,7 +419,7 @@ if(isset($_POST['delete_account']))
 					?>
         	<?php /*?><div class="profile_details">
             	 	<div class="profile_img">
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <?php
 						if(!empty($get['photo']))
 						{

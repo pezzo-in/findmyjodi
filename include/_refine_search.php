@@ -87,7 +87,7 @@ if($_GET['hint'] == 'curr_month')
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -153,7 +153,7 @@ if($_GET['hint'] == 'within_day')
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -218,7 +218,7 @@ if($_GET['hint'] == "one_month_active")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -281,7 +281,7 @@ if($_GET['hint'] == "one_week_active")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -346,7 +346,7 @@ if($_GET['hint'] == "age_search")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?> >
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -411,7 +411,7 @@ if($_GET['hint'] == "unmarried")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -477,7 +477,7 @@ if($_GET['hint'] == "gujarati_lang")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -542,7 +542,7 @@ if($_GET['hint'] == "star_rohini")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -607,7 +607,7 @@ if($_GET['hint'] == "star_ashwini")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -669,7 +669,7 @@ if($_GET['hint'] == "enginner_occu")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -734,7 +734,7 @@ if($_GET['hint'] == "admini_prof")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -799,7 +799,7 @@ if($_GET['hint'] == "one_to_three_lakh")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -864,7 +864,7 @@ if($_GET['hint'] == "three_to_five")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -929,7 +929,7 @@ if($_GET['hint'] == "five_to_ten")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -994,7 +994,7 @@ if($_GET['hint'] == "india")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -1059,7 +1059,7 @@ if($_GET['hint'] == "usa")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -1124,7 +1124,7 @@ if($_GET['hint'] == "fair")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -1189,7 +1189,7 @@ if($_GET['hint'] == "wheatish")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -1254,7 +1254,7 @@ if($_GET['hint'] == "manglik")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -1319,7 +1319,7 @@ if($_GET['hint'] == "not_manglik")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -1384,7 +1384,7 @@ if($_GET['hint'] == "hindu")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -1448,7 +1448,7 @@ if($_GET['hint'] == "muslim")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -1512,7 +1512,7 @@ if($_GET['hint'] == "christian")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -1569,7 +1569,7 @@ if($_GET['hint'] == "agarwal")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -1634,7 +1634,7 @@ if($_GET['hint'] == "arora")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))
@@ -1698,7 +1698,7 @@ if($_GET['hint'] == "brahmin")
 					$i=0;
 					foreach($members as $res) { ?>
             	<li <?php if($i%3==0){ ?> style="margin-left:0px;" <?php } $i++; ?>>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']))

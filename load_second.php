@@ -503,14 +503,14 @@ if(count($members)>0) {
 						}
 						
 						 ?>
-            	<li class="message_box <?php if($i==0) { ?>first<?php } ?>" id="<?php echo $members[$i]['id']; ?>">
-                    <div class="profile-img-box">
+            	<li class="message_box <?php if($i==0) { ?>first<?php } ?> col-md-4 col-xs-12 col-md-6 nopadding" id="<?php echo $members[$i]['id']; ?>">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $members[$i]['id']; ?>" target="_blank" class="popper" data-popbox="pop<?php echo $members[$i]['id']; ?>">
                      <?php //$plan="select * from member_plans where member_id='".$members[$i]['id']."'"; 
 							//$dbplan=$obj->select($plan);
 							//if(count($dbplan)>0)
 							//{
-$membership="<label style='background:none; text-align:left; font-weight:bold; color:#000; font-size:14px; height:20px; color:#000; padding-bottom:5px;'>".$members[$i]['member_id']."</label>";
+$membership="<label style='background:none; text-align:left; font-weight:bold; color:#000; font-size:14px; height:20px; color:#000; padding-bottom:5px; display:block;'>".$members[$i]['member_id']."</label>";
 							//}
 							//else
 							//{

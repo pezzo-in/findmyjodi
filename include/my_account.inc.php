@@ -110,7 +110,7 @@ $(document).ready(function(e) {
 					}
 					?>
             	<div class="profile_img">
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <?php
 						
 						if(!empty($logged_in_member[0]['photo']) && $logged_in_member[0]['Approve']=='1')
@@ -267,7 +267,7 @@ $(document).ready(function(e) {
                 <?php } ?>
                 
                 <?php if($logged_in_member[0]['no_of_brothers']!='' || $logged_in_member[0]['no_of_sisters']!='' || $logged_in_member[0]['living_with_parents']!='' || $logged_in_member[0]['family_value']!='' || $logged_in_member[0]['family_type']!='' || $logged_in_member[0]['family_status']!=''){ ?>
-                <div class="row-detail">
+                   <div class="row-detail">
                 	<span class="family1"></span><h3>Family</h3>
 <?php if(!empty($logged_in_member[0]['father_occupation'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Father's Occupation</li><li>:</li><li><?php echo $logged_in_member[0]['father_occupation']; ?></li></ul><?php } ?>
 <?php if(!empty($logged_in_member[0]['mother_occupation'])) { ?><ul class="col-md-6 col-sm-6 col-xs-12"><li>Mother's Occupation</li><li>:</li><li><?php echo $logged_in_member[0]['mother_occupation']; ?></li></ul><?php } ?>

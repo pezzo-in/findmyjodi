@@ -104,7 +104,7 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
 ?>
 
-      <div class="content">
+      <div class="col-md-12 col-xs-12 col-sm-12">
 
 		      <h3>Add/Edit Partner Preference</h3>
 
@@ -116,15 +116,15 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
         	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" class="editpartpref">
 
-				<tr>
+				
 
-                	<td width="20%" valign="top"><label>Preferred Age</label></td>
+                	<span class="col-md-3 col-xs-12 col-sm-3"><label>Preferred Age</label></span>
 
-                    <td>
+                    <span class="col-md-9 col-sm-9 col-xs-12">
 
                         <div class="preff-age" style="margin-left:0px;">
 
-                            <select name="drpAgeFrom" id="drpAgeFrom" style="width:70px;">
+                            <select class="form-control col-xs-12 col-md-12 col-sm-12" name="drpAgeFrom" id="drpAgeFrom" style="width:70px;">
 
                                 <?php 
 								
@@ -142,7 +142,7 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                         <div id="age_to">
 
-                         <select name="drpAgeTo" id="drpAgeTo" style="width:70px;">
+                         <select class="form-control col-xs-12 col-md-12 col-sm-12" name="drpAgeTo" id="drpAgeTo" style="width:70px;">
 
                             <?php for($i=20;$i<=50;$i++) { ?>
 
@@ -152,15 +152,15 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                          </select>
 
-                        </div> </div></td>
+                        </div> </div></span>
 
-                 </tr>
+                 
 
-                 <tr>
+                 
 
-                	<td width="20%" valign="top"><label>Marital Status</label></td>
+                	<span class="col-md-3 col-xs-12 col-sm-3"><label>Marital Status</label></span>
 
-                    <td><select id="drpMaritalStatus" name="drpMaritalStatus" style="clear:none;">
+                    <span class="col-md-9 col-sm-9 col-xs-12"><select class="form-control col-xs-12 col-md-12 col-sm-12" id="drpMaritalStatus" name="drpMaritalStatus" style="clear:none;">
 
                         <option value="">-Select-</option>
 
@@ -172,18 +172,18 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                         <option value="Widowed"  <?php if($logged_in_member[0]['marital_status'] == "Widowed") { ?> selected="selected" <?php } ?>>Widowed</option>
 
-                    </select></td>
+                    </select></span>
 
-				</tr>
+				
 
-                <tr>
+                
 
-                    <td width="20%" valign="top"><label>Height</label></td>
+                    <span class="col-md-3 col-xs-12 col-sm-3"><label>Height</label></span>
 
-                    <td>
+                    <span class="col-md-9 col-sm-9 col-xs-12">
                     <div class="preff-age" style="margin-left:0px;">
 
-                           <select id="drpHeight" name="drpHeight" style="width:130px;">
+                           <select class="form-control col-xs-12 col-md-12 col-sm-12" id="drpHeight" name="drpHeight" style="width:130px;">
 
                        <option value="">Feet/Inches</option>
                        
@@ -202,7 +202,7 @@ $ht=explode("to",$logged_in_member[0]['height']);
                         <span>to</span>
 
                         <div id="age_to">
-							<select id="drptoHeight" name="drptoHeight"  style="width:130px;">
+							<select class="form-control col-xs-12 col-md-12 col-sm-12" id="drptoHeight" name="drptoHeight"  style="width:130px;">
 
                        <option value="">Feet/Inches</option>
                        
@@ -214,15 +214,15 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                     </select>
                          </div> </div>
-                      </td>
+                      </span>
 
-                </tr>
+                
 
-                <tr>
+                
 
-                    <td width="20%" valign="top"><label>Physical status</label></td>
+                    <span class="col-md-3 col-xs-12 col-sm-3"><label>Physical status</label></span>
 
-                    <td><select id="drpPhysicalStatus" name="drpPhysicalStatus"  style="clear:none;">
+                    <span class="col-md-9 col-sm-9 col-xs-12"><select class="form-control col-xs-12 col-md-12 col-sm-12" id="drpPhysicalStatus" name="drpPhysicalStatus"  style="clear:none;">
 
                        <option value="">-Select-</option>
 
@@ -230,15 +230,15 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                        <option value="physically_challenged" <?php if($logged_in_member[0]['physical_status'] == "physically_challenged") { ?> selected="selected" <?php } ?>>Physically challenged</option>                       
 
-                    </select></td>
+                    </select></span>
 
-                </tr>
+                
 
-                <tr>
+                
 
-                    <td width="20%" valign="top"><label>Religion</label></td>
+                    <span class="col-md-3 col-xs-12 col-sm-3"><label>Religion</label></span>
 
-                    <td><?php
+                    <span class="col-md-9 col-sm-9 col-xs-12"><?php
 
 						$religion_list = "select * from religions";
 
@@ -246,7 +246,7 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
 					?>
 
-                    <select name="drpReligion" id="drpReligion" onchange="change_religion(this.value);" style="clear:none;">
+                    <select class="form-control col-xs-12 col-md-12 col-sm-12" name="drpReligion" id="drpReligion" onchange="change_religion(this.value);" style="clear:none;">
 
                         <option value=""> -Select- </option>
 
@@ -256,17 +256,17 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                         <?php } ?>
 
-                    </select></td>
-
-                </tr>
+                    </select></span>
 
                 
 
-                <tr>
+                
 
-                    <td width="20%" valign="top"><label>Caste</label></td>
+                
 
-                    <td><?php						
+                    <span class="col-md-3 col-xs-12 col-sm-3"><label>Caste</label></span>
+
+                    <span class="col-md-9 col-sm-9 col-xs-12"><?php						
 
 						$select_religions="select * from religions where religion='".$logged_in_member[0]['religion']."'";
 
@@ -282,7 +282,7 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                     <div id="caste_drp_div">
 
-                    <select name="drpCaste" id="drpCaste" style="clear:none;">
+                    <select class="form-control col-xs-12 col-md-12 col-sm-12" name="drpCaste" id="drpCaste" style="clear:none;">
 
                         <option value=""> -Select- </option>
 
@@ -296,9 +296,9 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                     </div>
 
-                    </td>
+                    </span>
 
-                </tr>
+                
 
 				
 
@@ -312,11 +312,11 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
 					?>	
 
-                <tr>
+                
 
-                    <td width="20%" valign="top"><label>Mother Tongue</label></td>
+                    <span class="col-md-3 col-xs-12 col-sm-3"><label>Mother Tongue</label></span>
 
-                    <td><select name="drpMotherlanguage" id="drpMotherlanguage" style="clear:none;" >
+                    <span class="col-md-9 col-sm-9 col-xs-12"><select class="form-control col-xs-12 col-md-12 col-sm-12" name="drpMotherlanguage" id="drpMotherlanguage" style="clear:none;" >
 
                         <option value=""> -Select- </option>
 
@@ -328,17 +328,17 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                         <?php } ?>
 
-                    </select></td>
-
-                </tr>
+                    </select></span>
 
                 
 
-                <tr>
+                
 
-                    <td width="20%" valign="top"><label>Manglik</label></td>
+                
 
-                    <td><select id="drpManglik" name="drpManglik"  style="clear:none;">	
+                    <span class="col-md-3 col-xs-12 col-sm-3"><label>Manglik</label></span>
+
+                    <span class="col-md-9 col-sm-9 col-xs-12"><select class="form-control col-xs-12 col-md-12 col-sm-12" id="drpManglik" name="drpManglik"  style="clear:none;">	
 
                     	<option value="">--Select--</option>
 
@@ -348,15 +348,15 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                         <option value="" <?php if($logged_in_member[0]['manglik'] == "") { ?> selected="selected" <?php } ?>>Don't know</option>                        
 
-             </select></td>
+             </select></span>
 
-                </tr>
+                
 
-                <tr>
+                
 
-                    <td width="20%" valign="top"><label>Eating Habits</label></td>
+                    <span class="col-md-3 col-xs-12 col-sm-3"><label>Eating Habits</label></span>
 
-                    <td><select id="drpFood" name="drpFood"   style="clear:none;">	
+                    <span class="col-md-9 col-sm-9 col-xs-12"><select class="form-control col-xs-12 col-md-12 col-sm-12" id="drpFood" name="drpFood"   style="clear:none;">	
 
                     	<option value="">--Select--</option>
 
@@ -366,15 +366,15 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                         <option value="eggetarian"  <?php if($logged_in_member[0]['food'] == "eggetarian") { ?> selected="selected" <?php } ?>>Eggetarian</option>                        
 
-              </select></td>
+              </select></span>
 
-                </tr>
+                
 
-                <tr>
+                
 
-                    <td width="20%" valign="top"><label>Smoking Habits</label></td>
+                    <span class="col-md-3 col-xs-12 col-sm-3"><label>Smoking Habits</label></span>
 
-                    <td><select id="drpSmoking" name="drpSmoking"  style="clear:none;">	
+                    <span class="col-md-9 col-sm-9 col-xs-12"><select class="form-control col-xs-12 col-md-12 col-sm-12" id="drpSmoking" name="drpSmoking"  style="clear:none;">	
 
                     	<option value="">--Select--</option>
 
@@ -384,15 +384,15 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                         <option value="O" <?php if($logged_in_member[0]['is_smoker'] == "O") { ?> selected="selected" <?php } ?>>Occasionally</option>                        
 
-              </select>  </td>
+              </select>  </span>
 
-                </tr>
+                
 
-                <tr>
+                
 
-                    <td width="20%" valign="top"><label>Drinking Habits</label></td>
+                    <span class="col-md-3 col-xs-12 col-sm-3"><label>Drinking Habits</label></span>
 
-                    <td><select id="drpDrinking" name="drpDrinking"  style="clear:none;">	
+                    <span class="col-md-9 col-sm-9 col-xs-12"><select class="form-control col-xs-12 col-md-12 col-sm-12" id="drpDrinking" name="drpDrinking"  style="clear:none;">	
 
                     	<option value="">--Select--</option>
 
@@ -402,15 +402,15 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                         <option value="O" <?php if($logged_in_member[0]['is_drinker'] == "O") { ?> selected="selected" <?php } ?>>Occasionally</option>                        
 
-              </select></td>
+              </select></span>
 
-                </tr>
+                
 
-                <tr>
+                
 
-                    <td width="20%" valign="top"><label>Country Living In</label></td>
+                    <span class="col-md-3 col-xs-12 col-sm-3"><label>Country Living In</label></span>
 
-                    <td><?php
+                    <span class="col-md-9 col-sm-9 col-xs-12"><?php
 
 						$country_list = "select * from mobile_codes";
 
@@ -420,7 +420,7 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
 					?>
 
-                    <select name="drpCountry" id="drpCountry"  style="clear:none;">
+                    <select class="form-control col-xs-12 col-md-12 col-sm-12" name="drpCountry" id="drpCountry"  style="clear:none;">
 
                     
 
@@ -432,12 +432,12 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                         <?php } ?>
 
-                    </select></td>
+                    </select></span>
 
-                </tr>
-                <tr>
-            <td width="20%" valign="top"><label>Education</label></td>
-            <td><select id="drpEducation" name="drpEducation"  style="clear:none;">
+                
+                
+            <span class="col-md-3 col-xs-12 col-sm-3"><label>Education</label></span>
+            <span class="col-md-9 col-sm-9 col-xs-12"><select class="form-control col-xs-12 col-md-12 col-sm-12" id="drpEducation" name="drpEducation"  style="clear:none;">
         <option value="">--Select--</option>
 					<?php
 					$level="SELECT education_details.* FROM `education_details` join education_course on Eid=education_details.id group by education_details.id";
@@ -458,22 +458,22 @@ $ht=explode("to",$logged_in_member[0]['height']);
                             <?php } ?>
                      </optgroup>
                           <?php } ?> 
-      </select></td>
-        </tr>
+      </select></span>
+        
 
-                <tr>
+                
 
-                    <td width="20%" valign="top"><label>Residing city</label></td>
+                    <span class="col-md-3 col-xs-12 col-sm-3"><label>Residing city</label></span>
 
-                    <td><input type="text" name="city" id="city" value="<?php echo $logged_in_member[0]['city']; ?>" style="clear:none;"> </td>
+                    <span class="col-md-9 col-sm-9 col-xs-12"><input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="city" id="city" value="<?php echo $logged_in_member[0]['city']; ?>" style="clear:none;"> </span>
 
-                </tr>
+                
 
-                <tr>
+                
 
-                    <td width="20%" valign="top"><label>Occupation</label></td>
+                    <span class="col-md-3 col-xs-12 col-sm-3"><label>Occupation</label></span>
 
-                    <td><select id="drpOccupation" name="drpOccupation"  style="clear:none;">
+                    <span class="col-md-9 col-sm-9 col-xs-12"><select class="form-control col-xs-12 col-md-12 col-sm-12" id="drpOccupation" name="drpOccupation"  style="clear:none;">
 
                     	<option value="">--Select--</option>
 
@@ -495,15 +495,15 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                                                 
 
-                    </select> </td>
+                    </select> </span>
 
-                </tr>
+                
 
-                <tr>
+                
 
-                    <td width="20%" valign="top"><label>Annual Income</label></td>
+                    <span class="col-md-3 col-xs-12 col-sm-3"><label>Annual Income</label></span>
 
-                    <td><select id="drpAnnualIncome" name="drpAnnualIncome" style="clear:none;">	
+                    <span class="col-md-9 col-sm-9 col-xs-12"><select class="form-control col-xs-12 col-md-12 col-sm-12" id="drpAnnualIncome" name="drpAnnualIncome" style="clear:none;">	
 
                     	<option value="">--Select--</option>
 
@@ -523,26 +523,26 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
                             <?php } } ?>
 
-                    </select> </td>
+                    </select> </span>
 
-                </tr>
+                
 
-                <tr>
+                
 
-                    <td width="20%" valign="top"><label>Partner Description</label></td>
+                    <span class="col-md-3 col-xs-12 col-sm-3"><label>Partner Description</label></span>
 
-                    <td><textarea name="partner_description" id="partner_description" rows="5" cols="42" style='clear:none;resize: none;'><?php echo $logged_in_member[0]['partner_description']; ?></textarea>
-                   </td>
+                    <span class="col-md-9 col-sm-9 col-xs-12"><textarea class="form-control col-md-12 col-xs-12 col-sm-12" name="partner_description" id="partner_description" rows="5" cols="42" style='clear:none;resize: none;'><?php echo $logged_in_member[0]['partner_description']; ?></textarea>
+                   </span>
 
-                </tr>
+                
 
-                <tr>
+                
 
-                    <td width="20%" valign="top">&nbsp;</td>
+                    <span class="col-md-3 col-xs-12 col-sm-3">&nbsp;</span>
 
-                    <td><input type="submit" name="save_pref_partner" class="update_btn_new1" value="Update"></td>
+                    <span class="col-md-9 col-sm-9 col-xs-12"><input class="form-control" type="submit" name="save_pref_partner" class="update_btn_new1" value="Update"></span>
 
-                </tr>
+                
 
 			</table>
 

@@ -69,7 +69,7 @@ $img=$obj->select($select_photo);
 	{
 	for($i=0;$i<count($img);$i++){ ?>
       <li>
-          <div class="profile-img-box"> <a href="javascript:;" class="popper" data-popbox="pop<?php echo $img[$i]['id']; ?>"> <img title="" data-popbox="pop				<?php echo $img[$i]['id']; ?>" class="profile_pic popper" src="upload/<?php echo $img[$i]['photo']; ?>">
+          <div class="profile-img-box first col-md-12 col-xs-12 col-md-12"> <a href="javascript:;" class="popper" data-popbox="pop<?php echo $img[$i]['id']; ?>"> <img title="" data-popbox="pop				<?php echo $img[$i]['id']; ?>" class="profile_pic popper" src="upload/<?php echo $img[$i]['photo']; ?>">
             <div id="pop<?php echo $img[$i]['id']; ?>" class="popbox"><img src="upload/<?php echo $img[$i]['photo']; ?>"></div>
             </a>
           </div>
@@ -137,7 +137,7 @@ for($i=0;$i<count($dbglry);$i++)
 	{
 	for($i=0;$i<count($img);$i++){ ?>
       <li>
-          <div class="profile-img-box"> <a href="javascript:;" class="popper" data-popbox="pop<?php echo $img[$i]['id']; ?>"> <img title="" data-popbox="pop				<?php echo $img[$i]['id']; ?>" class="profile_pic popper" src="upload/<?php echo $img[$i]['photo']; ?>">
+          <div class="profile-img-box first col-md-12 col-xs-12 col-md-12"> <a href="javascript:;" class="popper" data-popbox="pop<?php echo $img[$i]['id']; ?>"> <img title="" data-popbox="pop				<?php echo $img[$i]['id']; ?>" class="profile_pic popper" src="upload/<?php echo $img[$i]['photo']; ?>">
             <div id="pop<?php echo $img[$i]['id']; ?>" class="popbox"><img src="upload/<?php echo $img[$i]['photo']; ?>"></div>
             </a>
           </div>

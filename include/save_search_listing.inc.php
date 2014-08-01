@@ -127,13 +127,13 @@ $sql = $db_search[0]['Search'];
 						
 						 ?>
             	<li>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>" target="_blank" class="popper" data-popbox="pop<?php echo $res['id']; ?>">
                      <?php //$plan="select * from member_plans where member_id='".$res['id']."'"; 
 							//$dbplan=$obj->select($plan);
 							//if(count($dbplan)>0)
 							//{
-$membership="<label style='background:none; text-align:left; font-weight:bold; color:#000; font-size:14px; height:20px; color:#000; padding-bottom:5px;'>".$res['member_id']."</label>";
+$membership="<label style='background:none; text-align:left; font-weight:bold; color:#000; font-size:14px; height:20px; color:#000; padding-bottom:5px; display:block;'>".$res['member_id']."</label>";
 							//}
 							//else
 							//{
@@ -328,7 +328,7 @@ $membership="<label style='background:none; text-align:left; font-weight:bold; c
             <?php
 					foreach($members as $res) { ?>
             	<li>
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $res['id']; ?>" target="_blank" class="popper" data-popbox="pop<?php echo $res['id']; ?>">
                         <?php
 						if(!empty($res['photo']) && $res['Approve']==1)

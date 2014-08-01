@@ -735,10 +735,10 @@ $db_user_plan = $obj->select($user_plan);
 					}
 					for($i=0;$i<count($members);$i++) { 	?>
             	<li id="<?php echo $members[$i]['id']; ?>">
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $members[$i]['id']; ?>" target="_blank" class="popper" data-popbox="pop<?php echo $members[$i]['id']; ?>">
                      <?php 
-$membership="<label style='background:none; text-align:left; font-weight:bold; color:#000; font-size:14px; height:20px; color:#000; padding-bottom:5px;'>".$members[$i]['member_id']."</label>";
+$membership="<label style='background:none; text-align:left; font-weight:bold; color:#000; font-size:14px; height:20px; color:#000; padding-bottom:5px; display:block;'>".$members[$i]['member_id']."</label>";
 							
 					echo $membership;
 							?>

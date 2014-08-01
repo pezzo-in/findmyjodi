@@ -110,7 +110,7 @@ $(document).ready(function(e) {
 					}
 					?>
             	<div class="profile_img">
-                    <div class="profile-img-box">
+                    <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <?php
 						
 						if(!empty($logged_in_member[0]['photo']) && $logged_in_member[0]['Approve']=='1')

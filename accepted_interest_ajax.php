@@ -170,7 +170,7 @@ if($_GET['flag'] == 'del_prof')
 
 		$select_gallery_photo="select * from member_photo_gallery where member_id='".$each_msg[0]['mem_id']."' AND Approve=1";
 		$db_gallery_photo=$obj->select($select_gallery_photo);
-		
+
 		if(count($db_profile_photo)>0 || count($db_gallery_photo)>0)
 		{
 			if(count($db_profile_photo)>0)
@@ -179,7 +179,7 @@ if($_GET['flag'] == 'del_prof')
         	<img src="upload/<?php echo $db_profile_photo[0]['photo'] ?>" width="70" />
             <?php
 			}
-			
+
 			for($p=0;$p<count($db_gallery_photo);$p++)
 			{
 			?>
@@ -199,7 +199,7 @@ if($_GET['flag'] == 'del_prof')
           </div>
           <br />
           <span class="smalltxt">Last Login : 2 hours ago</span><br />
-          <p><?php echo $each_msg[0]['age']; ?> Yrs, <?php echo $each_msg[0]['height']." Inch" ?> | <?php echo $each_msg[0]['religion']; ?>: <?php echo $each_msg[0]['caste']; ?> | Location : <?php echo $each_msg[0]['city']; ?>, <?php echo $each_msg[0]['country']; ?> | Education : 
+          <p><?php echo $each_msg[0]['age']; ?> Yrs, <?php echo $each_msg[0]['height']." Inch" ?> | <?php echo $each_msg[0]['religion']; ?>: <?php echo $each_msg[0]['caste']; ?> | Location : <?php echo $each_msg[0]['city']; ?>, <?php echo $each_msg[0]['country']; ?> | Education :
 		  <?php
 			$select_education="select * from education_course where Id='".$each_msg[0]['education']."'";
 			$db_education=$obj->select($select_education);

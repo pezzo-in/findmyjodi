@@ -103,7 +103,7 @@ if(isset($_POST['postsubmit']) && (trim($_POST['PostText'])!='') || $_POST['img_
 }
 ?>
 <?php if($_GET['id'] == '') { ?>
-<div class="content col-md-9 col-sm-12 col-xs-12">
+<div class="content col-md-9 col-sm-12 col-xs-12 nopadding">
 	<div class="col-md-12 col-xs-12 col-sm-12">
         
             <div class="top_textarea col-md-12 nopadding col-xs-12 col-sm-12">
@@ -363,24 +363,18 @@ $select_like_comment="select * from tbl_user_comment_like where Postid='".$db_co
 				</div></div>
             <?php } } ?>    
             	</div>
-                <div class="cmmnts add-comments-div">
-                    <a href="#" class="pimg"><img src="images/male-user1.png" width="32" height="32"></a>
-                    <div class="ptext">
-                    	<div class="inputtxt" style="width:495px;">
-                        
-                        	 <input type="text" name="Comment" class="comment_text" id="post_comment_<?php echo $db_select_post[$i]['Id']; ?>_<?php echo $_GET['id']; ?>">
-                            <a class="rightsend_btn" id="post_comment_<?php echo $db_select_post[$i]['Id']; ?>_<?php echo $_GET['id']; ?>" onclick="add_comment(this.id);">click</a>
-                        
-                           
-                             <form name="file_upload<?php echo $db_select_post[$i]['Id']; ?>" action="upload_file_comment.php" method="post" target="frame<?php echo $db_select_post[$i]['Id']; ?>" enctype="multipart/form-data">
-                                <input type="file" id="file<?php echo $db_select_post[$i]['Id']; ?>" name="file" onchange="this.form.submit(); display_block(<?php echo $db_select_post[$i]['Id']; ?>);" />
-                            </form>
-                           
-							<div id="prepage<?php echo $db_select_post[$i]['Id']; ?>" class="prepage" style="margin-top:10px;"></div>
-						</div>
-                    </div>
-                     <iframe src="upload_file_comment.php" style="display:none;" id="frame<?php echo $db_select_post[$i]['Id']; ?>" name="frame<?php echo $db_select_post[$i]['Id']; ?>" target="_blank" onload="clearPreloadPage(<?php echo $db_select_post[$i]['Id']; ?>)"></iframe> 
-                </div>
+                <a href="#" class="pimg"><img src="images/male-user1.png" width="32" height="32"></a>
+
+                 <input type="text" name="Comment" class="comment_text form-control" id="post_comment_<?php echo $db_select_post[$i]['Id']; ?>_<?php echo $_GET['id']; ?>">
+                <a class="rightsend_btn" id="post_comment_<?php echo $db_select_post[$i]['Id']; ?>_<?php echo $_GET['id']; ?>" onclick="add_comment(this.id);">click</a>
+
+
+                 <form class="browse" name="file_upload<?php echo $db_select_post[$i]['Id']; ?>" action="upload_file_comment.php" method="post" target="frame<?php echo $db_select_post[$i]['Id']; ?>" enctype="multipart/form-data">
+                    <input type="file" id="file<?php echo $db_select_post[$i]['Id']; ?>" name="file" onchange="this.form.submit(); display_block(<?php echo $db_select_post[$i]['Id']; ?>);" />
+                </form>
+
+                <div id="prepage<?php echo $db_select_post[$i]['Id']; ?>" class="prepage" style="margin-top:10px;"></div>
+                 <iframe src="upload_file_comment.php" style="display:none;" id="frame<?php echo $db_select_post[$i]['Id']; ?>" name="frame<?php echo $db_select_post[$i]['Id']; ?>" target="_blank" onload="clearPreloadPage(<?php echo $db_select_post[$i]['Id']; ?>)"></iframe>
             </div>
             </div>
         </div>
@@ -649,7 +643,7 @@ $select_like_comment="select * from tbl_user_comment_like where Postid='".$db_co
                             <div id="prepage<?php echo $db_select_post[$i]['Id']; ?>" class="prepage" style="margin-top:10px;"></div>
 						</div>
                     </div>
-                    <iframe src="upload_file_comment.php" style="display:none;" id="frame<?php echo $db_select_post[$i]['Id']; ?>" name="frame<?php echo $db_select_post[$i]['Id']; ?>" target="_blank" onload="clearPreloadPage(<?php echo $db_select_post[$i]['Id']; ?>)"></iframe>   
+                    <iframe src="upload_file_comment.php" class="browse" style="display:none;" id="frame<?php echo $db_select_post[$i]['Id']; ?>" name="frame<?php echo $db_select_post[$i]['Id']; ?>" target="_blank" onload="clearPreloadPage(<?php echo $db_select_post[$i]['Id']; ?>)"></iframe>
 				</div>
             </div>
             </div>

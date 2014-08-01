@@ -64,7 +64,7 @@ img {
 }
 
 ul, ol {
-    list-style: none;
+    list-style: none outside none;
 }
 
 a:hover {
@@ -123,7 +123,7 @@ textarea {
 }
 
 .top {
-    background: #ffffff;
+    background: none repeat scroll 0 0 #ffffff;
     float: left;
 }
 
@@ -251,7 +251,6 @@ ul.menu {
 
 ul.menu li {
     float: left;
-    margin: 0 6px;
     padding: 0;
     position: relative;
 }
@@ -260,14 +259,13 @@ ul.menu li a:link, ul.menu li a:visited {
     color: #383838;
     display: block;
     font-size: 16px;
-    padding: 3px 9px;
+    padding: 5px 25px;
 }
 
 ul.menu li a:hover, ul.menu li.active a, ul.menu li a.menuhover {
     background: none repeat scroll 0 0 #0082b9;
-    border-radius: 3px;
     color: #fff;
-    padding: 3px 9px;
+    padding: 5px 25px;
 }
 
 ul.menu li a span {
@@ -495,6 +493,7 @@ ul.menu ul ul {
     border-left: 1px solid #e4e4e4;
     border-right: 1px solid #e4e4e4;
     padding-top: 15px;
+    overflow: hidden;
 }
 
 .mid h2 {
@@ -693,6 +692,7 @@ ul.foot_link li a:hover {
 .titlebox {
     font-size: 24px;
     font-weight: bold;
+    overflow: hidden;
 }
 
 .titlebox h2 {
@@ -729,7 +729,6 @@ ul.foot_link li a:hover {
     background: url("../images/sidebar_main_bg1.png") repeat-y scroll center top rgba(0, 0, 0, 0);
     float: left;
     padding: 10px 14px;
-    width: 192px;
 }
 
 .list-toggle > h3 {
@@ -769,7 +768,7 @@ ul.foot_link li a:hover {
     border-top: 1px dotted #a3a3a3;
     float: left;
     padding: 8px 0;
-    width: 192px;
+    width: 100%;
 }
 
 .list-toggle:first-child {
@@ -793,8 +792,13 @@ ul.foot_link li a:hover {
 }
 
 .my-account ul li:last-child {
-    width: 40%;
     padding-left: 10px;
+    width: 40%;
+}
+
+.mid_top_checkbox {
+    margin: 10px 0 20px;
+    float: left;
 }
 
 ul.profl-list {
@@ -803,21 +807,8 @@ ul.profl-list {
     padding: 0;
 }
 
-ul.profl-list li {
-    float: left;
-    height: 270px;
-    margin: 0 0 22px 15px;
-    padding: 0;
-}
-
 ul.profl-list li.first {
     margin-left: 0;
-}
-
-ul.profl-list li .profile-img-box {
-    margin: 0;
-    position: relative;
-    width: 164px;
 }
 
 ul.profl-list li .profile-img-box a {
@@ -829,6 +820,11 @@ ul.profl-list li .profile-img-box a {
 ul.profl-list li .profile-img-box a.popper {
     min-height: 211px;
     padding: 3px;
+    text-align: center;
+}
+
+.message_box {
+    height: 267px;
 }
 
 ul.profl-list li .profile-img-box a span {
@@ -1028,7 +1024,6 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
     font-size: 12px;
 }
 
-
 .login-user h3 {
     color: #555555;
     font-family: 'avenir_45_bookregular';
@@ -1042,12 +1037,6 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
     overflow: hidden;
     text-indent: -9999px;
     width: 160px;
-}
-
-.new_acc label {
-    display: block;
-    margin: 0;
-    padding: 5px 0;
 }
 
 .new_acc input[type="textarea"] {
@@ -1103,9 +1092,9 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
 }
 
 .new_acc input[type="submit"] {
+    clear: both;
     float: left;
     margin: 10px 0 30px;
-    clear: both;
 }
 
 .profile_img {
@@ -1146,7 +1135,7 @@ ul.msgtab {
     border-bottom: 1px solid #dfdfdf;
     float: left;
     list-style: none outside none;
-    margin: 0;
+    margin: 20px 0 0;
     padding: 0;
     width: 99%;
 }
@@ -2004,15 +1993,6 @@ ul.list1 li a:link, ul.list1 li a:visited {
     width: 100%;
 }
 
-.partner_search1 label {
-    clear: both;
-    color: #383838;
-    float: left;
-    font-size: 14px;
-    padding-bottom: 2px;
-    width: 150px;
-}
-
 .partner_search1 input[type="text"], .partner_search1 input[type="password"] {
     border: 1px solid #cfcdcd;
     color: #848484;
@@ -2047,16 +2027,6 @@ ul.list1 li a:link, ul.list1 li a:visited {
 
 .partner_search1 select.small1 {
     width: 170px;
-}
-
-.partner_search1 .checkbox1, .partner_search1 .radio1 {
-    clear: none;
-    color: #848484 !important;
-    float: left;
-    margin-right: 15px;
-    min-height: 29px;
-    padding-bottom: 0;
-    width: auto;
 }
 
 .partner_search1 .checkbox1 input[type="checkbox"], .partner_search1 .radio1 input[type="radio"] {
@@ -2250,6 +2220,10 @@ ul.list1 li a:link, ul.list1 li a:visited {
     font-size: 25px;
 }
 
+#regular_search_form {
+    margin-left: 10px;
+}
+
 .packtable tr td .getdetail {
     float: right;
     font-size: 12px;
@@ -2328,15 +2302,6 @@ ul.list1 li a:link, ul.list1 li a:visited {
     width: 100%;
 }
 
-.partner_search1 label {
-    clear: both;
-    color: #383838;
-    float: left;
-    font-size: 14px;
-    padding-bottom: 2px;
-    width: 150px;
-}
-
 .partner_search1 input[type="text"], .partner_search1 input[type="password"] {
     border: 1px solid #cfcdcd;
     color: #848484;
@@ -2371,16 +2336,6 @@ ul.list1 li a:link, ul.list1 li a:visited {
 
 .partner_search1 select.small1 {
     width: 170px;
-}
-
-.partner_search1 .checkbox1, .partner_search1 .radio1 {
-    clear: none;
-    color: #848484 !important;
-    float: left;
-    margin-right: 15px;
-    min-height: 29px;
-    padding-bottom: 0;
-    width: auto;
 }
 
 .partner_search1 .checkbox1 input[type="checkbox"], .partner_search1 .radio1 input[type="radio"] {
@@ -2566,7 +2521,6 @@ ul.list1 li a:link, ul.list1 li a:visited {
     float: left;
     margin: 8px 0;
     padding: 10px;
-    width: 688px;
 }
 
 .showbasiccontent input[type="checkbox"] {
@@ -2609,7 +2563,7 @@ ul.list1 li a:link, ul.list1 li a:visited {
 
 .prfl-details {
     float: left;
-    width: 600px;
+    width: 80%;
 }
 
 .floatl {
@@ -2667,6 +2621,7 @@ ul.list1 li a:link, ul.list1 li a:visited {
 
 .pics {
     height: 70px;
+    float: left;
 }
 
 .pics img {
@@ -2808,26 +2763,6 @@ ul.pagination li.inactive a:link, ul.pagination li.inactive a:visited {
     display: block;
     float: left;
     margin-bottom: 15px;
-}
-
-.hobbieslist-label label:first-child {
-    width: 200px;
-}
-
-.hobbieslist-label label {
-    clear: none;
-    float: left;
-}
-
-.list-chkbox {
-    float: right;
-    width: 800px;
-}
-
-.list-chkbox label {
-    padding-left: 20px;
-    position: relative;
-    width: 200px;
 }
 
 .list-chkbox label input[type="checkbox"] {
@@ -3089,7 +3024,6 @@ ul.list-prfl li a:hover {
 .sidebar-cont {
     background: none repeat scroll 0 0 #fff;
     border: 1px solid #dfdfdf;
-    width: 190px;
 }
 
 .sidebar-main-tab .sidebar-cont {
@@ -3207,9 +3141,10 @@ ul.list-prfl li a:hover {
     width: 95px;
 }
 
-.comment-div-repeat{
+.comment-div-repeat {
     width: 100%;
 }
+
 .photo_attach {
     cursor: pointer;
     float: left;
@@ -3233,7 +3168,6 @@ ul.list-prfl li a:hover {
     float: left;
     margin-top: 12px;
     padding-bottom: 7px;
-    width: 77%;
 }
 
 .mid_prof.last {
@@ -3293,7 +3227,24 @@ ul.list-prfl li a:hover {
     background: none repeat scroll 0 0 #efefef;
     clear: both;
     float: left;
-    width: 100%x;
+    width: 100%;
+}
+
+.comment_text {
+    width: 84%;
+    margin-left: 7px;
+    float: left;
+}
+
+.rightsend_btn {
+    clear: both;
+    float: left;
+    padding: 10px;
+}
+
+.browse {
+    float: left;
+    padding: 7px;
 }
 
 .wholikes {
@@ -3478,8 +3429,6 @@ ul.list-prfl li a:hover {
 
 .profile-img-box img.profile_pic {
     height: 168px;
-    max-width: 100%;
-    width: 100%;
 }
 
 ul.profl-list.thumb_view li {
@@ -3915,10 +3864,6 @@ ul.profl-list .griddetail {
     display: block;
     margin-bottom: 10px;
     white-space: nowrap;
-}
-
-.edithobbies .list-chkbox {
-    width: 710px;
 }
 
 .save_search_ul {
@@ -4430,6 +4375,7 @@ ul.profl-list .griddetail {
     border-bottom: 1px solid #dddddd;
     border-top: 1px solid #dddddd;
     padding: 4px 0;
+    overflow: hidden;
 }
 
 .msgChat ul li a:hover .msgChatIn, .msgChat ul li a.msgactive .msgChatIn {
@@ -4832,81 +4778,81 @@ ul.profl-list .griddetail {
     background: url("../images/baputus.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     float: left;
     height: 33px;
+    margin: 20px 10px 0 0;
     text-indent: -9999px;
     width: 33px;
-    margin: 20px 10px 0 0;
 }
 
 .astro1 {
     background: url("../images/astro.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     float: left;
     height: 33px;
+    margin: 20px 10px 0 0;
     text-indent: -9999px;
     width: 33px;
-    margin: 20px 10px 0 0;
 }
 
 .family1 {
     background: url("../images/family.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     float: left;
     height: 33px;
+    margin: 20px 10px 0 0;
     text-indent: -9999px;
     width: 33px;
-    margin: 20px 10px 0 0;
 }
 
 .life_style1 {
     background: url("../images/life_style.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     float: left;
     height: 33px;
+    margin: 20px 10px 0 0;
     text-indent: -9999px;
     width: 33px;
-    margin: 20px 10px 0 0;
 }
 
 .hobbies1 {
     background: url("../images/hobbies.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     float: left;
     height: 33px;
+    margin: 20px 10px 0 0;
     text-indent: -9999px;
     width: 33px;
-    margin: 20px 10px 0 0;
 }
 
 .looks1 {
     background: url("../images/looks.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     float: left;
     height: 33px;
+    margin: 20px 10px 0 0;
     text-indent: -9999px;
     width: 33px;
-    margin: 20px 10px 0 0;
 }
 
 .religion1 {
     background: url("../images/religion.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     float: left;
     height: 33px;
+    margin: 20px 10px 0 0;
     text-indent: -9999px;
     width: 33px;
-    margin: 20px 10px 0 0;
 }
 
 .Qualification1 {
     background: url("../images/Qualification.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     float: left;
     height: 33px;
+    margin: 20px 10px 0 0;
     text-indent: -9999px;
     width: 33px;
-    margin: 20px 10px 0 0;
 }
 
 .patner1 {
     background: url("../images/pp.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     float: left;
     height: 33px;
+    margin: 20px 10px 0 0;
     text-indent: -9999px;
     width: 33px;
-    margin: 20px 10px 0 0;
 }
 
 .editprof input[type="text"], .editprof input[type="password"] {
@@ -4980,7 +4926,7 @@ ul.profl-list .griddetail {
 }
 
 .msginput input[type="text"] {
-    line-height: 20px;
+    line-height: 15px;
     padding-right: 0;
     width: 100%;
 }
@@ -5007,7 +4953,7 @@ ul.profl-list .griddetail {
 }
 
 .chng-pwd-form label {
-    clear: both
+    clear: both;
 }
 
 .edit-hobbi input[type="submit"] {
