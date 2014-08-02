@@ -330,7 +330,7 @@ $db_user_plan = $obj->select($user_plan);
 						}
 					 ?></li></ul><?php } ?>
                      
-                     <?php if($db_memebr_hobbies_interest[0]['cuisine']!=''){?><ul style="width:100%"><li>Favourite Couisine</li><li class="nthchild2">:</li><li><?php
+                     <?php if($db_memebr_hobbies_interest[0]['cuisine']!=''){?><ul style="width:100%"><li>Favourite cuisine</li><li class="nthchild2">:</li><li><?php
 						$select_hobbies="select * from couisine where id IN(".$db_memebr_hobbies_interest[0]['cuisine'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)
@@ -342,7 +342,7 @@ $db_user_plan = $obj->select($user_plan);
 						}
 					 ?></li></ul><?php } ?>
                      
-                      <?php if($db_memebr_hobbies_interest[0]['dress_style']!=''){?><ul style="width:100%"><li>Dress Style</li><li class="nthchild2">:</li><li><?php
+                      <?php if($db_memebr_hobbies_interest[0]['dress_style']!=''){?><ul style="width:100%"><li>Dressing style</li><li class="nthchild2">:</li><li><?php
 						$select_hobbies="select * from dress_style where id IN(".$db_memebr_hobbies_interest[0]['dress_style'].")";
 						$db_hobbies=$obj->select($select_hobbies);
 						for($i=0;$i<count($db_hobbies);$i++)

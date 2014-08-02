@@ -129,7 +129,7 @@ include("common_user_fetch.php");
     <?php include('include/header.inc.php'); ?>
     <div class="header inn">
         <div class="titlebox col-md-12">
-            <h2>Packages</h2>
+            Packages
         </div>
     </div>
 </div>

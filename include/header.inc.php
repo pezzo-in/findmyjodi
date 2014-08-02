@@ -79,7 +79,7 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
             <div class="loginlink col-md-6 col-xs-6 col-sm-6 pull-right">
             <?php if($_SESSION['UserEmail']=='' || $_SESSION['IsActive']=='No') { ?>
                 <div class="dropdown">
-                    <a data-toggle="dropdown" href="login.php" class="btn btn-info btn-md col-md-12 col-xs-12 col-sm-12" title="Login to your profile">Sign In</a>
+                    <a href="login.php" class="btn btn-info btn-md col-md-12 col-xs-12 col-sm-12" title="Login to your profile">Sign In</a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                         <li>
                             <div class="loginbox">

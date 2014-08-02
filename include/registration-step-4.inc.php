@@ -226,7 +226,7 @@
              }
 	
 	?>
-    <div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
+    <div  class="mid col-md-12 col-sm-12 col-xs-12">
  
  			<div class="cont_left col-md-8">
 	        	<?php
@@ -256,7 +256,7 @@
              	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($hobbies as $h) { 						 
 				?>
-                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkHobbies[]"  value="<?php echo $h['id']; ?>"><?php echo $h['name']; ?></label>
+                  		 <label class="col-md-4 col-xs-12 col-sm-6"><input class="form-control" type="checkbox" name="chkHobbies[]"  value="<?php echo $h['id']; ?>"><?php echo $h['name']; ?></label>
                         <?php }  ?>                
                 </div>
              </div>
@@ -269,7 +269,7 @@
              	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($interests as $int) { 
 						 ?>
-                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkInterests[]" value="<?php echo $int['id']; ?>"><?php echo $int['name']; ?></label>					
+                  		 <label class="col-md-4 col-xs-12 col-sm-6"><input class="form-control" type="checkbox" name="chkInterests[]" value="<?php echo $int['id']; ?>"><?php echo $int['name']; ?></label>					
 						 <?php }  ?>                
                 </div>
              </div>
@@ -282,7 +282,7 @@
              	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($musics as $m) { 
 		  			   	?>
-                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkMusic[]" value="<?php echo $m['id']; ?>"
+                  		 <label class="col-md-4 col-xs-12 col-sm-6"><input class="form-control" type="checkbox" name="chkMusic[]" value="<?php echo $m['id']; ?>"
                         ><?php echo $m['name']; ?></label>											                 <?php }  ?>                
                 </div>
              </div>
@@ -295,7 +295,7 @@
              	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($reads as $r) { 
 				 		?>
-                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkRead[]" value="<?php echo $r['id']; ?>"
+                  		 <label class="col-md-4 col-xs-12 col-sm-6"><input class="form-control" type="checkbox" name="chkRead[]" value="<?php echo $r['id']; ?>"
                          ><?php echo $r['name']; ?></label>											                 <?php }  ?>                
                 </div>
              </div>
@@ -308,7 +308,7 @@
              	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($movies as $m) { 
 				 		 ?>
-                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkMovies[]" value="<?php echo $m['id']; ?>"
+                  		 <label class="col-md-4 col-xs-12 col-sm-6"><input class="form-control" type="checkbox" name="chkMovies[]" value="<?php echo $m['id']; ?>"
                         ><?php echo $m['name']; ?></label>											                 <?php }  ?>                
                 </div>
              </div>
@@ -322,7 +322,7 @@
              	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($activities as $act) {
 						 ?>
-                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkSports[]" value="<?php echo $act['id']; ?>"
+                  		 <label class="col-md-4 col-xs-12 col-sm-6"><input class="form-control" type="checkbox" name="chkSports[]" value="<?php echo $act['id']; ?>"
                           ><?php echo $act['name']; ?></label>											                 <?php }  ?>                
                 </div>
              </div>
@@ -332,12 +332,12 @@
 			  	   $couisine = $obj->select($sql);
 			?> 
              <div class="hobbieslist-label">
-     		 <h3 style="color:#C33">Favourite couisine</h3><hr />
+     		 <h3 style="color:#C33">Favourite cuisine</h3><hr />
             
              	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($couisine as $cou) {
 						 ?>
-                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkCouisine[]" value="<?php echo $cou['id']; ?>"
+                  		 <label class="col-md-4 col-xs-12 col-sm-6"><input class="form-control" type="checkbox" name="chkCouisine[]" value="<?php echo $cou['id']; ?>"
                           ><?php echo $cou['name']; ?></label>											                 <?php }  ?>                
                 </div>
              </div>
@@ -347,12 +347,12 @@
 			  	     $couisine = $obj->select($sql);
 				?> 
              <div class="hobbieslist-label">
-     		 <h3 style="color:#C33">Preferred dress style</h3><hr />
+     		 <h3 style="color:#C33">Preferred dressing style</h3><hr />
             
              	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($couisine as $dre) { 
 				 		  ?>
-                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkDress[]" value="<?php echo $dre['id']; ?>"
+                  		 <label class="col-md-4 col-xs-12 col-sm-6"><input class="form-control" type="checkbox" name="chkDress[]" value="<?php echo $dre['id']; ?>"
                          ><?php echo $dre['name']; ?></label>											                 <?php }  ?>                
                 </div>
              </div>  
@@ -365,7 +365,7 @@
              	<div class="list-chkbox col-md-12 col-xs-12 col-sm-12">
                  <?php   foreach($couisine as $lang) { 
 				 		   ?>
-                  		 <label class="col-md-3"><input class="form-control" type="checkbox" name="chkLang[]" value="<?php echo $lang['id']; ?>"><?php echo $lang['name']; ?></label>											                 <?php }  ?>                
+                  		 <label class="col-md-4 col-xs-12 col-sm-6"><input class="form-control" type="checkbox" name="chkLang[]" value="<?php echo $lang['id']; ?>"><?php echo $lang['name']; ?></label>											                 <?php }  ?>                
                 </div>
              </div>       
              

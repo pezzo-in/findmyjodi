@@ -63,7 +63,7 @@ $select_caste = "select * from caste where caste = '".$db_member[0]['caste']."'"
 $db_select_caste = $obj->select($select_caste);
  
 ?>
-    <div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
+    <div  class="mid col-md-12 col-sm-12 col-xs-12">
  		<div class="cont_left col-md-8">
         	<?php
 		$select_banner = "select * from advertise where adv_position = 'Registration-step-2 Top (622 X 197)' AND status = 'Active'";
@@ -90,7 +90,7 @@ $db_select_caste = $obj->select($select_caste);
                 	<td width="20%"><label style="margin-top:-18px">Marital Status<font color="#FF0000">*</font></label></td>
                     <td><?php $sql = "select * from relationship_status"; 
 					  $result = $obj->select($sql); ?>
-                    <select class="form-control"id="drpMaritalStatus" name="drpMaritalStatus" onchange="change_status_fun(this.id)"  tabindex="1" style="clear:none;">
+                    <select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpMaritalStatus" name="drpMaritalStatus" onchange="change_status_fun(this.id)"  tabindex="1" style="clear:none;">
                         <option value="">-Select-</option>
                         <?php
 							foreach($result as $res)
@@ -109,37 +109,37 @@ $db_select_caste = $obj->select($select_caste);
 						$select_subcaste = "select * from subcaste where caste_id = '".$db_select_caste[0]['id']."'";
 						$db_select_subcaste = $obj->select($select_subcaste);
 					?>
-                    <select class="form-control"id="sub_caste" name="sub_caste" tabindex="2" style="clear:none;">
+                    <select class="form-control col-md-12 col-xs-12 col-sm-12" id="sub_caste" name="sub_caste" tabindex="2" style="clear:none;">
                         <option value="" selected="selected">-Select-</option>
                         <?php for($i=0;$i<count($db_select_subcaste);$i++) { ?>
                         <option value="<?php echo $db_select_subcaste[$i]['subcaste']; ?>"><?php echo $db_select_subcaste[$i]['subcaste']; ?></option>
                         <?php } ?>
                     </select>
-                    <!--<input class="form-control"type="text" name="sub_caste" id="sub_caste" tabindex="2" style="clear:none;">-->
+                    <!--<input class="form-control col-md-12 col-xs-12 col-sm-12" type="text" name="sub_caste" id="sub_caste" tabindex="2" style="clear:none;">-->
                      <span id="scast" class="err_msg">&nbsp;</span> 
                     </td>
                 </tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Gothra(m)</label></td>
-                    <td><input class="form-control"type="text" name="Gothra" id="Gothra" tabindex="3" style="clear:none;">
+                    <td><input class="form-control col-md-12 col-xs-12 col-sm-12" type="text" name="Gothra" id="Gothra" tabindex="3" style="clear:none;">
                      <span id="scast" class="err_msg">&nbsp;</span> 
                     </td>
                 </tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Residing state<font color="#FF0000">*</font></label></td>
-                    <td><input class="form-control"type="text" name="state" id="state" onchange="change_status_fun(this.id)" tabindex="4" style="clear:none;">
+                    <td><input class="form-control col-md-12 col-xs-12 col-sm-12" type="text" name="state" id="state" onchange="change_status_fun(this.id)" tabindex="4" style="clear:none;">
                      <span id="rstate" class="err_msg">Enter your residing state</span> 
                     </td>
                 </tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Residing city<font color="#FF0000">*</font></label></td>
-                    <td><input class="form-control"type="text" name="city" id="city" onchange="change_status_fun(this.id)" tabindex="5" style="clear:none;"> 
+                    <td><input class="form-control col-md-12 col-xs-12 col-sm-12" type="text" name="city" id="city" onchange="change_status_fun(this.id)" tabindex="5" style="clear:none;"> 
                     <span id="rcity" class="err_msg">Enter your city</span> 
                     </td>
                 </tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Where do you wish to settle?</label></td>
-                    <td><input class="form-control"type="text" name="wishtosettle" id="wishtosettle" onchange="change_status_fun(this.id)" tabindex="5" style="clear:none;"> 
+                    <td><input class="form-control col-md-12 col-xs-12 col-sm-12" type="text" name="wishtosettle" id="wishtosettle" onchange="change_status_fun(this.id)" tabindex="5" style="clear:none;"> 
                     <span id="wishtosettleerr" class="err_msg">Enter your city</span> 
                     </td>
                 </tr>
@@ -153,7 +153,7 @@ $db_select_caste = $obj->select($select_caste);
           <table width="100%" align="center" border="0" cellpadding="5" cellspacing="0" class="tbl_control">
              	<tr>
                 	<td width="20%"><label style="margin-top:-18px">Height<font color="#FF0000">*</font></label></td>
-                    <td><select class="form-control"id="drpHeight" name="drpHeight" onchange="change_status_fun(this.id)"  tabindex="6" style="clear:none;">
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpHeight" name="drpHeight" onchange="change_status_fun(this.id)"  tabindex="6" style="clear:none;">
                        <option value="">- Feet/Inches -</option>
                        <?php 
 							$select_height="select * from height";
@@ -169,7 +169,7 @@ $db_select_caste = $obj->select($select_caste);
                 </tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Weight</label></td>
-                    <td><select class="form-control"id="drpWeight" name="drpWeight"  tabindex="7" style="clear:none;">
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpWeight" name="drpWeight"  tabindex="7" style="clear:none;">
                        <option value="">- Kgs -</option>
                        <?php for($i=41;$i<=140;$i++) { ?>
 	                       <option value="<?php echo $i." kg"; ?>"><?php echo $i." kg"; ?></option>					  
@@ -180,7 +180,7 @@ $db_select_caste = $obj->select($select_caste);
                 </tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Body Type</label></td>
-                    <td><select class="form-control"id="drpBodyType" name="drpBodyType"  tabindex="8" style="clear:none;">
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpBodyType" name="drpBodyType"  tabindex="8" style="clear:none;">
                     <option value="">- Select -</option>
                     <?php $sql = "select * from body_type"; 
 					  $result = $obj->select($sql); ?>
@@ -196,7 +196,7 @@ $db_select_caste = $obj->select($select_caste);
                 </tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Complexion</label></td>
-                    <td><select class="form-control"id="drpComplexion" name="drpComplexion"  tabindex="9" style="clear:none;">
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpComplexion" name="drpComplexion"  tabindex="9" style="clear:none;">
                        <option value="">-Select-</option>
                        <option value="Very Fair">Very Fair</option>
                        <option value="Fair">Fair</option>
@@ -209,7 +209,7 @@ $db_select_caste = $obj->select($select_caste);
                 </tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Physical status<font color="#FF0000">*</font></label></td>
-                    <td><select class="form-control"id="drpPhysicalStatus" onchange="change_status_fun(this.id)" name="drpPhysicalStatus"  tabindex="10" style="clear:none; " >
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpPhysicalStatus" onchange="change_status_fun(this.id)" name="drpPhysicalStatus"  tabindex="10" style="clear:none; " >
                        <option value="">-Select-</option>
                        <option value="normal">Normal</option>
                        <option value="Physically Challenged">Physically challenged</option>                       
@@ -225,19 +225,19 @@ $db_select_caste = $obj->select($select_caste);
          <table width="100%" align="center" border="0" cellpadding="5" cellspacing="0" class="tbl_control">
              	<tr>
                 	<td width="20%"><label style="margin-top:-18px">School</label></td>
-                    <td><input class="form-control"type="text" name="school" id="school" onchange="change_status_fun(this.id)" tabindex="5" style="clear:none;"> 
+                    <td><input class="form-control col-md-12 col-xs-12 col-sm-12" type="text" name="school" id="school" onchange="change_status_fun(this.id)" tabindex="5" style="clear:none;"> 
                     <span id="schoolerr" class="err_msg">Enter your school</span> 
                     </td>
                 </tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">College</label></td>
-                    <td><input class="form-control"type="text" name="college" id="college" onchange="change_status_fun(this.id)" tabindex="5" style="clear:none;"> 
+                    <td><input class="form-control col-md-12 col-xs-12 col-sm-12" type="text" name="college" id="college" onchange="change_status_fun(this.id)" tabindex="5" style="clear:none;"> 
                     <span id="collegeerr" class="err_msg">Enter your college</span> 
                     </td>
                 </tr>
              	<tr>
                 	<td width="20%"><label style="margin-top:-18px">Education<font color="#FF0000">*</font></label></td>
-                    <td><select class="form-control"id="drpEducation" onchange="change_status_fun(this.id)" name="drpEducation"  tabindex="11" style="clear:none;">
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpEducation" onchange="change_status_fun(this.id)" name="drpEducation"  tabindex="11" style="clear:none;">
                     <option value="">--Select--</option>
 					<?php
 					$level="SELECT education_details.* FROM `education_details` join education_course on Eid=education_details.id group by education_details.id";
@@ -266,7 +266,7 @@ $db_select_caste = $obj->select($select_caste);
                 </tr>
                 <?php /*?><tr>
                 	<td width="20%"><label style="margin-top:-18px">Occupation</label></td>
-                    <td> <select class="form-control"id="drpOccupation" name="drpOccupation" tabindex="12" style="clear:none;">
+                    <td> <select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpOccupation" name="drpOccupation" tabindex="12" style="clear:none;">
                     	<option value="">--Select--</option>
                       <?php
 					  	$sql = "select * from occupation_master";
@@ -281,7 +281,7 @@ $db_select_caste = $obj->select($select_caste);
 				</tr><?php */?>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Employed in<font color="#FF0000">*</font></label></td>
-                    <td><select class="form-control"id="drpEmployedIn" onchange="change_status_fun(this.id)" name="drpEmployedIn"  tabindex="13" style="clear:none;">	
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpEmployedIn" onchange="change_status_fun(this.id)" name="drpEmployedIn"  tabindex="13" style="clear:none;">	
                     	<option value="">--Select--</option>
                         <option value="Government">Government</option>
                         <option value="Private">Private</option>
@@ -294,7 +294,7 @@ $db_select_caste = $obj->select($select_caste);
 				</tr>
                                  <tr>
                 	<td width="20%"><label style="margin-top:-18px">Interested to work after marriage?<font color="#FF0000">*</font></label></td>
-                    <td><select class="form-control" id="inttowork" name="inttowork" tabindex="17" style="clear:none;">	
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12"  id="inttowork" name="inttowork" tabindex="17" style="clear:none;">	
                     	<option value="">--Select--</option>
                         <option value="Y">Yes</option>
                         <option value="N">No</option>
@@ -304,7 +304,7 @@ $db_select_caste = $obj->select($select_caste);
 				</tr>
                <?php /*?> <tr>
                 	<td width="20%"><label style="margin-top:-18px">Annual Income</label></td>
-                    <td><select class="form-control"id="drpAnnualIncome" name="drpAnnualIncome"  tabindex="14" style="clear:none;">	
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpAnnualIncome" name="drpAnnualIncome"  tabindex="14" style="clear:none;">	
                     	<option value="">--Select--</option>
                         <?php
 							$sql = "select * from annual_income_master";
@@ -324,7 +324,7 @@ $db_select_caste = $obj->select($select_caste);
             <table width="100%" align="center" border="0" cellpadding="5" cellspacing="0" class="tbl_control">
              	<tr>
                 	<td width="20%"><label style="margin-top:0px">Food</label></td>
-                    <td><select class="form-control"id="drpFood" name="drpFood"  tabindex="15" style="clear:none;">	
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpFood" name="drpFood"  tabindex="15" style="clear:none;">	
                     	<option value="">--Select--</option>
                         <option value="Vegetarian">Vegetarian</option>
                         <option value="Non-vegetarian">Non-Vegetarian</option>
@@ -335,7 +335,7 @@ $db_select_caste = $obj->select($select_caste);
 				</tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:0px">Smoking</label></td>
-                    <td><select class="form-control"id="drpSmoking" name="drpSmoking"  tabindex="16" style="clear:none;">	
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpSmoking" name="drpSmoking"  tabindex="16" style="clear:none;">	
                     	<option value="">--Select--</option>
                         <option value="N">No</option>
                         <option value="Y">Yes</option>
@@ -346,7 +346,7 @@ $db_select_caste = $obj->select($select_caste);
 				</tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:0px">Drinking</label></td>
-                    <td><select class="form-control"id="drpDrinking" name="drpDrinking"  tabindex="17" style="clear:none;">	
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpDrinking" name="drpDrinking"  tabindex="17" style="clear:none;">	
                     	<option value="">--Select--</option>
                         <option value="N">No</option>
                         <option value="Y">Yes</option>
@@ -367,7 +367,7 @@ $db_select_caste = $obj->select($select_caste);
             <table width="100%" align="center" border="0" cellpadding="5" cellspacing="0">
              	<tr>
                 	<td width="20%"><label style="margin-top:-18px">Manglik</label></td>
-                    <td><select class="form-control"id="drpManglik" name="drpManglik"  tabindex="16" style="clear:none;">	
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpManglik" name="drpManglik"  tabindex="16" style="clear:none;">	
                     	<option value="">--Select--</option>
                         <option value="N" <?php if($db_member[0]['manglik_dosham']=='N'){ ?> selected="selected" <?php } ?> >No</option>
                         <option value="Y" <?php if($db_member[0]['manglik_dosham']=='Y'){ ?> selected="selected" <?php } ?> >Yes</option>
@@ -376,7 +376,7 @@ $db_select_caste = $obj->select($select_caste);
 				</tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Star</label></td>
-                    <td><select class="form-control"id="drpStar" name="drpStar"  tabindex="17" style="clear:none;">	
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpStar" name="drpStar"  tabindex="17" style="clear:none;">	
                     	<option value="">--Select--</option>
                         <?php
 							$sql = "select * from horoscope_star_master";
@@ -396,7 +396,7 @@ $db_select_caste = $obj->select($select_caste);
 				
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Living with parents<font color="#FF0000">*</font></label></td>
-                    <td><select class="form-control" id="live_parent" name="live_parent" tabindex="17" style="clear:none;">	
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12"  id="live_parent" name="live_parent" tabindex="17" style="clear:none;">	
                     	<option value="">--Select--</option>
                         <option value="Y">Yes</option>
                         <option value="N">No</option>
@@ -407,7 +407,7 @@ $db_select_caste = $obj->select($select_caste);
                 <?php if( $_SESSION['gender_status']=='F'){ ?>                
                    <tr>
                 	<td width="20%"><label style="margin-top:-18px">Live with in-laws?<font color="#FF0000">*</font></label></td>
-                    <td><select class="form-control" id="live_inlaws" name="live_inlaws" tabindex="17" style="clear:none;">	
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12"  id="live_inlaws" name="live_inlaws" tabindex="17" style="clear:none;">	
                     	<option value="">--Select--</option>
                         <option value="Y">Yes</option>
                         <option value="N">No</option>
@@ -421,7 +421,7 @@ $db_select_caste = $obj->select($select_caste);
                 
              	<tr>
                 	<td width="20%"><label style="margin-top:-18px">Family Status<font color="#FF0000">*</font></label></td>
-                    <td><select class="form-control"id="drpFamilyStatus" onchange="change_status_fun(this.id)" name="drpFamilyStatus" tabindex="17" style="clear:none;">	
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpFamilyStatus" onchange="change_status_fun(this.id)" name="drpFamilyStatus" tabindex="17" style="clear:none;">	
                     	<option value="">--Select--</option>
                         <option value="Middle">Middle class</option>
                         <option value="Upper Middle">Upper middle class</option>
@@ -433,7 +433,7 @@ $db_select_caste = $obj->select($select_caste);
 				</tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Family Type<font color="#FF0000">*</font></label></td>
-                    <td><select class="form-control"id="drpFamilyType" onchange="change_status_fun(this.id)" name="drpFamilyType" tabindex="18" style="clear:none; ">	
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpFamilyType" onchange="change_status_fun(this.id)" name="drpFamilyType" tabindex="18" style="clear:none; ">	
                     	<option value="">--Select--</option>
                         <option value="joint">Joint</option>
                         <option value="nuclear">Nuclear</option>                       
@@ -443,7 +443,7 @@ $db_select_caste = $obj->select($select_caste);
 				</tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Family Values<font color="#FF0000">*</font></label></td>
-                    <td><select class="form-control"id="drpFamilyValues" onchange="change_status_fun(this.id)" name="drpFamilyValues" tabindex="19" style="clear:none;">	
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpFamilyValues" onchange="change_status_fun(this.id)" name="drpFamilyValues" tabindex="19" style="clear:none;">	
                     	<option value="">--Select--</option>
                         <option value="orthodox">Orthodox</option>
                         <option value="traditional">Traditional</option>                       
@@ -456,13 +456,13 @@ $db_select_caste = $obj->select($select_caste);
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Brothers</label></td>
                     <td>
-              <select class="form-control"id="num_bro" name="num_bro" style="width:100px;clear: none;">	
+              <select class="form-control col-md-12 col-xs-12 col-sm-12" id="num_bro" name="num_bro" style="width:100px;clear: none;">	
                     	<option value="">--Select--</option>
                         <?php for($i=1;$i<=10;$i++) { ?>
                         <option value=<?php echo $i; ?>><?php echo $i; ?></option>
                         <?php } ?>
              </select><span style="float:left; margin-left:3px;margin-right:3px;font-family: 'avenir_45_bookregular';padding-top:4px;"> Of them </span> 
-             <select class="form-control"id="num_bro_married" name="num_bro_married" style="width:100px;clear: none;">	
+             <select class="form-control col-md-12 col-xs-12 col-sm-12" id="num_bro_married" name="num_bro_married" style="width:100px;clear: none;">	
                     	<option value="">--Select--</option>
              </select><span style="margin-left:3px;padding-top:4px;float:left;">are married</span> 
              <span id="fvalue" class="err_msg">Select family values</span>              
@@ -470,13 +470,13 @@ $db_select_caste = $obj->select($select_caste);
 				</tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">Sisters</label></td>
-                    <td><select class="form-control"id="num_sis" name="num_sis" style="width:100px;clear: none;">
+                    <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="num_sis" name="num_sis" style="width:100px;clear: none;">
                     	<option value="">--Select--</option>
                         <?php for($i=1;$i<=10;$i++) { ?>
                         <option value=<?php echo $i; ?>><?php echo $i; ?></option>
                         <?php } ?>
              </select><span style="float:left; margin-left:3px;margin-right:3px;padding-top:4px;"> Of them </span> 
-             <select class="form-control"id="num_sis_married" name="num_sis_married" style="width:100px;clear: none;">	
+             <select class="form-control col-md-12 col-xs-12 col-sm-12" id="num_sis_married" name="num_sis_married" style="width:100px;clear: none;">	
                     	<option value="">--Select--</option>
              </select><span style="margin-left:3px;padding-top:4px;float:left;">are married</span> 
              <span id="fvalue" class="err_msg">Select family values</span>              
@@ -484,13 +484,13 @@ $db_select_caste = $obj->select($select_caste);
 				</tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">About Family</label></td>
-                        <td><textarea style='float:left;margin-bottom: 0px;clear:none;width:290px;resize: none;' name="aboutfamily" onchange="change_status_fun(this.id);" id="aboutfamily" tabindex="20" rows='5' cols='42' ></textarea>
+                        <td><textarea class='col-md-12 col-xs-12 col-sm-12 form-control' name="aboutfamily" onchange="change_status_fun(this.id);" id="aboutfamily" tabindex="20" rows='5' cols='42' ></textarea>
                                  <span id="abtoutfamilyerr" class="err_msg">Write about your family</span> 
                     </td>
 				</tr>
                 <tr>
                 	<td width="20%"><label style="margin-top:-18px">About Yourself<font color="#FF0000">*</font></label></td>
-                        <td><textarea style='float:left;margin-bottom: 0px;clear:none;width:290px;resize: none;' name="about" onchange="change_status_fun(this.id);" id="about" tabindex="20" rows='5' cols='42' ></textarea>
+                        <td><textarea class='col-md-12 col-xs-12 col-sm-12 form-control' name="about" onchange="change_status_fun(this.id);" id="about" tabindex="20" rows='5' cols='42' ></textarea>
                                  <span id="abt" class="err_msg">Write about your self</span> 
                     </td>
 				</tr>
@@ -503,7 +503,7 @@ $db_select_caste = $obj->select($select_caste);
         <br class="clear" />
         <div class="terms_line">
                 
-               <input class="btn btn-danger " type="submit" class="form-control" value="Next" name="submit" tabindex="22" />
+               <input class="btn btn-danger " type="submit" class="form-control col-md-12 col-xs-12 col-sm-12"  value="Next" name="submit" tabindex="22" />
     </div>
 </div>
 </form>

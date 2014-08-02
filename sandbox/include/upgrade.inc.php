@@ -2,7 +2,7 @@
 	$sql = "SELECT * from new_membership_plans";			 			  
 	$data=$obj->select($sql);
 ?>
-<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
+<div  class="mid col-md-12 col-sm-12 col-xs-12">
 			<div id="tab-container">
                 <div class="plan-box-main">
             	<div class="plan-box-in">

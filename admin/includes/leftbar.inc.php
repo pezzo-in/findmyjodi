@@ -234,7 +234,7 @@ $plan_permission = explode(",",$ans2[0]['member_plan_access']);
 
                   
 
-                   <li class="<?php if($url[3]=='list_dressstyle.php' || $url[2]=='list_dressstyle.php'){?>active<?php }?>"><a href="list_dressstyle.php">Dress Style</a></li> 
+                   <li class="<?php if($url[3]=='list_dressstyle.php' || $url[2]=='list_dressstyle.php'){?>active<?php }?>"><a href="list_dressstyle.php">Dressing style</a></li> 
 
                    
 

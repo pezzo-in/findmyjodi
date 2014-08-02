@@ -663,7 +663,7 @@ $countries=$obj->select($select_country);
                   <div class="row-fluid">
                     <div class="span6">
                       <div class="control-group">
-                        <label class="control-label" for="firstName">Favourite Couisine:</label>
+                        <label class="control-label" for="firstName">Favourite cuisine:</label>
                         <div class="controls"> <span class="text">
                         <?php
 						$select_hobbies="select * from couisine where id IN(".$db_memebr_hobbies_interest[0]['cuisine'].")";
@@ -682,7 +682,7 @@ $countries=$obj->select($select_country);
                     <!--/span-->
                     <div class="span6">
                       <div class="control-group">
-                        <label class="control-label" for="lastName">Dress Style:</label>
+                        <label class="control-label" for="lastName">Dressing style:</label>
                         <div class="controls"> <span class="text">
                         <?php
 						$select_hobbies="select * from dress_style where id IN(".$db_memebr_hobbies_interest[0]['dress_style'].")";
@@ -1650,7 +1650,7 @@ $countries=$obj->select($select_country);
                     
                     
                       <div class="control-group">
-                      <label class="control-label">Favourite Couisine</label>
+                      <label class="control-label">Favourite cuisine</label>
                       <div class="controls">
                  	
                     <style>
@@ -1683,7 +1683,7 @@ $countries=$obj->select($select_country);
                     
                     
                       <div class="control-group">
-                      <label class="control-label">Preferred Dress Style</label>
+                      <label class="control-label">Preferred dressing style</label>
                       <div class="controls">
                  	
                     <style>

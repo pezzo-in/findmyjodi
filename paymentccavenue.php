@@ -119,7 +119,7 @@ $(document).ready(function(){
 
 <div class="wrapper">
 
-	<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
+	<div  class="mid col-md-12 col-sm-12 col-xs-12">
 
 	<div class="paybydebit">
 

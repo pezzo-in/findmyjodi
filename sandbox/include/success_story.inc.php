@@ -54,7 +54,7 @@ if(isset($_GET['id']))
 }
 
 ?>
-	 	<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding" style="width:954px;">
+	 	<div  class="mid col-md-12 col-sm-12 col-xs-12" style="width:954px;">
 			<div id="tab-container">
                         <ul class="msgtab">
                             <li <?php if($_GET['flag'] == 'rag'){ echo "class='active'"; } ?>><a href="#success_story-1">Success Story</a></li>

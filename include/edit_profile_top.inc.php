@@ -224,7 +224,7 @@ $db_date = $obj->select($select_date);
 		
 		?>
     	Your Profile Completed <?php echo $profile_complate; ?>%<br />
-        <span class="cbar1 col-md-12 col-xs-12 col-sm-12">
+        <span class="cbar1 col-md-8 col-xs-4 col-sm-4 nopadding">
         	<span class="cbar1_in" style="width:<?php echo $profile_complate; ?>%;<?php if($profile_complate>70){ echo "background:green"; }else if($profile_complate>50 && $profile_complate<=70){ echo 'background:#ff7f00'; } ?>"></span>
 		</span>
 	</div>
@@ -233,7 +233,7 @@ $db_date = $obj->select($select_date);
     <div class="welcum-user">Welcome Back, <?php echo ucfirst($logged_in_member[0]['name']);?> (<?php echo $logged_in_member[0]['member_id']; ?>)</div>
     <h2>Membership Status: <span><?php if(count($db_member_plan)==0){ ?>Free Membership<?php }else{ echo $db_plan[0]['plan_name']; } ?></span></h2>
     
-    <?php if(count($db_member_plan)==0){ ?> <div class="welcumback" style="text-align: right; margin-top: -30px; float: right; padding-bottom:4px;"><span>upgrade now to</span>
+    <?php if(count($db_member_plan)==0){ ?> <div class="welcumback"><span>upgrade now to</span>
     <a href="packages.php" class="btn_paidmship" style="padding-bottom:4px; padding-top:4px;">Paid Membership</a></div><?php } ?>    
     <div class="created_on">Created Date : <span><?php echo date('d M Y',strtotime($db_date[0]['reg_date'])); ?></span>  <?php if(count($db_member_plan)>0){ ?>|   
     Expiry Date :  <span><?php echo date('d M Y',strtotime($db_member_plan[0]['expiry_date'])); ?></span>  <?php } ?> 

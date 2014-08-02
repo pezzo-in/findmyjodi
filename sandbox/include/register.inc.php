@@ -167,7 +167,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
 		
 	}
 ?>
-    <div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
+    <div  class="mid col-md-12 col-sm-12 col-xs-12">
  		<div class="cont_left">
         	<?php
 			$select_banner = "select * from advertise where adv_position = 'Register Top (622 X 197)' AND status = 'Active'";

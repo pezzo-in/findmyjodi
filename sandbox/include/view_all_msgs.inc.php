@@ -47,7 +47,7 @@ if(isset($_POST['delete_account']))
 	
 		
 ?>
-<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
+<div  class="mid col-md-12 col-sm-12 col-xs-12">
 
 <div class="mid_top">
         	<a href="#" class="upload_pic">

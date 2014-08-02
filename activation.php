@@ -38,7 +38,7 @@ if($_SESSION['UserEmail']!='' && $_SESSION['IsActive']=='Yes')
                 <?php include('include/header.inc.php'); ?>
                 <div class="header inn">
                     <div class="titlebox col-md-12">
-                        <h2>New account</h2>
+                        New account
                     </div>
                 </div>
             </div>

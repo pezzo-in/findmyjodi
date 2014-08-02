@@ -810,7 +810,7 @@ if(isset($_POST['submit']))
                 </div>
                     </div>
                       <div class="control-group">
-                      <label class="control-label">Favourite Couisine<span class="required">*</span></label>
+                      <label class="control-label">Favourite cuisine<span class="required">*</span></label>
                       <div class="controls">
                  	
                     <style>
@@ -834,7 +834,7 @@ if(isset($_POST['submit']))
                     
                     
                       <div class="control-group">
-                      <label class="control-label">Preferred Dress Style<span class="required">*</span></label>
+                      <label class="control-label">Preferred dressing style<span class="required">*</span></label>
                       <div class="controls">
                  	
                     <style>

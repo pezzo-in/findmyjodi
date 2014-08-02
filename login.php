@@ -36,7 +36,7 @@ $(document).ready(function(){
                 <?php include('include/header.inc.php'); ?>
                 <div class="header inn">
                     <div class="titlebox col-md-12">
-                        <h2>Login</h2>
+                        Login
                     </div>
                 </div>
             </div>

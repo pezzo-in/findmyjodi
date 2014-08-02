@@ -48,7 +48,7 @@
 
 
 
-<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
+<div  class="mid col-md-12 col-sm-12 col-xs-12">
 
 	<div class="cont_left col-md-8">
 
@@ -94,7 +94,7 @@
 
             <div class="preff-age" style="margin-left:0px;">
 
-                <select class="form-control" name="drpAgeFrom" id="drpAgeFrom" style="width:70px;" tabindex="0">
+                <select class="form-control col-md-4 col-xs-4 col-sm-4" name="drpAgeFrom" id="drpAgeFrom" style="width:70px;" tabindex="0">
 
                   <?php for($i=19;$i<=50;$i++) { ?>
 
@@ -108,7 +108,7 @@
 
                 <div id="age_to">
 
-                  <select class="form-control" name="drpAgeTo" id="drpAgeTo" style="width:70px;"  tabindex="1">
+                  <select class="form-control col-md-4 col-xs-4 col-sm-4" name="drpAgeTo" id="drpAgeTo" style="width:70px;"  tabindex="1">
 
                     <?php for($i=20;$i<=50;$i++) { ?>
 
@@ -121,6 +121,7 @@
                 </div>
 
               </div>
+              <span style="clear: both; float: left;">&nbsp;</span>
 
             </td>
 
@@ -130,7 +131,7 @@
 
             <td width="20%"><label style="margin-top:-18px">Marital Status</label></td>
 
-            <td><select class="form-control" id="drpMaritalStatus" name="drpMaritalStatus"  tabindex="2" style="clear:none;">
+            <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpMaritalStatus" name="drpMaritalStatus"  tabindex="2" style="clear:none;">
 
 				<?php $sql = "select * from relationship_status"; 
 
@@ -148,7 +149,7 @@
 
                 <?php } ?>
 
-              </select></td>
+              </select><span>&nbsp;</span></td>
 
 		</tr>    
 
@@ -156,7 +157,7 @@
 
             <td width="20%"><label style="margin-top:-18px">Height</label></td>
 
-            <td><select class="form-control" id="drpHeight" name="drpHeight"  tabindex="3" style="clear:none;">
+            <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpHeight" name="drpHeight"  tabindex="3" style="clear:none;">
 
                     <option value="">- Feet/Inches -</option>
 
@@ -174,7 +175,7 @@
 
                            <?php } ?>
 
-                  </select></td>
+                  </select><span>&nbsp;</span></td>
 
 		</tr> 
 
@@ -182,7 +183,7 @@
 
             <td width="20%"><label style="margin-top:-18px">Physical status</label></td>
 
-            <td><select class="form-control" id="drpPhysicalStatus" name="drpPhysicalStatus"  tabindex="4" style="clear:none;">
+            <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpPhysicalStatus" name="drpPhysicalStatus"  tabindex="4" style="clear:none;">
 
                     <option value="">-Select-</option>
 
@@ -190,7 +191,7 @@
 
                     <option value="physically_challenged">Physically challenged</option>
 
-                  </select></td>
+                  </select><span>&nbsp;</span></td>
 
 		</tr>   
 
@@ -208,7 +209,7 @@
 
 			?>
 
-		  <select class="form-control" name="drpReligion" id="drpReligion" tabindex="5" style="clear:none;">
+		  <select class="form-control col-md-12 col-xs-12 col-sm-12" name="drpReligion" id="drpReligion" tabindex="5" style="clear:none;">
 
 			<option value=""> -Select- </option>
 
@@ -218,7 +219,7 @@
 
 			<?php } ?>
 
-		  </select>
+		  </select><span>&nbsp;</span>
 
             </td>
 
@@ -236,7 +237,7 @@
 
             <td width="20%"><label style="margin-top:-18px">Mother Tongue</label></td>
 
-            <td><select class="form-control" name="drpMotherlanguage" id="drpMotherlanguage" tabindex="6" style="clear:none;" />     
+            <td><select class="form-control col-md-12 col-xs-12 col-sm-12" name="drpMotherlanguage" id="drpMotherlanguage" tabindex="6" style="clear:none;" />     
 
                   <option value=""> -Select- </option>
 
@@ -246,7 +247,7 @@
 
                   <?php } ?>
 
-                  </select></td>
+                  </select><span>&nbsp;</span></td>
 
 		</tr>
 
@@ -262,7 +263,7 @@
 
 			  ?>
 
-			  <select class="form-control" name="drpCaste" id="drpCaste" tabindex="7" style="clear:none;">
+			  <select class="form-control col-md-12 col-xs-12 col-sm-12" name="drpCaste" id="drpCaste" tabindex="7" style="clear:none;">
 
 				<option value=""> -Select- </option>
 
@@ -272,7 +273,7 @@
 
 				<?php } ?>
 
-			  </select></td>
+			  </select><span>&nbsp;</span></td>
 
         </tr>
 
@@ -280,7 +281,7 @@
 
             <td width="20%"><label style="margin-top:-18px">Manglik</label></td>
 
-            <td><select class="form-control" id="drpManglik" name="drpManglik"  tabindex="8" style="clear:none;">
+            <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpManglik" name="drpManglik"  tabindex="8" style="clear:none;">
 
                 <option value="">--Select--</option>
 
@@ -290,7 +291,7 @@
 
                 <option value="">Don't know</option>
 
-              </select></td>
+              </select><span>&nbsp;</span></td>
 
         </tr>
 
@@ -298,7 +299,7 @@
 
             <td width="20%"><label style="margin-top:-18px">Star</label></td>
 
-            <td><select class="form-control" id="drpStar" name="drpStar"  tabindex="9" style="clear:none;">
+            <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpStar" name="drpStar"  tabindex="9" style="clear:none;">
 
                 <option value="">--Select--</option>
 
@@ -320,7 +321,7 @@
 
                 <option value="">Don't know</option>
 
-              </select></td>
+              </select><span>&nbsp;</span></td>
 
         </tr>
 
@@ -328,7 +329,7 @@
 
             <td width="20%"><label style="margin-top:-18px">Eating Habits</label></td>
 
-            <td><select class="form-control" id="drpFood" name="drpFood"  tabindex="10" style="clear:none;">
+            <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpFood" name="drpFood"  tabindex="10" style="clear:none;">
 
                     <option value="">--Select--</option>
 
@@ -338,7 +339,7 @@
 
                     <option value="eggetarian">Eggetarian</option>
 
-                  </select></td>
+                  </select><span>&nbsp;</span></td>
 
         </tr>
 
@@ -346,7 +347,7 @@
 
             <td width="20%"><label style="margin-top:-18px">Smoking Habits</label></td>
 
-            <td><select class="form-control" id="drpSmoking" name="drpSmoking"  tabindex="11" style="clear:none;">
+            <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpSmoking" name="drpSmoking"  tabindex="11" style="clear:none;">
 
                 <option value="">--Select--</option>
 
@@ -356,7 +357,7 @@
 
                 <option value="O">Occasionally</option>
 
-              </select></td>
+              </select><span>&nbsp;</span></td>
 
         </tr>
 
@@ -366,7 +367,7 @@
 
             <td>
 
-            <select class="form-control" id="drpDrinking" name="drpDrinking"  tabindex="12" style="clear:none;">
+            <select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpDrinking" name="drpDrinking"  tabindex="12" style="clear:none;">
 
                 <option value="">--Select--</option>
 
@@ -376,7 +377,7 @@
 
                 <option value="O">Occasionally</option>
 
-              </select>
+              </select><span>&nbsp;</span>
 
             </td>
 
@@ -394,7 +395,7 @@
 
 	?>
 
-      <select class="form-control" name="drpCountry" id="drpCountry"  tabindex="13" style="clear:none;"/>
+      <select class="form-control col-md-12 col-xs-12 col-sm-12" name="drpCountry" id="drpCountry"  tabindex="13" style="clear:none;"/>
 
       
 
@@ -406,7 +407,7 @@
 
       <?php } ?>
 
-      </select></td>
+      </select><span>&nbsp;</span></td>
 
         </tr>
 
@@ -414,7 +415,8 @@
 
             <td width="20%"><label style="margin-top:-18px">Residing city</label></td>
 
-            <td><input class="form-control" type="text" name="city" id="city" tabindex="14" style="clear:none;"></td>
+            <td><input class="form-control col-md-12 col-xs-12 col-sm-12" type="text" name="city" id="city" tabindex="14" style="clear:none;">
+            <span>&nbsp;</span></td>
 
         </tr>
 
@@ -422,7 +424,7 @@
 
             <td width="20%"><label style="margin-top:-18px">Education</label></td>
 
-            <td><select class="form-control" id="drpEducation" name="drpEducation"  tabindex="15" style="clear:none;">
+            <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpEducation" name="drpEducation"  tabindex="15" style="clear:none;">
 
         <option value="">--Select--</option>
 
@@ -464,7 +466,7 @@
 
                           <?php } ?> 
 
-      </select></td>
+      </select><span>&nbsp;</span></td>
 
         </tr>
 
@@ -472,7 +474,7 @@
 
             <td width="20%"><label style="margin-top:-18px">Occupation</label></td>
 
-            <td><select class="form-control" id="drpOccupation" name="drpOccupation"  tabindex="16" style="clear:none;">
+            <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpOccupation" name="drpOccupation"  tabindex="16" style="clear:none;">
 
                 
 
@@ -492,7 +494,7 @@
 
                                ?>
 
-              </select></td>
+              </select><span>&nbsp;</span></td>
 
         </tr>
 
@@ -500,7 +502,7 @@
 
             <td width="20%"><label style="margin-top:-18px">Annual Income</label></td>
 
-            <td><select class="form-control" id="drpAnnualIncome" name="drpAnnualIncome"  tabindex="17" style="clear:none;">
+            <td><select class="form-control col-md-12 col-xs-12 col-sm-12" id="drpAnnualIncome" name="drpAnnualIncome"  tabindex="17" style="clear:none;">
 
         <option value="">--Select--</option>
 
@@ -520,7 +522,7 @@
 
         <?php } } ?>
 
-      </select></td>
+      </select><span>&nbsp;</span></td>
 
         </tr>
 
@@ -529,7 +531,7 @@
             <td width="20%"><label style="margin-top:-18px">Partner Description</label></td>
 
             <td>
-            <textarea name="partner_description" id="partner_description" rows="3" cols="42" tabindex="18" style='clear:none;'></textarea>
+            <textarea name="partner_description" id="partner_description" rows="3" cols="42" tabindex="18" style='clear:none;' class="form-control col-md-12 col-sm-12 col-xs-12"></textarea>
             </td>
 
         </tr>                           
@@ -540,7 +542,7 @@
 
       <div class="terms_line">
 
-        <input class="btn btn-danger " type="submit" class="form-control" value="Next" name="submit" tabindex="19" />
+        <input class="btn btn-danger " type="submit" class="form-control col-md-12 col-xs-12 col-sm-12" value="Next" name="submit" tabindex="19" />
 
       </div>
 

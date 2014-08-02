@@ -75,7 +75,7 @@ if(isset($_GET['did']))
                 <!-- END BEGIN STYLE CUSTOMIZER -->  
                 <!-- BEGIN PAGE TITLE & BREADCRUMB-->
                 <h3 class="page-title">
-                    List Dress Style
+                    List Dressing style
                 </h3>
                 <ul class="breadcrumb">
                     <li>
@@ -84,7 +84,7 @@ if(isset($_GET['did']))
                         <i class="icon-angle-right"></i>
                     </li>
                     <li>
-                        <a href="list_dressstyle.php">List Dress Style</a>                        
+                        <a href="list_dressstyle.php">List Dressing style</a>                        
                     </li>
                     
                 </ul>
@@ -103,7 +103,7 @@ if(isset($_GET['did']))
                 </div>
                 <div class="portlet box green">
                     <div class="portlet-title">
-                        <div class="caption"><i class="icon-globe"></i>List Dress Style</div>
+                        <div class="caption"><i class="icon-globe"></i>List Dressing style</div>
                         
                     </div>
                     

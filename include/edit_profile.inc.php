@@ -147,9 +147,9 @@ if(isset($_POST['submit']))
         <div class="content col-md-9 col-xs-12 col-sm-12">
 		 <div>
                      <?php if(!isset($_SESSION["linkedin_id"])&&$_SESSION["linkedin_id"]!=1){ ?>
-                     <button type="button" class="btn_paidmship"  id="linkedin" name="linkedin" onclick="location.href='acesslinkedindata.php'">Add your Linkedin ID </button> 
+                     <button type="button" class="btn btn-danger"  id="linkedin" name="linkedin" onclick="location.href='acesslinkedindata.php'">Add your Linkedin ID </button> 
                      <?php }else{ ?>
-                     <span class="btn_paidmship" style="background-color: #fff;border: solid 1px; color: #000;font-weight: bold;"  id="removelinkedin" name="removelinkedin" > LinkedIn ID Added - <a href="edit_profile.php?removeid=true" onclick="return confirm('Do you want to remove Linkedin ID?');">Remove</a></span> 
+                     <span class="btn btn-danger" style="background-color: #fff;border: solid 1px; color: #000;font-weight: bold;"  id="removelinkedin" name="removelinkedin" > LinkedIn ID Added - <a href="edit_profile.php?removeid=true" onclick="return confirm('Do you want to remove Linkedin ID?');">Remove</a></span>
                      <?php } ?>
                     </div>
         
@@ -165,12 +165,12 @@ if(isset($_POST['submit']))
                <div class="row-detail new_acc editprof">
                   <h3>More About Me</h3>
                    <ul class="col-md-6 col-xs-12 col-sm-6">
-                   	<li> <label>Name</label>
+                   	<li> <label class="col-md-12 col-xs-12 col-sm-12 nopadding">Name</label>
                     <input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="username" id="username" value="<?php echo $logged_in_member[0]['name']; ?>" />
                    </li></ul>
                    
                    <ul class="col-md-6 col-xs-12 col-sm-6">
-                   	<li> <label>Gender</label>
+                   	<li> <label class="col-md-12 col-xs-12 col-sm-12 nopadding">Gender</label>
                             <div id="genderRadio">
                             <label class="radiobtn">
                                 <input class="form-control" style="float: left; margin:-7px 7px 0 0" type="radio" name="Rdgender" id="Rdgenderm" value="M" <?php if($logged_in_member[0]['gender'] == 'M') { ?> checked="checked"  <?php } ?> />Male
@@ -182,7 +182,7 @@ if(isset($_POST['submit']))
                    </li></ul>
                    
                    <ul class="col-md-6 col-xs-12 col-sm-6">
-                   	<li><label>Marital Status</label><?php
+                   	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Marital Status</label><?php
 						$relation_list = "select * from relationship_status";
 						$data = $obj->select($relation_list);
 					?>
@@ -196,7 +196,7 @@ if(isset($_POST['submit']))
                     </select>
                     </li></ul>
                     <ul class="col-md-6 col-xs-12 col-sm-6">
-                    	<li><label>Matrimony Profile For</label><select class="form-control col-md-12 col-sm-12 col-xs-12" id="drpProfFor" name="drpProfFor">
+                    	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Matrimony Profile For</label><select class="form-control col-md-12 col-sm-12 col-xs-12" id="drpProfFor" name="drpProfFor">
                                 <option value="">-Select-</option>
                                 <option value="Myself" <?php if($logged_in_member[0]['profile_for'] == "Myself") { ?>  selected="selected" <?php } ?> >Myself</option>
                                 <option value="Son" <?php if($logged_in_member[0]['profile_for'] == "Son") { ?>  selected="selected" <?php } ?>>Son</option>
@@ -209,7 +209,7 @@ if(isset($_POST['submit']))
                     </li></ul>
                     
                     <ul class="col-md-6 col-xs-12 col-sm-6">
-                    	<li><label>Country Living in</label><?php
+                    	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Country Living in</label><?php
 								$country_list = "select * from mobile_codes";
 								$data = $obj->select($country_list);
 							?>
@@ -223,14 +223,14 @@ if(isset($_POST['submit']))
 							</select>
                     </li></ul>
                     <ul class="col-md-6 col-xs-12 col-sm-6">
-                    	<li><label>State</label>
+                    	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">State</label>
                  			<input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="state" id="state" value="<?php echo $logged_in_member[0]['state']; ?>">
                     </li></ul>
-                    <ul class="col-md-6 col-xs-12 col-sm-6"><li><label>City</label>
+                    <ul class="col-md-6 col-xs-12 col-sm-6"><li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">City</label>
                  			<input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="city" id="city" value="<?php echo $logged_in_member[0]['city']; ?>">
                     </li></ul>
                     <ul class="col-md-6 col-xs-12 col-sm-6">
-                    	<li> <label>Star</label>
+                    	<li> <label class="col-md-12 col-xs-12 col-sm-12 nopadding">Star</label>
                              <select class="form-control col-md-12 col-sm-12 col-xs-12" name="drpstar" id="drpstar"/>>
                                 <option value="">Select</option>
                                 <?php
@@ -242,7 +242,7 @@ if(isset($_POST['submit']))
                                 <?php }    ?>
                             </select> 
                     </li></ul>
-                    <ul class="col-md-6 col-xs-12 col-sm-6"><li><label>Mobile Number</label>
+                    <ul class="col-md-6 col-xs-12 col-sm-6"><li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Mobile Number</label>
 							 	<?php
 									$select_category2 = "select * from mobile_codes";
 									$db_category2 = $obj->select($select_category2);
@@ -254,14 +254,14 @@ if(isset($_POST['submit']))
                                 </select><input class="form-control col-md-10 col-sm-10 col-xs-12" type="text" name="txtMobNo" value="<?php echo $logged_in_member[0]['mobile_no']; ?>"  id="txtMobNo" />
                     </li></ul>
                      <ul class="col-md-6 col-xs-12 col-sm-6">
-                     	<li><label>Horoscope</label>
+                     	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Horoscope</label>
 							 	<input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="horoscope" value="<?php echo $logged_in_member[0]['horoscope_match']; ?>"  id="horoscope" />
                     </li></ul>
                     </div>
                     <div class="row-detail new_acc editprof">
                           <h3>Education & Occupation</h3>
                            <ul class="col-md-6 col-xs-12 col-sm-6">
-                           	<li><label>Education</label>
+                           	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Education</label>
                                    <select class="form-control col-md-12 col-sm-12 col-xs-12" id="education"  name="education" >
                                     
                                         <option value="">--Select--</option>
@@ -287,7 +287,7 @@ if(isset($_POST['submit']))
                             </li></ul>
                             
                             <ul class="col-md-6 col-xs-12 col-sm-6">
-                            	<li><label>Employed In</label>
+                            	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Employed In</label>
                                     <select class="form-control col-md-12 col-sm-12 col-xs-12" id="employed_in"  name="employed_in"  >	
                                         <option value="">--Select--</option>
                                         <option value="Government" <?php if($logged_in_member[0]['employed_in'] == "Government"){?> selected="selected" <?php } ?>>Government</option>
@@ -299,7 +299,7 @@ if(isset($_POST['submit']))
                             </li></ul>
                              
                              <ul class="col-md-6 col-xs-12 col-sm-6">
-                             	<li><label>Annual Income</label>
+                             	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Annual Income</label>
 									<?php
                                         $income = "select * from annual_income_master";
                                         $data = $obj->select($income);
@@ -315,7 +315,7 @@ if(isset($_POST['submit']))
                             </li></ul>
                             
                             <ul class="col-md-6 col-xs-12 col-sm-6">
-                            	<li> <label>Occupation</label>
+                            	<li> <label class="col-md-12 col-xs-12 col-sm-12 nopadding">Occupation</label>
 									<?php
                                         $list = "select * from occupation_master";
                                         $data = $obj->select($list);
@@ -336,7 +336,7 @@ if(isset($_POST['submit']))
                     <div class="row-detail new_acc editprof">
                           <h3>Physical Appearance & Looks</h3>
                            <ul class="col-md-6 col-xs-12 col-sm-6">
-                           	<li><label>Height</label>
+                           	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Height</label>
                                     <select class="form-control col-md-12 col-sm-12 col-xs-12" id="drpHeight" name="drpHeight" >
                                        <option value="">- Feet/Inches -</option>
                                        <?php 
@@ -350,7 +350,7 @@ if(isset($_POST['submit']))
                             </li></ul>
                             
                              <ul class="col-md-6 col-xs-12 col-sm-6">
-                             	<li><label>Weight</label>
+                             	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Weight</label>
                                         <select class="form-control col-md-12 col-sm-12 col-xs-12" id="drpWeight" name="drpWeight" >
                                            <option value="">- Kgs -</option>
                                            <?php for($i=41;$i<=140;$i++) { ?>
@@ -360,7 +360,7 @@ if(isset($_POST['submit']))
                             </li></ul>
                             
                              <ul class="col-md-6 col-xs-12 col-sm-6">
-                             	<li> <label>Complexion</label>
+                             	<li> <label class="col-md-12 col-xs-12 col-sm-12 nopadding">Complexion</label>
                                        <select class="form-control col-md-12 col-sm-12 col-xs-12" id="drpComplexion" name="drpComplexion">
                                            <option value="">-Select-</option>
                                            <option value="Very Fair" <?php if($logged_in_member[0]['complexion']=="Very Fair") { ?> selected="selected" <?php } ?>>Very Fair</option>
@@ -372,7 +372,7 @@ if(isset($_POST['submit']))
                             </li></ul>
                             
                              <ul class="col-md-6 col-xs-12 col-sm-6">
-                             	<li><label>Body type</label>
+                             	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Body type</label>
                                          <select class="form-control col-md-12 col-sm-12 col-xs-12" name="drpBodyType" id="drpBodyType" >
                                             <option value="">Select</option>
                                             <option value="Slim" <?php if($logged_in_member[0]['body_type'] == "Slim") { ?> selected="selected" <?php } ?>>Slim</option>
@@ -383,7 +383,7 @@ if(isset($_POST['submit']))
                             </li></ul>
                             
                             <ul class="col-md-6 col-xs-12 col-sm-6">
-                            	<li><label>Physical Status</label>
+                            	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Physical Status</label>
                                          <select class="form-control col-md-12 col-sm-12 col-xs-12" id="drpPhysicalStatus"  name="drpPhysicalStatus" >
                                            <option value="">-Select-</option>
                                            <option value="normal" <?php if($logged_in_member[0]['physical_status'] == "normal") { ?> selected="selected" <?php } ?>>Normal</option>
@@ -394,7 +394,7 @@ if(isset($_POST['submit']))
                     <div class="row-detail new_acc editprof">
                           <h3>Religion and Social info</h3>
                            <ul class="col-md-6 col-xs-12 col-sm-6">
-                           	<li> <label>Religion</label>
+                           	<li> <label class="col-md-12 col-xs-12 col-sm-12 nopadding">Religion</label>
 									<?php
                                         $religion_list = "select * from religions";
                                         $data = $obj->select($religion_list);
@@ -410,7 +410,7 @@ if(isset($_POST['submit']))
                             </li></ul>
                             
                              <ul class="col-md-6 col-xs-12 col-sm-6">
-                             	<li><label>Mother Tongue</label> 
+                             	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Mother Tongue</label> 
 										 <?php
                                             $list = "select * from mother_tongues";
                                             $data = $obj->select($list);
@@ -426,7 +426,7 @@ if(isset($_POST['submit']))
                             </li></ul>
                             
                              <ul class="col-md-6 col-xs-12 col-sm-6">
-                             	<li><label>Caste</label>
+                             	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Caste</label>
 										<?php
 											$select_caste_rel = "select id from religions where religion='".$logged_in_member[0]['religion']."'";
 											$db_rel_cast = $obj->select($select_caste_rel);
@@ -447,7 +447,7 @@ if(isset($_POST['submit']))
                             </li></ul>
                             
                              <ul class="col-md-6 col-xs-12 col-sm-6">
-                             	<li><label>Manglik</label>
+                             	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Manglik</label>
                                        <select class="form-control col-md-12 col-sm-12 col-xs-12" name="manglik" id="manglik" />
                                             <option value="Dont Know" <?php if($logged_in_member[0]['manglik_dosham'] == 'Dont Know') {  ?> selected="selected" <?php } ?>>Don't Know</option>
                                             <option value="Y" <?php if($logged_in_member[0]['manglik_dosham'] == 'Y') {  ?> selected="selected" <?php } ?>>Yes</option>
@@ -456,7 +456,7 @@ if(isset($_POST['submit']))
 							</li></ul>
                             
                              <ul class="col-md-6 col-xs-12 col-sm-6">
-                             	<li><label>Gotra /Gothram</label>
+                             	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Gotra /Gothram</label>
  									<input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="gothram" value="<?php echo $logged_in_member[0]['gothram']; ?>" id="gothram">
                             </li></ul>
                     </div>
@@ -464,14 +464,14 @@ if(isset($_POST['submit']))
                     <div class="row-detail new_acc editprof">
                           <h3>Astro info</h3>
                            <ul class="col-md-6 col-xs-12 col-sm-6">
-                           	<li><label>Date of Birth</label>
+                           	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Date of Birth</label>
                      		<div class="controls">
           <input class="form-control col-md-12 col-sm-12 col-xs-12 date-picker" type="text" value="<?php echo date('d-m-Y',strtotime($logged_in_member[0]['date_of_birth'])); ?>" id="dob" name="dob" />
                             </div>
                             </li></ul>
                             
                             <ul class="col-md-6 col-xs-12 col-sm-6">
-                            	<li><label>Place of Birth</label>
+                            	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Place of Birth</label>
                    					 <div><input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="place_of_birth" id="place_of_birth" value="<?php echo $logged_in_member[0]['place_of_birth']; ?>"  /></div>
                     		</li></ul>
                     </div>
@@ -479,7 +479,7 @@ if(isset($_POST['submit']))
                     <div class="row-detail new_acc editprof">
                           <h3>Family</h3>
                            <ul class="col-md-6 col-xs-12 col-sm-6">
-                           	<li><label>Brothers</label>
+                           	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Brothers</label>
                              <select class="form-control col-md-12 col-sm-12 col-xs-12" id="num_bro" name="num_bro" style="width:80px;">	
                 
                                         <option value="">Select</option>
@@ -496,7 +496,7 @@ if(isset($_POST['submit']))
                              </select><span style="padding:8px 4px 0; float:left;">are married</span>  
                             </li></ul>
                             
-                            <ul class="col-md-6 col-xs-12 col-sm-6"><li style="width:100%"><label>Sisters</label>			
+                            <ul class="col-md-6 col-xs-12 col-sm-6"><li style="width:100%"><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Sisters</label>			
                                      <select class="form-control col-md-12 col-sm-12 col-xs-12" id="num_sis" name="num_sis" style="width:80px;">	
                                                 <option value="">Select</option>
                                                 <?php for($i=1;$i<=10;$i++) { ?>
@@ -513,7 +513,7 @@ if(isset($_POST['submit']))
              				</li></ul>
                             
                             <ul class="col-md-6 col-xs-12 col-sm-6">
-                            	<li><label>Living with Parents?</label>
+                            	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Living with Parents?</label>
                                      <select class="form-control col-md-12 col-sm-12 col-xs-12" name="drpLiving" id="drpLiving" >
                                         <option value="">Select</option>
                                         <option value="Y" <?php if($logged_in_member[0]['living_with_parents'] == "Y"){?> selected="selected" <?php } ?>>Yes</option>	
@@ -522,7 +522,7 @@ if(isset($_POST['submit']))
                             </li></ul>
                             
                             <ul class="col-md-6 col-xs-12 col-sm-6">
-                            	<li><label>Family Values</label>
+                            	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Family Values</label>
 									<select class="form-control col-md-12 col-sm-12 col-xs-12" id="drpFamilyValues" name="drpFamilyValues" tabindex="19">	
                         				<option value="">--Select--</option>
                         		        <option value="orthodox" <?php if($logged_in_member[0]['family_value'] == "orthodox") { ?> selected="selected" <?php } ?>>Orthodox</option>
@@ -533,7 +533,7 @@ if(isset($_POST['submit']))
                             </li></ul>
                             
                             <ul class="col-md-6 col-xs-12 col-sm-6">
-                            	<li><label>Family Type</label>
+                            	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Family Type</label>
 										<select class="form-control col-md-12 col-sm-12 col-xs-12" id="drpFamilyType" name="drpFamilyType" tabindex="18">	
                         			        <option value="">--Select--</option>
                         			        <option value="joint" <?php if($logged_in_member[0]['family_type'] == "joint") { ?> selected="selected" <?php } ?>>Joint</option>
@@ -542,7 +542,7 @@ if(isset($_POST['submit']))
                             </li></ul>
                             
                             <ul class="col-md-6 col-xs-12 col-sm-6">
-                            	<li><label>Family Status</label>
+                            	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Family Status</label>
 									 <select class="form-control col-md-12 col-sm-12 col-xs-12" id="drpFamilyStatus" name="drpFamilyStatus" tabindex="17">	
                         					<option value="">--Select--</option>
                         					<option value="Middle" <?php if($logged_in_member[0]['family_status'] == "Middle") { ?> selected="selected" <?php } ?>>Middle class</option>
@@ -556,7 +556,7 @@ if(isset($_POST['submit']))
                     <div class="row-detail new_acc editprof">
                           <h3>Lifestyle</h3>
                            <ul class="col-md-6 col-xs-12 col-sm-6">
-                           	<li><label>Smoking Habits</label>
+                           	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Smoking Habits</label>
                                     <select class="form-control col-md-12 col-sm-12 col-xs-12" name="drpSmoking" id="drpSmoking" />
                                         <option value="">Select</option>
                                         <option value="Y" <?php if($logged_in_member[0]['is_smoker'] == "Y"){?> selected="selected"<?PHP } ?>>Yes</option>
@@ -566,7 +566,7 @@ if(isset($_POST['submit']))
                             </li></ul>
                             
                              <ul class="col-md-6 col-xs-12 col-sm-6">
-                             	<li> <label>Drinking Habits</label>
+                             	<li> <label class="col-md-12 col-xs-12 col-sm-12 nopadding">Drinking Habits</label>
                                         <select class="form-control col-md-12 col-sm-12 col-xs-12" name="drpDrinking" id="drpDrinking"  />
                                             <option value="">Select</option>
                                             <option value="Y" <?php if($logged_in_member[0]['is_drinker'] == "Y"){?> selected="selected"<?PHP } ?>>Yes</option>
@@ -576,7 +576,7 @@ if(isset($_POST['submit']))
                             </li></ul>
                             
                              <ul class="col-md-6 col-xs-12 col-sm-6">
-                             	<li> <label>Eating Habits</label>
+                             	<li> <label class="col-md-12 col-xs-12 col-sm-12 nopadding">Eating Habits</label>
                                         <select class="form-control col-md-12 col-sm-12 col-xs-12" name="drpEatingHabits" id="drpEatingHabits"  />
                                             <option value="">Select</option>
                                             <option value="Vegetarian" <?php if($logged_in_member[0]['food'] == "Vegetarian"){?> selected="selected"<?PHP } ?>>Vegetarian   </option>
@@ -587,9 +587,9 @@ if(isset($_POST['submit']))
                             
                     </div>
                     
-                     <div class="row-detail new_acc editprof">
+                    <!-- <div class="row-detail new_acc editprof">
                            <ul class="col-md-6 col-xs-12 col-sm-6">
-                           	<li><label><input class="form-control" type="checkbox" name="mail_alerts" style="margin-right:7px; float:left; margin-top:-7px;" value="1" <?php if($logged_in_member[0]['mail_alerts']==1){ ?> checked="checked" <?php } ?> />Do you want mail alerts?</label>
+                           	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding"><input class="form-control" type="checkbox" name="mail_alerts" style="margin-right:7px; float:left; margin-top:-7px;" value="1" <?php if($logged_in_member[0]['mail_alerts']==1){ ?> checked="checked" <?php } ?> />Do you want mail alerts?</label>
 							<?php
 								 $select_member_plan="select member_plans.* from member_plans, members where member_plans.member_id='".$_SESSION['logged_user'][0]['id']."' AND members.id=member_plans.member_id";
 								$db_member_plan=$obj->select($select_member_plan);
@@ -607,7 +607,7 @@ if(isset($_POST['submit']))
 								if(count($db_member_plan)>0 && date('Y-m-d',strtotime($exp_date))>=date('Y-m-d'))
 								{
 								?>
-								<label><input class="form-control" type="checkbox" name="is_featured" value="Y" style="margin-right:7px; float:left; margin-top:-7px;" <?php if($logged_in_member[0]['is_featured']=="Y"){ ?> checked="checked" <?php } ?> />Featured Profile</label>
+								<label class="col-md-12 col-xs-12 col-sm-12 nopadding"><input class="form-control" type="checkbox" name="is_featured" value="Y" style="margin-right:7px; float:left; margin-top:-7px;" <?php if($logged_in_member[0]['is_featured']=="Y"){ ?> checked="checked" <?php } ?> />Featured Profile</label>
 								 
 								<?php
 								}
@@ -615,13 +615,13 @@ if(isset($_POST['submit']))
                             </li>
                             </ul>
                             
-                    </div>
+                    </div>-->
                     
                     <div class="new_acc">           
                          <div class="left">
                         </div>
-                         <div class="terms_line paddL-0">
-                                <input class="btn btn-success btn-sm update_btn_new1" type="submit" name="submit" value="Update" onclick="return validate()" />
+                         <div class="paddL-0">
+                                <input class="btn btn-success" type="submit" name="submit" value="Update" onclick="return validate()" />
                          </div>
                     </div>            
           </form>

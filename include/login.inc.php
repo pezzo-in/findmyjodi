@@ -189,7 +189,7 @@
 				
 	}
 ?>
-<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding text-center">
+<div  class="mid col-md-12 col-sm-12 col-xs-12 text-center">
         	<div class="col-md-6">
                	<h2>New User ?</h2>
                 <br/>

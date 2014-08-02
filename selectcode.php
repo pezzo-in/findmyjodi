@@ -16,7 +16,7 @@ $db_code = $obj->select($select_code);
 
 
 
-  <select name="drpMobcode" id="drpMobcode" style="width:140px; ">
+  <select name="drpMobcode" id="drpMobcode" class="col-md-2 col-sm-2 col-xs-12 form-control">
 
   <!-- <option value="Select Mobile Code">Select Mobile Code</option>-->
 

@@ -366,7 +366,7 @@ if(isset($_POST['save_hobbies']))
 
              <div class="hobbieslist-label">
 
-     		 <h3>Favourite couisine</h3>
+     		 <h3>Favourite cuisine</h3>
 
             
 
@@ -394,7 +394,7 @@ if(isset($_POST['save_hobbies']))
 
              <div class="hobbieslist-label">
 
-     		 <h3>Preferred dress style</h3>
+     		 <h3>Preferred dressing style</h3>
 
             
 

@@ -65,7 +65,7 @@ include('lib/myclass.php');
                 <?php include('include/header.inc.php'); ?>
                 <div class="header inn">
                     <div class="titlebox col-md-12">
-                        <h2>Registration Step 2</h2>
+                        Registration Step 2
                     </div>
                 </div>
             </div>

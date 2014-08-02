@@ -123,7 +123,7 @@ $(function() {
     <?php include('include/slider1.inc.php'); ?>
     <div class="header inn" style="display:none">
         <div class="titlebox col-md-12">
-            <h2>Notifications</h2>
+            Notifications
         </div>
     </div>
 </div>

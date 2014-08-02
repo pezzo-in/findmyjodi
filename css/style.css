@@ -353,6 +353,10 @@ ul.menu ul ul {
     width: 100%;
 }
 
+.header.inn {
+    display: none;
+}
+
 .header h1 {
     color: #fff;
     line-height: 39px;
@@ -784,7 +788,8 @@ ul.foot_link li a:hover {
 }
 
 .my-account ul li:first-child {
-    width: 50%;
+    width: 30%;
+    font-weight: bold;
 }
 
 .my-account ul li {
@@ -793,7 +798,7 @@ ul.foot_link li a:hover {
 
 .my-account ul li:last-child {
     padding-left: 10px;
-    width: 40%;
+    width: 68%;
 }
 
 .mid_top_checkbox {
@@ -1095,12 +1100,6 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
     clear: both;
     float: left;
     margin: 10px 0 30px;
-}
-
-.profile_img {
-    min-height: 210px;
-    padding-left: 200px;
-    position: relative;
 }
 
 .profile_details .profile-img-box {
@@ -3062,9 +3061,12 @@ ul.list-prfl li a:hover {
     padding: 0;
 }
 
+.list-chkbox label {
+    font-weight: normal;
+}
+
 .sel_picture ul li {
     float: left;
-    height: 110px;
     margin: 0 8px;
     overflow: hidden;
     padding: 0 0 25px;
@@ -3844,10 +3846,6 @@ ul.profl-list .griddetail {
 .prfldetailtitle {
     display: block;
     padding-bottom: 20px;
-}
-
-.inputfile {
-    height: 26px;
 }
 
 .editpartpref tr td {

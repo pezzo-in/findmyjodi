@@ -12,7 +12,7 @@ function displayplan(plan)
 document.getElementById('plan_id').value=plan;	
 }
 </script>
-<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
+<div  class="mid col-md-12 col-sm-12 col-xs-12">
 <?php if($_GET['redirect']=='account'){ ?>
 <div class="backtolink"><a href="thank-you.php">&nbsp;&nbsp;&nbsp;Continue To Home Page »</a></div>
 <?php } ?>

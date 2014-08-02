@@ -253,11 +253,10 @@ $error = "Invalid Email id or Password";
                     </form>
                 </div>
             </div>
-            <div class="register col-md-12">Join us &amp; "Experience the magic of love"
-                <a class="btn btn-lg btn-danger col-md-2 col-sm-12 col-xs-12 col-md-offset-5" href="register.php">Register</a>
+            <div class="register col-md-8">
+                <span class="col-md-8">Join us &amp; "Experience the magic of love"</span>
+                <a href="register.php" class="btn btn-lg btn-danger col-md-4 col-sm-12 col-xs-12 pull-right">Register</a>
             </div>
-            <!--header text start-->
-            <div class="landing-copy">All rights reserved @Findmyjodi.com</div>
         </div>
     </div>
 </div>

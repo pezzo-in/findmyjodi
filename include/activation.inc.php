@@ -80,9 +80,8 @@ if(isset($_REQUEST['submit']))
 	
 }
 ?>
-    <div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
- 
-     		<h2>Activate Your Account</h2>
+    <div class="mid col-md-12 col-sm-12 col-xs-12">
+    <h2>Activate Your Account</h2>
     <form id="formID" class="form-horizontal" method="post" onsubmit="return check_form()">
     <input type="hidden" name="uid" id="uid" value="<?php echo $_REQUEST['uid']; ?>" />
        <div class="new_acc col-md-8 col-md-offset-2">
@@ -107,9 +106,10 @@ if(isset($_REQUEST['submit']))
          </div>
          <br class="clear" />
                 <div class="terms_line">
-                <input type="submit" name="submit" class="btn btn-success form-control" />
-                 <a href="activation.php?uid=<?php echo $_GET['uid'] ?>&resend=1" class="" style="padding: 5px;"><img src="./images/resendit_btn.png" style="margin-top:10px;"></a>
+	                <input type="submit" class="btn btn-success" name="submit">
+	                <a style="" class="btn btn-danger" href="activation.php?uid=&amp;resend=1">Resend it</a>
                 </div>
+                <br><br>
                 </div>
                 </form>
     </div>  

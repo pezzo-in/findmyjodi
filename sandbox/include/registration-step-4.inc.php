@@ -107,7 +107,7 @@
 	
 	
 	?>
-    <div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
+    <div  class="mid col-md-12 col-sm-12 col-xs-12">
  
  			<div class="cont_left">
 	        	<?php
@@ -212,7 +212,7 @@
 			  	   $couisine = $obj->select($sql);
 			?> 
              <div class="hobbieslist-label">
-     		 <h3 style="color:#C33">Favourite couisine</h3><hr />
+     		 <h3 style="color:#C33">Favourite cuisine</h3><hr />
             
              	<div class="list-chkbox">
                  <?php   foreach($couisine as $cou) {
@@ -227,7 +227,7 @@
 			  	     $couisine = $obj->select($sql);
 				?> 
              <div class="hobbieslist-label">
-     		 <h3 style="color:#C33">Preferred dress style</h3><hr />
+     		 <h3 style="color:#C33">Preferred dressing style</h3><hr />
             
              	<div class="list-chkbox">
                  <?php   foreach($couisine as $dre) { 

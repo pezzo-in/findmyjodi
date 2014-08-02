@@ -72,7 +72,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
 
 	}
 ?>
-    <div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
+    <div  class="mid col-md-12 col-sm-12 col-xs-12">
  		<div class="cont_left col-md-8">
         	<?php
 			$select_banner = "select * from advertise where adv_position = 'Register Top (622 X 197)' AND status = 'Active'";
@@ -140,7 +140,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                             $data = $obj->select($caste_list);
                 ?>
                 <div id="caste_drp_div">
-                    <select class="form-control col-md-12 col-xs-12 col-sm-12" name="drpCaste" id="drpCaste" onchange="drpProfFor_fun(this.id)" tabindex="8" style="clear:none;">
+                    <select name="drpCaste" id="drpCaste" onchange="drpProfFor_fun(this.id)" tabindex="8" class="form-control col-md-12 col-xs-12 col-sm-12">
                         <option value=""> -Select- </option>
                     </select>
                 </div>
@@ -242,7 +242,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 <div class="terms_line">
                     <label class="checkbox"><input class="form-control" checked="checked" style="margin:-6px 10px 0 0" tabindex="17" type="checkbox" id="chk" value="1" /> I agree to the Find My Jodi <a href="privacy_policy.php">Privacy Policy</a> and <a href="terms_conditions.php">Terms and Conditions.</a></label>
                     <span id="chkmsg" class="err_msg">Check Terms and condition box</span>
-                    <input type="submit" name="submit" onclick="return validate()" value="Register" tabindex="18" class="btn btn-danger" value="Register" />
+                    <input type="submit" name="submit" onclick="return validate()" value="Next" tabindex="18" class="btn btn-danger" />
                 </div>
 		</div>
     </form>

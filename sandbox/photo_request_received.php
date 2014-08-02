@@ -159,7 +159,7 @@ $(document).ready(function(){
     </div>
 </div>
 <div class="wrapper">
-	<div  class="mid col-md-12 col-sm-12 col-xs-12 nopadding">
+	<div  class="mid col-md-12 col-sm-12 col-xs-12">
     	 <?php include('include/edit_profile_top.inc.php'); ?>
          <?php include('include/profile_leftbar.inc.php'); ?>
 		 <?php include('include/photo_request_received.inc.php'); ?>

@@ -134,12 +134,12 @@ $(document).ready(function(){
 		?>
                 <div class="header inn">
                     <div class="titlebox col-md-12">
-            	<h2>Following</h2>
+            	Following
             </div>
         </div>
     </div>
 </div>
-        <div class="col-md-12 nopadding mid">
+        <div class="col-md-12 mid">
             <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
     	
     	 <?php include('include/edit_profile_top.inc.php'); ?>
