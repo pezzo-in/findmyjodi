@@ -78,7 +78,7 @@ if(isset($_POST['postsubmit']))
 
 <?php if($_GET['id'] == '') { ?>
 
-<div class="content">
+<div class="content col-md-9 col-sm-12 col-xs-12">
 
 
 
@@ -118,7 +118,7 @@ if(isset($_POST['postsubmit']))
 
         <div class="mid_prof" style="border-bottom:none">
 
-        		<div class="showbasiccontent" id="accept_div_<?php echo $db_select_post[$i]['UserId']."_".$db_select_post[$i]['FollowerId']; ?>">
+        		<div class="showbasiccontent col-md-12 col-sm-12 col-xs-12" id="accept_div_<?php echo $db_select_post[$i]['UserId']."_".$db_select_post[$i]['FollowerId']; ?>">
 
                     <div class="prfl-pic">
 
@@ -208,7 +208,7 @@ if(isset($_POST['postsubmit']))
 
 <?php } else { ?>
 
-<div class="content">
+<div class="content col-md-9 col-sm-12 col-xs-12">
 
 	<div class="about_right">
 
@@ -250,7 +250,7 @@ if(isset($_POST['postsubmit']))
 
         	
 
-			<div class="showbasiccontent">
+			<div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
 
                 <div class="prfl-pic">
 

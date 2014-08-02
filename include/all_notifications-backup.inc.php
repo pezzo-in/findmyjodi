@@ -98,7 +98,7 @@ if(count($db_banner) > 0)
 							$messages=$obj->select($select_new_msgs);
 							
 						?>
-                            <div class="content">
+                            <div class="content col-md-9 col-sm-12 col-xs-12">
                             <?php if(!empty($messages)) { ?>
                             	Listed here are the new messages you have received. We recommend you reply at the earliest.
                                 <ul class="pagination"><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><a href="#">5</a></li><li>&nbsp; of &nbsp;</li><li class="inactive"><a href="#">1</a></li></ul>
@@ -135,7 +135,7 @@ if(count($db_banner) > 0)
 										
 										?>
                                      
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                            <?php /*?> <input type="checkbox" /><?php */?>
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -156,7 +156,7 @@ if(count($db_banner) > 0)
                         <div id="request_content1<?php echo $each_msg[0]['id']; ?>">
                     	<div class="lightbox_cont full">
                         	<h2>All Communication with this member</h2>
-                            <div class="showbasiccontent">
+                            <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                         <div class="prfl-pic">
                                             <div id="slideshow" class="pics">
                                                 <img src="images/usericon.png" width="70" height="70" />
@@ -372,7 +372,7 @@ if(count($db_banner) > 0)
 										
 										?>
                                      
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <?php /*?><input type="checkbox" /><?php */?>
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -393,7 +393,7 @@ if(count($db_banner) > 0)
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />
@@ -502,7 +502,7 @@ if(count($db_banner) > 0)
 								?> 
 								
                                 <div class="basicview">
-                                	<div class="showbasiccontent">
+                                	<div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                 		<?php /*?><input type="checkbox" /><?php */?>
                                         <div class="prfl-pic">
                                             <div id="slideshow" class="pics">

@@ -100,7 +100,7 @@ if(isset($_POST['send_reply']))
 		$messages = $obj->select($sql);
 		if(!empty($messages)) { ?>
 
-<div class="content">
+<div class="content col-md-9 col-sm-12 col-xs-12">
   <?=$PAGING->show_paging("received_msgs.php")?>
   <!--<div class="title_select_all"></div>-->
     <?php
@@ -124,7 +124,7 @@ if(isset($_POST['send_reply']))
 									 
 									  ?>
 	<div class=""> <!--basicview-->
-		<div class="showbasiccontent">
+		<div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
 			<div class="prfl-pic">
         			<div id="slideshow" class="pics"> 
                     	<?php
@@ -183,7 +183,7 @@ if(isset($_POST['send_reply']))
           		<div id="request_content1<?php echo $each_msg[0]['mem_id']; ?>">
             		<div class="lightbox_cont full" style="width:710px;">
               			<h2>All Communication with this member</h2>
-              			<div class="showbasiccontent"> 
+              			<div class="showbasiccontent col-md-12 col-sm-12 col-xs-12"> 
                 			<div class="prfl-pic">
                   				<div id="slideshow" class="pics"> 
                                 	<?php

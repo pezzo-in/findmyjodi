@@ -180,7 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 									if (file_exists($path)) {
 							?>
                             <li>
-                                <a href="javascript:;" class="popper" data-popbox="pop<?php echo $db['id']; ?>" style="height:112px">
+                                <a href="javascript:;" class="popper" data-popbox="pop<?php echo $db['id']; ?>">
                                     <img src="upload/<?php echo $db['photo']; ?>" width="100px" height="100px">
                           <div id="pop<?php echo $db['id']; ?>" class="popbox"><img src="upload/<?php echo $db['photo'];//str_replace('crop_','',$db['photo']); ?>" /></div>
                                 </a>
@@ -491,5 +491,5 @@ $('.delete_btn1').live('click',function(){
 .sel_picture ul li{ position:inherit !important; }
 .sel_picture ul li input[type="radio"]{ height:auto !important;position:inherit !important; }
 .sel_picture ul li .popbox img{ width:auto !important; height:auto !important; }
-.sel_picture ul li a.popper{ height:100px; display:block;}
+.sel_picture ul li a.popper{ display:block;}
 </style>     

@@ -306,7 +306,7 @@ if(!empty($dbconversation))
  </div>
  
  <?php } else { ?>
-<div class="content">
+<div class="col-md-9 col-xs-12 col-sm-12">
 <?php echo"<div style='font-size:16px;'>Sorry you have no messages</div>"; ?>
 </div>
   <?php } $j++; ?>

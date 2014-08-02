@@ -291,7 +291,7 @@ if(isset($_GET['w'])){
 				 		<form action="logout.php" method="post" id="adminLogout" accept-charset="utf-8">
 							Welcome, <b>'.$_SESSION["cap_admin"].'</b>! <input type="submit" id="logout" name="logout" value="Logout">
 						</form>
-					 	<div class="content">
+					 	<div class="content col-md-9 col-sm-12 col-xs-12">
 							<a class="adBtn" href="index.php?w=chat-config"><img src="../img/settings.png" />Configuration</a>
 							<a class="adBtn" href="index.php?w=account-settings"><img src="../img/lock.png" />My Account</a>
 						</div>

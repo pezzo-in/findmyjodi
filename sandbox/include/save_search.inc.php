@@ -2,7 +2,7 @@
 $sql_search = "SELECT * from tbl_search WHERE Member_id = '".$_SESSION['logged_user'][0]['id']."'";	
 $db_search=$obj->select($sql_search);
 ?>
-    <div class="content">
+    <div class="content col-md-9 col-sm-12 col-xs-12">
 		<h3>Saved Search</h3>
         <ul class="save_search_ul">
         	<?php for($i=0;$i<count($db_search);$i++){ ?>

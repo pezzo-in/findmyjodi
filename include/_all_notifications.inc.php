@@ -90,7 +90,7 @@ if(isset($_GET['id']))
 							$messages=$obj->select($sql);
 							
 						?>
-                            <div class="content">
+                            <div class="content col-md-9 col-sm-12 col-xs-12">
                             <?php if(!empty($messages)) { ?>
                             	Listed here are the new messages you have received. We recommend you reply at the earliest.
                                 <ul class="pagination"><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><a href="#">5</a></li><li>&nbsp; of &nbsp;</li><li class="inactive"><a href="#">1</a></li></ul>
@@ -125,7 +125,7 @@ if(isset($_GET['id']))
 										
 										?>
                                      
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <input type="checkbox" />
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -146,7 +146,7 @@ if(isset($_GET['id']))
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />
@@ -308,7 +308,7 @@ if(isset($_GET['id']))
 										
 										?>
                                      
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <input type="checkbox" />
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -329,7 +329,7 @@ if(isset($_GET['id']))
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />
@@ -415,7 +415,7 @@ if(isset($_GET['id']))
                                     </div>
                                 </div>
                             </div>
-                            <div class="content">
+                            <div class="content col-md-9 col-sm-12 col-xs-12">
                             	 <span class="floatl">Listed here are members who have requested you to add photo. &nbsp;&nbsp;</span><a class="btn-pink btn nofloat" href="#"><span>Add Photo</span></a>
                                  <br />
                                 <ul class="pagination"><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><a href="#">5</a></li><li>&nbsp; of &nbsp;</li><li class="inactive"><a href="#">1</a></li></ul>
@@ -426,7 +426,7 @@ if(isset($_GET['id']))
 </div>
                                 </div>
                                 <div class="basicview">
-                                	<div class="showbasiccontent">
+                                	<div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                 		<input type="checkbox" />
                                         <div class="prfl-pic">
                                             <div id="slideshow" class="pics">
@@ -447,7 +447,7 @@ if(isset($_GET['id']))
 					<div id="request_content">
                     	<div class="lightbox_cont full">
                         	<h2>All Communication with this member</h2>
-                            <div class="showbasiccontent">
+                            <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                         <div class="prfl-pic">
                                             <div id="slideshow" class="pics">
                                                 <img src="images/usericon.png" width="70" height="70" />
@@ -487,7 +487,7 @@ if(isset($_GET['id']))
  
 								
                                 	</div>
-                                    <div class="showbasiccontent">
+                                    <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                 		<input type="checkbox" />
                                         <div class="prfl-pic">
                                             <div id="slideshow" class="pics">
@@ -508,7 +508,7 @@ if(isset($_GET['id']))
 					<div id="request_content1">
                     	<div class="lightbox_cont full">
                         	<h2>All Communication with this member</h2>
-                            <div class="showbasiccontent">
+                            <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                         <div class="prfl-pic">
                                             <div id="slideshow" class="pics">
                                                 <img src="images/usericon.png" width="70" height="70" />

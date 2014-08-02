@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	$logged_in_member=$obj->select($sql_login);
 	
 ?>
-        <div class="content">
+        <div class="content col-md-9 col-sm-12 col-xs-12">
         	<div class="profile_details">
     			<div class="new_acc"> 
                 <h3>Your Photo Galllery</h3>

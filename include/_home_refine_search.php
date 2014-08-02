@@ -117,7 +117,7 @@ if($_GET['hint'] == "new_msg")
 										
 										?>
                                      
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                           <!--  <input type="checkbox" />-->
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -138,7 +138,7 @@ if($_GET['hint'] == "new_msg")
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />
@@ -242,7 +242,7 @@ Listed here are the messages you have read but not replied. We recommend you rep
 										
 										?>
                                      
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                            <!-- <input type="checkbox" />-->
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -263,7 +263,7 @@ Listed here are the messages you have read but not replied. We recommend you rep
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />
@@ -365,7 +365,7 @@ if($_GET['hint'] == "not_interested_msgs")
 										
 										?>
                                      
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <!--<input type="checkbox" />--> 
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -386,7 +386,7 @@ if($_GET['hint'] == "not_interested_msgs")
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />
@@ -482,7 +482,7 @@ if($_GET['hint'] == "sent_msgs")
 										
 										?>
                                      
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                           <!--  <input type="checkbox" />-->
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -503,7 +503,7 @@ if($_GET['hint'] == "sent_msgs")
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />
@@ -609,7 +609,7 @@ Listed here are the new interests you have sent.
 										
 										?>
                                      
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                          <!--   <input type="checkbox" />-->
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -630,7 +630,7 @@ Listed here are the new interests you have sent.
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />
@@ -741,7 +741,7 @@ Listed here are the new interests you have received. We recommend you to reply t
 										
 										?>
                                      
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <input type="checkbox" />
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -762,7 +762,7 @@ Listed here are the new interests you have received. We recommend you to reply t
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />
@@ -862,7 +862,7 @@ Listed here are the members whose interest you have accepted.
                                   
                                 </div>
                                 <div class="basicview"  id="accept_div_<?php echo $each_msg[0]['member_id']."_".$messages[0]['exp_int_id']; ?>">
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                            <!-- <input type="checkbox" />-->
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -883,7 +883,7 @@ Listed here are the members whose interest you have accepted.
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />
@@ -981,7 +981,7 @@ Listed here are the members whose interest you have accepted.
                                   
                                 </div>
                                 <div class="basicview"  id="accept_div_<?php echo $each_msg[0]['member_id']."_".$messages[0]['exp_int_id']; ?>">
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                            <!-- <input type="checkbox" />-->
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -1002,7 +1002,7 @@ Listed here are the members whose interest you have accepted.
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />
@@ -1113,7 +1113,7 @@ Listed here are the members whose interest you have declined.
 										
 										?>
                                      
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                            <!-- <input type="checkbox" />-->
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -1134,7 +1134,7 @@ Listed here are the members whose interest you have declined.
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />
@@ -1240,7 +1240,7 @@ Listed here are the members whose interest you have declined.
 										
 										?>
                                      
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                            <!-- <input type="checkbox" />-->
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -1261,7 +1261,7 @@ Listed here are the members whose interest you have declined.
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />
@@ -1354,7 +1354,7 @@ Listed here are the members whose interest you have declined.
 										
 										?>
                                      
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                            <!-- <input type="checkbox" />-->
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -1375,7 +1375,7 @@ Listed here are the members whose interest you have declined.
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />
@@ -1469,7 +1469,7 @@ Listed here are the members whose interest you have declined.
 										
 										?>
                                      
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                            <!-- <input type="checkbox" />-->
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -1490,7 +1490,7 @@ Listed here are the members whose interest you have declined.
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />
@@ -1584,7 +1584,7 @@ Listed here are the members whose interest you have declined.
 										
 										?>
                                      
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                            <!-- <input type="checkbox" />-->
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
@@ -1605,7 +1605,7 @@ Listed here are the members whose interest you have declined.
                         <div id="inline_content">
                             <div class="lightbox_cont full">
                                 <h2>All Communication with this member</h2>
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                                             <div class="prfl-pic">
                                                 <div id="slideshow" class="pics">
                                                     <img src="images/usericon.png" width="70" height="70" />

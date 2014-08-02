@@ -270,7 +270,7 @@ if($_GET['flag'] == 'del_prof')
 
 
 
-<div class="content">
+<div class="content col-md-9 col-sm-12 col-xs-12">
 
   <?=$PAGING->show_paging("reply_accept.php");?>
 
@@ -322,7 +322,7 @@ if($_GET['flag'] == 'del_prof')
 
     <div class="" id="accept_div_<?php echo $each_msg[0]['member_id']."_".$messages[$i]['exp_int_id']; ?>"> <!-- basicview -->
 
-      <div class="showbasiccontent">
+      <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
 
         <div class="prfl-pic">
 
@@ -508,7 +508,7 @@ $str="1 m";
 
                 <h2>All Communication with this member</h2>
 
-                <div class="showbasiccontent">
+                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
 
                   <div class="prfl-pic">
 

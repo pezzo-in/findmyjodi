@@ -310,7 +310,7 @@ if(count($db_banner) > 0)
 
                                      
 
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
 
                                            <?php /*?> <input type="checkbox" /><?php */?>
 
@@ -402,7 +402,7 @@ if(count($db_banner) > 0)
 
                         	<h2>All Communication with this member</h2>
 
-                            <div class="showbasiccontent">
+                            <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
 
                                         <div class="prfl-pic">
 
@@ -1082,7 +1082,7 @@ echo $db_education[0]['Title'];
 
                                      
 
-                                        <div class="showbasiccontent">
+                                        <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
 
                                             <?php /*?><input type="checkbox" /><?php */?>
 
@@ -1130,7 +1130,7 @@ echo $db_education[0]['Title'];
 
                                 <h2>All Communication with this member</h2>
 
-                                <div class="showbasiccontent">
+                                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
 
                                             <div class="prfl-pic">
 
@@ -1386,7 +1386,7 @@ echo $db_education[0]['Title'];
 
                                 <div class=""> <!--basicview-->
 
-                                	<div class="showbasiccontent">
+                                	<div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
 
                                 		<?php /*?><input type="checkbox" /><?php */?>
 

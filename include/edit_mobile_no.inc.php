@@ -23,7 +23,7 @@ if(isset($_POST['save_mobile_no']))
 		
 ?>
 
-      <div class="content">
+      <div class="content col-md-9 col-sm-12 col-xs-12">
 		      <h3>Edit Mobile No</h3>
 	       		 <form name="photo_upload_form" method="post" style="padding-top:10px" enctype="multipart/form-data">
        				<div class="new_acc">

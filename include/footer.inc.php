@@ -25,10 +25,10 @@
 </div>
 <script>
 $(document).ready(function(e) {
-    $('.showbasiccontent').each(function(index, element) {
+    $('.showbasiccontent col-md-12 col-sm-12 col-xs-12').each(function(index, element) {
         if(index==0)
 		{
-			$(this).addClass('first_showbasiccontent');
+			$(this).addClass('first_showbasiccontent col-md-12 col-sm-12 col-xs-12');
 		}
     });
 });

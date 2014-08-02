@@ -190,7 +190,7 @@ if(isset($_POST['send_reply']))
 
 	if(!empty($messages)) { ?>
 
-<div class="content">
+<div class="content col-md-9 col-sm-12 col-xs-12">
 
 	<div class="msgChat">
 

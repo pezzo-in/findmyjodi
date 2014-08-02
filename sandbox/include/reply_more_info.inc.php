@@ -132,7 +132,7 @@ if($_GET['flag'] == 'del_prof')
 		//$select_new_msgs = "select *, express_interest.id as exp_int_id from express_interest where to_mem = '".$_SESSION['logged_user'][0]['member_id']."'";								
 		//$messages = $obj->select($select_new_msgs);
 		if(!empty($messages)) { ?>
-<div class="content">
+<div class="content col-md-9 col-sm-12 col-xs-12">
   <?=$PAGING->show_paging("reply_more_info.php");?>
   <div class=""> <!-- title_select_all -->
     <div class="floatr">
@@ -158,7 +158,7 @@ if($_GET['flag'] == 'del_prof')
 										?>
     </div>
     <div class="" id="accept_div_<?php echo $each_msg[0]['member_id']."_".$messages[$i]['exp_int_id']; ?>"> <!-- basicview -->
-      <div class="showbasiccontent">
+      <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
         <div class="prfl-pic">
           <div id="slideshow" class="pics">
           <?php
@@ -250,7 +250,7 @@ $str="1 m";
             <div id="request_content1<?php echo $each_msg[0]['id']; ?>">
               <div class="lightbox_cont full">
                 <h2>All Communication with this member</h2>
-                <div class="showbasiccontent">
+                <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                   <div class="prfl-pic">
                     <div id="slideshow" class="pics"> <img src="images/usericon.png" width="70" height="70" /> <img src="http://malsup.github.com/images/beach1.jpg" width="70" height="70" /> <img src="http://malsup.github.com/images/beach2.jpg" width="70" height="70" /> <img src="http://malsup.github.com/images/beach3.jpg" width="70" height="70" /> </div>
                     <div class="img-count controls"><a href="javascript:;" class="prev"><img src="images/blue-arrow2.png" /></a><span class="caption">&nbsp;</span><a href="javascript:;" class="next"><img src="images/blue-arrow1.png" /></a></div>

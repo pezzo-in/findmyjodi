@@ -130,7 +130,7 @@ if($_GET['flag'] == 'del_prof')
 		$messages = $obj->select($select_new_msgs);
 		if(!empty($messages)) { ?>
 
-<div class="content">
+<div class="content col-md-9 col-sm-12 col-xs-12">
   <ul class="pagination">
     <li class="active"><a href="#">1</a></li>
     <li><a href="#">2</a></li>
@@ -163,7 +163,7 @@ if($_GET['flag'] == 'del_prof')
 									  ?>
   </div>
   <div class="basicview">
-    <div class="showbasiccontent">
+    <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
       <div class="prfl-pic">
         <div id="slideshow" class="pics"> <img src="images/usericon.png" width="70" /> <img src="http://malsup.github.com/images/beach1.jpg" width="70" /> <img src="http://malsup.github.com/images/beach2.jpg" width="70" /> <img src="http://malsup.github.com/images/beach3.jpg" width="70" /> </div>
         <div class="img-count controls"><a href="#" class="prev"><img src="images/blue-arrow2.png" /></a><span class="caption">&nbsp;</span><a href="#" class="next"><img src="images/blue-arrow1.png" /></a></div>
@@ -217,7 +217,7 @@ if($_GET['flag'] == 'del_prof')
           <div id="request_content1<?php echo $each_msg[0]['id']; ?>">
             <div class="lightbox_cont full">
               <h2>All Communication with this member</h2>
-              <div class="showbasiccontent">
+              <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
                 <div class="prfl-pic">
                   <div id="slideshow" class="pics"> <img src="images/usericon.png" width="70" height="70" /> <img src="http://malsup.github.com/images/beach1.jpg" width="70" height="70" /> <img src="http://malsup.github.com/images/beach2.jpg" width="70" height="70" /> <img src="http://malsup.github.com/images/beach3.jpg" width="70" height="70" /> </div>
                   <div class="img-count controls"><a href="#" class="prev"><img src="images/blue-arrow2.png" /></a><span class="caption">&nbsp;</span><a href="#" class="next"><img src="images/blue-arrow1.png" /></a></div>

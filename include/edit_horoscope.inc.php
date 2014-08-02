@@ -38,7 +38,7 @@ $logged_in_member=$obj->select($sql_login);
 
 ?>
 
-      <div class="content">
+      <div class="content col-md-9 col-sm-12 col-xs-12">
 
 		     <h3>Add/Edit Horoscope</h3>
 

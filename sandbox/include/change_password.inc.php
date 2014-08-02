@@ -40,7 +40,7 @@ if(isset($_POST['change_password']))
 
 
 
-      <div class="content">
+      <div class="content col-md-9 col-sm-12 col-xs-12">
 
 		      <h3>Change Password <label style="margin-left:10px;color:green;"><?php echo $success; ?></label> </h3>
 

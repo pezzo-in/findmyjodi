@@ -149,7 +149,7 @@ if(isset($_POST['submit']))
 	$logged_in_member=$obj->select($sql_login);		
 ?>
         <?php if(!empty($logged_in_member)) { ?>	  
-        <div class="content">
+        <div class="content col-md-9 col-sm-12 col-xs-12">
         
         	<div class="profile_details">
             

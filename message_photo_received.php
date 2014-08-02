@@ -43,7 +43,7 @@ $(function() {
 ?>
 
 <div class=""> <!--basicview-->
-  <div class="showbasiccontent">
+  <div class="showbasiccontent col-md-12 col-sm-12 col-xs-12">
     <?php /*?><input type="checkbox" /><?php */?>
     <div class="prfl-pic">
       <div id="slideshow" class="pics">

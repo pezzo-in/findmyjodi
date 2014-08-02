@@ -48,7 +48,7 @@ if(isset($_POST['save_family_details']))
 
 ?>
 
-      <div class="content">
+      <div class="content col-md-9 col-sm-12 col-xs-12">
 
 		     <h3>Add/Edit Family Details </h3>
 

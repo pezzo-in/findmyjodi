@@ -102,7 +102,7 @@ $ag=explode("to",$logged_in_member[0]['preferred_age']);
 
 ?>
 
-      <div class="content">
+      <div class="content col-md-9 col-sm-12 col-xs-12">
 
 		      <h3>Add/Edit Partner Preference</h3>
 

@@ -18,7 +18,7 @@ if(isset($_POST['login']))
 	}
 }
 ?>
-<div class="content">
+<div class="content col-md-9 col-sm-12 col-xs-12">
     <!-- BEGIN LOGIN FORM -->
     <form class="form-vertical login-form" name="login"  method="post">
       <h3 class="form-title">Login to admin account</h3>

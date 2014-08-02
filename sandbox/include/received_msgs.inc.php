@@ -88,7 +88,7 @@ if(isset($_POST['send_reply']))
  	if(!empty($messages)) 
 	{
 ?>
-<div class="content">
+<div class="content col-md-9 col-sm-12 col-xs-12">
 	<div class="msgChat">
     	<ul id="msgChat">
         <?php
@@ -306,7 +306,7 @@ if(!empty($dbconversation))
  </div>
  
  <?php } else { ?>
-<div class="content">
+<div class="content col-md-9 col-sm-12 col-xs-12">
 <?php echo"<div style='font-size:16px;'>Sorry you have no messages</div>"; ?>
 </div>
   <?php } $j++; ?>

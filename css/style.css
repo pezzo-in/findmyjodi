@@ -500,6 +500,10 @@ ul.menu ul ul {
     overflow: hidden;
 }
 
+.mid label {
+    font-weight: normal;
+}
+
 .mid h2 {
     background: url("../images/head_btm_border.png") no-repeat scroll center bottom rgba(0, 0, 0, 0);
     clear: both;
@@ -1992,20 +1996,6 @@ ul.list1 li a:link, ul.list1 li a:visited {
     width: 100%;
 }
 
-.partner_search1 input[type="text"], .partner_search1 input[type="password"] {
-    border: 1px solid #cfcdcd;
-    color: #848484;
-    float: left;
-    font-size: 14px;
-    font-weight: normal;
-    height: 20px;
-    line-height: 20px;
-    margin-bottom: 5px;
-    padding: 4px 10px;
-    vertical-align: top;
-    width: 270px;
-}
-
 .partner_search1 select {
     border: 1px solid #cfcdcd;
     color: #848484;
@@ -2033,34 +2023,6 @@ ul.list1 li a:link, ul.list1 li a:visited {
     float: left;
     margin-right: 5px;
     margin-top: 3px;
-}
-
-.partner_search1 input[type="submit"] {
-    background: url("../images/search_btn.png") no-repeat scroll left top rgba(0, 0, 0, 0);
-    border: medium none;
-    color: #f46989;
-    cursor: pointer;
-    float: left;
-    font-size: 0;
-    height: 33px;
-    margin-top: 10px;
-    overflow: hidden;
-    text-align: left;
-    text-indent: -9999px;
-    width: 90px;
-}
-
-.partner_search1 .save_and_search {
-    background: url("../images/save_search_btn1.png") no-repeat scroll left top rgba(0, 0, 0, 0);
-    float: left;
-    font-size: 0;
-    height: 33px;
-    margin-left: 5px;
-    margin-top: 10px;
-    overflow: hidden;
-    padding-top: 5px !important;
-    text-indent: -9999px;
-    width: 131px;
 }
 
 .partner_search1 .control-group {
@@ -2301,20 +2263,6 @@ ul.list1 li a:link, ul.list1 li a:visited {
     width: 100%;
 }
 
-.partner_search1 input[type="text"], .partner_search1 input[type="password"] {
-    border: 1px solid #cfcdcd;
-    color: #848484;
-    float: left;
-    font-size: 14px;
-    font-weight: normal;
-    height: 20px;
-    line-height: 20px;
-    margin-bottom: 5px;
-    padding: 4px 10px;
-    vertical-align: top;
-    width: 270px;
-}
-
 .partner_search1 select {
     border: 1px solid #cfcdcd;
     color: #848484;
@@ -2342,21 +2290,6 @@ ul.list1 li a:link, ul.list1 li a:visited {
     float: left;
     margin-right: 5px;
     margin-top: 4px;
-}
-
-.partner_search1 input[type="submit"] {
-    background: url("../images/search_btn.png") no-repeat scroll left top rgba(0, 0, 0, 0);
-    border: medium none;
-    color: #f46989;
-    cursor: pointer;
-    float: left;
-    font-size: 0;
-    height: 33px;
-    margin-top: 10px;
-    overflow: hidden;
-    text-align: left;
-    text-indent: -9999px;
-    width: 90px;
 }
 
 .partner_search1 .control-group {
@@ -4655,10 +4588,6 @@ ul.profl-list .griddetail {
     text-align: left !important;
     text-indent: -9999px !important;
     width: 74px;
-}
-
-.search_new1 {
-    background: url("../images/search_btn1.png") no-repeat scroll left top rgba(0, 0, 0, 0) !important;
 }
 
 .send_new1 {
