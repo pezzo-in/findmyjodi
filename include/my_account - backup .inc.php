@@ -97,7 +97,7 @@ if(isset($_POST['send_reply']))
         
 
         <?php if(!empty($logged_in_member)) { ?>	
-        <div class="content">
+        <div class="content col-md-9 col-sm-12 col-xs-12">
         
         	<div class="profile_details">
             	<?php if($_GET['msg'] == 'D'){

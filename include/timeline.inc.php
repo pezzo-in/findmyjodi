@@ -424,7 +424,7 @@ $select_like_comment="select * from tbl_user_comment_like where Postid='".$db_co
     </div>
 </div>
 <?php } else { ?>
-<div class="content">
+<div class="content col-md-9 col-sm-12 col-xs-12">
 	<div class="about_right">
         
         <?php

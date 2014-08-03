@@ -123,7 +123,7 @@ include("common_user_fetch.php");
                 </div>
             </div>
         </div>	
-        <div class="content">
+        <div class="content col-md-9 col-sm-12 col-xs-12">
         	<div class="profile_details">
             	<div class="profile_img">
                     <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">

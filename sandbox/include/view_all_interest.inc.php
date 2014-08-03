@@ -373,7 +373,7 @@ if(isset($_POST['delete_account']))
         
 
         
-        <div class="content">
+        <div class="content col-md-9 col-sm-12 col-xs-12">
         <?php if(!empty($messages)){ 
 				foreach($messages as $msg) { 
 				

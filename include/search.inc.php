@@ -54,7 +54,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Gender</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Gender</label>
 
                     <?php
 
@@ -64,15 +64,15 @@ if(count($db_banner) > 0)
 
                     <?php if($_SESSION['logged_user'][0]['member_id'] != '' ){ ?>
 
-                    <label class="radio1"><input type="radio" id="regular_rdGender" name="Search_rdGender" value="M"<?php if($db_user2['0']['gender'] == 'F'){ ?> checked="checked"<?php } ?>/>Male</label>
+                    <label class="radio1"><input class="form-control" type="radio" id="regular_rdGender" name="Search_rdGender" value="M"<?php if($db_user2['0']['gender'] == 'F'){ ?> checked="checked"<?php } ?>/>Male</label>
 
-                    <label class="radio1"><input type="radio" id="regular_rdGender" name="Search_rdGender" value="F" <?php if($db_user2['0']['gender'] == 'M'){ ?> checked="checked"<?php } ?> />Female</label>
+                    <label class="radio1"><input class="form-control" type="radio" id="regular_rdGender" name="Search_rdGender" value="F" <?php if($db_user2['0']['gender'] == 'M'){ ?> checked="checked"<?php } ?> />Female</label>
 
                     <?php }else{ ?>
 
-                    <label class="radio1"><input type="radio" id="regular_rdGender" name="Search_rdGender" value="M"/>Male</label>
+                    <label class="radio1"><input class="form-control" type="radio" id="regular_rdGender" name="Search_rdGender" value="M"/>Male</label>
 
-                    <label class="radio1"><input type="radio" id="regular_rdGender" name="Search_rdGender" value="F" checked="checked"/>Female</label>
+                    <label class="radio1"><input class="form-control" type="radio" id="regular_rdGender" name="Search_rdGender" value="F" checked="checked"/>Female</label>
 
                     <?php } ?>
 
@@ -80,19 +80,19 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Age</label> 
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Age</label> 
 
-                        <input type="text" class="age1" name="Search_from_age" id="regular_from_age" onkeypress="return isNumber(event)" value="18" >
+                        <input class="form-control col-md-1 age1" type="text" name="Search_from_age" id="regular_from_age" onkeypress="return isNumber(event)" value="18" >
 
                             <span class="bet_text">to</span>
 
-                        <input type="text" class="age1 no-clear" name="Search_to_age" onkeypress="return isNumber(event)" id="regular_to_age" value="40" ><span class="bet_text">years</span>
+                        <input class="form-control col-md-1 age1 no-clear" type="text" name="Search_to_age" onkeypress="return isNumber(event)" id="regular_to_age" value="40" ><span class="bet_text">years</span>
 
                     </div>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Height</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Height</label>
 
                     <select name="Search_from_drpHeight" style="width:175px;">                       
 
@@ -138,21 +138,21 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Marital Status</label>
+                        <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Marital Status</label>
 
-                        <label class="checkbox1"><input type="checkbox" name="Search_chk_marital_status[]" id="regular_chk_marital_status" value="Unmarried"/>Unmarried</label>
+                        <label class="checkbox1"><input class="form-control" type="checkbox" name="Search_chk_marital_status[]" id="regular_chk_marital_status" value="Unmarried"/>Unmarried</label>
 
-                        <label class="checkbox1"><input type="checkbox" name="Search_chk_marital_status[]" id="regular_chk_marital_status" value="Widowed"/>Widow</label>
+                        <label class="checkbox1"><input class="form-control" type="checkbox" name="Search_chk_marital_status[]" id="regular_chk_marital_status" value="Widowed"/>Widow</label>
 
-                        <label class="checkbox1"><input type="checkbox" name="Search_chk_marital_status[]" id="regular_chk_marital_status" value="Divorced"/>Divorced</label>
+                        <label class="checkbox1"><input class="form-control" type="checkbox" name="Search_chk_marital_status[]" id="regular_chk_marital_status" value="Divorced"/>Divorced</label>
 
-                        <!--<label class="checkbox1"><input type="checkbox" name="Search_chk_marital_status[]" id="regular_chk_marital_status" value="Awaiting divorce"/>Awaiting divorce</label>-->
+                        <!--<label class="checkbox1"><input class="form-control" type="checkbox" name="Search_chk_marital_status[]" id="regular_chk_marital_status" value="Awaiting divorce"/>Awaiting divorce</label>-->
 
                     </div>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                            <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Mother Tongue</label>
+                            <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Mother Tongue</label>
 
                             <select name="Search_drpMotherTongue[]" id="regular_drpMotherTongue" >
 
@@ -178,7 +178,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Religion</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Religion</label>
 
                     <select name="Search_drpReligion" id="regular_drpReligion" onchange="change_religion(this.value,1);">
 
@@ -204,7 +204,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Caste</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Caste</label>
 
                     <div id="caste_drp_div">
 
@@ -234,7 +234,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Country</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Country</label>
 
                      <select name="Search_drpCountry" id="regular_drpCountry" >
 
@@ -260,7 +260,7 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Education</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Education</label>
 
                     
 
@@ -306,25 +306,25 @@ if(count($db_banner) > 0)
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Show Profile</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Show Profile</label>
 
-                    <label class="checkbox1"><input type="checkbox" name="chk_with_photo" value="1" />With Photo</label>
+                    <label class="checkbox1"><input class="form-control" type="checkbox" name="chk_with_photo" value="1" />With Photo</label>
 
-                    <label class="checkbox1"><input type="checkbox" name="chk_with_horoscope" value="1" />With Horoscope</label>
+                    <label class="checkbox1"><input class="form-control" type="checkbox" name="chk_with_horoscope" value="1" />With Horoscope</label>
 
                     </div>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
 
-<input type="submit" name="regular_search" id="regular_search" class="regular_search search_new1"  value="Search" />
+                    <input type="submit" class="btn btn-danger" name="regular_search" id="regular_search" value="Search" />
 
                     <?php if($_SESSION['logged_user'][0]['id']!=''){ ?>
 
-                    <a class="inline save_and_search regular_search saved_search_new1" href="#save_search_div">Save & Search</a>
+                    <a class="inline save_and_search regular_search saved_search_new1 btn btn-danger" href="#save_search_div">Save &amp; Search</a>
 
-                    <input type="hidden" name="regular_search_save" id="regular_search_save" value="" />
+                    <input class="form-control" type="hidden" name="regular_search_save" id="regular_search_save" value="" />
 
                     <?php } ?>
 
@@ -340,13 +340,13 @@ if(count($db_banner) > 0)
 
                                      <div class="left">
 
-                                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Search Lable</label>
+                                        <label>Search Lable</label>
 
-                                        <input type="text" value="" id="Search_lable" name="Search_lable">
+                                        <input class="form-control" type="text" value="" id="Search_lable" name="Search_lable">
 
                                      </div>
 
-                                     <input type="submit" name="regular_search_save_popup" onclick=" return regular_search_submit()" />
+                                     <input type="submit" class="btn btn-danger" name="regular_search_save_popup" onclick=" return regular_search_submit()" />
 
                                 </div>            
 
@@ -374,19 +374,19 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Gender</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Gender</label>
 
                     <?php if($_SESSION['logged_user'][0]['member_id'] != '' ){ ?>
 
-                     <label class="radio1"><input type="radio" id="advanced_rdGender" name="Search_rdGender" value="M" <?php if($db_user2['0']['gender'] == 'F'){ ?> checked="checked"<?php } ?> />Male</label>
+                     <label class="radio1"><input class="form-control" type="radio" id="advanced_rdGender" name="Search_rdGender" value="M" <?php if($db_user2['0']['gender'] == 'F'){ ?> checked="checked"<?php } ?> />Male</label>
 
-                    <label class="radio1"><input type="radio" id="advanced_rdGender" name="Search_rdGender" value="F" <?php if($db_user2['0']['gender'] == 'M'){ ?> checked="checked"<?php } ?> />Female</label>
+                    <label class="radio1"><input class="form-control" type="radio" id="advanced_rdGender" name="Search_rdGender" value="F" <?php if($db_user2['0']['gender'] == 'M'){ ?> checked="checked"<?php } ?> />Female</label>
 
                     <?php }else { ?>
 
-                    <label class="radio1"><input type="radio" id="advanced_rdGender" name="Search_rdGender" value="M" />Male</label>
+                    <label class="radio1"><input class="form-control" type="radio" id="advanced_rdGender" name="Search_rdGender" value="M" />Male</label>
 
-                    <label class="radio1"><input type="radio" id="advanced_rdGender" name="Search_rdGender" value="F" checked="checked" />Female</label>
+                    <label class="radio1"><input class="form-control" type="radio" id="advanced_rdGender" name="Search_rdGender" value="F" checked="checked" />Female</label>
 
                     <?php } ?>
 
@@ -394,19 +394,19 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Age</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Age</label>
 
-                        <input type="text" class="age1" name="Search_from_age" id="advanced_from_age" onkeypress="return isNumber(event)" value="18" >
+                        <input class="form-control age1 col-md-1" type="text" name="Search_from_age" id="advanced_from_age" onkeypress="return isNumber(event)" value="18" >
 
                             <span class="bet_text">to</span>
 
-<input type="text" class="age1 no-clear" name="Search_to_age" id="advanced_to_age" onkeypress="return isNumber(event)" value="40" ><span class="bet_text">years</span>
+<input class="form-control age1 no-clear col-md-1" type="text" name="Search_to_age" id="advanced_to_age" onkeypress="return isNumber(event)" value="40" ><span class="bet_text">years</span>
 
                     </div>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Height</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Height</label>
 
                     <select name="Search_from_drpHeight" style="width:175px;">                      
 
@@ -454,21 +454,21 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Marital Status</label>
+                        <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Marital Status</label>
 
            
 
-    <label class="checkbox1"><input type="checkbox" name="Search_chk_marital_status[]" id="advanced_chk_marital_status" value="Unmarried"/>Unmarried</label>
+    <label class="checkbox1"><input class="form-control" type="checkbox" name="Search_chk_marital_status[]" id="advanced_chk_marital_status" value="Unmarried"/>Unmarried</label>
 
-    <label class="checkbox1"><input type="checkbox" name="Search_chk_marital_status[]" id="advanced_chk_marital_status" value="Widowed"/>Widow</label>
+    <label class="checkbox1"><input class="form-control" type="checkbox" name="Search_chk_marital_status[]" id="advanced_chk_marital_status" value="Widowed"/>Widow</label>
 
-    <label class="checkbox1"><input type="checkbox" name="Search_chk_marital_status[]" id="advanced_chk_marital_status" value="Divorced"/>Divorced</label>  <!--<label class="checkbox1"><input type="checkbox" name="Search_chk_marital_status[]" id="advanced_chk_marital_status" value="Awaiting divorce"/>Awaiting divorce</label>-->
+    <label class="checkbox1"><input class="form-control" type="checkbox" name="Search_chk_marital_status[]" id="advanced_chk_marital_status" value="Divorced"/>Divorced</label>  <!--<label class="checkbox1"><input class="form-control" type="checkbox" name="Search_chk_marital_status[]" id="advanced_chk_marital_status" value="Awaiting divorce"/>Awaiting divorce</label>-->
 
                     </div>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                            <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Mother Tongue</label>
+                            <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Mother Tongue</label>
 
                             <select name="Search_drpMotherTongue[]" id="advanced_drpMotherTongue" >
 
@@ -494,7 +494,7 @@ The results of this search will be closer to your expectations. </p>
 
                      <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Religion</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Religion</label>
 
                     <select name="Search_drpReligion" id="advanced_drpReligion" onchange="change_religion(this.value,2);">
 
@@ -520,7 +520,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Caste</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Caste</label>
 
                    <div id="drp_adv_caste">
 
@@ -550,7 +550,7 @@ The results of this search will be closer to your expectations. </p>
 
                    <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Country</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Country</label>
 
                      <select name="Search_drpCountry" id="advanced_drpCountry" >
 
@@ -576,7 +576,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Education</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Education</label>
 
                     
 
@@ -624,7 +624,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Occupation</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Occupation</label>
 
                     <select name="advanced_drpOccupation" id="advanced_drpOccupation" >
 
@@ -652,7 +652,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Annual Income</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Annual Income</label>
 
                        <?php /*?><select name="advanced_drpIncome" id="advanced_drpIncome" >
 
@@ -674,7 +674,7 @@ The results of this search will be closer to your expectations. </p>
 
                       </select><?php */?>
 
-                      <input type="text" name="advanced_drpIncome" id="advanced_drpIncome" value="" style="width:350px;" />
+                      <input class="form-control" type="text" name="advanced_drpIncome" id="advanced_drpIncome" value="" style="width:350px;" />
 
                     </div>
 
@@ -682,7 +682,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Star</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Star</label>
 
                         <select name="advanced_drpStar" id="advanced_drpStar" >
 
@@ -710,13 +710,13 @@ The results of this search will be closer to your expectations. </p>
 
                    <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Manglik</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Manglik</label>
 
-                        <label class="radio1"><input type="radio" id="advanced_rdManglik" name="advanced_rdManglik" value="Y" />Yes</label>
+                        <label class="radio1"><input class="form-control" type="radio" id="advanced_rdManglik" name="advanced_rdManglik" value="Y" />Yes</label>
 
-                       <label class="radio1"><input type="radio" id="advanced_rdManglik" name="advanced_rdManglik" value="N" />No</label>
+                       <label class="radio1"><input class="form-control" type="radio" id="advanced_rdManglik" name="advanced_rdManglik" value="N" />No</label>
 
-                       <label class="radio1"><input type="radio" id="advanced_rdManglik" name="advanced_rdManglik" value="Any" />Doesn't matter</label>
+                       <label class="radio1"><input class="form-control" type="radio" id="advanced_rdManglik" name="advanced_rdManglik" value="Any" />Doesn't matter</label>
 
                     </div>
 
@@ -726,11 +726,11 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Show Profile</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Show Profile</label>
 
-                    <label class="checkbox1"><input type="checkbox" name="chk_with_photo" value="1" />With Photo</label>
+                    <label class="checkbox1"><input class="form-control" type="checkbox" name="chk_with_photo" value="1" />With Photo</label>
 
-                    <label class="checkbox1"><input type="checkbox" name="chk_with_horoscope" value="1" />With Horoscope</label>
+                    <label class="checkbox1"><input class="form-control" type="checkbox" name="chk_with_horoscope" value="1" />With Horoscope</label>
 
                     </div>
 
@@ -758,7 +758,7 @@ The results of this search will be closer to your expectations. </p>
 
                             <label class="checkbox1" style="width:220px;"> 
 
-                            <input type="checkbox" id="soulmate_chkInterest[]" name="soulmate_chkInterest[]" value="<?php echo $int['id']; ?>" />	<?php echo $int['name'];  ?>				
+                            <input class="form-control" type="checkbox" id="soulmate_chkInterest[]" name="soulmate_chkInterest[]" value="<?php echo $int['id']; ?>" />	<?php echo $int['name'];  ?>				
 
 							</label>
 
@@ -774,15 +774,15 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
 
-                    <input type="submit" name="advanced_search" id="advanced_search" class="advanced_search search_new1" value="Search" />
+                    <input type="submit" name="advanced_search" id="advanced_search" class="advanced_search search_new1 btn btn-danger" value="Search" />
 
                     <?php if($_SESSION['logged_user'][0]['id']!=''){ ?>
 
-                    <a class="inline save_and_search advanced_search saved_search_new1" href="#save_search_adv_div">Save & Search</a>
+                    <a class="inline save_and_search advanced_search saved_search_new1 btn btn-danger" href="#save_search_adv_div">Save & Search</a>
 
-                    <input type="hidden" name="regular_search_save" id="advanced_search_save" value="" />
+                    <input class="form-control" type="hidden" name="regular_search_save" id="advanced_search_save" value="" />
 
                     <?php } ?>
 
@@ -798,13 +798,13 @@ The results of this search will be closer to your expectations. </p>
 
                                      <div class="left">
 
-                                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Search Lable</label>
+                                        <label>Search Lable</label>
 
-                                        <input type="text" value="" id="Adv_Search_lable" name="Adv_Search_lable">
+                                        <input class="form-control" type="text" value="" id="Adv_Search_lable" name="Adv_Search_lable">
 
                                      </div>
 
-                                     <input type="submit" name="advanced_search_save_save_popup" onclick="advanced_search_save_submit()" />
+                                     <input type="submit" class="btn btn-danger" name="advanced_search_save_save_popup" onclick="advanced_search_save_submit()" />
 
                                 </div>            
 
@@ -830,29 +830,29 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Gender</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Gender</label>
 
-                    <label class="radio1"><input type="radio" id="soulmate_rdGender" name="soulmate_rdGender" value="M" checked />Male</label>
+                    <label class="radio1"><input class="form-control" type="radio" id="soulmate_rdGender" name="soulmate_rdGender" value="M" checked />Male</label>
 
-                    <label class="radio1"><input type="radio" id="soulmate_rdGender" name="soulmate_rdGender" value="F" />Female</label>
+                    <label class="radio1"><input class="form-control" type="radio" id="soulmate_rdGender" name="soulmate_rdGender" value="F" />Female</label>
 
                     </div>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Age</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Age</label>
 
-                        <input type="text" class="age1" name="soulmate_from_age" id="soulmate_from_age" >
+                        <input class="form-control" type="text" class="age1" name="soulmate_from_age" id="soulmate_from_age" >
 
                             <span class="bet_text">to</span>
 
-                        <input type="text" class="age1 no-clear" name="soulmate_to_age" id="soulmate_to_age" ><span class="bet_text">years</span>
+                        <input class="form-control" type="text" class="age1 no-clear" name="soulmate_to_age" id="soulmate_to_age" ><span class="bet_text">years</span>
 
                     </div>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Height</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Height</label>
 
                     <select name="soul_drpHeight" style="width:175px;">
 
@@ -926,23 +926,23 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Marital Status</label>
+                        <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Marital Status</label>
 
                     
 
-                        <label class="checkbox1"><input type="checkbox" name="soulmate_chk_marital_status[]" id="soulmate_chk_marital_status" value="Unmarried"/>Unmarried</label>
+                        <label class="checkbox1"><input class="form-control" type="checkbox" name="soulmate_chk_marital_status[]" id="soulmate_chk_marital_status" value="Unmarried"/>Unmarried</label>
 
-                        <label class="checkbox1"><input type="checkbox" name="soulmate_chk_marital_status[]" id="soulmate_chk_marital_status" value="Widow"/>Widow</label>
+                        <label class="checkbox1"><input class="form-control" type="checkbox" name="soulmate_chk_marital_status[]" id="soulmate_chk_marital_status" value="Widow"/>Widow</label>
 
-                        <label class="checkbox1"><input type="checkbox" name="soulmate_chk_marital_status[]" id="soulmate_chk_marital_status" value="Divorced"/>Divorced</label>
+                        <label class="checkbox1"><input class="form-control" type="checkbox" name="soulmate_chk_marital_status[]" id="soulmate_chk_marital_status" value="Divorced"/>Divorced</label>
 
-                        <label class="checkbox1"><input type="checkbox" name="soulmate_chk_marital_status[]" id="soulmate_chk_marital_status" value="Awaiting divorce"/>Awaiting divorce</label>
+                        <label class="checkbox1"><input class="form-control" type="checkbox" name="soulmate_chk_marital_status[]" id="soulmate_chk_marital_status" value="Awaiting divorce"/>Awaiting divorce</label>
 
                     </div>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Religion</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Religion</label>
 
                     <select name="soulmate_drpReligion" id="soulmate_drpReligion" >
 
@@ -968,7 +968,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                            <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Mother Tongue</label>
+                            <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Mother Tongue</label>
 
                             <select name="soulmate_drpMotherTongue" id="soulmate_drpMotherTongue" >
 
@@ -994,7 +994,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Caste</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Caste</label>
 
                     <select name="soulmate_drpCaste" id="soulmate_drpCaste" >
 
@@ -1020,7 +1020,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Country</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Country</label>
 
                      <select name="soulmate_drpCountry" id="soulmate_drpCountry" >
 
@@ -1046,7 +1046,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Education</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Education</label>
 
                     
 
@@ -1074,7 +1074,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Mutual Interest</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Mutual Interest</label>
 
                     
 
@@ -1098,7 +1098,7 @@ The results of this search will be closer to your expectations. </p>
 
                             <label class="checkbox1"> 
 
-                            <input type="checkbox" id="soulmate_chkInterest[]" name="soulmate_chkInterest[]" value="<?php echo $int['id']; ?>" />	<?php echo $int['name'];  ?>				
+                            <input class="form-control" type="checkbox" id="soulmate_chkInterest[]" name="soulmate_chkInterest[]" value="<?php echo $int['id']; ?>" />	<?php echo $int['name'];  ?>				
 
                          </label>
 
@@ -1114,19 +1114,19 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Show Profile</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Show Profile</label>
 
-                    <label class="checkbox1"><input type="checkbox" name="chk_with_photo" value="1" />With Photo</label>
+                    <label class="checkbox1"><input class="form-control" type="checkbox" name="chk_with_photo" value="1" />With Photo</label>
 
-                    <label class="checkbox1"><input type="checkbox" name="chk_with_horoscope" value="1" />With Horoscope</label>
+                    <label class="checkbox1"><input class="form-control" type="checkbox" name="chk_with_horoscope" value="1" />With Horoscope</label>
 
                     </div>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
 
-                    <input type="submit" name="soulmate_search" id="soulmate_search" />
+                    <input type="submit" class="btn btn-danger" name="soulmate_search" id="soulmate_search" />
 
                     </div>
 
@@ -1148,9 +1148,9 @@ The results of this search will be closer to your expectations. </p>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Enter Keyword</label>
+                        <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Enter Keyword</label>
 
-                        <input type="text" name="txtKeyword" id="txtKeyword" onkeypress="return IsAlphaNumeric(event);" ondrop="return false;"
+                        <input class="form-control" type="text" name="txtKeyword" id="txtKeyword" onkeypress="return IsAlphaNumeric(event);" ondrop="return false;"
 
         onpaste="return false;" />
 
@@ -1170,7 +1170,7 @@ The results of this search will be closer to your expectations. </p>
 
 					$db_user5 = $obj->select($user4); ?>
 
-                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Show Profile</label>
+                        <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Show Profile</label>
 
                        <?php if($_SESSION['logged_user'][0]['member_id'] != '' ){ 
 
@@ -1178,29 +1178,29 @@ The results of this search will be closer to your expectations. </p>
 
 					   ?>
 
-                    <label class="radio1"><input type="hidden" id="regular_rdGender" name="Search_rdGender" value="M"<?php if($db_user5['0']['gender'] == 'F'){ ?> checked="checked"<?php } ?>/></label><?php }else { ?>
+                    <label class="radio1"><input class="form-control" type="hidden" id="regular_rdGender" name="Search_rdGender" value="M"<?php if($db_user5['0']['gender'] == 'F'){ ?> checked="checked"<?php } ?>/></label><?php }else { ?>
 
-                    <label class="radio1"><input type="hidden" id="regular_rdGender" name="Search_rdGender" value="F" <?php if($db_user5['0']['gender'] == 'M'){ ?> checked="checked"<?php } ?> /></label>
+                    <label class="radio1"><input class="form-control" type="hidden" id="regular_rdGender" name="Search_rdGender" value="F" <?php if($db_user5['0']['gender'] == 'M'){ ?> checked="checked"<?php } ?> /></label>
 
                         <?php }} ?>
 
-                        <label class="checkbox1"><input type="checkbox" name="chk_with_photo" value="1" />With Photo</label>
+                        <label class="checkbox1"><input class="form-control" type="checkbox" name="chk_with_photo" value="1" />With Photo</label>
 
-                        <label class="checkbox1"><input type="checkbox" name="chk_with_horoscope" value="1" />With Horoscope</label>
+                        <label class="checkbox1"><input class="form-control" type="checkbox" name="chk_with_horoscope" value="1" />With Horoscope</label>
 
                         </div>
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-3 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
+                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
 
-<input type="submit" name="keyword_search" id="keyword_search" class="keyword_search search_new1" value="Search" onclick="return validate1111();" />
+<input type="submit" class="btn btn-danger keyword_search search_new1 btn btn-danger" name="keyword_search" id="keyword_search" value="Search" onclick="return validate1111();" />
 
                     <?php if($_SESSION['logged_user'][0]['id']!=''){ ?>
 
-                    <a class="inline save_and_search keyword_search saved_search_new1" href="#save_search_key_div">Save & Search</a>
+                    <a class="inline save_and_search keyword_search saved_search_new1 btn btn-danger" href="#save_search_key_div">Save & Search</a>
 
-                    <input type="hidden" name="regular_search_save" id="keyword_search_save" value="" />
+                    <input class="form-control" type="hidden" name="regular_search_save" id="keyword_search_save" value="" />
 
                     <?php } ?>
 
@@ -1216,13 +1216,13 @@ The results of this search will be closer to your expectations. </p>
 
                                      <div class="left">
 
-                                        <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Search Lable</label>
+                                        <label>Search Lable</label>
 
-                                        <input type="text" value="" id="keyword_search_lable" name="keyword_search_lable">
+                                        <input class="form-control" type="text" value="" id="keyword_search_lable" name="keyword_search_lable">
 
                                      </div>
 
-                                     <input type="submit" name="keyword_search_save_save_popup" onclick=" return keyword_search_save_submit()" />
+                                     <input type="submit" class="btn btn-danger" name="keyword_search_save_save_popup" onclick=" return keyword_search_save_submit()" />
 
                                 </div>            
 
@@ -1250,11 +1250,11 @@ The results of this search will be closer to your expectations. </p>
 
                             <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                            <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Search By</label>
+                            <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Search By</label>
 
-                            <label class="radio1"><input type="radio" id="who_online" name="who_online" value="1" checked />Online Member</label>
+                            <label class="radio1"><input class="form-control" type="radio" id="who_online" name="who_online" value="1" checked />Online Member</label>
 
-                            <label class="radio1"><input type="radio" id="who_online" name="who_online" value="0" />Offline Member</label>
+                            <label class="radio1"><input class="form-control" type="radio" id="who_online" name="who_online" value="0" />Offline Member</label>
 
                             </div>
 
@@ -1264,9 +1264,9 @@ The results of this search will be closer to your expectations. </p>
 
                             <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                            <label class="col-md-3 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
+                            <label class="col-md-2 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
 
-                            <input type="submit" name="who_online_search" id="who_online_search" class="search_new1" value="Search" />
+                            <input type="submit" class="btn btn-danger" name="who_online_search" id="who_online_search" class="search_new1" value="Search" />
 
                             </div>
 
@@ -1290,9 +1290,9 @@ The results of this search will be closer to your expectations. </p>
 
                             <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                            <label class="col-md-3 col-sm-4 col-xs-12 nopadding">Member ID</label>
+                            <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Member ID</label>
 
-                            <input type="text" name="txt_by_id" id="txt_by_id" />
+                            <input class="form-control" type="text" name="txt_by_id" id="txt_by_id" />
 
                              <span id="err_id" class="err_msg" style="margin-left:150px;">Enter valid Member ID</span>
 
@@ -1304,9 +1304,9 @@ The results of this search will be closer to your expectations. </p>
 
                             <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                            <label class="col-md-3 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
+                            <label class="col-md-2 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
 
-                            <input type="submit" name="search_by_id" id="search_by_id" class="by_id_form search_new1" value="Search" />
+                            <input type="submit" class="btn btn-danger by_id_form search_new1" name="search_by_id" id="search_by_id" value="Search" />
 
                             </div>
 

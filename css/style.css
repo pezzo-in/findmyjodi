@@ -2289,7 +2289,7 @@ ul.list1 li a:link, ul.list1 li a:visited {
     cursor: pointer;
     float: left;
     margin-right: 5px;
-    margin-top: 4px;
+    margin-top: -7px;
 }
 
 .partner_search1 .control-group {
