@@ -361,7 +361,7 @@ $user_plan = "select new_membership_plans.*,member_plans.plan_id from new_member
 $db_user_plan = $obj->select($user_plan);
  ?>
 <?php if(!empty($members)){ ?>
-<div class="sidebar col-md-3 col-xs-12 col-sm-4">
+<div class="sidebar col-md-2 col-xs-12 col-sm-4">
         	<div class="sidebar-main hidden-xs">
             	<h2>Refine Search<a href="load_data.php?clear=all" style="float:right; font-size:12px; color:red;">Clear All</a></h2>
                 <form action="" method="post" name="profileform" id="profileform">
@@ -662,8 +662,8 @@ $db_user_plan = $obj->select($user_plan);
             </div>
         </div>
         
- <div class="content col-sm-8 col-xs-12 col-md-9" id="content_data">
-        <div class="mid_top_checkbox"><span style="float:left; margin-right:15px; font-weight:bold">Total Profiles : <?php echo count($members2); ?></span>
+ <div class="content col-sm-8 col-xs-12 col-md-10" id="content_data">
+        <div class="mid_top_checkbox pull-right"><span style="float:left; margin-right:15px; font-weight:bold">Total Profiles : <?php echo count($members2); ?></span>
             <a href="javascript:;" class="list_view hidden-xs">List View</a>
             <a href="javascript:;" class="grid_view hidden-xs">Grid View</a>
         </div>
@@ -671,7 +671,7 @@ $db_user_plan = $obj->select($user_plan);
         <input type="hidden" value="<?php echo count($members2); ?>" name="ttl_profile" id="ttl_profile">
                 <input type="hidden" value="8" name="limit" id="limit">
                 <input type="hidden" value="1" name="offset" id="offset">
-         <ul class="profl-list" id="refine_data">
+         <ul class="profl-list" id="refine_data b">
             <?php
 					for($j=0;$j<count($members2);$j++)
 					{
@@ -735,7 +735,7 @@ $db_user_plan = $obj->select($user_plan);
 						}
 					}
 					for($i=0;$i<count($members);$i++) { 	?>
-            	<li id="<?php echo $members[$i]['id']; ?>" class="message_box col-md-4 col-xs-12 col-md-6 nopadding">
+            	<li id="<?php echo $members[$i]['id']; ?>" class="message_box col-md-3 col-xs-12 col-md-6">
                     <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $members[$i]['id']; ?>" target="_blank" class="popper" data-popbox="pop<?php echo $members[$i]['id']; ?>">
                      <?php 

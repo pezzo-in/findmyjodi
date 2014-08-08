@@ -503,7 +503,7 @@ if(count($members)>0) {
 						}
 						
 						 ?>
-            	<li class="message_box <?php if($i==0) { ?>first<?php } ?> col-md-4 col-xs-12 col-md-6 nopadding" id="<?php echo $members[$i]['id']; ?>">
+            	<li class="message_box <?php if($i==0) { ?>first<?php } ?> col-md-3 col-xs-12 col-md-6" id="<?php echo $members[$i]['id']; ?>">
                     <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
                     <a href="view_profile.php?id=<?php echo $members[$i]['id']; ?>" target="_blank" class="popper" data-popbox="pop<?php echo $members[$i]['id']; ?>">
                      <?php //$plan="select * from member_plans where member_id='".$members[$i]['id']."'"; 

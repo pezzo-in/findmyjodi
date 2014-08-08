@@ -430,7 +430,7 @@ $members2 = $obj->select($sql2);
  <div class="mid_top_checkbox" style="clear: both;margin: 19px;float: right;margin-top: 0;"><span style="float:left; margin-right:15px; font-weight:bold">Total Profiles : <?php echo count($members2); ?></span><a href="javascript:;" class="list_view">List View</a><a href="javascript:;" class="grid_view">Grid View</a></div><br clear="all" />     
         <?php if(!empty($members)) { ?>
                 
-            <ul class="profl-list" id="refine_data">
+            <ul class="profl-list" id="refine_data c">
             <?php
 			for($j=0;$j<count($members2);$j++)
 					{

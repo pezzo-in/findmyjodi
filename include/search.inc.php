@@ -78,25 +78,27 @@ if(count($db_banner) > 0)
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Age</label> 
 
                         <input class="form-control col-md-1 age1" type="text" name="Search_from_age" id="regular_from_age" onkeypress="return isNumber(event)" value="18" >
 
-                            <span class="bet_text">to</span>
+                        <span class="bet_text">to</span>
 
                         <input class="form-control col-md-1 age1 no-clear" type="text" name="Search_to_age" onkeypress="return isNumber(event)" id="regular_to_age" value="40" ><span class="bet_text">years</span>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Height</label>
 
                     <select name="Search_from_drpHeight" style="width:175px;">                       
 
-                       		<?php 
+                       		<?php
 
 							$select_height="select * from height";
 
@@ -115,9 +117,6 @@ if(count($db_banner) > 0)
                     <span class="bet_text">to</span>
 
                     <select name="Search_to_drpHeight" style="width:175px;">
-
-                       
-
                        		<?php 
 
 							$select_height="select * from height";
@@ -136,6 +135,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                         <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Marital Status</label>
@@ -150,6 +150,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                             <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Mother Tongue</label>
@@ -176,6 +177,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Religion</label>
@@ -202,6 +204,7 @@ if(count($db_banner) > 0)
 
                     </div>                            
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Caste</label>
@@ -232,6 +235,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Country</label>
@@ -258,6 +262,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Education</label>
@@ -304,6 +309,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Show Profile</label>
@@ -314,6 +320,7 @@ if(count($db_banner) > 0)
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
@@ -372,26 +379,28 @@ The results of this search will be closer to your expectations. </p>
 
                 <form name="advanced_search_form" id="advanced_search_form" method="post" action="load_data.php">
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                    <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Gender</label>
+                        <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Gender</label>
 
-                    <?php if($_SESSION['logged_user'][0]['member_id'] != '' ){ ?>
+                        <?php if($_SESSION['logged_user'][0]['member_id'] != '' ){ ?>
 
-                     <label class="radio1"><input class="form-control" type="radio" id="advanced_rdGender" name="Search_rdGender" value="M" <?php if($db_user2['0']['gender'] == 'F'){ ?> checked="checked"<?php } ?> />Male</label>
+                            <label class="radio1"><input class="form-control" type="radio" id="advanced_rdGender" name="Search_rdGender" value="M" <?php if($db_user2['0']['gender'] == 'F'){ ?> checked="checked"<?php } ?> />Male</label>
 
-                    <label class="radio1"><input class="form-control" type="radio" id="advanced_rdGender" name="Search_rdGender" value="F" <?php if($db_user2['0']['gender'] == 'M'){ ?> checked="checked"<?php } ?> />Female</label>
+                            <label class="radio1"><input class="form-control" type="radio" id="advanced_rdGender" name="Search_rdGender" value="F" <?php if($db_user2['0']['gender'] == 'M'){ ?> checked="checked"<?php } ?> />Female</label>
 
-                    <?php }else { ?>
+                            <?php }else { ?>
 
-                    <label class="radio1"><input class="form-control" type="radio" id="advanced_rdGender" name="Search_rdGender" value="M" />Male</label>
+                            <label class="radio1"><input class="form-control" type="radio" id="advanced_rdGender" name="Search_rdGender" value="M" />Male</label>
 
-                    <label class="radio1"><input class="form-control" type="radio" id="advanced_rdGender" name="Search_rdGender" value="F" checked="checked" />Female</label>
+                            <label class="radio1"><input class="form-control" type="radio" id="advanced_rdGender" name="Search_rdGender" value="F" checked="checked" />Female</label>
 
-                    <?php } ?>
+                        <?php } ?>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Age</label>
@@ -404,6 +413,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Height</label>
@@ -452,6 +462,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                         <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Marital Status</label>
@@ -466,6 +477,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                             <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Mother Tongue</label>
@@ -492,6 +504,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>   
 
+                     <span class="col-md-12">&nbsp;</span>
                      <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Religion</label>
@@ -518,6 +531,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>                         
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Caste</label>
@@ -548,6 +562,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
+                   <span class="col-md-12">&nbsp;</span>
                    <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Country</label>
@@ -574,6 +589,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Education</label>
@@ -622,6 +638,7 @@ The results of this search will be closer to your expectations. </p>
 
                     
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Occupation</label>
@@ -650,6 +667,7 @@ The results of this search will be closer to your expectations. </p>
 
                     
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Annual Income</label>
@@ -680,6 +698,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <h2>Horoscope</h2>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Star</label>
@@ -708,6 +727,7 @@ The results of this search will be closer to your expectations. </p>
 
                    
 
+                   <span class="col-md-12">&nbsp;</span>
                    <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Manglik</label>
@@ -724,6 +744,7 @@ The results of this search will be closer to your expectations. </p>
 
                     
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Show Profile</label>
@@ -738,6 +759,7 @@ The results of this search will be closer to your expectations. </p>
 
                     <h2>Mutual Interest</h2>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <?php
@@ -772,6 +794,7 @@ The results of this search will be closer to your expectations. </p>
 
                     
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
@@ -828,6 +851,7 @@ The results of this search will be closer to your expectations. </p>
 
                 <form name="soulmate_search" id="soulmate_search" method="post" action="load_data.php">
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Gender</label>
@@ -838,6 +862,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Age</label>
@@ -850,6 +875,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Height</label>
@@ -924,6 +950,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                         <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Marital Status</label>
@@ -940,6 +967,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Religion</label>
@@ -966,6 +994,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                             <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Mother Tongue</label>
@@ -992,6 +1021,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>                            
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Caste</label>
@@ -1018,6 +1048,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Country</label>
@@ -1044,6 +1075,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Education</label>
@@ -1072,6 +1104,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">       
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Mutual Interest</label>
@@ -1112,6 +1145,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Show Profile</label>
@@ -1122,6 +1156,7 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
@@ -1136,25 +1171,21 @@ The results of this search will be closer to your expectations. </p>
 
             </div>
 
-                <div class="msgtab_content <?php if($_GET['flag'] == 'key'){ echo "class='active'"; } ?>" id="searchtab-3">
+            <div class="msgtab_content <?php if($_GET['flag'] == 'key'){ echo "class='active'"; } ?>" id="searchtab-3">
 
-            <p>Keyword Search is the most popular search based on a few important criteria one would look for in a life partner. </p>
+                <p>Keyword Search is the most popular search based on a few important criteria one would look for in a life partner. </p>
 
-                    <div class="partner_search1">
+                <div class="partner_search1">
 
-                    <h2>Keyword Search</h2>
+                <h2>Keyword Search</h2>
 
-                <form name="keyword_search" id="keyword_search" method="post" action="load_data.php">
+                    <form name="keyword_search" id="keyword_search" method="post" action="load_data.php">
 
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                         <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Enter Keyword</label>
 
-                        <input class="form-control" type="text" name="txtKeyword" id="txtKeyword" onkeypress="return IsAlphaNumeric(event);" ondrop="return false;"
-
-        onpaste="return false;" />
-
-                         
+                        <input class="form-control" type="text" name="txtKeyword" id="txtKeyword" onkeypress="return IsAlphaNumeric(event);" ondrop="return false;" onpaste="return false;" />
 
                         <span id="err_keyword" class="err_msg" style="margin-left:150px;">Enter valid keyword</span>
 
@@ -1190,6 +1221,7 @@ The results of this search will be closer to your expectations. </p>
 
                         </div>
 
+                    <span class="col-md-12">&nbsp;</span>
                     <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
@@ -1206,13 +1238,11 @@ The results of this search will be closer to your expectations. </p>
 
                     </div>
 
-                    
-
                     <div style='display:none'>
 
                         <div id='save_search_key_div' style='padding:10px; background:#fff;'>
 
-                                <div class="new_acc">           
+                                <div class="new_acc">
 
                                      <div class="left">
 
@@ -1224,7 +1254,7 @@ The results of this search will be closer to your expectations. </p>
 
                                      <input type="submit" class="btn btn-danger" name="keyword_search_save_save_popup" onclick=" return keyword_search_save_submit()" />
 
-                                </div>            
+                                </div>
 
                         </div>
 
@@ -1236,8 +1266,6 @@ The results of this search will be closer to your expectations. </p>
 
             </div>
 
-            
-
             <?php /*?><div class="msgtab_content" id="searchtab-4">
 
                     <!--<p>Who's Online is the most popular search based on a online memb. </p>-->
@@ -1248,6 +1276,7 @@ The results of this search will be closer to your expectations. </p>
 
                         <form name="who_online_form" id="who_online_form" method="post" action="search_list.php">
 
+                            <span class="col-md-12">&nbsp;</span>
                             <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                             <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Search By</label>
@@ -1262,6 +1291,7 @@ The results of this search will be closer to your expectations. </p>
 
                             
 
+                            <span class="col-md-12">&nbsp;</span>
                             <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
                             <label class="col-md-2 col-sm-4 col-xs-12 nopadding">&nbsp;</label>
@@ -1276,8 +1306,6 @@ The results of this search will be closer to your expectations. </p>
 
                 </div><?php */?>
 
-                
-
                 <div class="msgtab_content" id="searchtab-5">
 
                     <!--<p>Who's Online is the most popular search based on a online memb. </p>-->
@@ -1290,17 +1318,13 @@ The results of this search will be closer to your expectations. </p>
 
                             <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
-                            <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Member ID</label>
+                                <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Member ID</label>
 
-                            <input class="form-control" type="text" name="txt_by_id" id="txt_by_id" />
+                                <input class="form-control" type="text" name="txt_by_id" id="txt_by_id" />
 
-                             <span id="err_id" class="err_msg" style="margin-left:150px;">Enter valid Member ID</span>
+                                <span id="err_id" class="err_msg" style="margin-left:150px;">Enter valid Member ID</span>
 
                             </div>
-
-                            
-
-                            
 
                             <div class="search-row col-md-12 col-xs-12 col-sm-12">
 
@@ -1315,16 +1339,6 @@ The results of this search will be closer to your expectations. </p>
 		            </div>          
 
                 </div>
-
-                
-
-                
-
-            
-
-            
-
-                
 
             </div>
 

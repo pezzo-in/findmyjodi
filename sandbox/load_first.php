@@ -670,7 +670,7 @@ $db_user_plan = $obj->select($user_plan);
                 <input type="hidden" value="8" name="limit" id="limit">
                 <input type="hidden" value="1" name="offset" id="offset">
                 
-         <ul class="profl-list" id="refine_data">
+         <ul class="profl-list" id="refine_data d">
             <?php
 					for($j=0;$j<count($members2);$j++)
 					{

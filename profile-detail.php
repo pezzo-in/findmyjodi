@@ -62,7 +62,7 @@ include("common_user_fetch.php");
 </div>
 <div class="wrapper">
 	 <div  class="mid col-md-12 col-sm-12 col-xs-12">
-     	<div class="sidebar col-md-3 col-xs-12 col-sm-4">
+     	<div class="sidebar col-md-2 col-xs-12 col-sm-4">
         	<div class="sidebar-main">
             	<h2>Refine Search</h2>
                 <div class="sidebar-cont" id="acc-list">
@@ -123,7 +123,7 @@ include("common_user_fetch.php");
                 </div>
             </div>
         </div>	
-        <div class="content col-sm-8 col-xs-12 col-md-9">
+        <div class="content col-sm-8 col-xs-12 col-md-10">
         	<div class="profile_details col-md-8">
             	<div class="profile_img">
                     <div class="profile-img-box first col-md-12 col-xs-12 col-md-12">
