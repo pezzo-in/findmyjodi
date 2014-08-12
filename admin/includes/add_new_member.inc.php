@@ -523,7 +523,7 @@ if(isset($_POST['submit']))
                       <label class="control-label">Annual Income<span class="required">*</span></label>
                       <div class="controls">
                       <div id="drpcurrcodedata">
-                      <select id="txtcurr" name="txtcurr" style="width:75px;" class="span6 m-wrap" class="form-control col-md-12 col-xs-12 col-sm-12">
+                      <select id="txtcurr" name="txtcurr" style="width:75px;" class="span6 m-wrap">
                         	<option value="">Select</option>
                        	</select>
                         </div>
@@ -810,7 +810,7 @@ if(isset($_POST['submit']))
                 </div>
                     </div>
                       <div class="control-group">
-                      <label class="control-label">Favourite cuisine<span class="required">*</span></label>
+                      <label class="control-label">Favourite Couisine<span class="required">*</span></label>
                       <div class="controls">
                  	
                     <style>
@@ -834,7 +834,7 @@ if(isset($_POST['submit']))
                     
                     
                       <div class="control-group">
-                      <label class="control-label">Preferred dressing style<span class="required">*</span></label>
+                      <label class="control-label">Preferred Dress Style<span class="required">*</span></label>
                       <div class="controls">
                  	
                     <style>

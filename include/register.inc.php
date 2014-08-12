@@ -118,7 +118,8 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                 <span id="gen" class="err_msg">Select gender</span></div>
             <div class="col-md-4"><label>Email<font color="#FF0000">*</font></label></div>
             <div class="col-md-8"><input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="email" id="email" onblur="return check_form1()" tabindex="5" style="clear:none;">
-                <span id="mail" class="err_msg">Enter valid mail address</span></div>
+                <span id="mail" class="err_msg"></span>
+           </div>
             <div class="col-md-4"><label>Password<font color="#FF0000">*</font></label></div>
             <div class="col-md-8"><input class="form-control col-md-12 col-sm-12 col-xs-12" type="password" name="password" onchange="drpProfFor_fun(this.id)" id="password" tabindex="6" style="clear:none;">
                 <span id="pass" class="err_msg">Enter password</span></div>
@@ -216,8 +217,8 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
                     <?php } ?>
                 </select>
             </div>
-                <input class="form-control col-md-9 col-sm-9 col-xs-12" type="text" name="txtMobNo" id="txtMobNo" maxlength="10" onchange="return check_form1()" onkeypress="return isNumber(event)" tabindex="14" />
-                <span id="mnumber" class="err_msg">Enter mobile number</span></div>
+                <input class="form-control col-md-9 col-sm-9 col-xs-12" type="text" name="txtMobNo" id="txtMobNo" maxlength="10" onchange="return check_form2()" onkeypress="return isNumber(event)" tabindex="14" />
+                <span id="mnumber" class="err_msg"></span></div>
             <div class="col-md-4"><label>Occupation</label></div>
             <div class="col-md-8"><?php
                             $list = "select * from occupation_master";
@@ -295,9 +296,12 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
         </div>
     </div>
     <script>
+   
 var error = 0;
+var invalid_error_email=0;
 var error_email=0;
 var error_mobile=0;
+var invalid_error_mobile=0;
 function drpProfFor_fun(id)
 {
 	if(document.getElementById(id).value!='')
@@ -313,18 +317,20 @@ function drpProfFor_fun(id)
 }
 function check_form1()
 {
-	$('#email').css('border','1px solid #ccc');
-	$('#txtMobNo').css('border','1px solid #ccc');
-
-	if(document.getElementById('email').value!=null)
+    
+        if(document.getElementById('email').value!='')
 	{
-		var x=document.getElementById('email').value;
+	        $('#email').css('border','1px solid #ccc');
+                var x=document.getElementById('email').value;
 		var atpos=x.indexOf("@");
 		var dotpos=x.lastIndexOf(".");
 		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
 		{
-			  $('#email').css('border','1px solid red');
-			  $('#mail').css('visibility','visible');
+			
+                         $('#email').css('border','1px solid red');
+			 $('#mail').html('Enter a Valid  Email Address.');
+		         $('#mail').css('visibility','visible');
+                          invalid_error_email=1;
 			  error_email=1;
 		}
 		else
@@ -338,26 +344,48 @@ function check_form1()
 					if(data != "")
 					{
 						$('#email').css('border','1px solid red');
+                                                $('#mail').html('Entered Email ID is already registered. Please enter a new one.');
 						$('#mail').css('visibility','visible');
 						error_email=1;
+                                                invalid_error_email=0;
 					}
 					else
 					{
-						error_email=0;
+					        $('#email').css('border','1px solid #ccc');
+                                                $('#mail').html('');
+						$('#mail').css('visibility','hidden');
+                                             error_email=0;
+                                             invalid_error_email=0;
 					}
 				}
 			});
 		}
-	}
+                
+	}else{
+                $('#email').css('border','1px solid red');
+                $('#mail').html('Enter Email Address.');
+		$('#mail').css('visibility','visible');
+        } 
 
-	if(document.getElementById('txtMobNo').value!=null)
+
+}
+function check_form2()
+{
+	
+	
+            
+        if(document.getElementById('txtMobNo').value!='')
 	{
-		var val = document.getElementById('txtMobNo').value;
+	    $('#txtMobNo').css('border','1px solid #ccc');
+            var val = document.getElementById('txtMobNo').value;
 		var phoneno = /^\d{10}$/;
 		if(!val.match(phoneno)){
 
 			$('#txtMobNo').css('border','1px solid red');
+                        $('#mnumber').html('Enter a Valid Phone Number.');
+			$('#mnumber').css('visibility','visible');
 			error_mobile=1;
+                        invalid_error_mobile=1;
 		}
 
 		$.ajax({
@@ -365,25 +393,39 @@ function check_form1()
 			dataType: 'html',
 			data: { phone : val },
 			success: function(data) {
-				if(data != "")
+				
+                                if(data != "")
 				{
-					$('#txtMobNo').css('border','1px solid red');
+					
+                                       $('#txtMobNo').css('border','1px solid red');
+                                        $('#mnumber').html('Entered Phone Number is already registered. Please enter a new one.');
+					$('#mnumber').css('visibility','visible');
 					error_mobile=1;
+                                        invalid_error_mobile=0;
 				}
 				else
 				{
-					error_mobile=0;
+					$('#txtMobNo').css('border','1px solid #ccc');
+                                        $('#mnumber').html('');
+					$('#mnumber').css('visibility','hidden');
+                                        error_mobile=0;
+                                        invalid_error_mobile=0;
 				}
 			}
 		});
 
-	}
+	}else{
+                $('#txtMobNo').css('border','1px solid red');
+                $('#mnumber').html('Enter a Phone Number.');
+		$('#mnumber').css('visibility','visible');
+        }
 
 }
 
 function check_form()
 {
-	error = 0
+        setTimeout(function(){}, 2000);
+        error = 0
 	$('#drpProfFor').css('border','1px solid #ccc');
 	$('#username').css('border','1px solid #ccc');
 	$('#dob').css('border','1px solid #ccc');
@@ -464,11 +506,14 @@ function check_form()
 	if(document.getElementById('txtMobNo').value=='')
 	{
 		$('#txtMobNo').css('border','1px solid red');
+                $('#mnumber').html('Enter a Phone Number.');
 		$('#mnumber').css('visibility','visible');	
-		error=1
+		error=1;
+                invalid_error_mobile=2;
 	}
 	else
 	{
+                $('#mnumber').html('');
 		$('#mnumber').css('visibility','hidden');
 	}
 
@@ -507,12 +552,15 @@ function check_form()
 	if(document.getElementById('email').value=='')
 	{
 		$('#email').css('border','1px solid red');
+                $('#mail').html('Enter Email Address.');
 		$('#mail').css('visibility','visible');
-		error=1
+		error=1;
+                invalid_error_email=2;
 	}
 	else
 	{
-		$('#mail').css('visibility','hidden');
+             $('#mail').html('');
+             $('#mail').css('visibility','hidden');
 	}
 	var lnm=document.getElementById('username').value;
 	if(document.getElementById('username').value=='' || lnm.length>256)
@@ -524,7 +572,7 @@ function check_form()
 	}
 	else
 	{
-		$('#mail').css('visibility','hidden');
+		$('#nm').css('visibility','hidden');
 	}
 
 	if(document.getElementById('password').value=='')
@@ -550,7 +598,7 @@ function check_form()
 		$('#mtoungue').css('visibility','hidden');
 	}
 
-	if(error_email==1)
+   /*	if(error_email==1)
 	{
 		$('#email').css('border','1px solid red');
 		$('#mail').css('visibility','visible');
@@ -562,13 +610,12 @@ function check_form()
 
 	if(error_mobile==1)
 	{
-		$('#txtMobNo').css('border','1px solid red');
-		$('#mnumber').css('visibility','visible');
+		
 	}
 	else
 	{
 		$('#mnumber').css('visibility','hidden');
-	}
+	} */
 	if(!$("#chk").is(':checked'))
 	{
 		$('#chk').css('border','1px solid red');
@@ -582,10 +629,35 @@ function check_form()
 	}
 	$(document).scrollTop(0);
 	if(error==0 && error_email==0 && error_mobile==0)
+            {
 		return true;
-	else
-		return false;
-
+            }
+	else{
+              if(error_mobile!=0){
+              $('#txtMobNo').css('border','1px solid red');
+              if(invalid_error_mobile==0){
+              $('#mnumber').html('Entered Phone Number is already registered. Please enter a new one.');
+              }else{
+                $('#mnumber').html('Enter a Valid Phone Number.'); 
+                 if(invalid_error_mobile==2)
+                 $('#mnumber').html('Enter a Phone Number.');
+              }
+	      $('#mnumber').css('visibility','visible');
+              }
+              if(error_email!=0){
+              $('#email').css('border','1px solid red');
+              if(invalid_error_email==0){
+              $('#mail').html('Entered Email ID is already registered. Please enter a new one.');
+              }else{
+                  
+                $('#mail').html('Enter a Valid Email Address.');
+                if(invalid_error_email==2)
+                    $('#mail').html('Enter a Email Address.');
+              }
+              $('#mail').css('visibility','visible');
+              }
+            return false;
+        }
 
 }
 $(function() {
@@ -655,12 +727,13 @@ $(function() {
 			$('#edob').css('visibility','hidden');
 		}
 	});
-	$('#txtMobNo').blur(function(){
+     /*	$('#txtMobNo').blur(function(){
 		if($('#txtMobNo').val()!='')
 		{
-			$('#mnumber').css('visibility','hidden');
+		      $('#mnumber').html('');
+                      $('#mnumber').css('visibility','hidden');
 		}
-	});
+	}); */
 	$('#drpCountry').change(function(){
 		if($('#drpCountry').val()!='')
 		{
@@ -675,12 +748,13 @@ $(function() {
 		}
 	});
 
-	$('#email').blur(function(){
+     /*	$('#email').blur(function(){
 		if($('#email').val()!='')
 		{
-			$('#mail').css('visibility','hidden');
+			  $('#mail').html('');
+                          $('#mail').css('visibility','hidden');
 		}
-	});
+	}); */
 
 	$('#username').blur(function(){
 		if($('#username').val()!='')

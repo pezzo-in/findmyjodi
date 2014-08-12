@@ -1,4 +1,5 @@
 <?php 
+
 if($_GET['status']=='profile')
 {
 	$sql = "SELECT members.member_id as mem_id,members.id as mid,members.email_id,members.name,member_photos.id as pid, member_photos.member_id as pmid,member_photos.photo,member_photos.Approve FROM members JOIN member_photos ON members.id=member_photos.member_id order by Approve";
@@ -36,7 +37,8 @@ if(isset($_GET['paid']))
 		$sqld="UPDATE member_photos SET Approve = '0' where id = '".$_GET['paid']."'";
 		$obj->edit($sqld);
 	}
-	echo "<script> window.location.href = 'member_photo_approval.php?status=".$_GET['status']."' </script>";	
+        $_SESSION['reload']=1;
+	echo "<script>window.location.href = 'member_photo_approval.php?status=".$_GET['status']."' </script>";	
 }
 if(isset($_GET['aid']))
 {
@@ -54,6 +56,7 @@ if(isset($_GET['aid']))
 		$sqld="UPDATE member_photo_gallery SET Approve = '0' where id = '".$_GET['aid']."'";
 		$obj->edit($sqld);
 	}
+        $_SESSION['reload']=1;
 	echo "<script> window.location.href = 'member_photo_approval.php?status=".$_GET['status']."' </script>";	
 }
 ?> 
@@ -323,6 +326,19 @@ $select_photo_gallery="select member_photo_gallery.*,member_photo_gallery.id as 
 function doYouWantToChangeStatusPhoto1(status,id){
 	 doIt=confirm('Are you sure to change status?');
 	  if(doIt){
+                $.ajax({ 
+				url: 'watermark.php',
+				type:'post',
+                                async:false,
+				data: { 
+                                    id:id,
+                                     status:status
+                                     },
+				success: function(data) {
+			
+				}
+			});  
+              
 		window.location.href = 'member_photo_approval.php?status='+status+'&aid='+id;
 	  }
 	  else{
@@ -342,7 +358,7 @@ function doYouWantToChangeStatusPhoto1(status,id){
                                      status:status
                                      },
 				success: function(data) {
-				
+			
 				}
 			});  
 		window.location.href = 'member_photo_approval.php?status='+status+'&paid='+id;

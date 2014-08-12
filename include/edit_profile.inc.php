@@ -31,9 +31,15 @@ if($_GET['flag'] == 'delete')
 	session_destroy();
 	echo "<script>window.location='logout.php'</script>";
 }
+$sql_login = "SELECT members.*,member_photos.photo FROM members 
+				LEFT JOIN member_photos ON members.id = member_photos.member_id
+				WHERE 
+			 	members.id = '".$_SESSION['logged_user'][0]['id']."'";	
+	$logged_in_member=$obj->select($sql_login);	
 if(isset($_POST['submit']))
 {
-	$cnt = 0;
+	if($_POST['mob_code']==$logged_in_member[0]['mob_code'] && $_POST['txtMobNo']==$logged_in_member[0]['mobile_no'] ){
+        $cnt = 0;
 	if($_POST['occupation'] != "")
 	{
 		$cnt++;
@@ -135,13 +141,134 @@ if(isset($_POST['submit']))
 		
 						
 						echo "<script>window.location='my_account.php?ratio=".$ratio."'</script>";
+        }else{
+        $cnt = 0;
+	if($_POST['occupation'] != "")
+	{
+		$cnt++;
+	}
+	if($_POST['employed_in'] != "")
+	{
+		$cnt++;
+	}
+	if($_POST['annual_income'] != "")
+	{
+		$cnt++;
+	}
+	$total_fields = ($cnt + 8);
+	$ratio = ((round(($total_fields*70)/15,0))+30);
+	$_SESSION['ratio_number']=$ratio;
+	$eid="select * from education_course where id='".$_POST['education']."'";
+	$course_eid=$obj->select($eid);	
+	//$new_date=$_POST['dob']; 
+	//echo $_POST['dob'].'<br>';
+	//echo strtotime($_POST['dob']).'<br>';
+	$dob = date('Y-m-d',strtotime($_POST['dob']));
+	//echo $dob;die;
+	$update_page="UPDATE members 
+				  SET 
+				  		profile_for = '".$_POST['drpProfFor']."',name = '".$_POST['username']."',gender = '".$_POST['Rdgender']."',
+						religion = '".$_POST['drpReligion']."',caste = '".$_POST['drpCaste']."',country = '".$_POST['drpCountry']."',
+						place_of_birth = '".$_POST['place_of_birth']."',
+						date_of_birth = '".$dob."',
+						
+						age = '".(date('Y')-date('Y',strtotime($_POST['dob'])))."',
+						
+						mother_tongue =  '".$_POST['drpMotherlanguage']."',
+						education = '".$_POST['education']."',degree_in = '".$course_eid[0]['Eid']."',occupation =  '".$_POST['occupation']."',
+						employed_in = '".$_POST['employed_in']."',annual_income = '".$_POST['annual_income']."',
+						about_me = '".$_POST['about_me']."',
+						body_type = '".$_POST['drpBodyType']."',living_with_parents = '".$_POST['drpLiving']."',
+						family_value = '".$_POST['drpFamilyValue']."',is_smoker = '".$_POST['drpSmoking']."',
+						is_drinker = '".$_POST['drpDrinking']."',food = '".$_POST['drpEatingHabits']."',
+						family_status = '".$_POST['drpFamilyStatus']."',
+						family_value = '".$_POST['drpFamilyValues']."',
+						family_type = '".$_POST['drpFamilyType']."',
+						relationship_status = '".$_POST['mari_status']."',
+						manglik_dosham = '".$_POST['manglik']."',
+						weight = '".$_POST['drpWeight']."',
+						height = '".$_POST['drpHeight']."',
+						no_of_brothers = '".$_POST['num_bro']."',
+					 	no_of_sisters = '".$_POST['num_sis']."',
+					 	bro_married = '".$_POST['num_bro_married']."',
+					 	sis_married = '".$_POST['num_sis_married']."',
+						star = '".$_POST['drpstar']."',
+						gothram = '".$_POST['gothram']."',
+						complexion = '".$_POST['drpComplexion']."',
+						state = '".$_POST['state']."',
+						city = '".$_POST['city']."',
+						physical_status = '".$_POST['drpPhysicalStatus']."',
+						horoscope_match = '".$_POST['horoscope']."'
+				 where 
+				 		id = '".$_SESSION['logged_user'][0]['id']."'";
+						
+					$db_updatepage=$obj->edit($update_page);	
+						//echo $update_page;exit;
+		if($_POST['mail_alerts']==1)
+		{
+			$update_page="UPDATE members SET mail_alerts = '".$_POST['mail_alerts']."' where id = '".$_SESSION['logged_user'][0]['id']."'";
+			$db_updatepage=$obj->edit($update_page);
+		}
+		else
+		{
+			$update_page="UPDATE members SET mail_alerts = '0' where id = '".$_SESSION['logged_user'][0]['id']."'";
+			$db_updatepage=$obj->edit($update_page);
+		}
+		
+		 $select_member_plan="select member_plans.* from member_plans, members where member_plans.member_id='".$_SESSION['logged_user'][0]['id']."' AND members.id=member_plans.member_id";
+		$db_member_plan=$obj->select($select_member_plan);
+		
+		$exp_date=date('Y-m-d');
+		
+		if(count($db_member_plan)>0)
+		{
+			$select_plan="select * from new_membership_plans where id='".$db_member_plan[0]['plan_id']."'";
+			$db_plan=$obj->select($select_plan);
+			
+			$exp_date=date('Y-m-d',strtotime('+'.$db_plan[0]['plan_duration'].' days '.$db_date[0]['reg_date']));
+		}
+	
+		if(count($db_member_plan)>0 && date('Y-m-d',strtotime($exp_date))>=date('Y-m-d'))
+		{
+			if($_POST['is_featured']=='Y')
+			{
+				$update_page="UPDATE members SET is_featured = '".$_POST['is_featured']."' where id = '".$_SESSION['logged_user'][0]['id']."'";
+				$db_updatepage=$obj->edit($update_page);
+			}
+			else
+			{
+				$update_page="UPDATE members SET is_featured = 'N' where id = '".$_SESSION['logged_user'][0]['id']."'";
+				$db_updatepage=$obj->edit($update_page);
+			}
+		}
+                 $db_ins=$_SESSION['logged_user'][0]['id'];
+	
+                 $rand=mt_rand(100000,999999); 
+	   
+	///// Sms gateway integration - Krupa ///
+	
+	$mobileno = $_POST['mob_code'].$_POST['txtMobNo'];
+	$mobileno = substr($mobileno,1);
+	
+	$ch = curl_init('http://www.txtguru.in/imobile/api.php?');
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, "username=findmyjoditrans&password=Ganesha@1985&source=senderid&dmobile=$mobileno&message=Use Following code for Editing your Phone Number.  $rand ");
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+	$data = curl_exec($ch);
+        curl_close($ch);
+
+	$_SESSION['verification_code']=$rand;
+        $_SESSION['edited_phonenum']=$mobileno;
+        $_SESSION['edited_mob_code']=$_POST['mob_code'];
+        $_SESSION['edited_txtMobNo']=$_POST['txtMobNo'];
+        echo "<script> window.location.href='edit_phonenum.php?uid=".base64_encode($db_ins)."';</script>";
+						
+		//echo "<script>window.location='my_account.php?ratio=".$_SESSION['ratio_number']."'</script>";
+         
+        }
 }	
 //LOGGED-IN USER'S DETAIL //
-	$sql_login = "SELECT members.*,member_photos.photo FROM members 
-				LEFT JOIN member_photos ON members.id = member_photos.member_id
-				WHERE 
-			 	members.id = '".$_SESSION['logged_user'][0]['id']."'";	
-	$logged_in_member=$obj->select($sql_login);		
+		
 ?>
         <?php if(!empty($logged_in_member)) { ?>	  
         <div class="content col-md-9 col-xs-12 col-sm-12">
@@ -251,7 +378,7 @@ if(isset($_POST['submit']))
                                 <?php foreach($db_category2 as $db) {  ?>
                                     <option value="<?php echo $db['mob_code']; ?>" <?php if($db['id'] == $logged_in_member[0]['mob_code']){ ?> selected="selected" <?php } ?>><?php echo $db['mob_code']; ?></option>
                                 <?php } ?>
-                                </select><input class="form-control col-md-10 col-sm-10 col-xs-12" type="text" name="txtMobNo" value="<?php echo $logged_in_member[0]['mobile_no']; ?>"  id="txtMobNo" />
+                                </select><input class="form-control col-md-10 col-sm-10 col-xs-12" type="text" name="txtMobNo" value="<?php echo $logged_in_member[0]['mobile_no']; ?>" onchange="return check_form1(<?php echo $logged_in_member[0]['mobile_no'] ?>)" onkeypress="return isNumber(event)"  id="txtMobNo" />
                     </li></ul>
                      <ul class="col-md-6 col-xs-12 col-sm-6">
                      	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Horoscope</label>
@@ -631,6 +758,7 @@ if(isset($_POST['submit']))
          
         <?php } ?>
      <script>
+         var error_mobile=0;
 	 function check_form()
 	 {
 		$('#drpProfFor').css('border','1px solid #ccc');
@@ -767,10 +895,19 @@ if(isset($_POST['submit']))
 		{
 			dob=0
 		}
+        if(error_mobile==1)
+	{
+		$('#txtMobNo').css('border','1px solid red');
+		$('#mnumber').css('visibility','visible');
+	}
+	else
+	{
+		$('#mnumber').css('visibility','hidden');
+	}
 		
 		
 	
-	if(drpProfFor == 0 && username == 0 && drpReligion == 0 && drpCaste==0 && drpCountry==0 && dob==0 && drpMotherlanguage==0 && txtMobNo==0  && mari_status == 0)
+	if(drpProfFor == 0 && error_mobile==0 && username == 0 && drpReligion == 0 && drpCaste==0 && drpCountry==0 && dob==0 && drpMotherlanguage==0 && txtMobNo==0  && mari_status == 0)
 	{
 		return true;
 	}
@@ -779,6 +916,54 @@ if(isset($_POST['submit']))
 		return false;
 	}
 }
+function check_form1(phonenum)
+{
+	 error_mobile=0;   
+        var textphnum=document.getElementById('txtMobNo').value;
+        $('#txtMobNo').css('border','1px solid #ccc');
+        if(phonenum!=textphnum){
+	if(document.getElementById('txtMobNo').value!=null)
+	{
+		var val = document.getElementById('txtMobNo').value;
+		var phoneno = /^\d{10}$/;
+		if(!val.match(phoneno)){
+
+			$('#txtMobNo').css('border','1px solid red');
+			error_mobile=1;
+		}
+
+		$.ajax({
+			url: 'chkExistPhone.php',
+			dataType: 'html',
+			data: { phone : val },
+			success: function(data) {
+                               
+				if(data != "")
+				{
+					
+                                        $('#txtMobNo').css('border','1px solid red');
+					error_mobile=1;
+				}
+				else
+				{
+				   	
+                                   error_mobile=0;
+				}
+			}
+		});
+
+	}
+        }
+}
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+
 
 		$('#drpProfFor').click( function() {
 			var val = $('#drpProfFor').val();

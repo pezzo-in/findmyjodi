@@ -13,7 +13,7 @@ if(isset($_POST['submit']))
 	else
 	{
 		echo '<script language="javascript">';
-		echo 'alert("Dressing style already exist")';
+		echo 'alert("Dress Style already exist")';
 		echo '</script>';
 	}
 }
@@ -30,7 +30,7 @@ if(isset($_POST['update']))
 	else
 	{
 		echo '<script language="javascript">';
-		echo 'alert("Dressing style already exist")';
+		echo 'alert("Dress Style already exist")';
 		echo '</script>';
 	}
 }
@@ -100,7 +100,7 @@ $db_category = $obj->select($select_category);
                 </div>
                 <!-- END BEGIN STYLE CUSTOMIZER -->     
                 <h3 class="page-title">
-                    Dressing style                    
+                    Dress Style                    
                 </h3>
                 <ul class="breadcrumb">
                     <li>
@@ -109,10 +109,10 @@ $db_category = $obj->select($select_category);
                         <span class="icon-angle-right"></span>
                     </li>
                     <li>
-                        <a href="list_dressstyle.php">List Dressing style</a>
+                        <a href="list_dressstyle.php">List Dress Style</a>
                         <span class="icon-angle-right"></span>
                     </li>
-                    <li><a href="">Dressing style</a></li>
+                    <li><a href="">Dress Style</a></li>
                 </ul>
             </div>
         </div>
@@ -125,12 +125,12 @@ $db_category = $obj->select($select_category);
                 <!-- BEGIN VALIDATION STATES-->
                 <div class="btn-group" style="margin-bottom:10px; float:right">
                     <a href="list_dressstyle.php"><button id="sample_editable_1_new" class="btn green">
-                    List Dressing style
+                    List Dress Style
                     </button></a>
                 </div>
                 <div class="portlet box green">
                     <div class="portlet-title">
-                        <div class="caption"><i class="icon-reorder"></i>Dressing style</div>
+                        <div class="caption"><i class="icon-reorder"></i>Dress Style</div>
                         
                     </div>
                     <div class="portlet-body form">

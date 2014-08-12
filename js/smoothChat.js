@@ -1,3 +1,11 @@
+/*$(document).ready(function()
+{
+
+    setTimeout(function(){
+  
+        $('.chat').hide();}, 1000);  
+   
+}); */
 $(function(){
 	var path='';
 	var a=navigator.userAgent.toLowerCase();
@@ -333,7 +341,7 @@ var Chat={
 				}
 				if(openTab==u_id){
 					var elem=$('#chat-'+openTab);
-					elem.show();
+					elem.hide();
 					elem.parent().addClass('active').removeClass('hiddenTab');
 				}
 			}else if(tabNbr=='oneTabThroughClick'){
@@ -672,12 +680,12 @@ var Chat={
 					sayBox.hide();
 					setTimeout(function(){infoBox.hide();sayBox.show();},2000);
 				break;
-				case'repeat':
-				var sayDiv=$('#sayBox-'+ref);
-					sayDiv.hide();
-					infoBox.text('You said that already !').show();
-					setTimeout(function(){infoBox.hide();sayDiv.show();},2000);
-				break;
+		           //     case'repeat':
+			//	var sayDiv=$('#sayBox-'+ref);
+			//		sayDiv.hide();
+			//		infoBox.text('You said that already !').show();
+			//		setTimeout(function(){infoBox.hide();sayDiv.show();},2000);
+			//	break;
 				default:
 				d=$.evalJSON(d);
 					d[1]=d[1].replace(/<img class="smiley" src="/,'<img class="smiley" src="'+path+'');

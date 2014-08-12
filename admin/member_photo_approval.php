@@ -1,6 +1,11 @@
 <?php 
+
 session_start();
 include('../lib/myclass.php');
+if(isset($_SESSION['reload'])){
+    unset($_SESSION['reload']);
+    echo '<script>window.location.reload();</script>';
+}
 if($_SESSION['adminid']=='')
 {
 	echo "<script>window.location='login.php' </script>";

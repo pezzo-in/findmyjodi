@@ -17,7 +17,7 @@ if($_SESSION['adminid']=='')
 $select_site = "select * from tbl_sitename where Id = '1'";
 $db_site = $obj->select($select_site);
 ?>  
-    <title>Dressing style | <?php echo $db_site[0]['Name']; ?></title>
+    <title>Dress Style | <?php echo $db_site[0]['Name']; ?></title>
 	<title>Kannadalagna | Form Stuff - Form Validation</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta content="" name="description" />

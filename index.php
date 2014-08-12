@@ -10,6 +10,7 @@ session_start();
     <meta name="description"
           content="FindMyJodi is the no. 1 matrimonial website to find best life partner as per your choice. Trusted by lakhs of Brides & Grooms. Search by caste and community."/>
     <title>Find My Jodi</title>
+    <link rel="shortcut icon" href="images/favicon.ico"/>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <script src="assets/plugins/jquery-1.10.1.min.js" type="text/javascript"></script>

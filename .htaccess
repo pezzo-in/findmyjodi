@@ -1,3 +1,3 @@
 RewriteEngine on
 RewriteCond %{HTTPS} off
-RewriteRule ^packages\.php$ https://www.findmyjodi.com/packages.php [L,R=301]
+RewriteRule ^packages\.php$ http://www.findmyjodi.com/packages.php [L,R=301]

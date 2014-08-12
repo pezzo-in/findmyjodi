@@ -1,0 +1,200 @@
+<?
+error_reporting(0);
+$IP = $HTTP_SERVER_VARS["REMOTE_ADDR"];
+$vhttpreferrer = "";
+date_default_timezone_set('Asia/Kolkata'); 
+if (isset($HTTP_SERVER_VARS["HTTP_REFERER"]))
+{
+	$vhttpreferrer = $HTTP_SERVER_VARS["HTTP_REFERER"];
+}
+class myclass
+{
+ // var $DBASE             = "expilead_webepreneur";       // Set name of database to use           
+  // var $USER             = "expilead_uexpile";          // Set database username            	
+  //var $PASS             = "pexpilead";              // Set darabase R/W password      
+  //var $SERVER         = "localhost";  // Set server name                 
+  
+    var $DBASE             = "a2zfree_kannada";       // Set name of database to use         online:    "dphs_dphs"
+	var $USER             = "root";          // Set database username            online:    "dphs" 	
+	var $PASS             = "elite_info12#";              // Set darabase R/W password      online:    "jaydev"
+	var $SERVER         = "192.168.4.89";  // Set server name                online:    "localhost" 
+	var $SITEURL         = "http://www.a2zfreelance.com/matrimonial/"; 
+    // Admin Title
+    var $admin_title = "<<<<< ::::: @ ::::: Administrator Panel ::::: @ ::::: >>>>>";    
+    var $PAGELIMIT = 5; 
+    var $RECLIMIT = 10;
+    	
+    var $ADM_RECLIMIT = 20;
+    var $ADM_PAGELIMIT = 10;
+    
+    var $USER_RECLIMIT = 10;
+    var $USER_PAGELIMIT = 5;
+    
+    
+    //    *************************************************** 
+    //    PHP and MySQL Connection and Error Specific methods 
+    //    *************************************************** 
+    function SetPageSize($size){
+		$PAGELIMIT = $size;
+	}
+    function myclass() 
+    {
+        $user = $this->USER;
+        $pass = $this->PASS;
+        $server = $this->SERVER;
+        $dbase = $this->DBASE;
+        $conn = mysql_connect($server,$user,$pass);
+		if(!$conn) {
+			echo "<br>Connection attempt failed<br>";
+            //$this->error("Connection attempt failed");
+        }
+        if(!mysql_select_db($dbase,$conn)) {
+            $this->error("Dbase Select failed");
+        }
+        $this->CONN = $conn; 
+		
+        return true;
+    }
+    
+    function close()
+    {
+        $conn = $this->CONN ;
+        $close = mysql_close($conn);
+        if(!$close) {
+            $this->error("Connection close failed"); 
+        }
+        return true;
+    }
+    
+    function error($text)
+    {
+        $no = mysql_errno();
+        $msg = mysql_error();
+        return $no;
+    }
+    
+    function select ($sql="") 
+    {
+		
+        if(empty($sql)) { return false; }
+        if(!eregi("^select",$sql))
+        {
+            echo "wrongquery<br>$sql<p>";
+            echo "<H2>Wrong function silly!</H2>\n"; 
+            return false;
+        }
+        if(empty($this->CONN)) { return false; }
+        $conn = $this->CONN;
+		
+
+        $results = @mysql_query($sql,$conn);
+        if( (!$results) or (empty($results)) ) { 
+            return false;
+        }
+        $count = 0;
+        $data = array();
+		
+        while ( $row = mysql_fetch_array($results))
+        {
+            $data[$count] = $row;
+            $count++; 
+        }
+        mysql_free_result($results);
+        return $data;
+    }
+    
+    function affected($sql="")
+    {
+        if(empty($sql)) { return false; }
+        if(!eregi("^select",$sql)) 
+        {
+            echo "wrongquery<br>$sql<p>";
+            echo "<H2>Wrong function silly!</H2>\n";
+            return false;
+        }
+        if(empty($this->CONN)) { return false; } 
+        $conn = $this->CONN;
+        $results = @mysql_query($sql,$conn);
+        if( (!$results) or (empty($results)) ) {
+            return false;
+        }
+        $tot=0;
+        $tot=mysql_affected_rows(); 
+        return $tot;
+    }
+    
+    function insert ($sql="")
+    {
+        if(empty($sql)) { return false; }
+        if(!eregi("^insert",$sql))
+        {
+            return false; 
+        }
+        if(empty($this->CONN))
+        {
+            return false;
+        }
+        $conn = $this->CONN;
+        $results = mysql_query($sql,$conn);
+        if(!$results) 
+        { 
+            $this->error("<H2>No results!</H2>\n");
+            return false;
+        }
+        $id = mysql_insert_id();
+        return $id;
+    }
+    
+    function edit($sql="") 
+    {
+        if(empty($sql)) { return false; }
+        if(!eregi("^update",$sql))
+        {
+            return false;
+        }
+        if(empty($this->CONN))
+        {
+            return false; 
+        }
+        $conn = $this->CONN;
+        $results = mysql_query($sql,$conn);
+        if(!$results) 
+        {
+            $this->error("<H2>No results!</H2>\n");
+            return false; 
+        }
+        $rows = 0;
+        $rows = mysql_affected_rows();
+        return $rows;
+    }
+    
+    function sql_query($sql="")
+    {    if(empty($sql)) { return false; }
+        if(empty($this->CONN)) { return false; } 
+        $conn = $this->CONN;
+        $results = mysql_query($sql,$conn) or die("query fail");
+        if(!$results)
+        {   $message = "Query went bad!";
+            $this->error($message); 
+            return false;
+        }        
+        if(!eregi("^select",$sql)){
+            return true; }
+        else {
+            $count = 0;
+            $data = array();
+            while ( $row = mysql_fetch_array($results))    { 
+                $data[$count] = $row;
+                $count++;
+            }
+            mysql_free_result($results);
+            return $data;
+         }
+    }    
+//ends the class over here
+}
+if(!isset($obj)){
+    $obj = new myclass();
+}
+	
+?>

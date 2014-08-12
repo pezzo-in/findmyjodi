@@ -210,7 +210,7 @@ if(isset($_POST['postsubmit']) && (trim($_POST['PostText'])!='') || $_POST['img_
             </div>
             <p><?php echo $db_select_post[$i]['PostText']; ?></p>
             
-            <?php if($db_select_post[$i]['Image']!=''){ ?><div class="comment_img"><a href="javascript:;" ><img src="upload/<?php echo $db_select_post[$i]['Image']; ?>" /></a></div><?php } ?>
+            <?php if($db_select_post[$i]['Image']!=''){ ?><div class="comment_img"><a href="javascript:;" ><img src="<?php echo $obj->SITEURL; ?>upload/<?php echo $db_select_post[$i]['Image']; ?>" /></a></div><?php } ?>
             
             <?php
 			$select_liked = "select * from tbl_user_post_like where PostId = '".$db_select_post[$i]['Id']."' AND UserId = '".$db_select_member_id[0]['id']."'";

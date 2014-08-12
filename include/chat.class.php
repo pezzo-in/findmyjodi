@@ -60,11 +60,11 @@ function prepareToSay(){
 	$this->msg4DbClean=str_replace('<','!:l3ftT4g',$this->msg);  //in the msg we change "<" so we dont loose it in the next filter
 	$toBeCleaned=$this->msg4DbClean;
 	$this->msg4DbClean=$db->cleanInput('s',$toBeCleaned,1); // we clean any undesired harmful characters
-	if(isset($_SESSION['chatOldMsg'])){
+	/*if(isset($_SESSION['chatOldMsg'])){
 		if($_SESSION['chatOldMsg']==$this->msg4DbClean) { //if the user has said this already
 			die("repeat");
 		}
-	}
+	}*/
 	if(empty($this->msg4DbClean) && $this->msg4DbClean!='0'){ //if the message is empty
 		echo'f';$db->close();exit; //failure
 	}

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('lib/myclass.php');
+unset($_SESSION['ratio_number']);
 if($_SESSION['UserEmail']=='')
 {
 	echo "<script>window.location='login.php' </script>";
