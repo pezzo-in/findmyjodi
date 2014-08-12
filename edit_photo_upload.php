@@ -228,9 +228,9 @@ var $=jQuery.noConflict();
             <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
     	<?php include('include/header.inc.php'); ?>
         <?php include('include/slider1.inc.php'); ?>
-                <div class="header inn">
-                    <div class="titlebox col-md-12">
-            	Edit Profile
+        <div class="header inn">
+            <div class="titlebox col-md-12">
+            Edit Profile
             </div>
         </div>
     </div>

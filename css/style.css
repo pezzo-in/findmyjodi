@@ -1128,6 +1128,10 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
     padding-bottom: 2px;
 }
 
+.profile_details .new_acc li {
+    width: 100% !important;
+}
+
 .row-detail {
     float: left;
     padding-bottom: 10px;

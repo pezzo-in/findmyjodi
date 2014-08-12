@@ -141,7 +141,7 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
 
                           </li>
                              <li <?php //if($url[2] == "search.php") { echo "class='active'"; } ?>><a href="search.php" title="Search">Search</a>
-                           <ul><div>
+                           <ul>
                                 <li><a href="search.php?flag=rag">Simple Search</a></li>
                                 <li><a href="search.php?flag=adv">Advanced Search</a></li>
                                 <!--<li><a href="search.php?flag=soul">Soulmate search</a></li>-->
@@ -149,7 +149,7 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
                                 <!--<li><a href="search.php?flag=online">Who's Online</a></li>-->
                                 <li><a href="search.php?flag=id">Search by ID</a></li>
                                 <li><a href="save_search.php">Saved Search</a></li>
-                                </div>
+
                            </ul>
                         </li>
                         <li><a href="packages.php" title="Upgrade">Upgrade</a></li>
@@ -165,7 +165,7 @@ $url=explode('/',$_SERVER['REQUEST_URI']);
                 </div><!-- /.navbar-collapse -->
         </nav>
         <script type="text/javascript">
-        var menu=new menu.dd("menu");
+        var menu = new menu.dd("menu");
         menu.init("menu","menuhover");
         </script> 
     </div>

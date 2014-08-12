@@ -78,8 +78,6 @@ $(document).ready(function(){
 
 <body>
 
-<div class="container">
-    <div class="row">
 <?php 
 include("common_user_fetch.php");
 /*
@@ -125,18 +123,16 @@ if($_SESSION['UserEmail']!='')
 
 ?>
 
-<div class="topMain">
-
-	<div class="wrapper">
+<div class="container">
+    <div class="row">
+        <div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
+            <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
 
     	<?php include('include/header.inc.php'); ?>
 
-		<div class="header inn">
-
-        	<div class="titlebox col-md-12">
-
+                <div class="header inn">
+                    <div class="titlebox col-md-12">
             	Contact Us
-
             </div>
 
         </div>
@@ -145,7 +141,8 @@ if($_SESSION['UserEmail']!='')
 
 </div>
 
-<div class="wrapper">
+        <div class="col-md-12 mid">
+            <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
 
 	 <?php include('include/help.inc.php'); ?>
 
@@ -154,9 +151,7 @@ if($_SESSION['UserEmail']!='')
 </div>
 </div>
 </div>
-
-
-
+</div>
 </body>
 
 </html>
