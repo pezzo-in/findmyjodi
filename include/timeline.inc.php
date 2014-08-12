@@ -108,15 +108,14 @@ if(isset($_POST['postsubmit']) && (trim($_POST['PostText'])!='') || $_POST['img_
         
             <div class="top_textarea col-md-12 nopadding col-xs-12 col-sm-12">
                 <form action="" method="post" name="frmpost" class="col-md-12 col-sm-12 col-xs-12 nopadding">
-                <textarea name="PostText" cols="" rows="" class="col-md-12 col-sm-12 col-xs-12"></textarea>
+                <textarea name="PostText" cols="" rows="" class="col-md-12 col-sm-12 col-xs-12 form-control"></textarea>
+                    <br/>
                     <br/>
                     <br/>
                     <br/>
                     <div class="right_btn">
                     <input type="hidden" id="img_name" name="img_name" value="Photo" class="pull-left" btn btn-success btn-sm />
                     <input name="postsubmit" type="submit" value="Post" class="pull-left btn btn-success btn-sm" />
-                </div>
-				</form>
 				<form name="file_upload" action="upload_file_post.php" method="post" target="frame" enctype="multipart/form-data">
                 <div class="photo_attach">
                         <label for="file">
@@ -125,6 +124,8 @@ if(isset($_POST['postsubmit']) && (trim($_POST['PostText'])!='') || $_POST['img_
                     <input type="file" id="file" name="file" onchange="this.form.submit(); display_block1();" />                    
                 </div>
                 </form>
+                </div>
+				</form>
                 <div id="prepage" class="prepage" style="border:1px solid #CCC;width:520px;left:0px;border-top:none;top:64px;"></div>
             </div>
             

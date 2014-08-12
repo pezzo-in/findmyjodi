@@ -90,7 +90,7 @@ if(isset($_POST['send_reply']))
 ?>
 <div class="col-md-9 col-xs-12 col-sm-12 nopadding">
 	<div class="msgChat col-xs-2 col-sm-4 col-md-4 nopadding">
-    	<ul id="msgChat" style="height: 580px;">
+    	<ul id="msgChat" style="height: 580px;overflow-y: scroll">
         <?php
 			
 		for($lpcntrl=0;$lpcntrl<count($messages); $lpcntrl++)
@@ -226,7 +226,7 @@ if(isset($_POST['send_reply']))
 					$con_name = $obj->select($sql); ?>
 					<span class="converse-span1" style="font-size:20px;color:#0075A7;"><?php echo ucwords($con_name[0]['name']).' ('.$con_name[0]['member_id'].')' ?></span>
       
-                    <ul id="msgAll" style="height: 510px;">
+                    <ul id="msgAll" style="height: 510px;overflow-y: scroll">
 				
 <?php 					
 $conversation = "select * from messages where (to_mem = '".$to."' and from_mem='".$from."') or (to_mem = '".$from."' and from_mem='".$to."') order by id asc";

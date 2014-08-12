@@ -832,7 +832,7 @@ ul.profl-list li .profile-img-box a {
 ul.profl-list li .profile-img-box a.popper {
     min-height: 211px;
     padding: 3px;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .message_box {
@@ -1132,6 +1132,23 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
     float: left;
     padding-bottom: 10px;
     width: 100%;
+}
+
+.row-detail ul li {
+    float: left;
+}
+
+.row-detail ul li:first-child {
+    font-weight: bold;
+    width: 30%;
+}
+
+.row-detail ul li:nth-child(2) {
+    width: 6%;
+}
+
+.row-detail ul li:last-child {
+    width: 40%;
 }
 
 #tab-container {
@@ -2060,40 +2077,8 @@ ul.list1 li a:link, ul.list1 li a:visited {
     width: 215px;
 }
 
-.partner_searchnew input[type="text"], .partner_searchnew input[type="password"] {
-    border: 1px solid #cfcdcd;
-    color: #848484;
-    float: left;
-    font-size: 14px;
-    font-weight: normal;
-    height: 20px;
-    line-height: 20px;
-    margin-bottom: 5px;
-    padding: 4px 10px;
-    vertical-align: top;
-    width: 270px;
-}
-
-.partner_searchnew select {
-    border: 1px solid #cfcdcd;
-    color: #848484;
-    cursor: pointer;
-    float: left;
-    font-size: 14px;
-    font-weight: normal;
-    height: 30px;
-    line-height: 20px;
-    margin-bottom: 5px;
-    padding: 4px 5px;
-    width: 372px;
-}
-
 .partner_searchnew input.age1[type="text"] {
     width: 50px;
-}
-
-.partner_searchnew select.small1 {
-    width: 170px;
 }
 
 .partner_searchnew .checkbox1, .partner_searchnew .radio1 {
@@ -2111,6 +2096,12 @@ ul.list1 li a:link, ul.list1 li a:visited {
     float: left;
     margin-right: 5px;
     margin-top: 3px;
+}
+
+.fields {
+    float: left;
+    margin: 10px 0;
+    width: 100%;
 }
 
 .partner_searchnew input[type="submit"] {
@@ -3075,23 +3066,8 @@ ul.list-prfl li a:hover {
     position: relative;
 }
 
-.right_btn {
-    float: left;
-    width: 95px;
-}
-
 .comment-div-repeat {
     width: 100%;
-}
-
-.photo_attach {
-    cursor: pointer;
-    float: left;
-    height: 30px;
-    margin-left: 6px;
-    margin-top: 6px;
-    overflow: hidden;
-    width: 85px;
 }
 
 .photo_attach label {
@@ -3099,7 +3075,12 @@ ul.list-prfl li a:hover {
 }
 
 .photo_attach > input {
-    display: none;
+    padding: 3px 0;
+}
+
+.photo_attach {
+    float: left;
+    margin-left: 10px;
 }
 
 .mid_prof {
@@ -3570,18 +3551,6 @@ ul.profl-list .griddetail {
 
 .list_span {
     padding: 0 5px;
-}
-
-.row-detail-hobbies ul li {
-    width: 514px;
-}
-
-.row-detail-hobbies ul li:nth-child(2) {
-    width: 0;
-}
-
-.row-detail-hobbies ul li.nthchild2 {
-    width: 0 !important;
 }
 
 .chat1 {
@@ -4851,9 +4820,7 @@ ul.profl-list .griddetail {
 
 .msginput {
     float: left;
-    height: 20px;
-    margin: 0 0 20px;
-    padding: 15px 25px;
+    padding: 8px 25px !important;
     width: 100%;
 }
 

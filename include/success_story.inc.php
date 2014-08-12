@@ -54,7 +54,7 @@ if(isset($_GET['id']))
 }
 
 ?>
-	 	<div  class="mid col-md-12 col-sm-12 col-xs-12" style="width:954px;">
+	 	<div  class="mid col-md-12 col-sm-12 col-xs-12">
 			<div id="tab-container">
                         <ul class="msgtab">
                             <li <?php if($_GET['flag'] == 'rag'){ echo "class='active'"; } ?>><a href="#success_story-1">Success Story</a></li>
@@ -94,50 +94,50 @@ if(isset($_GET['id']))
                             celebrate and symbolize the beginning of your newly married life.
                              </p>
                
-                        	<div class="partner_searchnew">
+                        	<div class="partner_searchnew col-md-12 col-sm-12 col-xs-12">
                             <h2>Post Your Success Story</h2>
                     	<form name="success_story_form" id="success_story_form" method="post" enctype="multipart/form-data" >
                         	
-                        	<div class="row">
-                            <label>Bride Name(Female)<span style="color:#F00">*</span></label>
-                           	 <input type="text" name="bride_name" id="bride_name" />
+                        	<div class="fields">
+                            <label class="col-md-3 col-sm-3 col-xs-12 nopadding">Bride Name(Female)<span style="color:#F00">*</span></label>
+                           	 <input class="col-md-6 col-sm-9 col-xs-12 form-control" type="text" name="bride_name" id="bride_name" />
                             </div>
                             
-                            <div class="row">
-                            <label>Groom Name(Male)<span style="color:#F00">*</span></label>
-                           	 <input type="text" name="groom_name" id="groom_name" />
+                            <div class="fields">
+                            <label class="col-md-3 col-sm-3 col-xs-12 nopadding">Groom Name(Male)<span style="color:#F00">*</span></label>
+                           	 <input class="col-md-6 col-sm-9 col-xs-12 form-control" type="text" name="groom_name" id="groom_name" />
                             </div>
-                            <div class="row">
-                            <label>Bride Membership Id<span style="color:#F00">*</span></label>
+                            <div class="fields">
+                            <label class="col-md-3 col-sm-3 col-xs-12 nopadding">Bride Membership Id<span style="color:#F00">*</span></label>
                             <?php if(isset($_GET['id']) && $db_member[0]['gender']=='F') { ?>
-                           	 <input type="text" name="bride_id" id="bride_id" value="<?php echo $db_member[0]['member_id']?>" readonly="readonly"/>
+                           	 <input class="col-md-6 col-sm-9 col-xs-12 form-control" type="text" name="bride_id" id="bride_id" value="<?php echo $db_member[0]['member_id']?>" readonly="readonly"/>
                              <?php } else { ?>
-                             <input type="text" name="bride_id" id="bride_id" onblur="check_user(this.value,1)"/>
+                             <input class="col-md-6 col-sm-9 col-xs-12 form-control" type="text" name="bride_id" id="bride_id" onblur="check_user(this.value,1)"/>
                              <?php } ?>
                             </div>
-                            <div class="row">
-                            <label>Groom Membership Id<span style="color:#F00">*</span></label>
+                            <div class="fields">
+                            <label class="col-md-3 col-sm-3 col-xs-12 nopadding">Groom Membership Id<span style="color:#F00">*</span></label>
                              <?php if(isset($_GET['id']) && $db_member[0]['gender']=='M') { ?>
-                           	 <input type="text" name="groom_id" id="groom_id" value="<?php echo $db_member[0]['member_id']?>" readonly="readonly"/>
+                           	 <input class="col-md-6 col-sm-9 col-xs-12 form-control" type="text" name="groom_id" id="groom_id" value="<?php echo $db_member[0]['member_id']?>" readonly="readonly"/>
                              <?php } else { ?>
-                            <input type="text" name="groom_id" id="groom_id" onblur="check_user(this.value,2)" />
+                            <input class="col-md-6 col-sm-9 col-xs-12 form-control" type="text" name="groom_id" id="groom_id" onblur="check_user(this.value,2)" />
                             <?php } ?>
                             </div>
-                            <div class="row">
-                            <label>E-Mail<span style="color:#F00">*</span></label>
-                           	 <input type="text" name="email" id="email" />
+                            <div class="fields">
+                            <label class="col-md-3 col-sm-3 col-xs-12 nopadding">E-Mail<span style="color:#F00">*</span></label>
+                           	 <input class="col-md-6 col-sm-9 col-xs-12 form-control" type="text" name="email" id="email" />
                             </div>
                            	
-                            <div class="row">
-                            <label>Engagement/Marriage Date<span style="color:#F00">*</span></label>
-                            <select name="Edate" id="Edate" style="width:80px; margin-right:10px;">
+                            <div class="fields">
+                            <label class="col-md-3 col-sm-3 col-xs-12 nopadding">Engagement/Marriage Date<span style="color:#F00">*</span></label>
+                            <select class="col-md-6 col-sm-9 col-xs-12 nopadding form-control" name="Edate" id="Edate" style="width:80px; margin-right:10px;">
                                 <option value="">DD</option>
                                 <?php for($i=1;$i<32;$i++){ ?>
 								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                                 <?php } ?>
                                 </select>
                            
-                                <select name="Emonth" id="Emonth" style="width:80px;  margin-right:10px;">
+                                <select class="col-md-6 col-sm-9 col-xs-12 nopadding form-control" name="Emonth" id="Emonth" style="width:80px;  margin-right:10px;">
                                 <option value="">MM</option>
                                 <option value="1">January</option>
                                 <option value="2">February</option>
@@ -153,7 +153,7 @@ if(isset($_GET['id']))
                                 <option value="12">December</option>
                                 </select>
                               
-                                 <select name="Eyear"  id="Eyear" style="width:80px; ">
+                                 <select class="col-md-6 col-sm-9 col-xs-12 nopadding form-control" name="Eyear"  id="Eyear" style="width:80px; ">
                                  <option value="">YYYY</option>
                                  
                                <?php for($j=2000;$j<=date('Y')+1;$j++){ ?>
@@ -162,19 +162,19 @@ if(isset($_GET['id']))
                                   
                                  </select>
                             </div>
-                            <div class="row">
-                            <label>Attach Photo<span style="color:#F00">*</span></label>
-                           	 <input type="file" name="file" id="file" />
+                            <div class="fields">
+                            <label class="col-md-3 col-sm-3 col-xs-12 nopadding">Attach Photo<span style="color:#F00">*</span></label>
+                           	 <input class="col-md-6 col-sm-9 col-xs-12 form-control" type="file" name="file" id="file" />
                             </div>
-                            <div class="row">
-                            <label>Address<span style="color:#F00">*</span></label>
-                           	<textarea name="address" id="address" rows="5" cols="30"></textarea>
+                            <div class="fields">
+                            <label class="col-md-3 col-sm-3 col-xs-12 nopadding">Address<span style="color:#F00">*</span></label>
+                           	<textarea class="col-md-6 col-sm-9 col-xs-12 nopadding form-control" name="address" id="address" rows="5" cols="30"></textarea>
                             </div>
                             
                             
-                             <div class="row">
-                            <label>Country living in<span style="color:#F00">*</span></label>
-                            <select name="drpCountry" id="drpCountry" onchange="showmobcode(this.value)" style="width:292px;" >  
+                             <div class="fields">
+                            <label class="col-md-3 col-sm-3 col-xs-12 nopadding">Country living in<span style="color:#F00">*</span></label>
+                            <select class="col-md-6 col-sm-9 col-xs-12 nopadding form-control" name="drpCountry" id="drpCountry" onchange="showmobcode(this.value)">  
                               <option value="">---Select---</option>
                              <?php
 									$country_list="select * from mobile_codes";
@@ -186,10 +186,10 @@ if(isset($_GET['id']))
                             </select>
                             </div>
                             
-                            <div class="row">
-                            <label>Country Code<span style="color:#F00">*</span></label>
+                            <div class="fields">
+                            <label class="col-md-3 col-sm-3 col-xs-12 nopadding">Country Code<span style="color:#F00">*</span></label>
                             <div id="txtHint234">
-                           	<select name="drpMobcode" id="drpMobcode"  style="width:140px; ">
+                           	<select class="col-md-6 col-sm-9 col-xs-12 nopadding form-control" name="drpMobcode" id="drpMobcode">
                              <option value="">---Select---</option>	
                            <?php  $select_code = "select * from mobile_codes";
 								  $db_code = $obj->select($select_code);
@@ -200,22 +200,22 @@ if(isset($_GET['id']))
                              </div>
                             </div>
                             
-                            <div class="row">
-                            <label>Telephone<span style="color:#F00">*</span></label>
-                           	 <input type="text" name="contact_no" id="contact_no" />
+                            <div class="fields">
+                            <label class="col-md-3 col-sm-3 col-xs-12 nopadding">Telephone<span style="color:#F00">*</span></label>
+                           	 <input class="col-md-6 col-sm-9 col-xs-12 form-control" type="text" name="contact_no" id="contact_no" />
                             </div>
                             
-                            <div class="row">
-                            <label>Success Story<span style="color:#F00">*</span></label>
-                           	<textarea name="story" id="story"  rows="5" cols="30"></textarea>
+                            <div class="fields">
+                            <label class="col-md-3 col-sm-3 col-xs-12 nopadding">Success Story<span style="color:#F00">*</span></label>
+                           	<textarea class="col-md-6 col-sm-9 col-xs-12 nopadding form-control" name="story" id="story"  rows="5" cols="30"></textarea>
                             </div>
            
-                            <div class="row">
-                            <label>&nbsp;</label>
+                            <div class="fields">
+                            <label class="col-md-3 col-sm-3 col-xs-12 nopadding">&nbsp;</label>
                            <?php if($_GET['id'] != ''){ ?>
-                            <input type="submit" name="save" id="success_story" class="submit_btn_new1" style="margin-left:215px;" />
+                            <input class="col-md-6 col-sm-9 col-xs-12 form-control" type="submit" name="save" id="success_story" class="submit_btn_new1" style="margin-left:215px;" />
                             <?php }else{ ?>
-                            <input type="submit" name="submit1" id="success_story" class="submit_btn_new1" style="margin-left:215px;" />
+                            <input class="col-md-6 col-sm-9 col-xs-12 form-control" type="submit" name="submit1" id="success_story" class="submit_btn_new1" style="margin-left:215px;" />
                             <?php } ?>
                             </div>
                         </form>    

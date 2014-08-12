@@ -446,4 +446,3 @@ function change_religion()
 </html>
 
 
-

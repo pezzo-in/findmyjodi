@@ -16,6 +16,8 @@ $db_content = $obj->select($select_content);
 <link rel="stylesheet" href="css/colorbox.css" />
     <script type="text/javascript" src="assets/js/jquery-1.7.1.min.js"></script>
     <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 </head>
 		
 <body>
@@ -90,19 +92,24 @@ xmlhttp.send();
 }
 </script>
 
-        <div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
-            <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
+        <div class="container">
+            <div class="row">
+                <div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
+                    <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
     	<?php include('include/header.inc.php'); ?>
-		<div class="header inn">
-        	<div class="titlebox">
+                        <div class="header inn">
+                            <div class="titlebox col-md-12">
             	<h2>Success Story</h2>
             </div>
         </div>
     </div>
 </div>
-<div class="wrapper col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 mid">
+                    <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
 	 <?php include('include/success_story.inc.php'); ?>
      <?php include('include/footer.inc.php'); ?>
+</div>
+</div>
 </div>
 </div>
 </div>

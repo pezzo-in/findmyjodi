@@ -18,6 +18,8 @@ if($_SESSION['logged_user'][0]['id']==$_GET['id'])
 <title>Matrimonial</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="css/colorbox.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 </head>
 <body>
 <?php
@@ -123,31 +125,28 @@ $(document).ready(function(){
 		$(".alredy_sent").colorbox({innerWidth:"400px;", maxWidth:"400px;", innerHeight:"100px;", height:"100px;", xhrError: "Interest is already sent."});
 	});	
 </script>
-<div class="topMain">
-	<div class="wrapper">
+<div class="container">
+    <div class="row">
+        <div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
+            <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
     	<?php include('include/header.inc.php'); ?>
         <?php include('include/slider2.inc.php'); ?>
-		<div class="header inn" style="display:none">
-        	<div class="titlebox">
-            	<h2>Search</h2>
+                <div class="header inn">
+                    <div class="titlebox col-md-12">
+            	Search
             </div>
         </div>
     </div>
 </div>
-<div class="wrapper">
-	<div  class="mid col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-12 mid">
+            <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
 	 <?php include('include/view_profile.inc.php'); ?>
      <?php //include('include/profile_leftbar.inc.php'); ?>
 	</div>
      <?php include('include/footer.inc.php'); ?>
 	
 </div>
+</div>
+</div>
 </body>
 </html>
-<style>
-.content{ width:auto; }
-.row-detail ul{ *min-width:50%; width:50%; }
-.row-detail ul li:first-child{ width:133px; }
-.row-detail ul li:nth-child(3) { width:288px; }
-.row-detail-hobbies ul li:nth-child(3) { width:82%;text-align:justify; }
-</style>
