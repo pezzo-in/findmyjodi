@@ -196,7 +196,7 @@ if($action == 'like' && $id != '' && $userid != '')
                 <div class="cmmnts">
                     <a href="#" class="pimg"><img src="images/male-user1.png" width="32" height="32"></a>
                     <div class="ptext">
-                    	<div class="inputtxt">
+                    	<div class="inputtxt col-md-12 col-xs-12 col-sm-12">
                         	<form action="timeline.php?postid=<?php echo $db_select_post[$i]['Id']; ?>&profileid=<?php echo $_GET['id']; ?>" method="post" name="frmcomm">
            		             	<input type="text" name="Comment" value="">
                                 <input type="hidden" id="img_name<?php echo $db_select_post[$i]['Id']; ?>" name="img_name" />

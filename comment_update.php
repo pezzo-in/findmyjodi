@@ -247,7 +247,7 @@ $comments = $comment;
 
                     <div class="ptext">
 
-                    	<div class="inputtxt" style="width:495px;">
+                    	<div class="inputtxt col-md-12 col-xs-12 col-sm-12">
 
                         	
                             <input type="text" class="comment_text" name="Comment" id="<?php echo $new_id; ?>" value="">
