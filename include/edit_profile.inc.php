@@ -595,7 +595,7 @@ if(isset($_POST['submit']))
 										    $caste_list = "select * from caste where religion_id = '".$db_rel_cast[0]['id']."'";
                                             $data = $obj->select($caste_list);
                                         ?>
-                                        <div id="caste_drp_div">
+                                        <div id="caste_drp_div col-md-12">
                                         <select class="form-control col-md-12 col-sm-12 col-xs-12" name="drpCaste" id="drpCaste">
                                             <option value=""> -Select- </option>
                                             <?php foreach($data as $res) { ?>

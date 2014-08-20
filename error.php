@@ -18,22 +18,28 @@ $(document).ready(function(){
 	return false;
 });
 </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
 </head>
 		
 <body>
-<div class="topMain">
-	<div class="wrapper">
+<div class="container">
+    <div class="row">
+<div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
+    <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
     	<?php include('include/header.inc.php'); ?>
 		<div class="header inn">
-        	<div class="titlebox">
-            	<h2>Error</h2>
+            <div class="titlebox col-md-12">
+            	Error
             </div>
         </div>
     </div>
 </div>
-<div class="wrapper">
+<div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
 	 <?php include('include/error.inc.php'); ?>
      <?php include('include/footer.inc.php'); ?>
+</div>
+</div>
 </div>
 
 </body>

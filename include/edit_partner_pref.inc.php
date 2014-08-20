@@ -286,7 +286,7 @@ $ht=explode("to",$logged_in_member[0]['height']);
 
 					?>
 
-                    <div id="caste_drp_div">
+                    <div id="caste_drp_div col-md-12">
 
                     <select class="form-control col-xs-12 col-md-8 col-sm-8" name="drpCaste" id="drpCaste" style="clear:none;">
 
@@ -323,7 +323,7 @@ $ht=explode("to",$logged_in_member[0]['height']);
                     <span style="clear:both;float:left;width:100%;display: block;">&nbsp;</span>
                     <span class="col-md-3 col-xs-12 col-sm-3"><label>Mother Tongue</label></span>
 
-                    <span class="col-md-9 col-sm-9 col-xs-12"><select class="form-control col-xs-12 col-md-8 col-sm-8" name="drpMotherlanguage" id="drpMotherlanguage" style="clear:none;" >
+                    <span class="col-md-9 col-sm-9 col-xs-12"><select class="form-control col-xs-12 col-md-12 col-sm-12" name="drpMotherlanguage" id="drpMotherlanguage" style="clear:none;" >
 
                         <option value=""> -Select- </option>
 

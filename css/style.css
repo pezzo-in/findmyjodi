@@ -337,6 +337,20 @@ ul.menu ul li a:link, ul.menu ul li a:visited {
     z-index: 1;
 }
 
+/*ul.menu ul li:first-child a{
+    border-top: 1px solid #267896;
+}
+ul.menu ul li:last-child a{
+    border-bottom: 1px solid #267896;
+}*/
+.ui-datepicker-month {
+    color: #000000;
+}
+
+.ui-datepicker-year {
+    color: #000000;
+}
+
 ul.menu ul li a:hover {
     background: none repeat scroll 0 0 #58b1d4;
     border: medium none;

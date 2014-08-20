@@ -259,7 +259,7 @@ $insert="INSERT into members(id, profile_for, name, gender, date_of_birth,age, r
 						$caste_list = "select * from caste"; 
 						$data = $obj->select($caste_list);
 					?>
-                    <div id="caste_drp_div">
+                    <div id="caste_drp_div col-md-12">
                     <select name="drpCaste" id="drpCaste" onchange="drpProfFor_fun(this.id)" tabindex="8" style="clear:none;">
                         <option value=""> -Select- </option>
                         <?php /*?><?php foreach($data as $res) { ?>

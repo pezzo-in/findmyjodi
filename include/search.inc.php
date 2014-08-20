@@ -209,7 +209,7 @@ if(count($db_banner) > 0)
 
                     <label class="col-md-2 col-sm-4 col-xs-12 nopadding">Caste</label>
 
-                    <div id="caste_drp_div">
+                    <div id="caste_drp_div col-md-12">
 
                     <select name="drpCaste" id="regular_drpCaste" >
 

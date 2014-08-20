@@ -62,8 +62,8 @@ include('lib/myclass.php');
 		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
-		<div class="topMain">
-			<div class="wrapper">
+        <div class="topMain col-md-12 col-sm-12 col-xs-12 nopadding">
+            <div class="wrapper col-md-12 col-sm-12 col-xs-12 nopadding">
 		    	<?php include('include/header.inc.php'); ?>
                 <div class="header inn">
                     <div class="titlebox col-md-12">
