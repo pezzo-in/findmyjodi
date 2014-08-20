@@ -50,7 +50,7 @@ $(function(){
 	})
 
 	$('.onlineUsers').live('click',function(e){
-		e.preventDefault();
+		
 		var elem=$(this);
 		var w=$('#chatTab>ul').children('li').length;
 		var max=Tab.getMaxTabShown();

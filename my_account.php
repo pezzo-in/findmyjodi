@@ -122,6 +122,7 @@ $(document).ready(function(){
 </script>
 
 <div class="topMain">
+  
 	<div class="wrapper">
     	<?php include('include/header.inc.php'); ?>
         <?php include('include/slider1.inc.php'); ?>

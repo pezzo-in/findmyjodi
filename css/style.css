@@ -722,7 +722,7 @@ ul.foot_link li a:hover {
     padding-bottom: 5px;
     position: relative;
     width: 100%;
-    z-index: 99;
+    z-index: 0;
 }
 
 .sidebar h2 {

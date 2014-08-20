@@ -358,7 +358,7 @@ function doYouWantToChangeStatusPhoto1(status,id){
                                      status:status
                                      },
 				success: function(data) {
-			
+			          
 				}
 			});  
 		window.location.href = 'member_photo_approval.php?status='+status+'&paid='+id;

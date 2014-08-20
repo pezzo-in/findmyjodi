@@ -394,7 +394,7 @@ $('.not_int_msg_class').click(function() {
 	  return true;
 	}
 </script> 
-<script type="text/javascript" src="js/slimScroll.js"></scriptslimScrollDiv>
+<script type="text/javascript" src="js/slimScroll.js"></script>
 <script type="text/javascript">
    $(function(){
 		$('#msgChat').slimscroll({

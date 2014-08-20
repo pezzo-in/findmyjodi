@@ -38,7 +38,8 @@ $sql_login = "SELECT members.*,member_photos.photo FROM members
 	$logged_in_member=$obj->select($sql_login);	
 if(isset($_POST['submit']))
 {
-	if($_POST['mob_code']==$logged_in_member[0]['mob_code'] && $_POST['txtMobNo']==$logged_in_member[0]['mobile_no'] ){
+	$liveinlaws=($_POST['live_inlaws']==1 ? '' : $_POST['live_inlaws']);
+        if($_POST['mob_code']==$logged_in_member[0]['mob_code'] && $_POST['txtMobNo']==$logged_in_member[0]['mobile_no'] ){
         $cnt = 0;
 	if($_POST['occupation'] != "")
 	{
@@ -70,7 +71,13 @@ if(isset($_POST['submit']))
 						date_of_birth = '".$dob."',
 						
 						age = '".(date('Y')-date('Y',strtotime($_POST['dob'])))."',
-						
+						wishtosettle =  '".$_POST['wishtosettle']."',
+                                                school =  '".$_POST['school']."',
+                                                college =  '".$_POST['college']."',
+                                                inttowork =  '".$_POST['inttowork']."',
+                                                live_inlaws = '".$liveinlaws."',
+                                                aboutfamily= '".$_POST['aboutfamily']."',
+                                                    
 						mother_tongue =  '".$_POST['drpMotherlanguage']."',
 						mobile_no = '".$_POST['txtMobNo']."',education = '".$_POST['education']."',degree_in = '".$course_eid[0]['Eid']."',occupation =  '".$_POST['occupation']."',
 						employed_in = '".$_POST['employed_in']."',annual_income = '".$_POST['annual_income']."',
@@ -173,7 +180,14 @@ if(isset($_POST['submit']))
 						date_of_birth = '".$dob."',
 						
 						age = '".(date('Y')-date('Y',strtotime($_POST['dob'])))."',
-						
+						wishtosettle =  '".$_POST['wishtosettle']."',
+                                                school =  '".$_POST['school']."',
+                                                college =  '".$_POST['college']."',
+                                                inttowork =  '".$_POST['inttowork']."',
+                                                live_inlaws = '".$liveinlaws."',
+                                                aboutfamily= '".$_POST['aboutfamily']."',
+                                                    
+                                                
 						mother_tongue =  '".$_POST['drpMotherlanguage']."',
 						education = '".$_POST['education']."',degree_in = '".$course_eid[0]['Eid']."',occupation =  '".$_POST['occupation']."',
 						employed_in = '".$_POST['employed_in']."',annual_income = '".$_POST['annual_income']."',
@@ -374,15 +388,19 @@ if(isset($_POST['submit']))
 									$select_category2 = "select * from mobile_codes";
 									$db_category2 = $obj->select($select_category2);
                                 ?>
-                                <select id="drpMobcode" name="mob_code" class="col-md-2 col-sm-2 col-xs-12 form-control">
+                                <select id="drpMobcode" name="mob_code" class="col-md-3 col-sm-3 col-xs-12 form-control">
                                 <?php foreach($db_category2 as $db) {  ?>
                                     <option value="<?php echo $db['mob_code']; ?>" <?php if($db['id'] == $logged_in_member[0]['mob_code']){ ?> selected="selected" <?php } ?>><?php echo $db['mob_code']; ?></option>
                                 <?php } ?>
-                                </select><input class="form-control col-md-10 col-sm-10 col-xs-12" type="text" name="txtMobNo" value="<?php echo $logged_in_member[0]['mobile_no']; ?>" onchange="return check_form1(<?php echo $logged_in_member[0]['mobile_no'] ?>)" onkeypress="return isNumber(event)"  id="txtMobNo" />
+                                </select><input class="form-control col-md-9 col-sm-9 col-xs-12" type="text" name="txtMobNo" value="<?php echo $logged_in_member[0]['mobile_no']; ?>" onchange="return check_form1(<?php echo $logged_in_member[0]['mobile_no'] ?>)" onkeypress="return isNumber(event)"  id="txtMobNo" />
                     </li></ul>
                      <ul class="col-md-6 col-xs-12 col-sm-6">
                      	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Horoscope</label>
 							 	<input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="horoscope" value="<?php echo $logged_in_member[0]['horoscope_match']; ?>"  id="horoscope" />
+                    </li></ul>
+                    <ul class="col-md-6 col-xs-12 col-sm-6">
+                     	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Where do you wish to settle?</label>
+							 	<input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="wishtosettle" value="<?php echo $logged_in_member[0]['wishtosettle']; ?>"  id="wishtosettle" />
                     </li></ul>
                     </div>
                     <div class="row-detail new_acc editprof">
@@ -456,6 +474,22 @@ if(isset($_POST['submit']))
                                         <?php } ?>
                                     </select>
                             </li></ul>
+                          <ul class="col-md-6 col-xs-12 col-sm-6">
+                     	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">School</label>
+			<input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="school" value="<?php echo $logged_in_member[0]['school']; ?>"  id="school" />
+                    </li></ul>
+                           <ul class="col-md-6 col-xs-12 col-sm-6">
+                     	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">college</label>
+			<input class="form-control col-md-12 col-sm-12 col-xs-12" type="text" name="college" value="<?php echo $logged_in_member[0]['college']; ?>"  id="college" />
+                    </li></ul>
+                   <ul class="col-md-6 col-xs-12 col-sm-6">
+                            	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Interested to work after marriage?</label>
+                                     <select class="form-control col-md-12 col-sm-12 col-xs-12" name="inttowork" id="inttowork" >
+                                        <option value="">Select</option>
+                                        <option value="Y" <?php if($logged_in_member[0]['inttowork'] == "Y"){?> selected="selected" <?php } ?>>Yes</option>	
+                                        <option value="N" <?php if($logged_in_member[0]['inttowork'] == "N"){?> selected="selected" <?php } ?>>No</option>
+                                     </select>
+                  </li></ul>
                     
                     
                     </div>
@@ -647,7 +681,18 @@ if(isset($_POST['submit']))
                                         <option value="N" <?php if($logged_in_member[0]['living_with_parents'] == "N"){?> selected="selected" <?php } ?>>No</option>
                                      </select>
                             </li></ul>
-                            
+                          <?php if($logged_in_member[0]['gender'] == 'F') { ?> 
+                           <ul class="col-md-6 col-xs-12 col-sm-6">
+                            	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Live with in-laws?</label>
+                                     <select class="form-control col-md-12 col-sm-12 col-xs-12" name="live_inlaws" id="live_inlaws" >
+                                        <option value="">Select</option>
+                                        <option value="Y" <?php if($logged_in_member[0]['live_inlaws'] == "Y"){?> selected="selected" <?php } ?>>Yes</option>	
+                                        <option value="N" <?php if($logged_in_member[0]['live_inlaws'] == "N"){?> selected="selected" <?php } ?>>No</option>
+                                     </select>
+                            </li></ul>
+                          <?php }else{ ?>
+                          <input id="live_inlaws" name="live_inlaws" value="1" type="hidden"  style="clear:none;">
+                           <?php } ?>
                             <ul class="col-md-6 col-xs-12 col-sm-6">
                             	<li><label class="col-md-12 col-xs-12 col-sm-12 nopadding">Family Values</label>
 									<select class="form-control col-md-12 col-sm-12 col-xs-12" id="drpFamilyValues" name="drpFamilyValues" tabindex="19">	
@@ -678,6 +723,11 @@ if(isset($_POST['submit']))
                         			        <option value="affluent" <?php if($logged_in_member[0]['family_status'] == "affluent") { ?> selected="selected" <?php } ?>>Affluent</option>
                         			 </select>
                             </li></ul>
+                          <div style="clear: both;"></div>
+                      <div class="row-detail new_acc editprof">
+                  <h3>About Family</h3>
+                   <textarea id="aboutfamily" rows="5" class="col-md-12 col-xs-12 col-sm-12" name="aboutfamily"><?php echo $logged_in_member[0]['aboutfamily']; ?></textarea>
+               </div>
                      </div>
                     
                     <div class="row-detail new_acc editprof">
@@ -771,7 +821,8 @@ if(isset($_POST['submit']))
 		$('#txtMobNo').css('border','1px solid #ccc');
 		$('#about_me').css('border','1px solid #ccc');
 		$('#mari_status').css('border','1px solid #ccc');
-				
+                $('#inttowork').css('border','1px solid #ccc');
+		$('#live_inlaws').css('border','1px solid #ccc');		
 		error = 0;
 		
 		var letters = /^[A-Za-z]+$/;
@@ -895,6 +946,25 @@ if(isset($_POST['submit']))
 		{
 			dob=0
 		}
+                if(document.getElementById('inttowork').value=='')
+                {
+		$('#inttowork').css('border','1px solid red');
+		inttowork=1
+		
+                }
+                else
+                {
+		  inttowork=0
+                }
+                if(document.getElementById('live_inlaws').value=='')
+                {
+		$('#live_inlaws').css('border','1px solid red');
+		 live_inlaws=1
+                }
+                else
+                {
+		 live_inlaws=0
+                }
         if(error_mobile==1)
 	{
 		$('#txtMobNo').css('border','1px solid red');
@@ -907,7 +977,7 @@ if(isset($_POST['submit']))
 		
 		
 	
-	if(drpProfFor == 0 && error_mobile==0 && username == 0 && drpReligion == 0 && drpCaste==0 && drpCountry==0 && dob==0 && drpMotherlanguage==0 && txtMobNo==0  && mari_status == 0)
+	if(drpProfFor == 0 && live_inlaws == 0 && inttowork == 0 && error_mobile==0 && username == 0 && drpReligion == 0 && drpCaste==0 && drpCountry==0 && dob==0 && drpMotherlanguage==0 && txtMobNo==0  && mari_status == 0)
 	{
 		return true;
 	}

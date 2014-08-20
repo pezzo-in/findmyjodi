@@ -203,6 +203,25 @@ $(document).ready(function(e) {
                     <?php
                  
                           $totalcount=$linkedinposition->{'@attributes'}->total;
+                          $value=$linkedinposition->position;
+                          if($totalcount!=1)
+                          {    
+                          foreach($value as $val)
+                          {
+                             
+                            if($val->{'is-current'}=='true'){
+                            echo $val->title."<br/>";
+                            echo $val->company->name."<br/>";
+                            echo $val->{'start-date'}->year." to ";
+                            if($val->{'is-current'}=='true')
+                            {
+                                echo "Present";
+                            }else{    
+                                echo $val->{'end-date'}->year;
+                                }
+                              }
+                          }
+                          }else{
                             for($i=0;$i<$totalcount;$i++)
                             {
                               if($linkedinposition->position->{'is-current'}=='true'){
@@ -217,6 +236,7 @@ $(document).ready(function(e) {
                                 }
                               }
                             }
+                          }
                     ?>
                 </span>
             </div>

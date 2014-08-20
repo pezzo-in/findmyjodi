@@ -14,6 +14,7 @@
 	}
         $proimagename=$image[0]['photo'];
         $file=$proimagename;
+        $ext = pathinfo($file, PATHINFO_EXTENSION);
         
 $path   = '../upload';
 $filename = $path ."/".$file;
@@ -24,9 +25,9 @@ $font_size = 20;       // in pixcels
 $water_mark_text_2 = "Find My Jodi";
 if(strlen($file))
 {
-   
+    if($ext=="jpg" || $ext=="JPG" || $ext==="jpeg"){
     $data= watermark_image($filename, $filename);
-    
+    }
 }
 
 ?>
@@ -66,7 +67,7 @@ function watermark_text($oldimage_name, $new_image_name){
     imagejpeg($image, $new_image_name, 100);
   
     return true;
-}
+} 
 
 
     
