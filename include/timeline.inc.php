@@ -115,12 +115,10 @@ if(isset($_POST['postsubmit']) && (trim($_POST['PostText'])!='') || $_POST['img_
                     <br/>
                     <div class="right_btn">
                     <input type="hidden" id="img_name" name="img_name" value="Photo" class="pull-left" btn btn-success btn-sm />
-                    <input name="postsubmit" type="submit" value="Post" class="pull-left btn btn-success btn-sm" />
+                    <input name="postsubmit" type="submit" value="Post" class="pull-left btn btn-success" />
 				<form name="file_upload" action="upload_file_post.php" method="post" target="frame" enctype="multipart/form-data">
                 <div class="photo_attach">
-                        <label for="file">
-                    	<img src="images/photo_btn1.png"/>
-                    </label>
+                    <label for="file"><span class="btn btn-danger">Upload Picture</span></label>
                     <input type="file" id="file" name="file" onchange="this.form.submit(); display_block1();" />                    
                 </div>
                 </form>
@@ -634,7 +632,7 @@ $select_like_comment="select * from tbl_user_comment_like where Postid='".$db_co
             <div class="cmmnts add-comments-div">
                     <a href="#" class="pimg"><img src="images/male-user1.png" width="32" height="32"></a>
                     <div class="ptext">
-                    	<div class="inputtxt" style="width:495px;">
+                    	<div class="inputtxt col-md-12 col-xs-12 col-sm-12">
                  <input type="text" name="Comment" class="comment_text" id="post_comment_<?php echo $db_select_post[$i]['Id']; ?>_<?php echo $_GET['id']; ?>">
                             <a class="rightsend_btn" id="post_comment_<?php echo $db_select_post[$i]['Id']; ?>_<?php echo $_GET['id']; ?>" onclick="add_comment(this.id);">click</a>
                            

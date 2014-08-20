@@ -448,7 +448,7 @@ if(!empty($dbconversation))
 
                     </ul>
 
-                    <div class="inputtxt msginput">
+                    <div class="inputtxt col-md-12 col-xs-12 col-sm-12 msginput">
 
                     <input type="text" name="Message" id="message_sent_<?php echo $to; ?>_<?php echo $from; ?>" value="">
 

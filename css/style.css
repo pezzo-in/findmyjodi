@@ -1119,6 +1119,7 @@ ul.profl-list li .goto a.icon-heart, ul.profl-list li .goto a.icon-gift, ul.prof
     margin: 0 0 7px;
     padding-bottom: 15px;
     text-align: left;
+    font-size: 20px;
 }
 
 .profile_details h3 {
@@ -1163,7 +1164,7 @@ ul.msgtab {
     border-bottom: 1px solid #dfdfdf;
     float: left;
     list-style: none outside none;
-    margin: 20px 0 0;
+    margin: 0;
     padding: 0;
     width: 99%;
 }
@@ -3080,6 +3081,10 @@ ul.list-prfl li a:hover {
 
 .photo_attach > input {
     padding: 3px 0;
+}
+
+.photo_attach > input[type="file"] {
+    display: none;
 }
 
 .photo_attach {
