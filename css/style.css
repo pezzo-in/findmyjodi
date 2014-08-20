@@ -319,8 +319,9 @@ ul.menu ul li:first-child {
 }
 
 ul.menu ul li a:link, ul.menu ul li a:visited {
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: medium none;
+    background: #ffffff;
+    border-left: 1px solid #267896;
+    border-right: 1px solid #267896;
     border-radius: 0;
     color: #267896;
     display: block;
